@@ -5,14 +5,14 @@
     <div class="font-80">Innovative education, </div>
     <div class="font-80">unlocking limitless</div>
     <div class=""></div>
-    <div class=""><img src="" alt=""></div>
+    <div class="test"><img src="" alt=""></div>
 </div>
 </template>
 <style scoped>
 .test{
     width: 300px;
     height: 300px;
-    background-image: url('img');
+    background-image: url('image/arrow/blue-row.png');
 }
 .font-185{
     @apply text-[185px] text-[#0057ff];
