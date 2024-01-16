@@ -7,9 +7,7 @@ import Navbar from './components/NavBar.vue';
 
 const app = createApp({
     components: {
-        Example,
-        Banner,
-        Navbar,
+        Example, Banner, Navbar,
     }
 });
 
