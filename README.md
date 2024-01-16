@@ -7,7 +7,7 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## 一鹿狂飆
+## 一鹿狂飆 啟動
 1.要使用此專案的同學們，要去安裝"XAMPP"以及"composer" <選自己用的作業系統下載>
 
 2.第一次clone下來後，在左邊檔案目錄找到".env.example "，複製後貼上改名"新一份"叫 ".env"
@@ -15,13 +15,21 @@
 
 3.都好了之後分割出兩個終端機，分別打上 "npm i" 以及 "composer i"  
 
-4.html/css的檔案會在 resources/views/xxxxx.html (副檔名改成.blade.php)
+4.打開XAMPP，點選mySQL的start 啟動mySQL，回到隨便一個終端機，打上 "php artisan key:generate"
 
-5.圖片丟在 public/image 裡面
+5.都好了之後在分割的終端機裡，分別打上 "npm run dev" 以及 "php artisan serve" 運行你的環境 看到畫面就代表成功了喔!
 
-6.該頁面要使用tailwinds的話，要在那張html裡面貼上 @vite('resources/css/app.css') 在<head>裡面
+## 檔案目錄
 
-7.該頁面要使用Vue3的話，要在那張html裡面貼上 @vite('resources/js/app.js') 在<head>裡面
+1.html/css的檔案會在 resources/views/xxxxx.html (副檔名改成.blade.php)
+
+2.圖片丟在 public/image 裡面
+
+## import事項
+
+該頁面要使用tailwinds的話，要在那張html裡面貼上 @vite('resources/css/app.css') 在<head>裡面
+
+該頁面要使用Vue3的話，要在那張html裡面貼上 @vite('resources/js/app.js') 在<head>裡面
  ``<script src="{{ mix('js/app.js') }}"></script>``貼在body下面
 
 ## About Laravel
