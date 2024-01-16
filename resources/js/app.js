@@ -2,10 +2,11 @@ import './bootstrap';
 
 import { createApp } from 'vue/dist/vue.esm-bundler.js';
 import Example from './components/ExampleComponent.vue';
+import Banner from './components/Banner.vue';
 
 const app = createApp({
   components: {
-    Example
+    Example, Banner,
   }
 });
 

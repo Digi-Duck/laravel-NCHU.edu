@@ -32,7 +32,6 @@
 該頁面要使用tailwinds的話，要在那張html裡面貼上 @vite('resources/css/app.css') 在<head>裡面
 
 該頁面要使用Vue3的話，要在那張html裡面貼上 @vite('resources/js/app.js') 在<head>裡面
- ``<script src="{{ mix('js/app.js') }}"></script>``貼在body下面
 
 ## About Laravel
 

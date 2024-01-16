@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,10 +8,14 @@
     @vite('resources/js/app.js')
     @vite('resources/css/app.css')
 </head>
+<style>
+
+</style>
+
 <body>
-<div id="app">
-    <example/>
-</div>
-    <script src="{{ mix('js/app.js') }}"></script>
+    <div id="app">
+        <banner />
+    </div>
 </body>
+
 </html>
