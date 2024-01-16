@@ -21,9 +21,11 @@
 
 ## 檔案目錄
 
-1.html/css的檔案會在 resources/views/xxxxx.html (副檔名改成.blade.php)
+1.components 會在 resources/js/components
 
-2.圖片丟在 public/image 裡面
+2.html/css的檔案會在 resources/views/xxxxx.html (副檔名改成.blade.php)
+
+3.圖片丟在 public/image 裡面
 
 ## import事項
 
