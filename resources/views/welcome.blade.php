@@ -14,6 +14,8 @@
 
 <body>
     <div id="app">
+        <div>
+        </div>
         <banner />
     </div>
 </body>

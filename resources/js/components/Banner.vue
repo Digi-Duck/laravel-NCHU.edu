@@ -5,7 +5,7 @@
         <div class="font-185">開啟無限可能</div>
         <div class="font-80">Innovative education, </div>
         <div class="font-80">unlocking limitless</div>
-        <div class=""></div>
+        <div class="test"></div>
         <div class=""><img src="" alt=""></div>
     </div>
 </template>
@@ -13,16 +13,18 @@
 .test {
     width: 300px;
     height: 300px;
-    background-image: url('img');
+    background-image: url('images/arrow/blue-row.png');
 }
 
 .font-185 {
     @apply text-[185px] text-[#0057ff];
+    font-family: 'Noto Sans TC', sans-serif;
 }
 
 .font-80 {
     @apply text-[80px] text-[#000000];
+    font-family: 'Noto Sans TC', sans-serif;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@800&display=swap');
+
 </style>
