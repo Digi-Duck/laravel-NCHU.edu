@@ -15,14 +15,14 @@
 </style>
 
 <body>
-    <div id="app" class="w-[100%]">
+    <div id="app" class="w-[100%] ">
         <nav class="nav-bar h-[60px] bg-white flex items-center justify-between px-[40px]">
             <Navbar />
         </nav>
-        <header class="h-[100vh] mt-[50px]">
+        <header class="h-[100vh] m-auto w-[80%] mt-[37px]  relative">
             <banner />
         </header>
-        <main></main>
+        <main class="m-auto w-[80%]"></main>
         <footer>
             <foot />
         </footer>
