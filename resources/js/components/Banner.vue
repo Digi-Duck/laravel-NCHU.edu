@@ -21,11 +21,13 @@
 .font-title {
     @apply text-[145px] text-[#0057ff];
     font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 800;
 }
 
 .font-large {
     @apply text-[64px] text-[#000000] font-black tracking-[-2.5px];
     font-family: 'Inter', sans-serif;
+    font-weight: 700;
 }
 
 .row-one,
