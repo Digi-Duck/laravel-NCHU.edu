@@ -15,13 +15,17 @@
 </style>
 
 <body>
-    <div id="app">
-        <nav class="nav-bar w-[100vw] h-[60px] bg-white flex items-center justify-between px-[40px]">
+    <div id="app" class="w-[100%]">
+        <nav class="nav-bar h-[60px] bg-white flex items-center justify-between px-[40px]">
             <Navbar />
         </nav>
-        <header class="mt-[50px] w-full ">
+        <header class="h-[100vh] mt-[50px]">
             <banner />
         </header>
+        <main></main>
+        <footer>
+            <foot />
+        </footer>
     </div>
 </body>
 
