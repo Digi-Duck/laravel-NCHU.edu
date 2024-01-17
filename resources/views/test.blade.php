@@ -14,7 +14,7 @@
         }
 
         .logo {
-            background-image: url('{{ asset('image/logo/logo.svg') }}');
+            background-image: url('/images/logo/logo.svg');
             background-color: #fff;
             width: 98px;
             height: 40px;
@@ -73,11 +73,52 @@
             transform: translate(-50%, -50%) rotate(-45deg);
             top: 50%;
         }
+
+        .provide {
+            font-family: 'Noto Sans TC', sans-serif;
+            font-weight: 700;
+            font-size: 95px
+        }
+
+        .provide span {
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            font-size: 50px
+        }
+
+        main ul {
+            font-family: 'Inter', sans-serif;
+            font-size: 22px
+        }
+
+        main ul li {
+            font-family: 'Inter', sans-serif;
+            font-weight: 800;
+            font-size: 22px
+        }
+
+        main ul li:hover {
+            color: #0057FF;
+        }
+        .arrow{
+            position: relative;
+        }
+        .arrow::after{
+            content: '';
+            position: absolute;
+            width: 88px;
+            height: 88px;
+            background-image: url('/images/banner/blue-row.png');
+            background-size: contain;
+            transform: rotate(90deg);
+            bottom: -124px;
+            right: 50px;
+        }
     </style>
 </head>
 
 <body>
-    <nav class="nav-bar w-[100vw] h-[60px] bg-white flex items-center justify-between px-[40px] fixed">
+    <nav class="nav-bar w-[100%] h-[60px] bg-white flex items-center justify-between px-[40px]">
         {{-- <div class="logo"></div>
         <div class="menu">
             <ul class="flex">
@@ -95,11 +136,48 @@
                 </div>
             </ul>
         </div> --}}
-        <Navbar />
+        {{-- <Navbar /> --}}
     </nav>
-
     <header></header>
-    <main></main>
+    <main class="w-[80%] m-auto">
+        <div class="flex justify-center items-center pt-[63px] pb-[105px]">
+            <div class="provide w-[503px] h-[252px]">
+                <div class="w-[100%] mt-[-15px] ms-[50px] arrow">我們<span> We</span></div>
+                <div class="w-[100%] mt-[-40px] flex gap-[15px]"><span class="mt-[15px]">provide </span>提供</div>
+            </div>
+            <ul class="w-[748px] flex items-center justify-between">
+                <li><a href="">01兒童營隊</a></li>|
+                <li><a href="">02單元手作</a></li>|
+                <li><a href="">03運動課程</a></li>|
+                <li><a href="">04職業訓練</a></li>|
+                <li><a href="">05專業證照</a></li>
+            </ul>
+        </div>
+        <div>
+            <ul class="w-[1219px]">
+                <li><a href="">
+                        <div></div>
+                        <div></div>
+                    </a></li>
+                <li><a href="">
+                        <div></div>
+                        <div></div>
+                    </a></li>
+                <li><a href="">
+                        <div></div>
+                        <div></div>
+                    </a></li>
+                <li><a href="">
+                        <div></div>
+                        <div></div>
+                    </a></li>
+                <li><a href="">
+                        <div></div>
+                        <div></div>
+                    </a></li>
+            </ul>
+        </div>
+    </main>
     <footer></footer>
 </body>
 <script scoped lang="scss"></script>
