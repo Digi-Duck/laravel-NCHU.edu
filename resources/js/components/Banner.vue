@@ -1,13 +1,15 @@
 
 <template>
-    <div class="w-full absolute">
+    <div class="w-full">
         <div class="flex">
             <div class="font-title ml-[120px] row-one ">創新教育</div>
         </div>
         <div class="font-title ml-[411px] mt-[-67px] row-two">開啟無限可能</div>
         <div class="font-large ml-[549px] mt-[-25px] row-three">Innovative education, </div>
         <div class="font-large ml-[319px]  mt-[-30px] row-four">unlocking limitless</div>
-        <div class="font-large ml-[809px] mt-[-45px] row-five">possibilities.</div>
+        <div class="circle-p w-0 h-0"></div>
+        <div class="right-p w-0 h-0"></div>
+        <div class="font-large ml-[812px] mt-[-45px] row-five">possibilities.</div>
         <div class="flex ml-[415px] ">
             <img class="mr-[53px] w-[90px] h-[90px]" src="/public/images/banner/black-row.png" alt="">
             <img class="mr-[53px] w-[90px] h-[90px]" src="/public/images/banner/black-row.png" alt="">
@@ -16,12 +18,6 @@
     </div>
 </template>
 <style scoped>
-.test {
-    width: 300px;
-    height: 300px;
-    background-image: url('images/banner/blue-row.png');
-}
-
 .font-title {
     @apply text-[145px] text-[#0057ff];
     font-family: 'Noto Sans TC', sans-serif;
@@ -36,6 +32,8 @@
 .row-two,
 .row-three,
 .row-four,
+.circle-p,
+.right-p,
 .row-five {
     position: relative;
 }
@@ -52,18 +50,8 @@
     background-size: 85px 85px;
 
 }
-.row-two:before {
-    content: "";
-    position: absolute;
-    left: 50%;
-    bottom: 100px;
-    width: 166px;
-    height: 166px;
-    z-index: -1;
-    background-image: url('images/banner/circle-p.png');
-    background-repeat: no-repeat;
 
-}
+
 .row-two:after {
     content: "";
     position: absolute;
@@ -75,8 +63,8 @@
     background-position-x: right;
     background-size: 85px 85px;
     rotate: 90deg;
-
 }
+
 .row-three:before {
     content: "";
     position: absolute;
@@ -89,6 +77,7 @@
     background-position-x: left;
     z-index: -1;
 }
+
 .row-five:before {
     content: "";
     position: absolute;
@@ -99,14 +88,29 @@
     background-image: url('images/banner/draw_circle.png');
     background-repeat: no-repeat;
 }
-.row-five:after {
+
+.right-p:after {
     content: "";
     position: absolute;
-    right: 115px;
+    left: 1151px;
+    top: -53px;
     height: 216px;
     width: 251px;
     background-image: url('images/banner/right-p.png');
     background-repeat: no-repeat;
     z-index: -1;
+}
+
+.circle-p:after {
+    content: "";
+    position: absolute;
+    left: 858px;
+    bottom: 248px;
+    width: 166px;
+    height: 166px;
+    z-index: -1;
+    background-image: url('images/banner/circle-p.png');
+    background-repeat: no-repeat;
+
 }
 </style>
