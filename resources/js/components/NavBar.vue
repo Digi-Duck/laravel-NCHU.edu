@@ -29,7 +29,7 @@
 </template>
 <style scoped lang="scss">
 .logo {
-    background-image: url('/image/logo/logo.svg');
+    background-image: url('/images/logo/logo.svg');
     background-color: #fff;
     width: 98px;
     height: 40px;
