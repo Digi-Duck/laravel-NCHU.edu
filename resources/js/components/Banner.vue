@@ -1,6 +1,6 @@
 
 <template>
-    <div class="w-full">
+    <div class="w-full mb-[81px]">
         <div class="flex">
             <div class="font-title ml-[120px] row-one ">創新教育</div>
         </div>
@@ -15,6 +15,9 @@
             <img class="mr-[53px] w-[90px] h-[90px]" src="/public/images/banner/black-row.png" alt="">
             <img class="mr-[53px] w-[90px] h-[90px]" src="/public/images/banner/black-row.png" alt="">
         </div>
+    </div>
+    <div class="w-full">
+        <img class="w-full" src="/public/images/banner/Rectangle 64.png" alt="">
     </div>
 </template>
 <style scoped>

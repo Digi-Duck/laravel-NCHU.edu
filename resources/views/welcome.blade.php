@@ -19,11 +19,11 @@
         <nav class="nav-bar h-[60px] bg-white flex items-center justify-between px-[40px]">
             <Navbar />
         </nav>
-        <header class="h-[100vh] m-auto w-[80%] mt-[37px]  relative">
+        <header class="h-[100vh] m-auto w-[80%] mt-[37px]">
             <banner />
         </header>
         <main class="m-auto w-[80%]"></main>
-        <footer>
+        <footer class="m-auto w-[80%]">
             <foot />
         </footer>
     </div>
