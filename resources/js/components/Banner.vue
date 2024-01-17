@@ -1,9 +1,9 @@
 
 <template>
-    <div class="container">
-        <div class="font-185">創新教育</div>
-        <div class="font-185">開啟無限可能</div>
-        <div class="font-80">Innovative education, </div>
+    <div class="w-full">
+        <div class="font-185 ml-[151px]  ">創新教育</div>
+        <div class="font-185  ml-[507px]">開啟無限可能</div>
+        <div class="font-80 ml-[689px]">Innovative education, </div>
         <div class="font-80">unlocking limitless</div>
         <div class="test"></div>
         <div class=""><img src="" alt=""></div>
@@ -25,6 +25,4 @@
     @apply text-[80px] text-[#000000];
     font-family: 'Noto Sans TC', sans-serif;
 }
-
-
 </style>

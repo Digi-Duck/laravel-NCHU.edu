@@ -16,10 +16,12 @@
 
 <body>
     <div id="app">
-        <nav class="nav-bar w-[100vw] h-[60px] bg-white flex items-center justify-between px-[40px] fixed">
+        <nav class="nav-bar w-[100vw] h-[60px] bg-white flex items-center justify-between px-[40px]">
             <Navbar />
         </nav>
-        <banner />
+        <header class="mt-[50px] w-full ">
+            <banner />
+        </header>
     </div>
 </body>
 
