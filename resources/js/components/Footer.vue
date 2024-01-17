@@ -58,7 +58,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Noto Sans TC', sans-serif;
 }
 
 .main {
@@ -95,7 +95,6 @@
 .h1 {
     font-size: 22px;
     margin-bottom: 10px;
-    font-weight: bold;
 }
 
 .top-right {
@@ -111,7 +110,6 @@
 .h2 {
     margin-bottom: 23px;
     font-size: 30px;
-    font-weight: bold;
 }
 
 .h3 {
