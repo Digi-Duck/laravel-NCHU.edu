@@ -24,7 +24,7 @@
 .font-title {
     @apply text-[145px] text-[#0057ff];
     font-family: 'Noto Sans TC', sans-serif;
-    font-weight: 800;
+    font-weight: 900;
 }
 
 .font-large {
