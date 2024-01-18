@@ -5,8 +5,8 @@ import FrontendLayout from '@/Layouts/FrontendLayout.vue';
 import IndexBanner from '@/Components/Frontend/Other/IndexBanner.vue';
 
 export default {
-  layout: FrontendLayout,
   components: {
+    FrontendLayout,
     IndexBanner,
   },
   data() {
@@ -21,9 +21,11 @@ export default {
 </script>
 
 <template>
-  <div>
-    <IndexBanner />
-  </div>
+  <FrontendLayout>
+    <div>
+      <IndexBanner />
+    </div>
+  </FrontendLayout>
 </template>
 
 <style scoped>

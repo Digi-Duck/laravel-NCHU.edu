@@ -18,7 +18,7 @@ class UserSeeder extends Seeder
             'name' => '管理者',
             'email' => 'admin@gmail.com',
             'email_verified_at' => now(),
-            'password' => '12345678',
+            'password' => 'NchuEdu2024',
             'remember_token' => Str::random(10),
         ]);
     }

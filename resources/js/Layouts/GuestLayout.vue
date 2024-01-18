@@ -1,12 +1,12 @@
 <script setup>
-import logoLuminous from '/images/logo/logo-luminous.png';
+import logo from '/images/logo/logo.svg';
 </script>
 
 <template>
   <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
     <div>
       <Link href="/" title="回到首頁(跳轉頁面)">
-        <img :src="logoLuminous" alt="LOGO" width="200" class="w-[200px]">
+        <img :src="logo" alt="LOGO" width="200" class="w-[200px]">
       </Link>
     </div>
 
