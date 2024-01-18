@@ -1,10 +1,13 @@
 /.phpunit.cache
+/bootstrap/ssr
 /node_modules
 /public/build
 /public/hot
 /public/storage
+/public/upload
 /storage/*.key
 /vendor
+stats-analyze.html
 .env
 .env.backup
 .env.production

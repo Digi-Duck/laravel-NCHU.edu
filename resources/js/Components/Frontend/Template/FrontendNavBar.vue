@@ -1,35 +1,41 @@
 <script>
-// import logo from '/public/image/logo/logo.svg';
-// export default {
-//     data() {
-//         return {
-//             logo,
-//         }
-//     }
-// }
+import logo from '/images/logo/logo.svg';
+
+export default {
+  data() {
+    return {
+      images: {
+        logo,
+      },
+    };
+  },
+};
 </script>
+
 <template>
-    <div class="logo"></div>
+  <nav class="h-[60px] bg-white flex items-center justify-between px-10">
+    <div class="logo" :style="{ backgroundImage: `url(${images.logo})` }"></div>
     <div class="menu">
-        <ul class="flex">
-            <li><a href="">最新消息</a></li>
-            <li><a href="">最新課程</a></li>
-            <li><a href="">課程總覽</a></li>
-            <li><a href="">關於我們</a></li>
-            <div class="fun-menu ">
-                <input id="ham-menu-switch" type="checkbox" hidden>
-                <label for="ham-menu-switch" class="ham-menu">
-                    <div class="line line-1"></div>
-                    <div class="line line-2"></div>
-                    <div class="line line-3"></div>
-                </label>
-            </div>
-        </ul>
+      <ul class="flex">
+        <li><Link href="">最新消息</Link></li>
+        <li><Link href="">最新課程</Link></li>
+        <li><Link href="">課程總覽</Link></li>
+        <li><Link href="">關於我們</Link></li>
+        <div class="fun-menu ">
+          <input id="ham-menu-switch" type="checkbox" hidden>
+          <label for="ham-menu-switch" class="ham-menu">
+            <div class="line line-1"></div>
+            <div class="line line-2"></div>
+            <div class="line line-3"></div>
+          </label>
+        </div>
+      </ul>
     </div>
+  </nav>
 </template>
-<style scoped lang="scss">
+
+<style scoped>
 .logo {
-    background-image: url('/images/logo/logo.svg');
     background-color: #fff;
     width: 98px;
     height: 40px;
