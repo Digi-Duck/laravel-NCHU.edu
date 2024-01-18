@@ -2,12 +2,12 @@
 
 <script>
 import FrontendLayout from '@/Layouts/FrontendLayout.vue';
-import FrontendBanner from '@/Components/Frontend/Other/FrontendBanner.vue';
+import IndexBanner from '@/Components/Frontend/Other/IndexBanner.vue';
 
 export default {
   layout: FrontendLayout,
   components: {
-    FrontendBanner,
+    IndexBanner,
   },
   data() {
     return {
@@ -22,7 +22,7 @@ export default {
 
 <template>
   <div>
-    <FrontendBanner />
+    <IndexBanner />
   </div>
 </template>
 
