@@ -61,8 +61,8 @@
 }
 
 .main {
-    background-color: aqua;
     width: 100%;
+    margin: auto;
     display: flex;
     align-items: center;
     flex-direction: column;
