@@ -2,7 +2,7 @@
 
 <script>
 import FrontendLayout from '@/Layouts/FrontendLayout.vue';
-import FrontendBanner from '@/Components/Frontend/Template/FrontendBanner.vue';
+import FrontendBanner from '@/Components/Frontend/Other/FrontendBanner.vue';
 
 export default {
   layout: FrontendLayout,
