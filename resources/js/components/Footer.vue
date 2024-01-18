@@ -61,8 +61,8 @@
 }
 
 .main {
+    background-color: aqua;
     width: 100%;
-    height: 636px;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -70,8 +70,8 @@
 
 .top {
     height: 468px;
-    width: 1621px;
-    margin-top: 100px;
+    width: 100%;
+    margin-top: 1%;
     display: flex;
 }
 
@@ -83,7 +83,7 @@
 .logo {
     width: 490px;
     height: 183px;
-    margin-bottom: 81px;
+    margin-bottom: 60px;
 }
 
 .word {
@@ -133,7 +133,7 @@
 }
 
 .bottom {
-    width: 1621px;
+    width: 100%;
     height: 27px;
 }
 </style>
