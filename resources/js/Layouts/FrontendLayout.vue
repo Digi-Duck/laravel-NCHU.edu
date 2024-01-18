@@ -44,7 +44,7 @@ export default {
     <div>
       <FrontendHeader />
 
-      <main class="w-[80%]">
+      <main class="w-[80%] m-auto">
         <slot />
       </main>
 
