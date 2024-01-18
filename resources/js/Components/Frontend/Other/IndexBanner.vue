@@ -15,40 +15,41 @@ export default {
 };
 </script>
 
-<template>
-  <div class="m-auto w-[80%] mt-[37px]">
+<template >
+    <div class="w-[1520px] m-auto">
+        <div class=" ml-[314px] mt-[25px]">
     <div class="flex">
-      <div class="font-title ml-[120px] row-one">創新教育</div>
+      <div class="font-title  row-one">創新教育</div>
     </div>
-    <div class="font-title ml-[411px] mt-[-67px] row-two">開啟無限可能</div>
-    <div class="font-large ml-[549px] mt-[-25px] row-three">Innovative education, </div>
-    <div class="font-large ml-[319px]  mt-[-30px] row-four">unlocking limitless</div>
+    <div class="font-title ml-[291px] mt-[-67px] row-two">開啟無限可能</div>
+    <div class="font-large ml-[429px] mt-[-25px] row-three">Innovative education, </div>
+    <div class="font-large ml-[199px]  mt-[-30px] row-four">unlocking limitless</div>
     <div class="circle-p w-0 h-0"></div>
     <div class="right-p w-0 h-0"></div>
-    <div class="font-large ml-[812px] mt-[-43px] row-five">possibilities.</div>
-    <div class="flex ml-[415px] mb-[90px]">
+    <div class="font-large ml-[692px] mt-[-43px] row-five">possibilities.</div>
+    <div class="flex ml-[295px] mb-[90px]">
       <img class="mr-[53px] w-[90px] h-[90px]" :src="images.blackRow" alt="">
       <img class="mr-[53px] w-[90px] h-[90px]" :src="images.blackRow" alt="">
       <img class="mr-[53px] w-[90px] h-[90px]" :src="images.blackRow" alt="">
     </div>
-    <div class="w-[84%] m-auto">
+    <div class="w-[1259px] m-auto">
       <img class="w-full" :src="images.rectangle64" alt="">
     </div>
   </div>
+</div>
+
 </template>
 
 <style scoped>
 .font-title {
-    @apply text-[145px] text-[#0057ff];
+    @apply text-[145px] text-[#0057ff] font-black;
     font-family: 'Noto Sans TC', sans-serif;
-    font-weight: 900;
     z-index: 1;
 }
 
 .font-large {
-    @apply text-[64px] text-[#000000] font-black tracking-[-3px];
+    @apply text-[64px] text-[#000000] font-black tracking-[-3px] font-bold;
     font-family: 'Inter', sans-serif;
-    font-weight: 700;
 }
 
 .row-one,
@@ -93,7 +94,7 @@ export default {
     bottom: 15px;
     height: 201px;
     width: 549px;
-    background-image: url('/images/banner/left-p.png');
+    background-image: url('/images/banner/left-p.svg');
     background-repeat: no-repeat;
     background-position-x: left;
 }
@@ -101,33 +102,34 @@ export default {
 .row-five:before {
     content: "";
     position: absolute;
-    left: -35px;
-    bottom: -22px;
-    height: 115px;
-    width: 409px;
-    background-image: url('/images/banner/draw_circle.png');
+    left: -120px;
+    bottom: -70px;
+    height: 220px;
+    width: 580px;
+    background-image: url('/images/banner/draw_circle.gif');
     background-repeat: no-repeat;
+    background-size:580px 220px ;
 }
 
 .right-p:after {
     content: "";
     position: absolute;
-    left: 1142px;
+    left: 1020px;
     top: -58px;
     height: 216px;
     width: 251px;
-    background-image: url('/images/banner/right-p.png');
+    background-image: url('/images/banner/right-p.svg');
     background-repeat: no-repeat;
 }
 
 .circle-p:after {
     content: "";
     position: absolute;
-    left: 858px;
+    left: 740px;
     bottom: 248px;
     width: 166px;
     height: 166px;
-    background-image: url('/images/banner/circle-p.png');
+    background-image: url('/images/banner/circle-p.svg');
     background-repeat: no-repeat;
 }
 </style>
