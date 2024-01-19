@@ -127,6 +127,6 @@ img{
 }
 img:hover{
     filter: none;
-    transition: 0.5s;
+    transition: 0.3s;
 }
 </style>
