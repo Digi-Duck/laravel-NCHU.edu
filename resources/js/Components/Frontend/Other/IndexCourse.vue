@@ -9,7 +9,7 @@
                     <div class="card"></div>
                     <div class="card"></div>
                     <div class="card flex flex-col justify-end">
-                        <div class="card-title">一般專案經理政照培訓班</div>
+                        <div class="card-title ">一般專案經理政照培訓班</div>
                         <div class="card-tags flex ">
                             <div class="card-tag">#新手</div>
                             <div class="card-tag">#培訓班</div>
@@ -20,19 +20,20 @@
                 </div>
             </div>
             <div class="w-[40%] h-[72%] bg-blue-300">
-                <div>
+                <div class="mt-[-15%] ml-[12%] w-[80%] h-[40%] bg-yellow-300 ">
                     <div class="provide w-[100%] h-[100%] ml-[5%]">
-                        <div class="w-[100%] mt-[-5%] ms-[30%px] arrow"><span>Latest </span>最新</div>
-                        <div class="w-[100%] ml-[20%] mt-[-10%] flex gap-[15px] row">課程 <span
-                                class="mt-[15px]">course</span>
+                        <div class="w-[100%] ml-[6%] ms-[30%px] arrow tracking-[-3px]"><span class="mr-[20px]">Latest</span >最新</div>
+                        <div class="w-[100%] ml-[19%] mt-[-10%] flex gap-[15px] tracking-[-3px] row">課程<span
+                                class="mt-[15px] tracking-[-3px]">course</span>
                         </div>
                     </div>
                 </div>
-                <div class="w-full h-[65%] flex flex-col justify-end bg-red-200">
-                    <div class="title pl-[2%]">一般專案經理證照培訓班</div>
-                    <div class="intro pl-[2%] tracking-[3px]">專案經理是現在團隊中不可或缺的角色，擁有專業的證照能夠提升個人競爭力並開啟更廣況的職業發展道路。</div>
+                <div class="w-[100%] h-[60%] mt-[15%] flex flex-col justify-end bg-red-200">
+                    <div class="w-[95%] title ml-[15%]  bg-green-500 mb-[20px]">一般專案經理證照培訓班</div>
+                    <div class="w-[85%] intro ml-[15%] bg-green-500 mb-[70px] ">專案經理是現在團隊中不可或缺的角色，擁有專業的證照能夠提升個人競爭力並開啟更廣況的職業發展道路。</div>
+                    <div class="w-[25%] mt-[20px] ml-[77%] more"><a href="">了解更多 → </a></div>
                 </div>
-                <div class="w-[25%] ml-[77%] more">了解更多 → </div>
+
             </div>
         </section>
     </div>
@@ -64,7 +65,8 @@
 
 .card:nth-child(4) {
     top: 39%;
-    background-color: #7dbda8
+    background-color: #7dbda8;
+   
 }
 
 .card-title {
@@ -96,8 +98,8 @@
 .row:after {
     content: "";
     position: absolute;
-    top: 60%;
-    left: 50%;
+    top: 58%;
+    left: 58%;
     width: 120px;
     height: 110px;
     background-image: url('/images/banner/blue-row.png');
@@ -110,16 +112,17 @@
 .title {
     @apply text-[72px] text-[#0054ff] font-black;
     font-family: 'Noto Sans TC', sans-serif;
+    line-height: 1.1
 }
 
 .intro {
     @apply text-[20px] font-bold;
-    line-height: 50px;
+    line-height: 1.6;
     font-family: 'Noto Sans TC', sans-serif;
 }
 
 .more {
-    @apply text-[20px] font-bold;
+    @apply text-[20px] font-extrabold;
     font-family: 'Inter', sans-serif;
 }
 </style>
