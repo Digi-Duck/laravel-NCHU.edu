@@ -15,7 +15,7 @@ export default {
 </script>
 
 <template>
-  <footer class="w-[80%] m-auto">
+  <footer class="w-[64%] m-auto">
     <div class="main">
       <div class="top">
         <div class="top-left">
@@ -30,7 +30,7 @@ export default {
           </div>
         </div>
         <div class="top-right">
-          <div class="content flex">
+          <div class="content flex justify-end">
             <div class="content-3">
               <div class="h2">消息資訊</div>
               <div>
@@ -170,8 +170,8 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 33%;
   height: 100%;
+  margin-left: 5%;
   gap: 5%;
 }
 
