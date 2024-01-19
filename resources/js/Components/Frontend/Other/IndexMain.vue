@@ -14,11 +14,11 @@ export default {
             pro: [{
                 id: 1,
                 name: '兒童營隊',
-                content: '體驗平日上課較無機會接觸到的課<br>程，讓小朋友有個難忘且充實的寒<br>暑假。',
+                content: '體驗平日上課較無機會接觸到的課程，<br>讓小朋友有個難忘且充實的寒<br>暑假。',
                 img: camp,
             },],
         }
-    }
+    },
 }
 </script>
 <template>
@@ -54,7 +54,7 @@ export default {
                         <div class="title ps-[3%]">01</div>
                         <div class="title text-right mt-[-6%]">兒童營隊</div>
                         <div class="text-right">體驗平日上課較無機會接觸到的課<br>程，讓小朋友有個難忘且充實的寒<br>暑假。</div>
-                        <div class="more text-right">了解更多</div>
+                        <Link href="" class="more text-right">了解更多</Link>
                     </div>
                     <div class="w-[60%] flex "><img :src="pro[0].img" alt=""></div>
                 </div>
