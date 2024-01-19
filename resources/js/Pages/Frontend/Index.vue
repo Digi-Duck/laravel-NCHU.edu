@@ -3,6 +3,7 @@
 <script>
 import FrontendLayout from '@/Layouts/FrontendLayout.vue';
 import IndexBanner from '@/Components/Frontend/Other/IndexBanner.vue';
+import IndexMain from '@/Components/Frontend/Other/IndexMain.vue';
 
 import IndexCourse from '@/Components/Frontend/Other/IndexCourse.vue';
 
@@ -11,6 +12,7 @@ export default {
     FrontendLayout,
     IndexBanner,
     IndexCourse,
+    IndexMain,
   },
   data() {
     return {
@@ -29,8 +31,15 @@ export default {
       <IndexBanner />
     </div>
     <div>
+        <IndexMain />
+    </div>
+    <div>
       <IndexCourse />
     </div>
+
+    <!-- <div>
+      <IndexMain />
+    </div> -->
   </FrontendLayout>
 </template>
 
