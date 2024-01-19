@@ -20,10 +20,10 @@
                 </div>
             </div>
             <div class="w-[40%] h-[72%] bg-blue-300">
-                <div class="mt-[-15%] ml-[12%] w-[80%] h-[40%] bg-yellow-300 ">
-                    <div class="provide w-[100%] h-[100%] ml-[5%]">
-                        <div class="w-[100%] ml-[6%] ms-[30%px] arrow tracking-[-3px]"><span class="mr-[20px]">Latest</span >最新</div>
-                        <div class="w-[100%] ml-[19%] mt-[-10%] flex gap-[15px] tracking-[-3px] row">課程<span
+                <div class="mt-[-15%]  w-[100%] h-[40%] bg-yellow-300 ">
+                    <div class="provide w-[100%] h-[100%] ">
+                        <div class="w-[100%] pl-[21%]  arrow tracking-[-3px] "><span class="mr-[20px]">Latest</span >最新</div>
+                        <div class="w-[100%]  pl-[31%] mt-[-10%] flex gap-[15px] tracking-[-3px] row ">課程<span
                                 class="mt-[15px] tracking-[-3px]">course</span>
                         </div>
                     </div>
@@ -101,7 +101,7 @@
     content: "";
     position: absolute;
     top: 58%;
-    left: 58%;
+    left: 78%;
     width: 120px;
     height: 110px;
     background-image: url('/images/banner/blue-row.png');
