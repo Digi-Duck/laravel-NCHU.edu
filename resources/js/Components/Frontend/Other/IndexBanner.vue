@@ -16,26 +16,21 @@ export default {
 </script>
 
 <template >
-        <div class="w-[1200px] m-auto mt-[25px]">
-            <div class="flex">
-                <div class="font-title  row-one">創新教育</div>
-            </div>
-            <div class="font-title ml-[291px] mt-[-67px] row-two">開啟無限可能</div>
-            <div class="font-large ml-[429px] mt-[-25px] row-three">Innovative education, </div>
-            <div class="font-large ml-[199px]  mt-[-30px] row-four">unlocking limitless</div>
-            <div class="circle-p w-0 h-0"></div>
-            <div class="right-p w-0 h-0"></div>
-            <div class="font-large ml-[692px] mt-[-43px] row-five">possibilities.</div>
-            <div class="flex ml-[295px] mb-[90px]">
-                <img class="mr-[53px] w-[90px] h-[90px]" :src="images.blackRow" alt="">
-                <img class="mr-[53px] w-[90px] h-[90px]" :src="images.blackRow" alt="">
-                <img class="mr-[53px] w-[90px] h-[90px]" :src="images.blackRow" alt="">
-            </div>
-            <div class="w-[1270px] m-auto">
-            <img class="w-full" :src="images.rectangle64" alt="">
+    <div class="w-[85%] m-auto mt-[25px] bg-red-300">
+        <div class="font-title  row-one">創新教育</div>
+        <div class="font-title ml-[291px] mt-[-67px] row-two">開啟無限可能</div>
+        <div class="font-large ml-[429px] mt-[-25px] row-three">Innovative education, </div>
+        <div class="font-large ml-[199px]  mt-[-30px] row-four">unlocking limitless</div>
+        <div class="circle-p w-0 h-0"></div>
+        <div class="right-p w-0 h-0"></div>
+        <div class="font-large ml-[692px] mt-[-43px] row-five">possibilities.</div>
+        <div class="flex ml-[295px] mb-[90px]">
+            <img class="mr-[53px] w-[90px] h-[90px]" :src="images.blackRow" alt="">
+            <img class="mr-[53px] w-[90px] h-[90px]" :src="images.blackRow" alt="">
+            <img class="mr-[53px] w-[90px] h-[90px]" :src="images.blackRow" alt="">
         </div>
-        </div>
-
+        <img class="w-[100%] m-auto" :src="images.rectangle64" alt="">
+    </div>
 </template>
 
 <style scoped>
