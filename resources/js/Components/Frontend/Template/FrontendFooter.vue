@@ -48,43 +48,49 @@ export default {
               <div>
                 <Link class="h3" href="">成員介紹</Link>
               </div>
+              <div>
+                <Link class="h3" href="">相關法規</Link>
+              </div>
+              <div>
+                <Link class="h3" href="">成果展示</Link>
+              </div>
             </div>
             <div class="content-3">
               <div class="h2">課程資訊</div>
               <div>
-                <Link class="h3" href="">所有課程</Link>
+                <Link class="h3" href="">兒童營隊</Link>
               </div>
               <div>
-                <Link class="h3" href="">小時學堂</Link>
+                <Link class="h3" href="">單元手作</Link>
               </div>
               <div>
-                <Link class="h3" href="">學齡前課程</Link>
+                <Link class="h3" href="">運動課程</Link>
               </div>
               <div>
-                <Link class="h3" href="">小貓頭鷹冬夏令營</Link>
+                <Link class="h3" href="">專業訓練</Link>
               </div>
               <div>
-                <Link class="h3" href="">Looking for 運動咖</Link>
+                <Link class="h3" href="">專業證照</Link>
               </div>
             </div>
           </div>
         </div>
       </div>
       <div class="bottom flex justify-between ">
-        <pre class="h4">©2024 International College of Innovation and Industry Liaison, N.C.H.U. </pre>
-        <div class="flex">
-          <pre>
-            <Link class="h4" href=""> 隱私權聲明 |</Link>
-          </pre>
-          <pre>
-            <Link class="h4" href=""> 智慧財產權聲明 |</Link>
-          </pre>
-          <pre>
-            <Link class="h4" href=""> 網站導覽 |</Link>
-          </pre>
-          <pre>
-            <Link class="h4" href=""> 網站意見回饋 </Link>
-          </pre>
+        <div class="h4">©2024 International College of Innovation and Industry Liaison, N.C.H.U. </div>
+        <div class="flex gap-1">
+          <div>
+            <Link class="h4" href="">隱私權聲明 </Link>|
+          </div>
+          <div>
+            <Link class="h4" href="">智慧財產權聲明 </Link>|
+          </div>
+          <div>
+            <Link class="h4" href="">網站導覽 </Link>|
+          </div>
+          <div>
+            <Link class="h4" href="">網站意見回饋</Link>
+          </div>
         </div>
       </div>
     </div>
@@ -94,16 +100,15 @@ export default {
 <style scoped>
 .main {
   width: 100%;
-  margin: auto;
   display: flex;
   align-items: center;
   flex-direction: column;
 }
 
 .top {
-  height: 468px;
+  height: 70%;
   width: 100%;
-  margin-top: 1%;
+  margin-top: 5%;
   display: flex;
 }
 
@@ -113,9 +118,9 @@ export default {
 }
 
 .logo {
-  width: 490px;
-  height: 183px;
-  margin-bottom: 60px;
+  width: 294px;
+  height: 110px;
+  margin-bottom: 15%;
 }
 
 .word {
@@ -124,10 +129,11 @@ export default {
 }
 
 .h1 {
-  font-size: 22px;
+  /* font-size: 22px; */
+  font-size: 13px;
   margin-bottom: 10px;
-  font-family: 'Inter', sans-serif;
-  font-weight: 600;
+  font-weight: bold;
+
 }
 
 .top-right {
@@ -141,31 +147,37 @@ export default {
 }
 
 .h2 {
-  font-family: 'Noto Sans TC', sans-serif;
   margin-bottom: 23px;
-  font-size: 30px;
-  font-weight: 700;
+  /* font-size: 30px; */
+  font-size: 18px;
+  font-weight: bold;
 }
 
 .h3 {
   margin-top: 13px;
-  font-size: 25px;
-  font-family: 'Noto Sans TC', sans-serif;
+  /* font-size: 25px; */
+  font-size: 15px;
 }
 
 .h4 {
   font-weight: bold;
   line-height: 27px;
-  font-size: 20px;
+  /* font-size: 20px; */
+  font-size: 12px;
 }
 
 .content-3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 33%;
   height: 100%;
+  gap: 5%;
 }
 
 .bottom {
   width: 100%;
   height: 27px;
+  margin-bottom: 5%;
 }
 </style>
