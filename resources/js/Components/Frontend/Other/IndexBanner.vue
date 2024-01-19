@@ -1,14 +1,14 @@
 
 <script>
 import blackRow from '/images/banner/black-row.png';
-import rectangle64 from '/images/banner/Rectangle64.png';
+import indexP from '/images/banner/index-p.svg';
 
 export default {
     data() {
         return {
             images: {
                 blackRow,
-                rectangle64,
+                indexP,
             },
         };
     },
@@ -29,7 +29,7 @@ export default {
             <img class="mr-[53px] w-[90px] h-[90px]" :src="images.blackRow" alt="">
             <img class="mr-[53px] w-[90px] h-[90px]" :src="images.blackRow" alt="">
         </div>
-        <img class="w-[98%] m-auto" :src="images.rectangle64" alt="">
+        <img class="w-[100%] m-auto" :src="images.indexP" alt="">
     </div>
 </template>
 
