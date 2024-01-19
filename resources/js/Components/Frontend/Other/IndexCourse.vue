@@ -29,9 +29,11 @@
                     </div>
                 </div>
                 <div class="w-[100%] h-[60%] mt-[15%] flex flex-col justify-end bg-red-200">
-                    <div class="w-[100%] title pl-[15%]  bg-green-500 mb-[20px]">一般專案經理證照培訓班</div>
-                    <div class="w-[100%] intro pl-[15%] bg-green-500 mb-[70px] ">專案經理是現在團隊中不可或缺的角色，擁有專業的證照能夠提升個人競爭力並開啟更廣況的職業發展道路。</div>
-                    <div class="w-[100%] mt-[20px] flex justify-end bg-green-500 more"><a href="">了解更多 → </a></div>
+                    <div class="w-[100%] h-[40%] title pl-[15%]  bg-green-500 mb-[1px]">一般專案經理證照培訓班</div>
+                    <div class="w-[100%] h-[60%] intro pl-[15%] bg-green-500 mb-[1px]">
+                        專案經理是現在團隊中不可或缺的角色，擁有專業的證照能夠提升個人競爭力並開啟更廣況的職業發展道路。
+                    </div>
+                    <div class="w-[100%]  flex justify-end bg-green-500 more"><a href="">了解更多 → </a></div>
                 </div>
 
             </div>
