@@ -76,17 +76,17 @@ export default {
                     </div>
                 </div>
             </div>
-            <div class="bottom flex justify-between ">
+            <div class="bottom flex ">
                 <div class="h4">©2024 International College of Innovation and Industry Liaison, N.C.H.U. </div>
-                <div class="flex gap-1">
-                    <div>
-                        <Link class="h4" href="">隱私權聲明 </Link>|
+                <div class="flex gap-1 tabs">
+                    <div class="abc">
+                        <Link class="h4" href="">隱私權聲明 </Link>
                     </div>
                     <div>
-                        <Link class="h4" href="">智慧財產權聲明 </Link>|
+                        <Link class="h4" href="">智慧財產權聲明 </Link>
                     </div>
                     <div>
-                        <Link class="h4" href="">網站導覽 </Link>|
+                        <Link class="h4" href="">網站導覽 </Link>
                     </div>
                     <div>
                         <Link class="h4" href="">網站意見回饋</Link>
@@ -102,7 +102,6 @@ export default {
     display: flex;
     align-items: center;
     flex-direction: column;
-    font-family: 'Noto Sans TC', sans-serif;
 }
 
 .top {
@@ -131,6 +130,7 @@ export default {
     font-size: 18px;
     margin-bottom: 1%;
     font-weight: bold;
+    font-family: 'Noto Sans TC', sans-serif;
 }
 
 .top-right {
@@ -151,6 +151,7 @@ export default {
 .h4 {
     line-height: 27px;
     font-size: 16px;
+    font-family: 'Noto Sans TC', sans-serif;
 }
 
 .content-3 {
@@ -167,6 +168,7 @@ export default {
     height: 27px;
     margin-bottom: 5%;
     position: relative;
+    justify-content: space-between;
 }
 
 .bottom::before {
@@ -205,7 +207,7 @@ export default {
         font-size: 15px;
     }
 
-    .content-3{
+    .content-3 {
         gap: 3.5%;
     }
 
@@ -322,7 +324,8 @@ export default {
     .h3 {
         font-size: 11px;
     }
-    .content-3{
+
+    .content-3 {
         gap: 3%;
     }
 
@@ -360,7 +363,8 @@ export default {
     .h3 {
         font-size: 10px;
     }
-    .content-3{
+
+    .content-3 {
         gap: 2%;
     }
 
@@ -384,7 +388,8 @@ export default {
         width: 40%;
         height: 25%;
     }
-    .content-3{
+
+    .content-3 {
         gap: 1%;
     }
 }
@@ -392,35 +397,51 @@ export default {
 @media (max-width:768px) {
 
     .logo {
-        width: 48%;
-        margin-bottom: 18%;
+        width: 80%;
+        margin-bottom: 55%;
+    }
+
+    .bottom {
+        justify-content: center;
+        flex-direction: column-reverse;
+    }
+
+    .bottom::before {
+        top: -640%;
+        left: -18.5%;
+        width: 50%;
+        height: 50%;
     }
 
     .h1 {
-        font-size: 7px;
-        margin-bottom: 4px;
+        font-size: 14px;
+        margin-bottom: 5px;
         font-weight: bold;
     }
 
     .h2 {
         margin-bottom: 10px;
-        font-size: 11px;
+        font-size: 15px;
         font-weight: bold;
     }
 
     .h3 {
-        font-size: 9px;
-        margin-bottom: 5%;
+        font-size: 13px;
     }
 
     .h4 {
-        font-size: 7px;
+        font-size: 12px;
+        line-height: 12px;
+        text-align: center;
     }
 
-    .bottom::before {
-        top: -45%;
-        right: -16%;
-        width: 40%;
-        height: 25%;
+    .tabs {
+        justify-content: center;
     }
-}</style>
+
+    .word {
+        width: 100%;
+        margin-bottom: 50%;
+    }
+}
+</style>
