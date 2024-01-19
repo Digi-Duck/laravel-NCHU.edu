@@ -17,8 +17,8 @@ export default {
 </script>
 
 <template>
-  <footer class="w-[68%] m-auto">
-    <div class="main">
+  <footer class="w-[100%]  flex bg-white justify-center">
+    <div class="main w-[64%]">
       <div class="top">
         <div class="top-left">
           <div class="logo">
@@ -31,49 +31,47 @@ export default {
             <pre class="h1">網站製作  王亞筑 陳喬旭 蘇煒峻 林聖翰 陳瑋祥</pre>
           </div>
         </div>
-        <div class="top-right">
-          <div class="content flex justify-end">
-            <div class="content-3">
-              <div class="h2">消息資訊</div>
-              <div>
-                <Link class="h3" href="">最新消息</Link>
-              </div>
-              <div>
-                <Link class="h3" href="">最新課程</Link>
-              </div>
+        <div class="top-right flex justify-end ">
+          <div class="content-3">
+            <div class="h2">消息資訊</div>
+            <div>
+              <Link class="h3" href="">最新消息</Link>
             </div>
-            <div class="content-3">
-              <div class="h2">消息資訊</div>
-              <div>
-                <Link class="h3" href="">單位介紹</Link>
-              </div>
-              <div>
-                <Link class="h3" href="">成員介紹</Link>
-              </div>
-              <div>
-                <Link class="h3" href="">相關法規</Link>
-              </div>
-              <div>
-                <Link class="h3" href="">成果展示</Link>
-              </div>
+            <div>
+              <Link class="h3" href="">最新課程</Link>
             </div>
-            <div class="content-3">
-              <div class="h2">課程資訊</div>
-              <div>
-                <Link class="h3" href="">兒童營隊</Link>
-              </div>
-              <div>
-                <Link class="h3" href="">單元手作</Link>
-              </div>
-              <div>
-                <Link class="h3" href="">運動課程</Link>
-              </div>
-              <div>
-                <Link class="h3" href="">專業訓練</Link>
-              </div>
-              <div>
-                <Link class="h3" href="">專業證照</Link>
-              </div>
+          </div>
+          <div class="content-3">
+            <div class="h2">消息資訊</div>
+            <div>
+              <Link class="h3" href="">單位介紹</Link>
+            </div>
+            <div>
+              <Link class="h3" href="">成員介紹</Link>
+            </div>
+            <div>
+              <Link class="h3" href="">相關法規</Link>
+            </div>
+            <div>
+              <Link class="h3" href="">成果展示</Link>
+            </div>
+          </div>
+          <div class="content-3">
+            <div class="h2">課程資訊</div>
+            <div>
+              <Link class="h3" href="">兒童營隊</Link>
+            </div>
+            <div>
+              <Link class="h3" href="">單元手作</Link>
+            </div>
+            <div>
+              <Link class="h3" href="">運動課程</Link>
+            </div>
+            <div>
+              <Link class="h3" href="">專業訓練</Link>
+            </div>
+            <div>
+              <Link class="h3" href="">專業證照</Link>
             </div>
           </div>
         </div>
@@ -101,10 +99,10 @@ export default {
 
 <style scoped>
 .main {
-  width: 100%;
   display: flex;
   align-items: center;
   flex-direction: column;
+  font-family: 'Noto Sans TC', sans-serif;
 }
 
 .top {
@@ -120,52 +118,40 @@ export default {
 }
 
 .logo {
-  width: 294px;
-  height: 110px;
-  margin-bottom: 15%;
+  width: 45%;
+  margin-bottom: 10%;
 }
 
 .word {
-  width: 671px;
-  height: 151px;
+  width: 100%;
+  margin-bottom: 8%;
 }
 
 .h1 {
-  /* font-size: 22px; */
-  font-size: 13px;
-  margin-bottom: 10px;
+  font-size: 18px;
+  margin-bottom: 1%;
   font-weight: bold;
-
 }
 
 .top-right {
+  /* background-color: aqua; */
   width: 50%;
   height: 100%;
 }
 
-.content {
-  width: 100%;
-  height: 300px;
-}
-
 .h2 {
-  margin-bottom: 23px;
-  /* font-size: 30px; */
-  font-size: 18px;
+  margin-bottom: 1%;
+  font-size: 24px;
   font-weight: bold;
 }
 
 .h3 {
-  margin-top: 13px;
-  /* font-size: 25px; */
-  font-size: 15px;
+  font-size: 20px;
 }
 
 .h4 {
-  font-weight: bold;
   line-height: 27px;
-  /* font-size: 20px; */
-  font-size: 12px;
+  font-size: 16px;
 }
 
 .content-3 {
@@ -173,8 +159,8 @@ export default {
   flex-direction: column;
   align-items: center;
   height: 100%;
-  margin-left: 5%;
-  gap: 5%;
+  margin-left: 8%;
+  gap: 4%;
 }
 
 .bottom {
@@ -188,7 +174,7 @@ export default {
   content: "";
   position: absolute;
   right: 0;
-  top: -220%;
+  top: -150%;
   background-image: url('/images/FooterIcon/InstagramIcon.svg');
   background-repeat: no-repeat;
   background-size: contain;
@@ -200,13 +186,49 @@ export default {
 .bottom::before {
   content: "";
   position: absolute;
-  right: 5%;
-  top: -220%;
+  right: 4%;
+  top: -150%;
   background-image: url('/images/FooterIcon/FaceBookIcon.svg');
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
   width: 3%;
   height: 100%;
+}
+
+@media (max-width:1440px) {
+
+  .logo {
+    width: 60%;
+    margin-bottom: 15%;
+  }
+
+  .h1 {
+    font-size: 10px;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+
+  .h2 {
+    margin-bottom: 10px;
+    font-size: 15px;
+    font-weight: bold;
+  }
+
+  .h3 {
+    font-size: 12px;
+  }
+
+  .h4 {
+    font-size: 10px;
+  }
+
+  .bottom::before {
+    top: -160%;
+  }
+
+  .bottom::after {
+    top: -160%;
+  }
 }
 </style>
