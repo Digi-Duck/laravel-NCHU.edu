@@ -16,7 +16,7 @@ export default {
 </script>
 
 <template >
-    <div class="w-[85%] m-auto mt-[25px] bg-red-300">
+    <div class="w-[85%] m-auto mt-[25px]">
         <div class="font-title  row-one">創新教育</div>
         <div class="font-title ml-[291px] mt-[-67px] row-two">開啟無限可能</div>
         <div class="font-large ml-[429px] mt-[-25px] row-three">Innovative education, </div>
@@ -29,7 +29,7 @@ export default {
             <img class="mr-[53px] w-[90px] h-[90px]" :src="images.blackRow" alt="">
             <img class="mr-[53px] w-[90px] h-[90px]" :src="images.blackRow" alt="">
         </div>
-        <img class="w-[100%] m-auto" :src="images.rectangle64" alt="">
+        <img class="w-[98%] m-auto" :src="images.rectangle64" alt="">
     </div>
 </template>
 
