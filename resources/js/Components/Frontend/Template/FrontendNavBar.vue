@@ -10,21 +10,19 @@ export default {
             flag: false,
         };
     },
-    // computed:{
-    //     check(){
-    //         const ease = document.querySelector('.ham')
-    //         if(flag){
-    //             ease.classList.add('active');
-    //         }
-    //     }
-    // }
+    methods: {
+        check() {
+            const ease = document.querySelector('.ham')
+            ease.classList.toggle('active');
+        }
+    }
 };
 </script>
 
 <template>
     <nav class="h-[60px] bg-white flex items-center justify-between px-10 relative">
-        <div class="logo" :style="{ backgroundImage: `url(${images.logo})` }"></div>
-        <div class="menu">
+        <img class="logo" :src="images.logo" alt="">
+        <div class="menu flex items-center">
             <ul class="flex">
                 <li>
                     <Link href="">認識我們</Link>
@@ -41,17 +39,17 @@ export default {
                 <li>
                     <Link href="">關於我們</Link>
                 </li>
-                <div class="fun-menu">
-                    <input id="ham-menu-switch" type="checkbox" @click="flag = !flag">
-                    <label for="ham-menu-switch" class="ham-menu">
-                        <div class="line line-1"></div>
-                        <div class="line line-2"></div>
-                        <div class="line line-3"></div>
-                    </label>
-                </div>
             </ul>
+            <div class="fun-menu">
+                <input id="ham-menu-switch" type="checkbox" @click="check()">
+                <label for="ham-menu-switch" class="ham-menu">
+                    <div class="line line-1"></div>
+                    <div class="line line-2"></div>
+                    <div class="line line-3"></div>
+                </label>
+            </div>
         </div>
-        <ul v-if="flag" class="ham">
+        <ul class="ham">
             <li>單元介紹</li>
             <li>成員介紹</li>
             <li>相關法規</li>
@@ -63,14 +61,6 @@ export default {
 </template>
 
 <style scoped>
-@keyframes ease{
-    0%{
-        right: -11%;
-    }
-    50%{
-        right: 0;
-    }
-}
 .logo {
     background-color: #fff;
     width: 98px;
@@ -84,6 +74,32 @@ export default {
     color: #4f4f4f;
     margin-right: 55px;
     font-weight: 900;
+}
+
+@media(max-width:850px) {
+    .logo {
+        width: 86px;
+        height: 32px;
+        margin-right: 55px;
+    }
+
+    .menu ul li {
+        font-size: 14px;
+        margin-right: 55px;
+    }
+}
+
+@media(max-width:650px) {
+    .logo {
+        width: 24px;
+        height: 26px;
+        margin-right: 55px;
+    }
+
+    .menu ul li {
+        font-size: 14px;
+        margin-right: 55px;
+    }
 }
 
 .ham-menu {
@@ -104,14 +120,17 @@ export default {
     transform: translate(-50%, -50%);
     transition: 0.7s;
 }
-.ham{
-    @apply  w-[11%] h-[890px] bg-[#0057FF] absolute top-[60px] right-0 text-white flex flex-col items-center gap-[20px] pt-[20px] z-[2] rounded-bl-[300px];
-    animation: ease 1s linear 0s;
-    /* transition: 1s; */
-}
-.active{
 
+.ham {
+    @apply w-[11%] bg-[#0057FF] absolute top-[60px] right-[-11%] text-white flex flex-col items-center gap-[20px] pt-[20px] z-[2] rounded-bl-[300px];
+    transition: 1s;
+    height: calc(100vh - 60px);
 }
+
+.active {
+    transform: translate(-100%, 0);
+}
+
 .ham-menu .line-1 {
     top: 5.5px;
 }
@@ -140,4 +159,5 @@ export default {
 #ham-menu-switch:checked+.ham-menu .line-3 {
     transform: translate(-50%, -50%) rotate(-45deg);
     top: 50%;
-}</style>
+}
+</style>
