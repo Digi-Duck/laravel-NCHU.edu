@@ -16,7 +16,7 @@ export default {
 </script>
 
 <template >
-    <div class="w-[85%] m-auto mt-[25px]">
+    <div class="w-[1294px] m-auto mt-[25px]">
         <div class="font-title  row-one">創新教育</div>
         <div class="font-title ml-[291px] mt-[-67px] row-two">開啟無限可能</div>
         <div class="font-large ml-[429px] mt-[-25px] row-three">Innovative education, </div>
@@ -29,11 +29,18 @@ export default {
             <img class="mr-[53px] w-[90px] h-[90px]" :src="images.blackRow" alt="">
             <img class="mr-[53px] w-[90px] h-[90px]" :src="images.blackRow" alt="">
         </div>
-        <img class="w-[100%] m-auto" :src="images.indexP" alt="">
+        <img class="w-[98%] m-auto" :src="images.indexP" alt="">
     </div>
 </template>
 
 <style scoped>
+img{
+    filter: grayscale(100%);
+    transition: 0.3s;
+}
+img:hover{
+    filter: none
+}
 .font-title {
     @apply text-[145px] text-[#0057ff] font-black;
     font-family: 'Noto Sans TC', sans-serif;
