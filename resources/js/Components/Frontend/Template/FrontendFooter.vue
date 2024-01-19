@@ -2,6 +2,8 @@
 
 <script>
 import logo from '/images/logo/logo.svg';
+// import FaceBookIcon from '/images/FooterIcon/FaceBookIcon.svg';
+// import InstagramIcon from '/images/FooterIcon/InstagramIcon.svg';
 
 export default {
   data() {
@@ -15,7 +17,7 @@ export default {
 </script>
 
 <template>
-  <footer class="w-[80%] m-auto">
+  <footer class="w-[68%] m-auto">
     <div class="main">
       <div class="top">
         <div class="top-left">
@@ -30,7 +32,7 @@ export default {
           </div>
         </div>
         <div class="top-right">
-          <div class="content flex">
+          <div class="content flex justify-end">
             <div class="content-3">
               <div class="h2">消息資訊</div>
               <div>
@@ -170,8 +172,8 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 33%;
   height: 100%;
+  margin-left: 5%;
   gap: 5%;
 }
 
@@ -179,5 +181,32 @@ export default {
   width: 100%;
   height: 27px;
   margin-bottom: 5%;
+  position: relative;
+}
+
+.bottom::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: -220%;
+  background-image: url('/images/FooterIcon/InstagramIcon.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  width: 3%;
+  height: 100%;
+}
+
+.bottom::before {
+  content: "";
+  position: absolute;
+  right: 5%;
+  top: -220%;
+  background-image: url('/images/FooterIcon/FaceBookIcon.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  width: 3%;
+  height: 100%;
 }
 </style>

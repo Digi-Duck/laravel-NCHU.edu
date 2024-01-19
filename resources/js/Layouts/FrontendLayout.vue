@@ -3,6 +3,7 @@
 <script>
 import FrontendHeader from '@/Components/Frontend/Template/FrontendHeader.vue';
 import FrontendFooter from '@/Components/Frontend/Template/FrontendFooter.vue';
+
 import frontendBackground from '/images/body/grid.svg';
 
 export default {
