@@ -12,51 +12,127 @@ export default {
     },
     methods: {
         check() {
-            const ease = document.querySelector('.ham')
+            const ease = document.querySelector('.ham');
             ease.classList.toggle('active');
+            this.flag = !this.flag;
         }
     }
 };
 </script>
 
 <template>
-    <nav class="h-[60px] bg-white flex items-center justify-between px-10 relative">
-        <img class="logo" :src="images.logo" alt="">
-        <div class="menu flex items-center">
-            <ul class="flex">
-                <li>
-                    <Link href="">認識我們</Link>
-                </li>
-                <li>
-                    <Link href="">課程分類</Link>
-                </li>
-                <li>
-                    <Link href="">最新課程</Link>
-                </li>
-                <li>
-                    <Link href="">登入會員</Link>
-                </li>
-                <li>
-                    <Link href="">關於我們</Link>
-                </li>
-            </ul>
-            <div class="fun-menu">
-                <input id="ham-menu-switch" type="checkbox" @click="check()">
-                <label for="ham-menu-switch" class="ham-menu">
-                    <div class="line line-1"></div>
-                    <div class="line line-2"></div>
-                    <div class="line line-3"></div>
-                </label>
+    <nav class="fixed w-[100%] z-[3] top-0">
+        <div class="w-[100%] h-[60px] bg-white flex items-center justify-between px-10 relative">
+            <img class="logo" :src="images.logo" alt="">
+            <div class="menu flex items-center">
+                <ul class="flex">
+                    <li>
+                        <Link href="">認識我們</Link>
+                    </li>
+                    <li>
+                        <Link href="">課程分類</Link>
+                    </li>
+                    <li>
+                        <Link href="">最新課程</Link>
+                    </li>
+                    <li>
+                        <Link href="">最新消息</Link>
+                    </li>
+                    <li>
+                        <Link href="">聯絡我們</Link>
+                    </li>
+                </ul>
+                <div class="fun-menu">
+                    <input id="ham-menu-switch" type="checkbox" @click="check()">
+                    <label for="ham-menu-switch" class="ham-menu">
+                        <div class="line line-1"></div>
+                        <div class="line line-2"></div>
+                        <div class="line line-3"></div>
+                    </label>
+                </div>
             </div>
+            <ul class="ham">
+                <input type="checkbox" id="chevron-switch-1" class="chevron-switch hidden">
+                <label for="chevron-switch-1" class="chevron-label">
+                    <li>
+                        <span>關於我們</span> &nbsp
+                        <i class="fa-solid fa-chevron-down text-[14px]"></i>
+                        <i class="fa-solid fa-chevron-up hidden text-[14px]"></i>
+                    </li>
+                    <ul class="sub-dropdown-menu ml-[1px] h-[180px]">
+                        <li>
+                            <Link href="">單位介紹</Link>
+                        </li>
+                        <li>
+                            <Link href="">成員介紹</Link>
+                        </li>
+                        <li>
+                            <Link href="">相關法規</Link>
+                        </li>
+                        <li>
+                            <Link href="">表單下載</Link>
+                        </li>
+                        <li>
+                            <Link href="">成果展示</Link>
+                        </li>
+                    </ul>
+                </label>
+                <input type="checkbox" id="chevron-switch-2" class="chevron-switch hidden">
+                <label for="chevron-switch-2" class="chevron-label">
+                    <li>
+                        <span>課程資訊</span> &nbsp
+                        <i class="fa-solid fa-chevron-down text-[14px]"></i>
+                        <i class="fa-solid fa-chevron-up hidden text-[14px]"></i>
+                    </li>
+                    <ul class="sub-dropdown-menu  ml-[1px]">
+                        <li>
+                            <Link href="">全部課程</Link>
+                        </li>
+                        <li>
+                            <Link href="">最新課程</Link>
+                        </li>
+                        <li>
+                            <Link href="">兒童營隊</Link>
+                        </li>
+                        <li>
+                            <Link href="">單元手作</Link>
+                        </li>
+                        <li>
+                            <Link href="">運動課程</Link>
+                        </li>
+                        <li>
+                            <Link href="">職業訓練</Link>
+                        </li>
+                        <li>
+                            <Link href="">專業證照</Link>
+                        </li>
+                    </ul>
+                </label>
+                <input type="checkbox" id="chevron-switch-3" class="chevron-switch hidden">
+                <label for="chevron-switch-3" class="chevron-label">
+                    <li>
+                        <span>消息資訊</span> &nbsp
+                        <i class="fa-solid fa-chevron-down text-[14px]"></i>
+                        <i class="fa-solid fa-chevron-up hidden text-[14px]"></i>
+                    </li>
+                    <ul class="sub-dropdown-menu  ml-[1px]">
+                        <li>
+                            <Link href="">本週消息</Link>
+                        </li>
+                        <li>
+                            <Link href="">本月消息</Link>
+                        </li>
+                        <li>
+                            <Link href="">半年內消息</Link>
+                        </li>
+                        <li>
+                            <Link href="">所有消息</Link>
+                        </li>
+                    </ul>
+                </label>
+            </ul>
         </div>
-        <ul class="ham">
-            <li>單元介紹</li>
-            <li>成員介紹</li>
-            <li>相關法規</li>
-            <li>成果展示</li>
-            <li>課程總覽</li>
-            <li>最新課程</li>
-        </ul>
+        <div v-if="flag" class="mask"></div>
     </nav>
 </template>
 
@@ -122,9 +198,35 @@ export default {
 }
 
 .ham {
-    @apply w-[11%] bg-[#0057FF] absolute top-[60px] right-[-11%] text-white flex flex-col items-center gap-[20px] pt-[20px] z-[2] rounded-bl-[300px];
+    @apply w-[11%] text-[18px] bg-[#0057FF] absolute top-[60px] right-[-11%] text-white flex flex-col items-center gap-[20px] pt-[20px] z-[3] rounded-bl-[300px];
     transition: 1s;
     height: calc(100vh - 60px);
+}
+
+.ham .sub-dropdown-menu {
+    @apply text-[14px] py-[10px];
+}
+
+.ham .sub-dropdown-menu li {
+    @apply mb-[10px];
+}
+
+
+.chevron-switch:checked+label li i:nth-of-type(1) {
+    display: none;
+}
+
+.chevron-switch:checked+label li i:nth-of-type(2) {
+    display: inline-block;
+}
+
+.chevron-switch:not(:checked)+label .sub-dropdown-menu {
+    display: none;
+
+}
+
+.chevron-label {
+    @apply flex flex-col;
 }
 
 .active {
@@ -159,5 +261,14 @@ export default {
 #ham-menu-switch:checked+.ham-menu .line-3 {
     transform: translate(-50%, -50%) rotate(-45deg);
     top: 50%;
+}
+
+.mask {
+    width: 100%;
+    height: calc(100vh - 60px);
+    position: absolute;
+    z-index: 2;
+    background-color: black;
+    opacity: 0.5;
 }
 </style>
