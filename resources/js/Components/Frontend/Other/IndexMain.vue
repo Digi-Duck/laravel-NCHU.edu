@@ -4,18 +4,44 @@ import certificate from '/images/main/certificate.svg';
 import handmade from '/images/main/hand-made.svg';
 import sport from '/images/main/sport.svg';
 import training from '/images/main/training.svg';
+import blueRow from '/images/banner/blue-row.png';
+import vector from '/images/main/vector.svg';
 
 export default {
     data() {
         return {
             images: {
-                camp, certificate, handmade, sport, training,
+                camp, certificate, handmade, sport, training, blueRow, vector
             },
             pro: [{
                 id: 1,
                 name: '兒童營隊',
-                content: '體驗平日上課較無機會接觸到的課程，<br>讓小朋友有個難忘且充實的寒<br>暑假。',
+                content: '體驗平日上課較無機會接觸到的課程，讓小朋友有個難忘且充實的寒暑假。',
                 img: camp,
+            },
+            {
+                id: 2,
+                name: '單元手作',
+                content: '短時間的學習課程，適合生活忙碌的、想要體驗不同領域或是培養其他興趣的你。',
+                img: handmade,
+            },
+            {
+                id: 3,
+                name: '運動課程',
+                content: '為期2~3個月運動課程，適合想要運動、喜歡運動或是想挑戰不同以往運動的你。',
+                img: sport,
+            },
+            {
+                id: 4,
+                name: '職業訓練',
+                content: '適合有較充裕時間，想要了解、學習、體驗更完整不同領域知識的你。',
+                img: training,
+            },
+            {
+                id: 5,
+                name: '專業證照',
+                content: '適合想要考取證照的你，由課程專業講師帶領你了解各種專業知識，得到專業認證。',
+                img: certificate,
             },],
         }
     },
@@ -23,65 +49,63 @@ export default {
 </script>
 <template>
     <div>
-        <div class="flex justify-center items-center pt-[63px]">
+        <div class="flex justify-center items-center pt-[63px] gap-[1.5%] mt-[-0.5%] mb-[5%]">
             <div class="provide w-[503px] h-[252px]">
-                <div class="w-[100%] mt-[-15px] ms-[50px] arrow">我們<span> We</span></div>
-                <div class="w-[100%] mt-[-40px] flex gap-[15px]"><span class="mt-[15px]">provide </span>提供</div>
+                <div class="w-[100%] mt-[-15px] ms-[50px] arrow">我們<span class="tracking-[-3px]"> We</span></div>
+                <div class="w-[100%] mt-[-40px] flex gap-[15px]"><span class="mt-[15px] tracking-[-3px]">provide </span>提供</div>
             </div>
             <ul class="w-[748px] flex items-center justify-between">
-                <li><a href="">01兒童營隊</a></li>|
-                <li><a href="">02單元手作</a></li>|
-                <li><a href="">03運動課程</a></li>|
-                <li><a href="">04職業訓練</a></li>|
-                <li><a href="">05專業證照</a></li>
+                <li>
+                    <Link href="">01兒童營隊</Link>
+                </li>|
+                <li>
+                    <Link href="">02單元手作</Link>
+                </li>|
+                <li>
+                    <Link href="">03運動課程</Link>
+                </li>|
+                <li>
+                    <Link href="">04職業訓練</Link>
+                </li>|
+                <li>
+                    <Link href="">05專業證照</Link>
+                </li>
             </ul>
         </div>
-        <div class="flex items-center flex-col">
-            <div class="w-[85%]">
+        <div class="flex items-center flex-col ml-[4%]">
+            <div class="w-[85%] mt-[-7%]" v-for="item in pro" :key="item.id">
                 <div class="w-[100%] flex justify-evenly">
                     <div class="w-[30%] py-[10%]">
-                        <div class="title ps-[3%]">01</div>
-                        <div class="title text-right mt-[-6%]">兒童營隊</div>
-                        <div class="content ms-[25%]">體驗平日上課較無機會接觸到的課<br>程，讓小朋友有個難忘且充實的寒<br>暑假。</div>
-                        <div class="more text-right">了解更多</div>
+                        <div class="title ps-[3%]">0{{ item.id }}</div>
+                        <div class="title text-right mt-[-6%]">{{ item.name }}</div>
+                        <div class="content ml-[25%] tracking-[1px]">{{ item.content }}</div>
+                        <Link href="" class="more mt-[30px] float-right">了解更多&nbsp<i class="fa-solid fa-arrow-right"></i></Link>
                     </div>
-                    <div class="w-[60%] flex "><img :src="pro[0].img" alt=""></div>
-                </div>
-            </div>
-            <div class="w-[85%]">
-                <div class="w-[100%] flex justify-evenly">
-                    <div class="w-[30%] py-[10%]">
-                        <div class="title ps-[3%]">01</div>
-                        <div class="title text-right mt-[-6%]">兒童營隊</div>
-                        <div class="text-right">體驗平日上課較無機會接觸到的課<br>程，讓小朋友有個難忘且充實的寒<br>暑假。</div>
-                        <Link href="" class="more text-right">了解更多</Link>
-                    </div>
-                    <div class="w-[60%] flex "><img :src="pro[0].img" alt=""></div>
+                    <div class="w-[60%] flex "><img :src="item.img" alt=""></div>
                 </div>
             </div>
         </div>
     </div>
 </template>
 <style scoped>
+*{
+    /* font-family: 'Noto Sans TC', sans-serif; */
+}
 .provide {
-    font-family: 'Noto Sans TC', sans-serif;
     font-weight: 700;
     font-size: 95px;
 }
 
 .provide span {
-    font-family: 'Inter', sans-serif;
-    font-weight: 700;
+    font-weight: 800;
     font-size: 50px;
 }
 
 main ul {
-    font-family: 'Inter', sans-serif;
     font-size: 22px;
 }
 
 main ul li {
-    font-family: 'Inter', sans-serif;
     font-weight: 800;
     font-size: 22px;
 }
@@ -107,25 +131,31 @@ main ul li:hover {
 }
 
 .title {
-    font-family: 'Noto Sans TC', sans-serif;
     font-size: 75px;
-    font-weight: 800;
+    font-weight: 900;
     color: #0057FF;
 }
-.content{
-    font-family: 'Noto Sans TC', sans-serif;
+
+.content {
     font-size: 18px;
-    font-weight: 800;
-}
-.more{
-    font-family: 'Inter', sans-serif;
-    font-size: 20px;
     font-weight: 900;
 }
-img{
+
+.more {
+    font-size: 20px;
+    font-weight: 700;
+    position: relative;
+}
+
+.more:hover {
+    color: #0057FF;
+}
+
+img {
     filter: grayscale(100%);
 }
-img:hover{
+
+img:hover {
     filter: none;
     transition: 0.3s;
 }
