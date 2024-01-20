@@ -3,9 +3,9 @@ export default {
     data() {
         return {
             cards: [
-                { title: '一般專案經理證照培訓班', tag1: '新手', tag2: '培訓班', tag3: '專案管理', tag4: 'APMA證照', transform: 'translateY(0%)', color: '#21d2db',  },
-                { title: '一般專案經理證照培訓班', tag1: '新手', tag2: '培訓班', tag3: '專案管理', tag4: 'APMA證照', transform: 'translateY(0%)', color: '#ffcc00',  },
-                { title: '一般專案經理證照培訓班', tag1: '新手', tag2: '培訓班', tag3: '專案管理', tag4: 'APMA證照', transform: 'translateY(0%)', color: '#db5621',  },
+                { title: '一般專案經理證照培訓班', tag1: '新手', tag2: '培訓班', tag3: '專案管理', tag4: 'APMA證照', transform: 'translateY(0%)', color: '#21d2db', },
+                { title: '一般專案經理證照培訓班', tag1: '新手', tag2: '培訓班', tag3: '專案管理', tag4: 'APMA證照', transform: 'translateY(0%)', color: '#ffcc00', },
+                { title: '一般專案經理證照培訓班', tag1: '新手', tag2: '培訓班', tag3: '專案管理', tag4: 'APMA證照', transform: 'translateY(0%)', color: '#db5621', },
                 { title: '一般專案經理證照培訓班', tag1: '新手', tag2: '培訓班', tag3: '專案管理', tag4: 'APMA證照', transform: 'translateY(0%)', color: '#7dbda8', },
             ],
             topCardIndex: 3,
@@ -13,31 +13,37 @@ export default {
     },
     methods: {
         handleMouseWheel(event) {
-
             const deltaY = event.deltaY;
             const direction = deltaY > 0 ? 'down' : 'up';
-
-
             if (direction === 'down') {
                 if (this.topCardIndex > 0 && this.topCardIndex < this.cards.length) {
-                    this.cards[this.topCardIndex] = { ...this.cards[this.topCardIndex], transform: 'translateY(93%)',};
+                    this.cards[this.topCardIndex] = { ...this.cards[this.topCardIndex], transform: 'translateY(93%)', };
                     this.topCardIndex--;
                 }
             } else if (direction === 'up') {
                 if (this.topCardIndex < this.cards.length - 1) {
                     this.topCardIndex++;
-                    this.cards[this.topCardIndex] = { ...this.cards[this.topCardIndex], transform: 'translateY(0%)',  };
+                    this.cards[this.topCardIndex] = { ...this.cards[this.topCardIndex], transform: 'translateY(0%)', };
                 }
             }
         },
+        resetCards() {
+            this.topNoteIndex = 3;
+            this.cards.forEach((card, index) => {
+                setTimeout(() => {
+                    this.cards[index] = { ...card, transform: 'translateY(0%)' };
+                }, index * 250);
+            });
+        },
+
     }
 }
 </script>
 <template>
-    <div class="flex justify-center items-center">
-        <section class="w-[85%] h-[100vh] flex justify-center items-center">
-            <div @wheel.prevent="handleMouseWheel" class="w-[60%] h-[72%]">
-                <div  class="cards h-[72%] relative">
+    <div class="flex justify-center items-center ">
+        <section class="w-[85%] h-[100vh] flex justify-center items-center   overflow-hidden">
+            <div @wheel.prevent="handleMouseWheel" @mouseleave="resetCards" class="w-[60%] h-[72%]">
+                <div class="cards h-[72%] relative ">
                     <div v-for="card in cards" :key="card.id" class="card"
                         :style="{ transform: card.transform, backgroundColor: card.color, opacity: card.opacity }">
                         <div class="card flex flex-col justify-end">
