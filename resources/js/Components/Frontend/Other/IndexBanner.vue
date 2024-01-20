@@ -39,7 +39,7 @@ img{
     transition: 0.3s;
 }
 img:hover{
-    filter: none
+    @apply filter-none;
 }
 .font-title {
     @apply text-[145px] text-[#0057ff] font-black;
@@ -59,77 +59,43 @@ img:hover{
 .circle-p,
 .right-p,
 .row-five {
-    position: relative;
+   @apply relative;
 }
 
 .row-one:after {
+    @apply absolute bottom-[20px] w-[115px] h-[110px] bg-no-repeat bg-right bg-[length:85px_85px] ;
     content: "";
-    position: absolute;
-    bottom: 20px;
-    width: 115px;
-    height: 110px;
     background-image: url('/images/banner/blue-row.png');
-    background-repeat: no-repeat;
-    background-position-x: right;
-    background-size: 85px 85px;
 }
 
 .row-two:after {
+    @apply absolute bottom-[44px] w-[120px] h-[110px] bg-no-repeat bg-right bg-[length:85px_85px] rotate-90;
     content: "";
-    position: absolute;
-    bottom: 44px;
-    width: 120px;
-    height: 110px;
     background-image: url('/images/banner/blue-row.png');
-    background-repeat: no-repeat;
-    background-position-x: right;
-    background-size: 85px 85px;
-    rotate: 90deg;
 }
 
 .row-three:before {
+    @apply absolute left-[-420px] bottom-[15px] h-[201px] w-[549px] bg-no-repeat bg-left;
     content: "";
-    position: absolute;
-    left: -420px;
-    bottom: 15px;
-    height: 201px;
-    width: 549px;
     background-image: url('/images/banner/left-p.svg');
-    background-repeat: no-repeat;
-    background-position-x: left;
 }
 
 .row-five:before {
+    @apply absolute left-[-120px] bottom-[-70px] h-[220px] w-[580px] bg-no-repeat bg-[length:580px_220px];
     content: "";
-    position: absolute;
-    left: -120px;
-    bottom: -70px;
-    height: 220px;
-    width: 580px;
     background-image: url('/images/banner/draw_circle.gif');
-    background-repeat: no-repeat;
-    background-size: 580px 220px;
+
 }
 
 .right-p:after {
+    @apply absolute left-[1020px] top-[-58px] h-[216px] w-[251px] bg-no-repeat;
     content: "";
-    position: absolute;
-    left: 1020px;
-    top: -58px;
-    height: 216px;
-    width: 251px;
     background-image: url('/images/banner/right-p.svg');
-    background-repeat: no-repeat;
 }
 
 .circle-p:after {
+    @apply absolute left-[740px] bottom-[248px] h-[166px] w-[166px] bg-no-repeat;
     content: "";
-    position: absolute;
-    left: 740px;
-    bottom: 248px;
-    width: 166px;
-    height: 166px;
     background-image: url('/images/banner/circle-p.svg');
-    background-repeat: no-repeat;
 }
 </style>
