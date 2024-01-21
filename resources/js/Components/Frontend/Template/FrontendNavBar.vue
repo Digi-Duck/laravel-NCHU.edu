@@ -59,7 +59,7 @@ export default {
                         <i class="fa-solid fa-chevron-down text-[14px]"></i>
                         <i class="fa-solid fa-chevron-up hidden text-[14px]"></i>
                     </li>
-                    <ul class="sub-dropdown-menu ml-[1px] h-[180px]">
+                    <ul class="sub-dropdown-menu ml-[1px] truncate">
                         <li>
                             <Link href="">單位介紹</Link>
                         </li>
@@ -84,7 +84,7 @@ export default {
                         <i class="fa-solid fa-chevron-down text-[14px]"></i>
                         <i class="fa-solid fa-chevron-up hidden text-[14px]"></i>
                     </li>
-                    <ul class="sub-dropdown-menu  ml-[1px]">
+                    <ul class="sub-dropdown-menu sub-2 ml-[1px] truncate">
                         <li>
                             <Link href="">全部課程</Link>
                         </li>
@@ -115,7 +115,7 @@ export default {
                         <i class="fa-solid fa-chevron-down text-[14px]"></i>
                         <i class="fa-solid fa-chevron-up hidden text-[14px]"></i>
                     </li>
-                    <ul class="sub-dropdown-menu  ml-[1px]">
+                    <ul class="sub-dropdown-menu  ml-[1px] truncate">
                         <li>
                             <Link href="">本週消息</Link>
                         </li>
@@ -204,11 +204,11 @@ export default {
 }
 
 .ham .sub-dropdown-menu {
-    @apply text-[14px] py-[10px];
+    @apply text-[14px];
 }
 
 .ham .sub-dropdown-menu li {
-    @apply mb-[10px];
+    @apply mt-[10px];
 }
 
 
@@ -219,12 +219,18 @@ export default {
 .chevron-switch:checked+label li i:nth-of-type(2) {
     display: inline-block;
 }
-
-.chevron-switch:not(:checked)+label .sub-dropdown-menu {
-    display: none;
-
+.chevron-switch:checked+label .sub-dropdown-menu {
+    height: 160px;
+    transition: 0.5s;
 }
-
+.chevron-switch:checked+label .sub-2 {
+    height: 220px;
+    transition: 0.5s;
+}
+.chevron-switch:not(:checked)+label .sub-dropdown-menu {
+    height: 0;
+    transition: 0.5s;
+}
 .chevron-label {
     @apply flex flex-col;
 }
