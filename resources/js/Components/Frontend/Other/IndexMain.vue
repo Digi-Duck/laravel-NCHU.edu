@@ -49,12 +49,17 @@ export default {
 </script>
 <template>
     <div>
-        <div class="flex justify-center items-center pt-[63px] gap-[1.5%] mt-[-0.5%] mb-[5%]">
-            <div class="provide w-[503px] h-[252px]">
-                <div class="w-[100%] mt-[-15px] ms-[50px] arrow">我們<span class="tracking-[-3px]"> We</span></div>
-                <div class="w-[100%] mt-[-40px] flex gap-[15px]"><span class="mt-[15px] tracking-[-3px]">provide </span>提供</div>
+        <div class="main-top">
+            <div class="provide">
+                <div class="w-[83%]">
+                    <div class="w-[100%] mt-[-15px] ms-[50px]">我們<span class="tracking-[-3px]"> We</span></div>
+                    <div class="w-[100%] mt-[-40px] flex gap-[15px]"><span class="mt-[15px] tracking-[-3px]">provide
+                        </span>提供
+                    </div>
+                </div>
+                <div class="w-[83px] mt-auto"><img :src="images.blueRow" alt=""></div>
             </div>
-            <ul class="w-[748px] flex items-center justify-between">
+            <ul class="w-[50%] flex items-center justify-between">
                 <li>
                     <Link href="">01兒童營隊</Link>
                 </li>|
@@ -72,14 +77,15 @@ export default {
                 </li>
             </ul>
         </div>
-        <div class="flex items-center flex-col ml-[4%]">
+        <div class="main-bottom">
             <div class="w-[85%] mt-[-7%]" v-for="item in pro" :key="item.id">
                 <div class="w-[100%] flex justify-evenly">
                     <div class="w-[30%] py-[10%]">
                         <div class="title ps-[3%]">0{{ item.id }}</div>
                         <div class="title text-right mt-[-6%]">{{ item.name }}</div>
-                        <div class="content ml-[25%] tracking-[1px]">{{ item.content }}</div>
-                        <Link href="" class="more mt-[30px] float-right">了解更多&nbsp<i class="fa-solid fa-arrow-right"></i></Link>
+                        <div class="content">{{ item.content }}</div>
+                        <Link href="" class="more">了解更多&nbsp<i class="fa-solid fa-arrow-right"></i>
+                        </Link>
                     </div>
                     <div class="w-[60%] flex "><img :src="item.img" alt=""></div>
                 </div>
@@ -88,10 +94,16 @@ export default {
     </div>
 </template>
 <style scoped>
-*{
+* {
     /* font-family: 'Noto Sans TC', sans-serif; */
 }
+
+.main-top {
+    @apply flex justify-center pt-[63px] gap-[1.5%] mt-[-0.5%] mb-[5%];
+}
+
 .provide {
+    @apply w-[32%] h-[252px] flex;
     font-weight: 700;
     font-size: 95px;
 }
@@ -101,33 +113,50 @@ export default {
     font-size: 50px;
 }
 
-main ul {
-    font-size: 22px;
+.provide img {
+    filter: none;
+    rotate: 90deg;
 }
 
-main ul li {
+ul {
+    font-size: 22px;
+    font-weight: 800;
+}
+
+ul li {
     font-weight: 800;
     font-size: 22px;
 }
 
-main ul li:hover {
+ul li:hover {
     color: #0057FF;
 }
 
-.arrow {
-    position: relative;
-}
+@media(max-width:768px) {
+    .main-top {
+        @apply flex-col;
+    }
 
-.arrow::after {
-    content: '';
-    position: absolute;
-    width: 88px;
-    height: 88px;
-    background-image: url('/images/banner/blue-row.png');
-    background-size: contain;
-    transform: rotate(90deg);
-    bottom: -124px;
-    right: 50px;
+    .provide {
+        @apply w-[100%] h-[126px] justify-between;
+        font-size: 60px;
+    }
+
+    .provide span {
+        font-size: 45px;
+    }
+
+    .provide img {
+        @apply w-[45px] ml-auto;
+    }
+
+    ul {
+        @apply w-[100%];
+    }
+
+    ul li {
+        font-size: 16px;
+    }
 }
 
 .title {
@@ -137,14 +166,15 @@ main ul li:hover {
 }
 
 .content {
+    @apply ml-[25%] tracking-[1px];
     font-size: 18px;
     font-weight: 900;
 }
 
 .more {
+    @apply  mt-[30px] float-right;
     font-size: 20px;
     font-weight: 700;
-    position: relative;
 }
 
 .more:hover {
@@ -158,5 +188,24 @@ img {
 img:hover {
     filter: none;
     transition: 0.3s;
+}
+.main-bottom{
+    @apply flex items-center flex-col ml-[4%];
+}
+
+@media(max-width:768px) {
+    .title {
+        font-size: 24px;
+        text-align: unset;
+    }
+
+    .content {
+        @apply ml-0;
+        font-size: 12px;
+    }
+    .more{
+        font-size: 10px;
+        float: none;
+    }
 }
 </style>
