@@ -6,7 +6,7 @@ import IndexBanner from '@/Components/Frontend/Other/IndexBanner.vue';
 import IndexMain from '@/Components/Frontend/Other/IndexMain.vue';
 
 import IndexCourse from '@/Components/Frontend/Other/IndexCourse.vue';
-
+import IndexNews from '@/Components/Frontend/Other/IndexNews.vue';
 import IndexContact from '@/Components/Frontend/Other/IndexContact.vue';
 
 export default {
@@ -15,6 +15,7 @@ export default {
         IndexBanner,
         IndexCourse,
         IndexMain,
+        IndexNews,
         IndexContact,
     },
     data() {
@@ -38,6 +39,9 @@ export default {
     </div>
     <div>
       <IndexCourse />
+    </div>
+    <div>
+      <IndexNews />
     </div>
     <div>
       <IndexContact />
