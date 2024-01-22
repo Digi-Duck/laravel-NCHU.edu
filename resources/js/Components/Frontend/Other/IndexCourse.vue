@@ -3,10 +3,10 @@ export default {
     data() {
         return {
             cards: [
-                { title: '一般專案經理證照培訓班', type: '專業證照', tag1: '新手', tag2: '培訓班', tag3: '專案管理', tag4: 'APMA證照', color: '#21d2db', },
-                { title: '一般專案經理證照培訓班', type: '專業證照', tag1: '新手', tag2: '培訓班', tag3: '專案管理', tag4: 'APMA證照', color: '#ffcc00', },
-                { title: '一般專案經理證照培訓班', type: '專業證照', tag1: '新手', tag2: '培訓班', tag3: '專案管理', tag4: 'APMA證照', color: '#db5621', },
-                { title: '一般專案經理證照培訓班', type: '專業證照', tag1: '新手', tag2: '培訓班', tag3: '專案管理', tag4: 'APMA證照', color: '#7dbda8', },
+                { title: '一般專案經理證照培訓班', type: '專業證照', tag1: '新手', tag2: '培訓班', tag3: '專案管理', tag4: 'APMA證照', color: '#21d2db', text: '專案經理是現在團隊中不可或缺的角色，擁有專業的證照能夠提升個人競爭力並開啟更廣況的職業發展道路。' },
+                { title: '一般專案經理證照培訓班', type: '專業證照', tag1: '新手', tag2: '培訓班', tag3: '專案管理', tag4: 'APMA證照', color: '#ffcc00', text: '專案經理是現在團隊中不可或缺的角色，擁有專業的證照能夠提升個人競爭力並開啟更廣況的職業發展道路。' },
+                { title: '一般專案經理證照培訓班', type: '專業證照', tag1: '新手', tag2: '培訓班', tag3: '專案管理', tag4: 'APMA證照', color: '#db5621', text: '專案經理是現在團隊中不可或缺的角色，擁有專業的證照能夠提升個人競爭力並開啟更廣況的職業發展道路。' },
+                { title: '一般專案經理證照培訓班', type: '專業證照', tag1: '新手', tag2: '培訓班', tag3: '專案管理', tag4: 'APMA證照', color: '#7dbda8', text: '專案經理是現在團隊中不可或缺的角色，擁有專業的證照能夠提升個人競爭力並開啟更廣況的職業發展道路。' },
             ],
             topCardIndex: 3,
         }
@@ -44,12 +44,12 @@ export default {
 <template>
     <div class="flex justify-center items-center ">
         <section class=" w-[1294px] h-[100vh] flex justify-center items-center  overflow-hidden" @mouseleave="resetCards">
-            <div class="w-[776px] h-[72%]" >
+            <div class="w-[776px] h-[72%]">
                 <div class="cards h-[72%] relative" @wheel.prevent="handleMouseWheel">
                     <div v-for="card in cards" :key="card.id" class="card"
                         :style="{ transform: card.transform, backgroundColor: card.color, opacity: card.opacity }">
                         <div class="card flex flex-col justify-end">
-                            <p class="card-type">{{ card.type }}</p>
+                            <div class="card-type">{{ card.type }}</div>
                             <div class="card-title">{{ card.title }}</div>
                             <div class="card-tags flex">
                                 <div v-for="tag in [card.tag1, card.tag2, card.tag3, card.tag4]" :key="tag.id"
@@ -59,21 +59,53 @@ export default {
                     </div>
                 </div>
             </div>
-            <div class="w-[517px] h-[72%]">
-                <div class="mt-[-10%]  w-[100%] h-[40%] ">
+            <div class="w-[517px] h-[72%] ">
+                <div class="mt-[-10%]  w-[100%] h-[40%]  ">
                     <div class="provide w-[100%] h-[100%] ">
-                        <div class="w-[517px] pl-[21%]  arrow tracking-[-3px] "><span class="mr-[20px]">Latest</span>最新</div>
+                        <div class="w-[517px] pl-[21%]  arrow tracking-[-3px] "><span class="mr-[20px]">Latest</span>最新
+                        </div>
                         <div class=" w-[517px]  pl-[31%] mt-[-10%] flex gap-[15px] tracking-[-3px] row ">課程<span
                                 class="mt-[15px] tracking-[-3px]">course</span>
                         </div>
                     </div>
                 </div>
-                <div class="w-[100%] h-[60%] mt-[10%] flex flex-col justify-end">
-                    <div class="w-[100%]  h-[40%] title pl-[15%]  mb-[1px]">一般專案經理證照培訓班</div>
-                    <div class="w-[100%] h-[60%] intro pl-[15%] pt-[4%] mb-[1px]">
-                        專案經理是現在團隊中不可或缺的角色，擁有專業的證照能夠提升個人競爭力並開啟更廣況的職業發展道路。
-                    </div>
-                    <div class="w-[100%] flex justify-end more"><a href="">了解更多 → </a></div>
+                <div class="w-[100%] h-[60%] mt-[10%] flex flex-col justify-end overflow-hidden">
+                    <transition name="slide-fade">
+                        <div v-if="topCardIndex === 0" class="w-[100%]  h-[40%] title pl-[15%]  mb-[1px]">{{ cards[0].title}}</div>
+                    </transition>
+                    <transition name="slide-fade">
+                        <div v-if="topCardIndex === 1" class="w-[100%]  h-[40%] title pl-[15%]  mb-[1px]">{{ cards[1].title}}</div>
+                    </transition>
+                    <transition name="slide-fade">
+                        <div v-if="topCardIndex === 2" class="w-[100%]  h-[40%] title pl-[15%]  mb-[1px]">{{ cards[2].title}}</div>
+                    </transition>
+                    <transition name="slide-fade">
+                        <div v-if="topCardIndex === 3" class="w-[100%]  h-[40%] title pl-[15%]  mb-[1px] ">{{ cards[3].title}}</div>
+                    </transition>
+                    <transition name="fade">
+                        <div v-if="topCardIndex === 0" class="w-[100%] h-[43%] intro pl-[15%] pt-[4%] mb-[1px]">{{cards[0].text }}</div>
+                    </transition>
+                    <transition name="fade">
+                        <div v-if="topCardIndex === 1" class="w-[100%] h-[43%] intro pl-[15%] pt-[4%] mb-[1px]">{{cards[1].text }}</div>
+                    </transition>
+                    <transition name="fade">
+                        <div v-if="topCardIndex === 2" class="w-[100%] h-[43%] intro pl-[15%] pt-[4%] mb-[1px]">{{cards[2].text }}</div>
+                    </transition>
+                    <transition name="fade">
+                        <div v-if="topCardIndex === 3" class="w-[100%] h-[43%] intro pl-[15%] pt-[4%] mb-[1px] ">{{cards[3].text }}</div>
+                    </transition>
+                    <transition name="fade">
+                        <div v-if="topCardIndex === 0" class="w-[100%] flex justify-end more "><a href="">了解更多 → </a></div>
+                    </transition>
+                    <transition name="fade">
+                        <div v-if="topCardIndex === 1" class="w-[100%] flex justify-end more "><a href="">了解更多 → </a></div>
+                    </transition>
+                    <transition name="fade">
+                        <div v-if="topCardIndex === 2" class="w-[100%] flex justify-end more "><a href="">了解更多 → </a></div>
+                    </transition>
+                    <transition name="fade">
+                        <div v-if="topCardIndex === 3" class="w-[100%] flex justify-end more "><a href="">了解更多 → </a></div>
+                    </transition>
                 </div>
 
             </div>
@@ -81,13 +113,38 @@ export default {
     </div>
 </template>
 <style scoped>
-/* Card Styles */
+/* transition */
 
+.slide-fade-enter-active {
+  transition: all 0.5s ease-in-out;
+}
+
+
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+  transform: translateY(-40%);
+
+}
+
+.fade-enter-active {
+  transition: all 0.5s ease-in-out;
+}
+
+
+.fade-enter-from,
+.slide-fade-leave-to {
+  transform: translateY(-20%);
+}
+
+
+
+/* Card Styles */
 .card {
-     /* w-95% */
+    /* w-95% */
     @apply w-[737px] h-[100%] p-[30px] absolute cursor-pointer border-dotted;
     transition: 0.5s ease-in-out;
     transform-origin: bottom center;
+    will-change: transform;
 }
 
 .card:nth-child(1) {
@@ -125,13 +182,13 @@ export default {
 }
 
 .card-type {
-    @apply w-[18%] py-[1%] text-[19px] text-white border-white border-2 border-solid text-center rounded-full font-semibold;
+    @apply w-[18%] py-[1%] text-[19px] text-white border-white border-2 border-solid rounded-full font-semibold flex justify-center items-center;
     font-family: 'Inter', sans-serif;
 }
 
 /* Provide Styles */
 .provide {
-    @apply text-[95px] font-bold ;
+    @apply text-[95px] font-bold;
     font-family: 'Noto Sans TC', sans-serif;
 }
 
@@ -169,6 +226,7 @@ export default {
 .more {
     @apply text-[20px] font-extrabold;
     font-family: 'Inter', sans-serif;
-}</style>
+}
+</style>
 
 
