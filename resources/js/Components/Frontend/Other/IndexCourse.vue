@@ -69,43 +69,30 @@ export default {
                         </div>
                     </div>
                 </div>
-                <div class="w-[100%] h-[60%] mt-[10%] flex flex-col justify-end overflow-hidden">
-                    <transition name="slide-fade">
-                        <div v-if="topCardIndex === 0" class="w-[100%]  h-[40%] title pl-[15%]  mb-[1px]">{{ cards[0].title}}</div>
+                <div class="w-[100%] h-[60%] mt-[10%] relative flex flex-col justify-end ">
+                    <transition name="slide-down">
+                        <div v-if="topCardIndex === 0" class="trans_title w-[100%]  h-[40%] title pl-[15%]  mb-[1px]">{{
+                            cards[0].title }}</div>
+                        <div v-else-if="topCardIndex === 1" class="trans_title w-[100%]  h-[40%] title pl-[15%]  mb-[1px]">{{
+                            cards[1].title }}</div>
+                        <div v-else-if="topCardIndex === 2" class="trans_title w-[100%]  h-[40%] title pl-[15%]  mb-[1px]">{{
+                            cards[2].title }}</div>
+                        <div v-else-if="topCardIndex === 3" class="trans_title w-[100%]  h-[40%] title pl-[15%]  mb-[1px] ">{{
+                            cards[3].title }}</div>
                     </transition>
-                    <transition name="slide-fade">
-                        <div v-if="topCardIndex === 1" class="w-[100%]  h-[40%] title pl-[15%]  mb-[1px]">{{ cards[1].title}}</div>
-                    </transition>
-                    <transition name="slide-fade">
-                        <div v-if="topCardIndex === 2" class="w-[100%]  h-[40%] title pl-[15%]  mb-[1px]">{{ cards[2].title}}</div>
-                    </transition>
-                    <transition name="slide-fade">
-                        <div v-if="topCardIndex === 3" class="w-[100%]  h-[40%] title pl-[15%]  mb-[1px] ">{{ cards[3].title}}</div>
-                    </transition>
-                    <transition name="fade">
-                        <div v-if="topCardIndex === 0" class="w-[100%] h-[43%] intro pl-[15%] pt-[4%] mb-[1px]">{{cards[0].text }}</div>
-                    </transition>
-                    <transition name="fade">
-                        <div v-if="topCardIndex === 1" class="w-[100%] h-[43%] intro pl-[15%] pt-[4%] mb-[1px]">{{cards[1].text }}</div>
-                    </transition>
-                    <transition name="fade">
-                        <div v-if="topCardIndex === 2" class="w-[100%] h-[43%] intro pl-[15%] pt-[4%] mb-[1px]">{{cards[2].text }}</div>
-                    </transition>
-                    <transition name="fade">
-                        <div v-if="topCardIndex === 3" class="w-[100%] h-[43%] intro pl-[15%] pt-[4%] mb-[1px] ">{{cards[3].text }}</div>
-                    </transition>
-                    <transition name="fade">
-                        <div v-if="topCardIndex === 0" class="w-[100%] flex justify-end more "><a href="">了解更多 → </a></div>
-                    </transition>
-                    <transition name="fade">
-                        <div v-if="topCardIndex === 1" class="w-[100%] flex justify-end more "><a href="">了解更多 → </a></div>
-                    </transition>
-                    <transition name="fade">
-                        <div v-if="topCardIndex === 2" class="w-[100%] flex justify-end more "><a href="">了解更多 → </a></div>
-                    </transition>
-                    <transition name="fade">
-                        <div v-if="topCardIndex === 3" class="w-[100%] flex justify-end more "><a href="">了解更多 → </a></div>
-                    </transition>
+                    <div v-if="topCardIndex === 0" class="w-[100%] h-[43%] intro pl-[15%] pt-[4%] mb-[1px]">{{ cards[0].text
+                    }}</div>
+                    <div v-if="topCardIndex === 1" class="w-[100%] h-[43%] intro pl-[15%] pt-[4%] mb-[1px]">{{ cards[1].text
+                    }}</div>
+                    <div v-if="topCardIndex === 2" class="w-[100%] h-[43%] intro pl-[15%] pt-[4%] mb-[1px]">{{ cards[2].text
+                    }}</div>
+                    <div v-if="topCardIndex === 3" class="w-[100%] h-[43%] intro pl-[15%] pt-[4%] mb-[1px] ">{{
+                        cards[3].text
+                    }}</div>
+                    <div v-if="topCardIndex === 0" class="w-[100%] flex justify-end more "><a href="">了解更多 → </a></div>
+                    <div v-if="topCardIndex === 1" class="w-[100%] flex justify-end more "><a href="">了解更多 → </a></div>
+                    <div v-if="topCardIndex === 2" class="w-[100%] flex justify-end more "><a href="">了解更多 → </a></div>
+                    <div v-if="topCardIndex === 3" class="w-[100%] flex justify-end more "><a href="">了解更多 → </a></div>
                 </div>
 
             </div>
@@ -114,26 +101,24 @@ export default {
 </template>
 <style scoped>
 /* transition */
-
-.slide-fade-enter-active {
-  transition: all 0.5s ease-in-out;
-}
-
-
-.slide-fade-enter-from,
-.slide-fade-leave-to {
-  transform: translateY(-40%);
+.trans_title{
+    top: 0;
+    position: absolute;
 
 }
-
-.fade-enter-active {
-  transition: all 0.5s ease-in-out;
+.slide-down-enter-active,
+.slide-down-leave-active {
+    transition: all 0.2s ease-out;
 }
 
+.slide-down-enter-from {
+    opacity: 0;
+    transform: translateY(-30px);
+}
 
-.fade-enter-from,
-.slide-fade-leave-to {
-  transform: translateY(-20%);
+.slide-down-leave-to {
+    opacity: 0;
+    transform: translateY(30px);
 }
 
 
