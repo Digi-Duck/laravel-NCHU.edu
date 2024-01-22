@@ -8,9 +8,7 @@ import IndexMain from '@/Components/Frontend/Other/IndexMain.vue';
 import IndexCourse from '@/Components/Frontend/Other/IndexCourse.vue';
 
 import IndexContact from '@/Components/Frontend/Other/IndexContact.vue';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-AOS.init();
+
 export default {
     components: {
         FrontendLayout,
