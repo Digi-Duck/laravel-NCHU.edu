@@ -53,11 +53,15 @@ export default {
         <div class="main-top">
             <div class="big-title">
                 <div class="w-[83%]">
-                    <img class=" w-[100%]" :src="images.provide" alt="">
+                    <!-- <img class=" w-[100%]" :src="images.provide" alt=""> -->
+                    <div class="w-[517px] mt-[-15px] ms-[50px]">我們<span class="tracking-[-3px]"> We</span></div>
+                    <div class="w-[517px] mt-[-40px] flex gap-[15px] arrow"><span class="mt-[15px] tracking-[-3px]">provide
+                        </span>提供
+                    </div>
                 </div>
-                <div class="w-[18%] mt-auto"><img class="arrow" :src="images.blueRow" alt=""></div>
+                <!-- <div class="w-[18%] mt-auto"><img class="arrow" :src="images.blueRow" alt=""></div> -->
             </div>
-            <ul class="w-[50%] flex items-center justify-between flex-wrap">
+            <ul class="w-[800px] flex items-center justify-center flex-wrap gap-[15px]">
                 <li>
                     <Link href="">01兒童營隊</Link>
                 </li>|
@@ -77,8 +81,8 @@ export default {
         </div>
         <div class="main-bottom">
             <div class="main w-[85%] mt-[-7%]" v-for="item in pro" :key="item.id">
-                <div class="w-[100%] flex justify-evenly" data-aos="fade-down"
-                data-aos-easing="linear" data-aos-duration="1500">
+                <div class="w-[100%] flex justify-evenly" data-aos="fade-down" data-aos-easing="linear"
+                    data-aos-duration="1500">
                     <div class="main-card w-[30%] py-[10%]">
                         <div class="title ps-[3%]">0{{ item.id }}</div>
                         <div class="title float-right mt-[-6%]">{{ item.name }}</div>
@@ -110,8 +114,15 @@ export default {
 }
 
 .big-title .arrow {
-    filter: none;
-    rotate: 90deg;
+    /* filter: none;
+    rotate: 90deg; */
+    position: relative;
+}
+
+.big-title .arrow::after {
+    content: "";
+    @apply absolute top-[35%] left-[78%] w-[120px] h-[110px] bg-no-repeat bg-right bg-[length:85px_85px] rotate-90;
+    background-image: url('/images/banner/blue-row.png');
 }
 
 ul {
@@ -209,4 +220,5 @@ img:hover {
         font-size: 10px;
         float: none;
     }
-}</style>
+}
+</style>
