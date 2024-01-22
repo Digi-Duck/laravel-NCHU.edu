@@ -6,12 +6,13 @@ import sport from '/images/main/sport.svg';
 import training from '/images/main/training.svg';
 import blueRow from '/images/banner/blue-row.png';
 import vector from '/images/main/vector.svg';
+import provide from '/images/main/provide.svg';
 
 export default {
     data() {
         return {
             images: {
-                camp, certificate, handmade, sport, training, blueRow, vector
+                camp, certificate, handmade, sport, training, blueRow, vector, provide,
             },
             pro: [{
                 id: 1,
@@ -50,16 +51,13 @@ export default {
 <template>
     <div>
         <div class="main-top">
-            <div class="provide">
+            <div class="big-title">
                 <div class="w-[83%]">
-                    <div class="w-[100%] mt-[-15px] ms-[50px]">我們<span class="tracking-[-3px]"> We</span></div>
-                    <div class="w-[100%] mt-[-40px] flex gap-[15px]"><span class="mt-[15px] tracking-[-3px]">provide
-                        </span>提供
-                    </div>
+                    <img class=" w-[100%]" :src="images.provide" alt="">
                 </div>
-                <div class="w-[83px] mt-auto"><img :src="images.blueRow" alt=""></div>
+                <div class="w-[18%] mt-auto"><img class="arrow" :src="images.blueRow" alt=""></div>
             </div>
-            <ul class="w-[50%] flex items-center justify-between">
+            <ul class="w-[50%] flex items-center justify-between flex-wrap">
                 <li>
                     <Link href="">01兒童營隊</Link>
                 </li>|
@@ -78,11 +76,12 @@ export default {
             </ul>
         </div>
         <div class="main-bottom">
-            <div class="w-[85%] mt-[-7%]" v-for="item in pro" :key="item.id">
-                <div class="w-[100%] flex justify-evenly">
-                    <div class="w-[30%] py-[10%]">
+            <div class="main w-[85%] mt-[-7%]" v-for="item in pro" :key="item.id">
+                <div class="w-[100%] flex justify-evenly" data-aos="fade-down"
+                data-aos-easing="linear" data-aos-duration="1500">
+                    <div class="main-card w-[30%] py-[10%]">
                         <div class="title ps-[3%]">0{{ item.id }}</div>
-                        <div class="title text-right mt-[-6%]">{{ item.name }}</div>
+                        <div class="title float-right mt-[-6%]">{{ item.name }}</div>
                         <div class="content">{{ item.content }}</div>
                         <Link href="" class="more">了解更多&nbsp<i class="fa-solid fa-arrow-right"></i>
                         </Link>
@@ -102,34 +101,29 @@ export default {
     @apply flex justify-center pt-[63px] gap-[1.5%] mt-[-0.5%] mb-[5%];
 }
 
-.provide {
-    @apply w-[32%] h-[252px] flex;
-    font-weight: 700;
-    font-size: 95px;
+.big-title {
+    @apply w-[32%] h-[252px] text-[95px] font-[700] flex;
 }
 
-.provide span {
-    font-weight: 800;
-    font-size: 50px;
+.big-title span {
+    @apply text-[53%] font-[800];
 }
 
-.provide img {
+.big-title .arrow {
     filter: none;
     rotate: 90deg;
 }
 
 ul {
-    font-size: 22px;
-    font-weight: 800;
+    @apply text-[22px] font-[800];
 }
 
 ul li {
-    font-weight: 800;
-    font-size: 22px;
+    @apply text-[22px] font-[800];
 }
 
 ul li:hover {
-    color: #0057FF;
+    @apply text-[#0057FF];
 }
 
 @media(max-width:768px) {
@@ -137,16 +131,16 @@ ul li:hover {
         @apply flex-col;
     }
 
-    .provide {
+    .big-title {
         @apply w-[100%] h-[126px] justify-between;
         font-size: 60px;
     }
 
-    .provide span {
+    .bid-title span {
         font-size: 45px;
     }
 
-    .provide img {
+    .big-title img {
         @apply w-[45px] ml-auto;
     }
 
@@ -166,15 +160,11 @@ ul li:hover {
 }
 
 .content {
-    @apply ml-[25%] tracking-[1px];
-    font-size: 18px;
-    font-weight: 900;
+    @apply text-[18px] font-[900] ml-[25%] tracking-[1px];
 }
 
 .more {
-    @apply  mt-[30px] float-right;
-    font-size: 20px;
-    font-weight: 700;
+    @apply text-[20px] font-[700] mt-[30px] float-right;
 }
 
 .more:hover {
@@ -189,23 +179,34 @@ img:hover {
     filter: none;
     transition: 0.3s;
 }
-.main-bottom{
+
+.main-bottom {
     @apply flex items-center flex-col ml-[4%];
 }
 
 @media(max-width:768px) {
+    .main {
+        @apply w-[100%];
+    }
+
+    .main-card {
+        @apply w-[40%];
+    }
+
     .title {
         font-size: 24px;
-        text-align: unset;
+        /* text-align: unset; */
+        float: none;
+        padding: 0;
     }
 
     .content {
         @apply ml-0;
         font-size: 12px;
     }
-    .more{
+
+    .more {
         font-size: 10px;
         float: none;
     }
-}
-</style>
+}</style>
