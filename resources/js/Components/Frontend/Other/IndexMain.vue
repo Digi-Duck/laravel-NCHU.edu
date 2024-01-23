@@ -97,25 +97,19 @@ export default {
     </div>
 </template>
 <style scoped>
-* {
-    /* font-family: 'Noto Sans TC', sans-serif; */
-}
-
 .main-top {
     @apply flex justify-center pt-[63px] gap-[1.5%] mt-[-0.5%] mb-[5%];
 }
 
 .big-title {
-    @apply w-[32%] h-[252px] text-[95px] font-[700] flex;
+    @apply w-[32%] h-[252px] text-[5vw] font-[700] flex;
 }
 
 .big-title span {
-    @apply text-[53%] font-[800];
+    @apply text-[3vw] font-[700];
 }
 
 .big-title .arrow {
-    /* filter: none;
-    rotate: 90deg; */
     position: relative;
 }
 
@@ -165,7 +159,7 @@ ul li:hover {
 }
 
 .title {
-    font-size: 75px;
+    @apply text-[4vw];
     font-weight: 900;
     color: #0057FF;
 }
@@ -205,8 +199,8 @@ img:hover {
     }
 
     .title {
+        
         font-size: 24px;
-        /* text-align: unset; */
         float: none;
         padding: 0;
     }
