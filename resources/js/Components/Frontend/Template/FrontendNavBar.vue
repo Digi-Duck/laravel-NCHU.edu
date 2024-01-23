@@ -1,11 +1,13 @@
 <script>
 import logo from '/images/logo/logo.svg';
+import smallLogo from '/images/logo/small-logo.svg';
 
 export default {
     data() {
         return {
             images: {
                 logo,
+                smallLogo,
             },
             flag: false,
         };
@@ -15,31 +17,37 @@ export default {
             const ease = document.querySelector('.ham');
             ease.classList.toggle('active');
             this.flag = !this.flag;
-        }
+        },
+        // logoChange(){
+        //     if (window.innerWidth <= 500){
+        //         return this.images.smallLogo;
+        //     } else{
+        //         return this.images.logo;
+        //     }
+        // },
+
     }
 };
 </script>
 
 <template>
     <nav class="fixed w-[100%] z-[3] top-0">
-        <div class="w-[100%] h-[60px] bg-white flex items-center justify-between px-10 relative">
+        <div class="all">
             <img class="logo" :src="images.logo" alt="">
-            <div class="menu flex items-center">
-                <ul class="flex">
+            <img class="small-logo" :src="images.smallLogo" alt="">
+            <div class="menu">
+                <ul class="list">
                     <li>
-                        <Link href="">認識我們</Link>
+                        <Link href="">首頁</Link>
                     </li>
                     <li>
-                        <Link href="">課程分類</Link>
+                        <Link href="">關於我們</Link>
                     </li>
                     <li>
-                        <Link href="">最新課程</Link>
+                        <Link href="">課程資訊</Link>
                     </li>
                     <li>
                         <Link href="">最新消息</Link>
-                    </li>
-                    <li>
-                        <Link href="">聯絡我們</Link>
                     </li>
                 </ul>
                 <div class="fun-menu">
@@ -137,6 +145,9 @@ export default {
 </template>
 
 <style scoped>
+.all{
+    @apply  w-[100%] h-[60px] bg-white flex items-center justify-between px-10 relative;
+}
 .logo {
     background-color: #fff;
     width: 98px;
@@ -144,7 +155,15 @@ export default {
     background-size: contain;
     background-repeat: no-repeat;
 }
-
+.small-logo{
+    @apply hidden;
+}
+.list{
+    @apply flex items-center justify-between;
+}
+.menu{
+    @apply flex items-center;
+}
 .menu ul li {
     font-size: 16px;
     color: #4f4f4f;
@@ -152,29 +171,34 @@ export default {
     font-weight: 900;
 }
 
-@media(max-width:850px) {
+@media(max-width:768px) {
+    .all{
+        @apply px-[20px];
+    }
     .logo {
         width: 86px;
         height: 32px;
-        margin-right: 55px;
     }
 
     .menu ul li {
         font-size: 14px;
-        margin-right: 55px;
+        margin-right: 5vw;
     }
 }
 
-@media(max-width:650px) {
-    .logo {
-        width: 24px;
-        height: 26px;
-        margin-right: 55px;
+@media(max-width:500px) {
+    .logo{
+        @apply hidden;
     }
-
-    .menu ul li {
-        font-size: 14px;
-        margin-right: 55px;
+    .small-logo {
+        width: 28px;
+        height: 30px;
+        display: block;
+        margin: auto;
+        transform: translate(50%, 0%);
+    }
+    .menu ul {
+        display: none;
     }
 }
 
@@ -219,18 +243,22 @@ export default {
 .chevron-switch:checked+label li i:nth-of-type(2) {
     display: inline-block;
 }
+
 .chevron-switch:checked+label .sub-dropdown-menu {
     height: 160px;
     transition: 0.5s;
 }
+
 .chevron-switch:checked+label .sub-2 {
     height: 220px;
     transition: 0.5s;
 }
+
 .chevron-switch:not(:checked)+label .sub-dropdown-menu {
     height: 0;
     transition: 0.5s;
 }
+
 .chevron-label {
     @apply flex flex-col;
 }
