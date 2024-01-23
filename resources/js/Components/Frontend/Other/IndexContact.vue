@@ -21,9 +21,9 @@ export default {
         <div class="mt-[-50px]">
             <div class="mt-[-10%] mb-[100px] w-[100%] h-[40%] ">
                 <div class="provide w-[100%] h-[100%] ">
-                    <div class="w-[517px] pl-[6%] arrow tracking-[-3px] "><span class="mr-[20px]">Contact</span>聯絡</div>
-                    <div class=" w-[517px]  pl-[23%] mt-[-10%] flex gap-[15px] tracking-[-3px] row ">我們<span
-                            class="mt-[15px] tracking-[-3px]">us</span>
+                    <div class="w-[517px] pl-[2vw] arrow tracking-[-3px] "><span class="mr-[2vw]">Contact</span>聯絡</div>
+                    <div class=" w-[517px]  pl-[6vw] mt-[-3vw] flex gap-[2vw] tracking-[-3px] row ">我們<span
+                            class="mt-[1vw] tracking-[-3px]">us</span>
                     </div>
                 </div>
             </div>
@@ -42,12 +42,12 @@ export default {
     height: calc(100vh - 60px);
 }
 .provide {
-    @apply text-[95px] font-bold;
+    @apply text-[5vw] font-bold;
     font-family: 'Noto Sans TC', sans-serif;
 }
 
 .provide span {
-    @apply text-[50px] font-bold;
+    @apply text-[3vw] font-bold;
     font-family: 'Inter', sans-serif;
 }
 
