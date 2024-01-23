@@ -37,13 +37,13 @@ export default {
             <div v-show="stage >= 2" class=" font-title ml-[291px] mt-[-67px] row-two ">開啟無限可能</div>
         </transition>
         <transition name="right-in" @after-enter="showImg">
-            <div v-show="stage >= 2" class="font-large ml-[429px] mt-[-25px] row-three">Innovative education, </div>
+            <div v-show="stage >= 2" class="font-large ml-[429px] mt-[-25px] row-three z-[1]">Innovative education, </div>
         </transition>
         <transition name="left-in" @after-enter="showRight">
-            <div v-show="showLeft" class="font-large ml-[199px]  mt-[-30px] row-four">unlocking limitless</div>
+            <div v-show="showLeft" class="z-[2] font-large ml-[199px]  mt-[-30px] row-four">unlocking limitless</div>
         </transition>
         <transition>
-            <div v-show="stage >= 2" class="circle-p w-0 h-0"></div>
+            <div v-show="stage >= 2" class="circle-p w-0 h-0 z-[0]"></div>
         </transition>
         <transition>
             <div v-show="stage >= 2" class="right-p w-0 h-0"></div>
@@ -52,10 +52,10 @@ export default {
             <div v-show="stage >= 2" class="font-large ml-[692px] mt-[-43px] row-five">possibilities.</div>
         </transition>
         <transition name="left-in" @after-enter="showRight">
-            <div v-show="showLeft" class="flex ml-[295px] mb-[90px] ">
-                <img class="mr-[53px] w-[90px] h-[90px]" :src="images.blackRow" alt="">
-                <img class="mr-[53px] w-[90px] h-[90px]" :src="images.blackRow" alt="">
-                <img class="mr-[53px] w-[90px] h-[90px]" :src="images.blackRow" alt="">
+            <div v-show="showLeft" class=" flex ml-[295px] mb-[90px] ">
+                <img class="z-[2] mr-[53px] w-[90px] h-[90px]" :src="images.blackRow" alt="">
+                <img class="z-[2] mr-[53px] w-[90px] h-[90px]" :src="images.blackRow" alt="">
+                <img class="z-[2] mr-[53px] w-[90px] h-[90px]" :src="images.blackRow" alt="">
             </div>
         </transition>
         <transition>
@@ -124,7 +124,7 @@ img:hover {
     @apply text-[145px] text-[#0057ff] font-black;
     font-family: 'Noto Sans TC', sans-serif;
     position: absolute;
-    z-index: 1;
+    z-index: 2;
 }
 
 .font-large {
