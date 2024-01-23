@@ -444,4 +444,189 @@ export default {
         margin-bottom: 50%;
     }
 }
+
+@media (max-width:740px) {
+
+    .logo {
+        width: 75%;
+        margin-bottom: 55%;
+    }
+
+    .bottom::before {
+        top: -640%;
+        left: -18.5%;
+        width: 50%;
+        height: 50%;
+    }
+
+    .h1 {
+        font-size: 13px;
+        margin-bottom: 4px;
+    }
+
+    .h2 {
+        font-size: 14px;
+    }
+
+    .h3 {
+        font-size: 12px;
+    }
+
+    .h4 {
+        font-size: 11px;
+        line-height: 11px;
+    }
+
+
+    .word {
+        width: 100%;
+        margin-bottom: 50%;
+    }
+
+}
+
+@media (max-width:691px) {
+
+    .logo {
+        width: 70%;
+        margin-bottom: 80%;
+    }
+
+    .bottom::before {
+        top: -640%;
+        left: -18.5%;
+        width: 50%;
+        height: 50%;
+    }
+
+    .h1 {
+        font-size: 12px;
+        margin-bottom: 4px;
+    }
+
+    .h2 {
+        font-size: 13px;
+    }
+
+    .h3 {
+        font-size: 11px;
+    }
+
+    .h4 {
+        font-size: 10px;
+        line-height: 10px;
+    }
+
+
+    .word {
+        width: 100%;
+        margin-bottom: 50%;
+    }
+}
+
+@media (max-width:640px) {
+
+    .logo {
+        width: 70%;
+        margin-bottom: 90%;
+    }
+
+    .h1 {
+        font-size: 11px;
+        margin-bottom: 4px;
+    }
+
+    .h2 {
+        font-size: 12px;
+    }
+
+    .h3 {
+        font-size: 10px;
+    }
+
+    .h4 {
+        font-size: 9px;
+        line-height: 9px;
+    }
+
+
+    .word {
+        width: 100%;
+        margin-bottom: 50%;
+    }
+
+}
+
+@media (max-width:592px) {
+
+    .logo {
+        width: 60%;
+        margin-bottom: 90%;
+    }
+
+    .h1 {
+        font-size: 10px;
+        margin-bottom: 4px;
+    }
+
+    .h2 {
+        font-size: 11px;
+    }
+
+    .h3 {
+        font-size: 9px;
+    }
+
+    .h4 {
+        font-size: 8px;
+        line-height: 8px;
+    }
+
+
+    .word {
+        width: 100%;
+        margin-bottom: 50%;
+    }
+
+}
+
+@media (max-width:543px) {
+
+    .logo {
+        width: 60%;
+        margin-bottom: 90%;
+    }
+
+    .h1 {
+        font-size: 9px;
+        margin-bottom: 4px;
+    }
+
+    .h2 {
+        font-size: 10px;
+    }
+
+    .h3 {
+        font-size: 8px;
+    }
+
+    .h4 {
+        font-size: 7px;
+        line-height: 7px;
+    }
+
+
+    .word {
+        width: 100%;
+        margin-bottom: 50%;
+    }
+
+    .bottom::before {
+        top: -530%;
+        left: -12%;
+        width: 40%;
+        height: 40%;
+    }
+
+}
 </style>
