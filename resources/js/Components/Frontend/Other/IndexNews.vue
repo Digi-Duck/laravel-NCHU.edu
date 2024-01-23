@@ -15,30 +15,30 @@ export default {
                 </span>消息
             </div>
         </div>
-        <div class="w-[100%] flex flex-col justify-center mt-[60px] ml-[15%]">
-            <Link class="news w-[80%] py-[10px] text-[30px] font-[800] border-b-[4px] border-black flex justify-between">
+        <div class="all-news">
+            <Link class="news">
                 <div>2023.01.01</div>
                 <div>包含職業訓練、兒童營隊、專業證照、運動課程</div>
                 <div><i class="fa-solid fa-arrow-right"></i></div>
             </Link>
-            <Link class="news w-[80%] py-[10px] text-[30px] font-[800] border-b-[4px] border-black flex justify-between">
+            <Link class="news">
                 <div>2023.01.01</div>
                 <div>包含職業訓練、兒童營隊、專業證照、運動課程</div>
                 <div><i class="fa-solid fa-arrow-right"></i></div>
             </Link>
-            <Link class="news w-[80%] py-[10px] text-[30px] font-[800] border-b-[4px] border-black flex justify-between">
+            <Link class="news">
                 <div>2023.01.01</div>
                 <div>包含職業訓練、兒童營隊、專業證照、運動課程</div>
                 <div><i class="fa-solid fa-arrow-right"></i></div>
             </Link>
-            <Link class="news w-[80%] py-[10px] text-[30px] font-[800] border-b-[4px] border-black flex justify-between">
+            <Link class="news">
                 <div>2023.01.01</div>
-                <div>包含職業訓練、兒童營隊、專業證照、運動課程</div>
+                <div class="truncate">包含職業訓練、兒童營隊、專業證照、運動課程</div>
                 <div><i class="fa-solid fa-arrow-right"></i></div>
             </Link>
-            <Link class="news w-[80%] py-[10px] text-[30px] font-[800] border-b-[4px] border-black flex justify-between">
+            <Link class="news">
                 <div>2023.01.01</div>
-                <div>包含職業訓練、兒童營隊、專業證照、運動課程</div>
+                <div class="truncate">包含職業訓練、兒童營隊、專業證照、運動課程</div>
                 <div><i class="fa-solid fa-arrow-right"></i></div>
             </Link>
         </div>
@@ -63,7 +63,21 @@ export default {
     @apply absolute top-[75%] left-[-5%] w-[120px] h-[110px] bg-no-repeat bg-right bg-[length:85px_85px];
     background-image: url('/images/banner/blue-row.png');
 }
+.all-news{
+    @apply  w-[100%] flex flex-col justify-center mt-[60px] ml-[15%];
+}
+.news{
+    @apply w-[80%] py-[10px] text-[1.4vw] font-[800] border-b-[0.2vw] border-black flex justify-center gap-[10%];
+}
 .news:hover{
     @apply text-[#0057ff] duration-500;
+}
+@media(max-width:768px){
+    .all-news{
+        @apply ml-[0];
+    }
+    .news{
+        @apply w-[100%] text-[1.9vw];
+    }
 }
 </style>
