@@ -68,7 +68,7 @@ export default {
 /* transition */
 /* left-in*/
 .left-in-enter-active {
-    transition: all 1.3s ease-out;
+    transition: all 1.5s ease-out;
 }
 
 .left-in-enter-from {
