@@ -108,9 +108,9 @@ export default {
 .trans-content, .trans-title, .trans-more{
     @apply absolute;
 }
-.trans-title{top: 0%;}
-.trans-content{top: 40%;}
-.trans-more{top: 93%;}
+.trans-title{top: 10%;}
+.trans-content{top: 52%;}
+.trans-more{top: 92%;}
 
 /* transition-title */
 .slide-down-enter-active{
@@ -132,7 +132,7 @@ export default {
 
 /* transition-content */
 .slide-down-content-enter-active{
-    transition:  0.7s ease-in;
+    transition:  0.5s ease-in;
 }
 .slide-down-content-leave-active {
     transition:  0.2s ease-out;
@@ -149,7 +149,7 @@ export default {
 }
 /* transition-moreLink*/
 .slide-down-more-enter-active{
-    transition:  0.9s ease-in;
+    transition:  0.5s ease-in;
 }
 .slide-down-more-leave-active {
     transition:  0.2s ease-out;
@@ -211,7 +211,7 @@ export default {
 }
 
 .card-type {
-    @apply w-[18%] py-[1%] text-[19px] text-white border-white border-2 border-solid rounded-full font-semibold flex justify-center items-center;
+    @apply w-[18%] py-[1%] text-[19px] mb-[2%] text-white border-white border-2 border-solid rounded-full font-semibold flex justify-center items-center;
     font-family: 'Inter', sans-serif;
 }
 
