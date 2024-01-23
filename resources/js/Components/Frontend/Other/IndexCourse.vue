@@ -71,28 +71,31 @@ export default {
                 </div>
                 <div class="w-[100%] h-[60%] mt-[10%] relative flex flex-col justify-end ">
                     <transition name="slide-down">
-                        <div v-if="topCardIndex === 0" class="trans_title w-[100%]  h-[40%] title pl-[15%]  mb-[1px]">{{
-                            cards[0].title }}</div>
-                        <div v-else-if="topCardIndex === 1" class="trans_title w-[100%]  h-[40%] title pl-[15%]  mb-[1px]">{{
-                            cards[1].title }}</div>
-                        <div v-else-if="topCardIndex === 2" class="trans_title w-[100%]  h-[40%] title pl-[15%]  mb-[1px]">{{
-                            cards[2].title }}</div>
-                        <div v-else-if="topCardIndex === 3" class="trans_title w-[100%]  h-[40%] title pl-[15%]  mb-[1px] ">{{
-                            cards[3].title }}</div>
+                        <div v-if="topCardIndex === 0" class="trans-title w-[100%]  h-[40%] title pl-[15%]  mb-[1px]">
+                            {{ cards[0].title }}</div>
+                        <div v-else-if="topCardIndex === 1" class="trans-title w-[100%]  h-[40%] title pl-[15%]  mb-[1px]">
+                            {{ cards[1].title }}</div>
+                        <div v-else-if="topCardIndex === 2" class="trans-title w-[100%]  h-[40%] title pl-[15%]  mb-[1px]">
+                            {{ cards[2].title }}</div>
+                        <div v-else-if="topCardIndex === 3" class="trans-title w-[100%]  h-[40%] title pl-[15%]  mb-[1px] ">
+                            {{ cards[3].title }}</div>
                     </transition>
-                    <div v-if="topCardIndex === 0" class="w-[100%] h-[43%] intro pl-[15%] pt-[4%] mb-[1px]">{{ cards[0].text
-                    }}</div>
-                    <div v-if="topCardIndex === 1" class="w-[100%] h-[43%] intro pl-[15%] pt-[4%] mb-[1px]">{{ cards[1].text
-                    }}</div>
-                    <div v-if="topCardIndex === 2" class="w-[100%] h-[43%] intro pl-[15%] pt-[4%] mb-[1px]">{{ cards[2].text
-                    }}</div>
-                    <div v-if="topCardIndex === 3" class="w-[100%] h-[43%] intro pl-[15%] pt-[4%] mb-[1px] ">{{
-                        cards[3].text
-                    }}</div>
-                    <div v-if="topCardIndex === 0" class="w-[100%] flex justify-end more "><a href="">了解更多 → </a></div>
-                    <div v-if="topCardIndex === 1" class="w-[100%] flex justify-end more "><a href="">了解更多 → </a></div>
-                    <div v-if="topCardIndex === 2" class="w-[100%] flex justify-end more "><a href="">了解更多 → </a></div>
-                    <div v-if="topCardIndex === 3" class="w-[100%] flex justify-end more "><a href="">了解更多 → </a></div>
+                    <transition name="slide-down-content">
+                        <div v-if="topCardIndex === 0"
+                            class="trans-content w-[100%] h-[43%] intro pl-[15%] pt-[4%] mb-[1px]">{{ cards[0].text }}</div>
+                        <div v-else-if="topCardIndex === 1"
+                            class="trans-content w-[100%] h-[43%] intro pl-[15%] pt-[4%] mb-[1px]">{{ cards[1].text }}</div>
+                        <div v-else-if="topCardIndex === 2"
+                            class="trans-content w-[100%] h-[43%] intro pl-[15%] pt-[4%] mb-[1px]">{{ cards[2].text }}</div>
+                        <div v-else-if="topCardIndex === 3"
+                            class="trans-content w-[100%] h-[43%] intro pl-[15%] pt-[4%] mb-[1px] ">{{ cards[3].text }}</div>
+                    </transition>
+                    <transition name="slide-down-more">
+                        <div v-if="topCardIndex === 0" class="trans-more w-[100%] flex justify-end more "><a href="">了解更多 → </a></div>
+                        <div v-else-if="topCardIndex === 1" class="trans-more w-[100%] flex justify-end more "><a href="">了解更多 → </a></div>
+                        <div v-else-if="topCardIndex === 2" class="trans-more w-[100%] flex justify-end more "><a href="">了解更多 → </a></div>
+                        <div v-else-if="topCardIndex === 3" class="trans-more w-[100%] flex justify-end more "><a href="">了解更多 → </a></div>
+                    </transition>
                 </div>
 
             </div>
@@ -101,22 +104,63 @@ export default {
 </template>
 <style scoped>
 /* transition */
-.trans_title{
-    top: 0;
-    position: absolute;
 
+.trans-content, .trans-title, .trans-more{
+    @apply absolute;
 }
-.slide-down-enter-active,
+.trans-title{top: 0%;}
+.trans-content{top: 40%;}
+.trans-more{top: 93%;}
+
+/* transition-title */
+.slide-down-enter-active{
+    transition: 0.5s ease-in;
+}
 .slide-down-leave-active {
-    transition: all 0.2s ease-out;
+    transition: 0.2s ease-out;
 }
 
 .slide-down-enter-from {
     opacity: 0;
-    transform: translateY(-30px);
+    transform: translateY(-50px);
 }
 
 .slide-down-leave-to {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+/* transition-content */
+.slide-down-content-enter-active{
+    transition:  0.7s ease-in;
+}
+.slide-down-content-leave-active {
+    transition:  0.2s ease-out;
+}
+
+.slide-down-content-enter-from {
+    opacity: 0;
+    transform: translateY(-40px);
+}
+
+.slide-down-content-leave-to {
+    opacity: 0;
+    transform: translateY(30px);
+}
+/* transition-moreLink*/
+.slide-down-more-enter-active{
+    transition:  0.9s ease-in;
+}
+.slide-down-more-leave-active {
+    transition:  0.2s ease-out;
+}
+
+.slide-down-more-enter-from {
+    opacity: 0;
+    transform: translateY(-40px);
+}
+
+.slide-down-more-leave-to {
     opacity: 0;
     transform: translateY(30px);
 }
@@ -211,7 +255,6 @@ export default {
 .more {
     @apply text-[20px] font-extrabold;
     font-family: 'Inter', sans-serif;
-}
-</style>
+}</style>
 
 
