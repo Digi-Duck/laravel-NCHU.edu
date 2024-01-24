@@ -10,18 +10,18 @@ export default {
                 blackRow,
                 indexP,
             },
-            showLeft: false,
+            show: false,
             stage: 1,
         };
     },
     mounted() {
-        this.showLeft = true;
+        this.show = true;
     },
     methods: {
-        showRight() {
+        showTwo() {
             this.stage = 2;
         },
-        showImg() {
+        showThree() {
             this.stage = 3;
         }
     },
@@ -30,17 +30,20 @@ export default {
 
 <template >
     <div class="w-[1294px] h-[100vh] mb-[30%] m-auto mt-[25px] ">
-        <transition name="left-in" @after-enter="showRight">
-            <div v-show="showLeft" class=" font-title  row-one ">創新教育</div>
+        <transition name="left-in" @after-enter="showTwo">
+            <div v-show="show" class=" font-title  row-one ">創新教育</div>
         </transition>
-        <transition name="right-in" @after-enter="showImg">
-            <div v-show="stage >= 2" class=" font-title ml-[291px] mt-[-67px] row-two ">開啟無限可能</div>
+        <transition name="right-in" @after-enter="showThree">
+            <div v-show="show" class=" font-title ml-[291px] mt-[-67px] row-two ">開啟無限可能</div>
         </transition>
-        <transition name="right-in" @after-enter="showImg">
-            <div v-show="stage >= 2" class="font-large ml-[429px] mt-[-25px] row-three z-[1]">Innovative education, </div>
+        <transition name="right-in" @after-enter="showThree">
+            <div v-show="show" class="font-large ml-[429px] mt-[-25px] row-three z-[1]">Innovative education, </div>
         </transition>
-        <transition name="left-in" @after-enter="showRight">
-            <div v-show="showLeft" class="z-[2] font-large ml-[199px]  mt-[-30px] row-four">unlocking limitless</div>
+        <transition>
+            <div v-show="stage >= 2" class="left-p w-0 h-0 z-[0]"></div>
+        </transition>
+        <transition name="left-in" @after-enter="showTwo">
+            <div v-show="show" class="z-[2] font-large ml-[199px]  mt-[-30px] row-four">unlocking limitless</div>
         </transition>
         <transition>
             <div v-show="stage >= 2" class="circle-p w-0 h-0 z-[0]"></div>
@@ -48,11 +51,11 @@ export default {
         <transition>
             <div v-show="stage >= 2" class="right-p w-0 h-0"></div>
         </transition>
-        <transition name="right-in" @after-enter="showImg">
-            <div v-show="stage >= 2" class="font-large ml-[692px] mt-[-43px] row-five">possibilities.</div>
+        <transition name="right-in" @after-enter="showThree">
+            <div v-show="show" class="font-large ml-[692px] mt-[-43px] row-five">possibilities.</div>
         </transition>
-        <transition name="left-in" @after-enter="showRight">
-            <div v-show="showLeft" class=" flex ml-[295px] mb-[90px] ">
+        <transition name="left-in" @after-enter="showTwo">
+            <div v-show="show" class=" flex ml-[295px] mb-[90px] ">
                 <img class="z-[2] mr-[53px] w-[90px] h-[90px]" :src="images.blackRow" alt="">
                 <img class="z-[2] mr-[53px] w-[90px] h-[90px]" :src="images.blackRow" alt="">
                 <img class="z-[2] mr-[53px] w-[90px] h-[90px]" :src="images.blackRow" alt="">
@@ -114,7 +117,7 @@ img {
 
 }
 .indexP{
-    animation: upAnimation 1s ease;
+    animation: upAnimation 1.3s ease;
 }
 img:hover {
     @apply filter-none;
@@ -138,6 +141,7 @@ img:hover {
 .row-four,
 .circle-p,
 .right-p,
+.left-p,
 .row-five {
     @apply relative;
 }
@@ -161,12 +165,12 @@ img:hover {
     background-image: url('/images/banner/blue-row.png');
 }
 
-.row-three:before {
-    @apply absolute left-[-420px] bottom-[15px] h-[201px] w-[549px] bg-no-repeat bg-left duration-300 hover:filter-none;
+.left-p:before {
+    @apply absolute left-[10px] top-[-220px] h-[201px] w-[549px] bg-no-repeat bg-left duration-300 hover:filter-none;
     content: "";
     background-image: url('/images/banner/left-p.svg');
     filter: grayscale(100%);
-    animation: upAnimation 1s ease;
+    animation: upAnimation 1.3s ease;
 }
 
 .row-five:before {
@@ -180,7 +184,7 @@ img:hover {
     content: "";
     background-image: url('/images/banner/right-p.svg');
     filter: grayscale(100%);
-    animation: upAnimation 1s ease;
+    animation: upAnimation 1.3s ease;
 }
 
 .circle-p:after {
@@ -188,6 +192,6 @@ img:hover {
     content: "";
     background-image: url('/images/banner/circle-p.svg');
     filter: grayscale(100%);
-    animation: upAnimation 1s ease;
+    animation: upAnimation 1.3s ease;
 }
 </style>
