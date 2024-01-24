@@ -59,7 +59,7 @@ export default {
             </div>
         </transition>
         <transition>
-            <img v-show="stage >= 3" class=" indexP w-[98%] m-auto" :src="images.indexP" alt="">
+            <img v-show="stage >= 2" class=" indexP w-[98%] m-auto" :src="images.indexP" alt="">
         </transition>
     </div>
 </template>
@@ -68,7 +68,7 @@ export default {
 /* transition */
 /* left-in*/
 .left-in-enter-active {
-    transition: all 1.3s ease-out;
+    transition: all 0.8s ease-out;
 }
 
 .left-in-enter-from {
@@ -83,7 +83,7 @@ export default {
 
 /* right-in*/
 .right-in-enter-active {
-    transition: all 1.3s ease-out;
+    transition: all 0.8s ease-out;
 }
 
 .right-in-enter-from {
@@ -114,7 +114,7 @@ img {
 
 }
 .indexP{
-    animation: upAnimation 3s ease;
+    animation: upAnimation 1s ease;
 }
 img:hover {
     @apply filter-none;
@@ -166,7 +166,7 @@ img:hover {
     content: "";
     background-image: url('/images/banner/left-p.svg');
     filter: grayscale(100%);
-    animation: upAnimation 3s ease;
+    animation: upAnimation 1s ease;
 }
 
 .row-five:before {
@@ -180,7 +180,7 @@ img:hover {
     content: "";
     background-image: url('/images/banner/right-p.svg');
     filter: grayscale(100%);
-    animation: upAnimation 3s ease;
+    animation: upAnimation 1s ease;
 }
 
 .circle-p:after {
@@ -188,6 +188,6 @@ img:hover {
     content: "";
     background-image: url('/images/banner/circle-p.svg');
     filter: grayscale(100%);
-    animation: upAnimation 3s ease;
+    animation: upAnimation 1s ease;
 }
 </style>
