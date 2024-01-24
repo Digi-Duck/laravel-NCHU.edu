@@ -12,14 +12,7 @@ export default {
 </script>
 <template>
     <div class="w-[83%] m-auto">
-
-        <!-- <div class="title">
-            <div class="w-[517px] mt-[-15px] ms-[45px]">最新<span class="tracking-[-3px]"> Latest</span></div>
-            <div class="w-[517px] mt-[-40px] ml-[50px] flex gap-[15px] arrow"><span class="mt-[15px] tracking-[-3px]">news
-                </span>消息
-            </div>
-        </div> -->
-        <img class="w-[28%]" :src="images.latest" alt="">
+        <img class="w-[18vw]" :src="images.latest" alt="">
         <Link class="more">了解更多</Link>
         <div class="all-news">
             <Link class="news">
