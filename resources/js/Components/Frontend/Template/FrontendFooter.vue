@@ -2,8 +2,6 @@
 
 <script>
 import logo from '/images/logo/logo.svg';
-// import FaceBookIcon from '/images/FooterIcon/FaceBookIcon.svg';
-// import InstagramIcon from '/images/FooterIcon/InstagramIcon.svg';
 
 export default {
     data() {
@@ -76,17 +74,23 @@ export default {
                     </div>
                 </div>
             </div>
+                <div class="word-small">
+                    <pre class="h1">聯絡電話  04 2284 0455</pre>
+                    <pre class="h1">電子信箱  hello20131005@gmail.com</pre>
+                    <pre class="h1">學校地址  40227台中市南區興大路145號(綜合教學大樓8樓804、805室)</pre>
+                    <pre class="h1">製作人員  王亞筑 陳喬旭 蘇煒峻 林聖翰 陳瑋祥</pre>
+                </div>
             <div class="bottom flex ">
                 <div class="h4">©2024 International College of Innovation and Industry Liaison, N.C.H.U. </div>
                 <div class="flex gap-1 tabs">
-                    <div class="abc">
-                        <Link class="h4" href="">隱私權聲明 </Link>
+                    <div>
+                        <Link class="h4" href="">隱私權聲明 |</Link>
                     </div>
                     <div>
-                        <Link class="h4" href="">智慧財產權聲明 </Link>
+                        <Link class="h4" href="">智慧財產權聲明 |</Link>
                     </div>
                     <div>
-                        <Link class="h4" href="">網站導覽 </Link>
+                        <Link class="h4" href="">網站導覽 |</Link>
                     </div>
                     <div>
                         <Link class="h4" href="">網站意見回饋</Link>
@@ -98,6 +102,13 @@ export default {
 </template>
 
 <style scoped>
+.word-small{
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 10%;
+}
+
 .main {
     display: flex;
     align-items: center;
@@ -183,6 +194,7 @@ export default {
     width: 50%;
     height: 80%;
 }
+
 
 @media (max-width:1440px) {
 
@@ -628,5 +640,66 @@ export default {
         height: 40%;
     }
 
+}
+
+@media (max-width:500px) {
+
+    .main {
+        height: auto;
+        position: relative;
+    }
+
+    .word {
+        display: none;
+    }
+
+    .top {
+        flex-direction: column;
+    }
+
+    .top-right {
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .top-left {
+        height: 10%;
+        margin-bottom: 10%;
+    }
+
+    .content-3 {
+        margin: 0;
+        align-items: flex-start;
+        height: auto;
+    }
+
+    .h2 {
+        margin: 0;
+    }
+
+    .bottom::before {
+        display: none;
+    }
+
+    .h3 {
+        line-height: 32px;
+    }
+
+    .bottom {
+        width: 100%;
+        height: 27px;
+        position: absolute;
+        bottom: 5%;
+    }
+    .word-small{
+    display: flex;
+}
+.tabs{
+    justify-content: left;
+}
+.h4{
+    text-align: left;
+    font-size: 8px;
+}
 }
 </style>
