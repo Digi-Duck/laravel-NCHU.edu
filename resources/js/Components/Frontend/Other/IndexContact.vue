@@ -13,7 +13,7 @@ export default {
 </script>
 <template>
     <div class="contact">
-        <div class="w-[50%]">
+        <div class="frame-1">
             <iframe class="w-[100%]"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3641.446104629765!2d120.67400941162171!3d24.1209667783293!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693d02fbdf00cf%3A0xca558b13873d5a59!2zNDAy5Y-w5Lit5biC5Y2X5Y2A6IiI5aSn6LevMTQ16Jmf!5e0!3m2!1szh-TW!2stw!4v1705892760083!5m2!1szh-TW!2stw"
                 style="border:0;" allowfullscreen="" loading="lazy"
@@ -21,8 +21,12 @@ export default {
         </div>
         <div class="con-right">
             <div class=" con-img">
-                <img class="w-[24vw]" :src="images.contact" alt="">
+                <img :src="images.contact" alt="">
             </div>
+            <iframe class="frame-2"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3641.446104629765!2d120.67400941162171!3d24.1209667783293!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693d02fbdf00cf%3A0xca558b13873d5a59!2zNDAy5Y-w5Lit5biC5Y2X5Y2A6IiI5aSn6LevMTQ16Jmf!5e0!3m2!1szh-TW!2stw!4v1705892760083!5m2!1szh-TW!2stw"
+                style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
             <div class="con-r-b">
                 <Link href="" class=""><img class="face" :src="images.facebook" alt=""></Link>
                 <pre class="phone"><i class="fa-solid fa-phone mr-[11%]"></i> 04 2284 0455</pre>
@@ -38,7 +42,12 @@ export default {
     @apply flex justify-center gap-[5vw] items-center;
     height: calc(100vh - 60px);
 }
-
+.frame-1{
+    @apply w-[50%];
+}
+.frame-2{
+    @apply hidden;
+}
 .provide {
     @apply text-[5vw] font-bold;
     font-family: 'Noto Sans TC', sans-serif;
@@ -69,6 +78,9 @@ iframe{
 .con-img{
     @apply mb-[40px] w-[100%];
 }
+.con-img img{
+    @apply w-[24vw];
+}
 .phone{
     @apply mt-[30px] mb-[13px];
 }
@@ -82,11 +94,8 @@ iframe{
     @apply w-[50%] pl-[6%] mt-[-10px];
 }
 @media(max-width:1200px){
-    .contact{
-        height: calc(50vh - 60px);
-    }
     .con-img{
-        @apply mb-0;
+        @apply mb-[20px];
     }
     .con-right{
         @apply mt-[-5vh];
@@ -99,6 +108,9 @@ iframe{
     }
 }
 @media(max-width:768px) {
+    .contact{
+        height: calc(60vh - 60px);
+    }
     .con-right{
         @apply mt-[-50px];
     }
@@ -108,11 +120,12 @@ iframe{
     iframe{
         aspect-ratio: 3/2;
     }
-    .con-right img{
-        @apply w-[33vw];
-    }
-    .con-img{
 
+    .con-img{
+@apply mb-0;
+    }
+    .con-img img{
+        @apply w-[33vw];
     }
     pre {
         @apply text-[1.85vw];
@@ -130,4 +143,46 @@ iframe{
     .con-r-b{
         @apply mt-[-10px];
     }
-}</style>
+}
+@media (max-width:500px) {
+    .contact{
+        height: calc(100vh - 60px);
+        @apply w-[100%];
+    }
+    .frame-1{
+        @apply hidden;
+    }
+    .frame-2{
+        @apply w-[100%] block;
+    }
+    pre{
+        @apply text-[3.2vw];
+    }
+    .fa-solid{
+        @apply text-[4vw];
+    }
+    .face{
+        @apply mb-[20px] h-[5vw];
+    }
+    .con-img img{
+        @apply m-auto w-[55vw];
+    }
+    .con-right{
+        @apply flex flex-col gap-[30px];
+    }
+    .con-r-b{
+        @apply mt-0 translate-x-[10%];
+    }
+}
+@media (max-width:375px){
+    pre{
+        @apply text-[4.3vw];
+    }
+    .fa-solid{
+        @apply text-[5vw];
+    }
+    .face{
+        @apply h-[6vw];
+    }
+}
+</style>

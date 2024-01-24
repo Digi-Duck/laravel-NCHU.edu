@@ -49,19 +49,12 @@ export default {
 }
 </script>
 <template>
-    <div>
+    <div class="main">
         <div class="main-top">
             <div class="big-title">
-                <img class="w-[100vw]" :src="images.provide" alt="">
-                <!-- <div class="w-[83%]">
-                    <div class="w-[517px] mt-[-15px] ms-[50px]">我們<span class="tracking-[-3px]"> We</span></div>
-                    <div class="w-[517px] mt-[-40px] flex gap-[15px] arrow"><span class="mt-[15px] tracking-[-3px]">provide
-                        </span>提供
-                    </div>
-                </div> -->
-                <!-- <div class="w-[18%] mt-auto"><img class="arrow" :src="images.blueRow" alt=""></div> -->
+                <img :src="images.provide" alt="">
             </div>
-            <ul class="flex items-center justify-center flex-wrap gap-[1vw]">
+            <ul class="list">
                 <li>
                     <Link href="">01兒童營隊</Link>
                 </li>|
@@ -81,9 +74,8 @@ export default {
         </div>
         <div class="main-bottom">
             <div class="main-cards" v-for="item in pro" :key="item.id">
-                <div class="card-content" data-aos="fade-down" data-aos-easing="linear"
-                    data-aos-duration="1500">
-                    <div class="main-card w-[30%] py-[10%]">
+                <div class="card">
+                    <div class="main-card">
                         <div class="title">0{{ item.id }}</div>
                         <div class="title float-right mt-[-6%]">{{ item.name }}</div>
                         <div class="content">{{ item.content }}</div>
@@ -102,42 +94,30 @@ export default {
 }
 
 .big-title {
-    @apply w-[32%] text-[5vw] font-[700] flex;
+    @apply w-[32%] text-[5vw] font-[700];
 }
 
-.big-title span {
-    @apply text-[3vw] font-[700];
+.list {
+    @apply text-[1.15vw] font-[800] flex items-center justify-center flex-wrap gap-[1vw];
 }
 
-.big-title .arrow {
-    position: relative;
-}
-
-.big-title .arrow::after {
-    content: "";
-    @apply absolute top-[35%] left-[78%] w-[120px] h-[110px] bg-no-repeat bg-right bg-[length:85px_85px] rotate-90;
-    background-image: url('/images/banner/blue-row.png');
-}
-
-ul {
-    @apply text-[1.15vw] font-[800];
-}
-
-ul li {
-    @apply text-[1.15vw] font-[800];
-}
-
-ul li:hover {
+.list li:hover {
     @apply text-[#0057FF];
+}
+
+@media(max-width:1400px) {
+    .list {
+        @apply text-[1.4vw];
+    }
 }
 
 @media(max-width:768px) {
     .main-top {
-        @apply flex-col;
+        @apply pt-[20%] flex-col;
     }
 
     .big-title {
-        @apply w-[100%] h-[126px] justify-between;
+        @apply w-[41%];
         font-size: 60px;
     }
 
@@ -145,36 +125,33 @@ ul li:hover {
         font-size: 45px;
     }
 
-    .big-title img {
-        @apply w-[45px] ml-auto;
-    }
-
-    ul {
-        @apply w-[100%];
-    }
-
-    ul li {
-        font-size: 16px;
+    .list {
+        @apply text-[2.3vw];
     }
 }
-.main-cards{
+
+.main-cards {
     @apply w-[85%] mt-[-7%];
 }
-.card-content{
+
+.card {
     @apply w-[100%] flex justify-evenly;
 }
+
+.main-card {
+    @apply w-[30%] py-[10%];
+}
+
 .title {
-    @apply text-[4vw];
-    font-weight: 900;
-    color: #0057FF;
+    @apply text-[4vw] text-[#0057ff] font-[900];
 }
 
 .content {
-    @apply text-[18px] font-[900] ml-[25%] tracking-[1px];
+    @apply text-[1vw] font-[900] ml-[25%] tracking-[1px];
 }
 
 .more {
-    @apply text-[20px] font-[700] mt-[30px] float-right;
+    @apply text-[1vw] font-[700] mt-[30px] float-right;
 }
 
 .more:hover {
@@ -195,32 +172,49 @@ ul li:hover {
     @apply flex items-center flex-col ml-[4%];
 }
 
+@media(max-width:1400px) {
+    .main-cards {
+        @apply w-[95%];
+    }
+    .title{
+        @apply text-[4.3vw];
+    }
+    .content, .more{
+        @apply text-[1.3vw];
+    }
+}
+
 @media(max-width:768px) {
     .main {
         @apply w-[100%];
     }
 
-    .main-card {
-        @apply w-[35%];
+    .list {
+        @apply mb-[30px];
     }
-    .card-content{
+
+    .main-card {
+        @apply w-[35%] py-[6%];
+    }
+
+    .card {
         @apply justify-between;
     }
+
     .title {
         font-size: 5.2vw;
-        /* float: none; */
-        padding: 0;
+        margin-bottom: -10px;
     }
 
     .content {
-        @apply ml-0;
+        /* @apply ml-0; */
         clear: right;
-        font-size: 12px;
+        font-size: 1.6vw;
     }
 
     .more {
-        font-size: 10px;
-        float: none;
+        font-size: 1.6vw;
+        margin-top: 10px;
+        /* float: none; */
     }
-}
-</style>
+}</style>

@@ -12,7 +12,7 @@ export default {
 </script>
 <template>
     <div class="w-[83%] m-auto">
-        <img class="w-[18vw]" :src="images.latest" alt="">
+        <img :src="images.latest" alt="">
         <Link class="more">了解更多</Link>
         <div class="all-news">
             <Link class="news">
@@ -48,7 +48,9 @@ export default {
 .title {
     @apply w-[32%] h-[252px] text-[95px] font-[700] pt-[10px] flex flex-col;
 }
-
+img{
+    @apply w-[18vw];
+}
 .title span {
     @apply text-[53%] font-[800];
 }
@@ -75,6 +77,9 @@ export default {
     @apply text-[#0057ff] duration-500;
 }
 @media(max-width:768px){
+    img{
+        @apply w-[25vw] ms-[-10%];
+    }
     .more{
         @apply translate-x-0;
     }
@@ -87,7 +92,7 @@ export default {
 }
 @media(max-width:500px){
     img{
-        @apply w-[50%] m-auto;
+        @apply w-[40vw] m-auto;
     }
     .more{
         @apply hidden;
@@ -96,7 +101,7 @@ export default {
         @apply ml-[0];
     }
     .news{
-        @apply text-[3vw] flex-col gap-0;
+        @apply text-[3.55vw] flex-col gap-0;
     }
     i{
         @apply hidden;
