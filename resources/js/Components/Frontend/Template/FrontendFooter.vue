@@ -74,12 +74,12 @@ export default {
                     </div>
                 </div>
             </div>
-                <div class="word-small">
-                    <pre class="h1">聯絡電話  04 2284 0455</pre>
-                    <pre class="h1">電子信箱  hello20131005@gmail.com</pre>
-                    <pre class="h1">學校地址  40227台中市南區興大路145號(綜合教學大樓8樓804、805室)</pre>
-                    <pre class="h1">製作人員  王亞筑 陳喬旭 蘇煒峻 林聖翰 陳瑋祥</pre>
-                </div>
+            <div class="word-small">
+                <pre class="h1">聯絡電話  04 2284 0455</pre>
+                <pre class="h1">電子信箱  hello20131005@gmail.com</pre>
+                <pre class="h1">學校地址  40227台中市南區興大路145號(綜合教學大樓8樓804、805室)</pre>
+                <pre class="h1">製作人員  王亞筑 陳喬旭 蘇煒峻 林聖翰 陳瑋祥</pre>
+            </div>
             <div class="bottom flex ">
                 <div class="h4">©2024 International College of Innovation and Industry Liaison, N.C.H.U. </div>
                 <div class="flex gap-1 tabs">
@@ -102,7 +102,7 @@ export default {
 </template>
 
 <style scoped>
-.word-small{
+.word-small {
     display: none;
     flex-direction: column;
     width: 100%;
@@ -655,6 +655,7 @@ export default {
 
     .top {
         flex-direction: column;
+
     }
 
     .top-right {
@@ -664,7 +665,7 @@ export default {
 
     .top-left {
         height: 10%;
-        margin-bottom: 10%;
+        margin-bottom: 5%;
     }
 
     .content-3 {
@@ -675,6 +676,7 @@ export default {
 
     .h2 {
         margin: 0;
+        font-size: 4.266vw;
     }
 
     .bottom::before {
@@ -683,6 +685,7 @@ export default {
 
     .h3 {
         line-height: 32px;
+        font-size: 3vw;
     }
 
     .bottom {
@@ -691,15 +694,23 @@ export default {
         position: absolute;
         bottom: 5%;
     }
-    .word-small{
-    display: flex;
-}
-.tabs{
-    justify-content: left;
-}
-.h4{
-    text-align: left;
-    font-size: 8px;
-}
-}
-</style>
+
+    .word-small {
+        display: flex;
+        font-size: 3vw;
+    }
+
+    .tabs {
+        justify-content: left;
+    }
+
+    .h4 {
+        text-align: left;
+        font-size: 2.5vw;
+        line-height: 10px;
+    }
+
+    .logo{
+        width: 80%;
+    }
+}</style>
