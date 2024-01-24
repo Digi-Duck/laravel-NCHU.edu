@@ -6,7 +6,7 @@ import sport from '/images/main/sport.svg';
 import training from '/images/main/training.svg';
 import blueRow from '/images/banner/blue-row.png';
 import vector from '/images/main/vector.svg';
-import provide from '/images/main/provide.svg';
+import provide from '/images/main/provide.png';
 
 export default {
     data() {
@@ -52,16 +52,16 @@ export default {
     <div>
         <div class="main-top">
             <div class="big-title">
-                <div class="w-[83%]">
-                    <!-- <img class=" w-[100%]" :src="images.provide" alt=""> -->
+                <img class="w-[100vw]" :src="images.provide" alt="">
+                <!-- <div class="w-[83%]">
                     <div class="w-[517px] mt-[-15px] ms-[50px]">我們<span class="tracking-[-3px]"> We</span></div>
                     <div class="w-[517px] mt-[-40px] flex gap-[15px] arrow"><span class="mt-[15px] tracking-[-3px]">provide
                         </span>提供
                     </div>
-                </div>
+                </div> -->
                 <!-- <div class="w-[18%] mt-auto"><img class="arrow" :src="images.blueRow" alt=""></div> -->
             </div>
-            <ul class="w-[800px] flex items-center justify-center flex-wrap gap-[15px]">
+            <ul class="flex items-center justify-center flex-wrap gap-[1vw]">
                 <li>
                     <Link href="">01兒童營隊</Link>
                 </li>|
@@ -80,17 +80,17 @@ export default {
             </ul>
         </div>
         <div class="main-bottom">
-            <div class="main w-[85%] mt-[-7%]" v-for="item in pro" :key="item.id">
-                <div class="w-[100%] flex justify-evenly" data-aos="fade-down" data-aos-easing="linear"
+            <div class="main-cards" v-for="item in pro" :key="item.id">
+                <div class="card-content" data-aos="fade-down" data-aos-easing="linear"
                     data-aos-duration="1500">
                     <div class="main-card w-[30%] py-[10%]">
-                        <div class="title ps-[3%]">0{{ item.id }}</div>
+                        <div class="title">0{{ item.id }}</div>
                         <div class="title float-right mt-[-6%]">{{ item.name }}</div>
                         <div class="content">{{ item.content }}</div>
                         <Link href="" class="more">了解更多&nbsp<i class="fa-solid fa-arrow-right"></i>
                         </Link>
                     </div>
-                    <div class="w-[60%] flex "><img :src="item.img" alt=""></div>
+                    <div class="card-img"><img :src="item.img" alt=""></div>
                 </div>
             </div>
         </div>
@@ -102,7 +102,7 @@ export default {
 }
 
 .big-title {
-    @apply w-[32%] h-[252px] text-[5vw] font-[700] flex;
+    @apply w-[32%] text-[5vw] font-[700] flex;
 }
 
 .big-title span {
@@ -120,11 +120,11 @@ export default {
 }
 
 ul {
-    @apply text-[22px] font-[800];
+    @apply text-[1.15vw] font-[800];
 }
 
 ul li {
-    @apply text-[22px] font-[800];
+    @apply text-[1.15vw] font-[800];
 }
 
 ul li:hover {
@@ -157,7 +157,12 @@ ul li:hover {
         font-size: 16px;
     }
 }
-
+.main-cards{
+    @apply w-[85%] mt-[-7%];
+}
+.card-content{
+    @apply w-[100%] flex justify-evenly;
+}
 .title {
     @apply text-[4vw];
     font-weight: 900;
@@ -176,11 +181,12 @@ ul li:hover {
     color: #0057FF;
 }
 
-img {
+.card-img {
+    @apply w-[60%] flex;
     filter: grayscale(100%);
 }
 
-img:hover {
+.card-img:hover {
     filter: none;
     transition: 0.3s;
 }
@@ -195,18 +201,20 @@ img:hover {
     }
 
     .main-card {
-        @apply w-[40%];
+        @apply w-[35%];
     }
-
+    .card-content{
+        @apply justify-between;
+    }
     .title {
-        
-        font-size: 24px;
-        float: none;
+        font-size: 5.2vw;
+        /* float: none; */
         padding: 0;
     }
 
     .content {
         @apply ml-0;
+        clear: right;
         font-size: 12px;
     }
 
