@@ -3,10 +3,10 @@ export default {
     data() {
         return {
             cards: [
-                { title: '一般專案經理證照培訓班', type: '專業證照', tag1: '新手', tag2: '培訓班', tag3: '專案管理', tag4: 'APMA證照', color: '#21d2db', text: '專案經理是現在團隊中不可或缺的角色，擁有專業的證照能夠提升個人競爭力並開啟更廣況的職業發展道路。' },
-                { title: '一般專案經理證照培訓班', type: '專業證照', tag1: '新手', tag2: '培訓班', tag3: '專案管理', tag4: 'APMA證照', color: '#ffcc00', text: '專案經理是現在團隊中不可或缺的角色，擁有專業的證照能夠提升個人競爭力並開啟更廣況的職業發展道路。' },
-                { title: '一般專案經理證照培訓班', type: '專業證照', tag1: '新手', tag2: '培訓班', tag3: '專案管理', tag4: 'APMA證照', color: '#db5621', text: '專案經理是現在團隊中不可或缺的角色，擁有專業的證照能夠提升個人競爭力並開啟更廣況的職業發展道路。' },
-                { title: '一般專案經理證照培訓班', type: '專業證照', tag1: '新手', tag2: '培訓班', tag3: '專案管理', tag4: 'APMA證照', color: '#7dbda8', text: '專案經理是現在團隊中不可或缺的角色，擁有專業的證照能夠提升個人競爭力並開啟更廣況的職業發展道路。' },
+                { title: '一般專案經理證照培訓班', type: '專業證照', tag1: '新手', tag2: '培訓班', tag3: '專案管理', tag4: 'APMA證照', color: '#21d2db', text: '專案經理是現在團隊中不可或缺的角色，擁有專業的證照能夠提升個人競爭力並開啟更廣況的職業發展道路。', link: 1 },
+                { title: '一般專案經理證照培訓班', type: '專業證照', tag1: '新手', tag2: '培訓班', tag3: '專案管理', tag4: 'APMA證照', color: '#ffcc00', text: '專案經理是現在團隊中不可或缺的角色，擁有專業的證照能夠提升個人競爭力並開啟更廣況的職業發展道路。', link: 2 },
+                { title: '一般專案經理證照培訓班', type: '專業證照', tag1: '新手', tag2: '培訓班', tag3: '專案管理', tag4: 'APMA證照', color: '#db5621', text: '專案經理是現在團隊中不可或缺的角色，擁有專業的證照能夠提升個人競爭力並開啟更廣況的職業發展道路。', link: 3 },
+                { title: '一般專案經理證照培訓班', type: '專業證照', tag1: '新手', tag2: '培訓班', tag3: '專案管理', tag4: 'APMA證照', color: '#7dbda8', text: '專案經理是現在團隊中不可或缺的角色，擁有專業的證照能夠提升個人競爭力並開啟更廣況的職業發展道路。', link: 4 },
             ],
             topCardIndex: 3,
         }
@@ -48,14 +48,16 @@ export default {
                 <div class="cards h-[72%] relative" @wheel.prevent="handleMouseWheel">
                     <div v-for="card in cards" :key="card.id" class="card"
                         :style="{ transform: card.transform, backgroundColor: card.color, opacity: card.opacity }">
-                        <div class="card flex flex-col justify-end">
-                            <div class="card-type">{{ card.type }}</div>
-                            <div class="card-title">{{ card.title }}</div>
-                            <div class="card-tags flex">
-                                <div v-for="tag in [card.tag1, card.tag2, card.tag3, card.tag4]" :key="tag.id"
-                                    class="card-tag">{{ tag }}</div>
+                        <a :href="card.link">
+                            <div class="card flex flex-col justify-end">
+                                <div class="card-type">{{ card.type }}</div>
+                                <div class="card-title">{{ card.title }}</div>
+                                <div class="card-tags flex">
+                                    <div v-for="tag in [card.tag1, card.tag2, card.tag3, card.tag4]" :key="tag.id"
+                                        class="card-tag">{{ tag }}</div>
+                                </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -88,13 +90,19 @@ export default {
                         <div v-else-if="topCardIndex === 2"
                             class="trans-content w-[100%] h-[43%] intro pl-[15%] pt-[4%] mb-[1px]">{{ cards[2].text }}</div>
                         <div v-else-if="topCardIndex === 3"
-                            class="trans-content w-[100%] h-[43%] intro pl-[15%] pt-[4%] mb-[1px] ">{{ cards[3].text }}</div>
+                            class="trans-content w-[100%] h-[43%] intro pl-[15%] pt-[4%] mb-[1px] ">{{ cards[3].text }}
+                        </div>
                     </transition>
                     <transition name="slide-down-more">
-                        <div v-if="topCardIndex === 0" class="trans-more w-[100%] flex justify-end more "><a href="">了解更多 → </a></div>
-                        <div v-else-if="topCardIndex === 1" class="trans-more w-[100%] flex justify-end more "><a href="">了解更多 → </a></div>
-                        <div v-else-if="topCardIndex === 2" class="trans-more w-[100%] flex justify-end more "><a href="">了解更多 → </a></div>
-                        <div v-else-if="topCardIndex === 3" class="trans-more w-[100%] flex justify-end more "><a href="">了解更多 → </a></div>
+                        <div v-if="topCardIndex === 0" class="trans-more w-[100%] flex justify-end more "><a
+                                :href="cards[0].link">了解更多<i class="fa-solid fa-arrow-right"></i>
+                            </a></div>
+                        <div v-else-if="topCardIndex === 1" class="trans-more w-[100%] flex justify-end more "><a
+                                :href="cards[1].link">了解更多<i class="fa-solid fa-arrow-right"></i> </a></div>
+                        <div v-else-if="topCardIndex === 2" class="trans-more w-[100%] flex justify-end more "><a
+                                :href="cards[2].link">了解更多 <i class="fa-solid fa-arrow-right"></i> </a></div>
+                        <div v-else-if="topCardIndex === 3" class="trans-more w-[100%] flex justify-end more "><a
+                                :href="cards[3].link">了解更多 <i class="fa-solid fa-arrow-right"></i> </a></div>
                     </transition>
                 </div>
 
@@ -105,17 +113,29 @@ export default {
 <style scoped>
 /* transition */
 
-.trans-content, .trans-title, .trans-more{
+.trans-content,
+.trans-title,
+.trans-more {
     @apply absolute;
 }
-.trans-title{top: 10%;}
-.trans-content{top: 52%;}
-.trans-more{top: 92%;}
+
+.trans-title {
+    top: 10%;
+}
+
+.trans-content {
+    top: 52%;
+}
+
+.trans-more {
+    top: 92%;
+}
 
 /* transition-title */
-.slide-down-enter-active{
+.slide-down-enter-active {
     transition: 0.5s ease-in;
 }
+
 .slide-down-leave-active {
     transition: 0.2s ease-out;
 }
@@ -131,11 +151,12 @@ export default {
 }
 
 /* transition-content */
-.slide-down-content-enter-active{
-    transition:  0.5s ease-in;
+.slide-down-content-enter-active {
+    transition: 0.5s ease-in;
 }
+
 .slide-down-content-leave-active {
-    transition:  0.2s ease-out;
+    transition: 0.2s ease-out;
 }
 
 .slide-down-content-enter-from {
@@ -147,12 +168,14 @@ export default {
     opacity: 0;
     transform: translateY(30px);
 }
+
 /* transition-moreLink*/
-.slide-down-more-enter-active{
-    transition:  0.5s ease-in;
+.slide-down-more-enter-active {
+    transition: 0.5s ease-in;
 }
+
 .slide-down-more-leave-active {
-    transition:  0.2s ease-out;
+    transition: 0.2s ease-out;
 }
 
 .slide-down-more-enter-from {
@@ -253,8 +276,9 @@ export default {
 
 /* More Styles */
 .more {
-    @apply text-[20px] font-extrabold;
+    @apply text-[20px] font-extrabold text-[#0057ff];
     font-family: 'Inter', sans-serif;
-}</style>
+}
+</style>
 
 

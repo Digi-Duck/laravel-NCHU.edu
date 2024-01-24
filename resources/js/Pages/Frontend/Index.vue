@@ -8,6 +8,7 @@ import IndexMain from '@/Components/Frontend/Other/IndexMain.vue';
 import IndexCourse from '@/Components/Frontend/Other/IndexCourse.vue';
 import IndexNews from '@/Components/Frontend/Other/IndexNews.vue';
 import IndexContact from '@/Components/Frontend/Other/IndexContact.vue';
+import CoursePage from '@/Components/Frontend/Other/CoursePage.vue';
 
 export default {
     components: {
@@ -17,6 +18,7 @@ export default {
         IndexMain,
         IndexNews,
         IndexContact,
+        CoursePage,
     },
     data() {
         return {
@@ -45,6 +47,9 @@ export default {
     </div>
     <div>
       <IndexContact />
+    </div>
+    <div>
+       <CoursePage/>
     </div>
   </FrontendLayout>
 </template>
