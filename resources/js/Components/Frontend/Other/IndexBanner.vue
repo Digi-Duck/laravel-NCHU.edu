@@ -29,21 +29,21 @@ export default {
 </script>
 
 <template >
-    <div class="w-[1294px] h-[100vh] mb-[30%] m-auto mt-[25px] ">
+    <div class="w-[85%] h-[100vh] mb-[25vw] m-auto mt-[4.3vw] ">
         <transition name="left-in" @after-enter="showTwo">
             <div v-show="show" class=" font-title  row-one ">創新教育</div>
         </transition>
         <transition name="right-in" @after-enter="showThree">
-            <div v-show="show" class=" font-title ml-[291px] mt-[-67px] row-two ">開啟無限可能</div>
+            <div v-show="show" class=" font-title ml-[15.15vw] mt-[-3.4vw] row-two ">開啟無限可能</div>
         </transition>
         <transition name="right-in" @after-enter="showThree">
-            <div v-show="show" class="font-large ml-[429px] mt-[-25px] row-three z-[1]">Innovative education, </div>
+            <div v-show="show" class="font-large ml-[22.34vw] mt-[-1.3vw] row-three z-[1]">Innovative education, </div>
         </transition>
         <transition>
             <div v-show="stage >= 2" class="left-p w-0 h-0 z-[0]"></div>
         </transition>
         <transition name="left-in" @after-enter="showTwo">
-            <div v-show="show" class="z-[2] font-large ml-[199px]  mt-[-30px] row-four">unlocking limitless</div>
+            <div v-show="show" class="z-[2] font-large ml-[10.3vw]  mt-[-1.56vw] row-four">unlocking limitless</div>
         </transition>
         <transition>
             <div v-show="stage >= 2" class="circle-p w-0 h-0 z-[0]"></div>
@@ -52,13 +52,13 @@ export default {
             <div v-show="stage >= 2" class="right-p w-0 h-0"></div>
         </transition>
         <transition name="right-in" @after-enter="showThree">
-            <div v-show="show" class="font-large ml-[692px] mt-[-43px] row-five">possibilities.</div>
+            <div v-show="show" class="font-large ml-[36vw] mt-[-2.23vw] row-five">possibilities.</div>
         </transition>
         <transition name="left-in" @after-enter="showTwo">
-            <div v-show="show" class=" flex ml-[295px] mb-[90px] ">
-                <img class="z-[2] mr-[53px] w-[90px] h-[90px]" :src="images.blackRow" alt="">
-                <img class="z-[2] mr-[53px] w-[90px] h-[90px]" :src="images.blackRow" alt="">
-                <img class="z-[2] mr-[53px] w-[90px] h-[90px]" :src="images.blackRow" alt="">
+            <div v-show="show" class=" flex ml-[15.36vw] mb-[4.68vw] ">
+                <img class="z-[2] mr-[2.7vw] w-[4.68vw] h-[4.68vw]" :src="images.blackRow" alt="">
+                <img class="z-[2] mr-[2.7vw] w-[4.68vw] h-[4.68vw]" :src="images.blackRow" alt="">
+                <img class="z-[2] mr-[2.7vw] w-[4.68vw] h-[4.68vw]" :src="images.blackRow" alt="">
             </div>
         </transition>
         <transition>
@@ -102,7 +102,7 @@ export default {
 /* animation */
 @keyframes upAnimation {
     0% {
-        transform: translateY(500px);
+        transform: translateY(26vw);
     }
 
     100% {
@@ -113,7 +113,7 @@ export default {
 /* CSS */
 img {
     filter: grayscale(100%);
-    transition: 0.3s;
+    /* transition: 0.3s; */
 
 }
 .indexP{
@@ -124,14 +124,14 @@ img:hover {
 }
 
 .font-title {
-    @apply text-[145px] text-[#0057ff] font-black;
+    @apply text-[7.55vw] text-[#0057ff] font-black;
     font-family: 'Noto Sans TC', sans-serif;
     position: absolute;
     z-index: 2;
 }
 
 .font-large {
-    @apply text-[64px] text-[#000000] font-black tracking-[-3px] font-bold;
+    @apply text-[3.33vw] text-[#000000] font-black tracking-[-3px] font-bold;
     font-family: 'Inter', sans-serif;
 }
 
@@ -147,7 +147,7 @@ img:hover {
 }
 
 .row-one:after {
-    @apply absolute bottom-[20px] w-[115px] h-[110px] bg-no-repeat bg-right bg-[length:85px_85px];
+    @apply absolute bottom-[1.04vw] w-[5.98vw] h-[5.72vw] bg-no-repeat bg-right bg-[length:4.42vw_4.42vw];
     content: "";
     background-image: url('/images/banner/blue-row.png');
 }
@@ -160,13 +160,13 @@ img:hover {
 }
 
 .row-two:after {
-    @apply absolute bottom-[44px] w-[120px] h-[110px] bg-no-repeat bg-right bg-[length:85px_85px] rotate-90;
+    @apply absolute bottom-[2.29vw] w-[6.25vw] h-[5.72vw] bg-no-repeat bg-right bg-[length:4.42vw_4.42vw] rotate-90;
     content: "";
     background-image: url('/images/banner/blue-row.png');
 }
 
 .left-p:before {
-    @apply absolute left-[10px] top-[-220px] h-[201px] w-[549px] bg-no-repeat bg-left duration-300 hover:filter-none;
+    @apply absolute left-[0.52vw] top-[-11.45vw] h-[10.46vw] w-[28.59vw] bg-no-repeat bg-left duration-300 hover:filter-none;
     content: "";
     background-image: url('/images/banner/left-p.svg');
     filter: grayscale(100%);
@@ -174,13 +174,13 @@ img:hover {
 }
 
 .row-five:before {
-    @apply absolute left-[-120px] bottom-[-70px] h-[220px] w-[580px] bg-no-repeat bg-[length:580px_220px];
+    @apply absolute left-[-6.25vw] bottom-[-3.64vw] h-[11.45vw] w-[30.20vw] bg-no-repeat bg-[length:30.2vw_11.45vw];
     content: "";
     background-image: url('/images/banner/draw_circle.gif');
 }
 
 .right-p:after {
-    @apply absolute left-[1020px] top-[-58px] h-[216px] w-[251px] bg-no-repeat duration-300 hover:filter-none;
+    @apply absolute left-[53.12vw] top-[-3.02vw] h-[11.25vw] w-[13.07vw] bg-no-repeat duration-300 hover:filter-none;
     content: "";
     background-image: url('/images/banner/right-p.svg');
     filter: grayscale(100%);
@@ -188,7 +188,7 @@ img:hover {
 }
 
 .circle-p:after {
-    @apply absolute left-[740px] bottom-[248px] h-[166px] w-[166px] bg-no-repeat duration-300;
+    @apply absolute left-[38.54vw] bottom-[12.9vw] h-[8.64vw] w-[8.64vw] bg-no-repeat duration-300;
     content: "";
     background-image: url('/images/banner/circle-p.svg');
     filter: grayscale(100%);
