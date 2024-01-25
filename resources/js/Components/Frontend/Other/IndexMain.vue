@@ -64,7 +64,7 @@ export default {
                     </li>|
                     <li>
                         <Link href="">03運動課程</Link>
-                    </li>|
+                    </li><span>|</span>
                     <li>
                         <Link href="">04職業訓練</Link>
                     </li>|
@@ -108,23 +108,7 @@ export default {
 }
 
 @media(max-width:1400px) {
-    .list {
-        @apply text-[1.4vw];
-    }
-}
 
-@media(max-width:768px) {
-    .main-top {
-        @apply flex-col pt-0;
-    }
-
-    .big-title {
-        @apply w-[41%];
-    }
-
-    .list {
-        @apply text-[2.3vw];
-    }
 }
 
 .main-cards {
@@ -171,6 +155,9 @@ export default {
 }
 
 @media(max-width:1400px) {
+    .list {
+        @apply text-[1.4vw];
+    }
     .main-cards {
         @apply w-[95%];
     }
@@ -187,10 +174,20 @@ export default {
 }
 
 @media(max-width:768px) {
-    .list {
-        @apply mb-[30px];
+    .main-top {
+        @apply flex-col pt-0;
     }
 
+    .big-title {
+        @apply w-[41%];
+    }
+
+    .list {
+        @apply text-[2.3vw] mb-[30px];
+    }
+    .main-bottom {
+        @apply gap-[40px];
+    }
     .main-card {
         @apply w-[35%] py-[6%];
     }
@@ -215,16 +212,38 @@ export default {
 }
 
 @media(max-width:500px) {
+    .main-top {
+        @apply items-center mb-0;
+    }
+
+    .big-title {
+        @apply w-[65%];
+    }
+
+    .list {
+        @apply text-[3.8vw] gap-[2vw] mb-0;
+    }
+
+    .list span {
+        @apply hidden;
+    }
+    .main-bottom{
+        @apply gap-[20px];
+    }
     .main-cards {
-        @apply mb-[20px];
+        @apply pt-[60px] border-b-[0.5vw] border-black;
     }
 
     .card {
-        @apply flex flex-col items-center;
+        @apply flex flex-col;
     }
 
     .main-card {
         @apply w-[100%] order-2;
+    }
+
+    .title-name {
+        @apply pr-[28vw];
     }
 
     .title,
@@ -245,5 +264,4 @@ export default {
     }
 
 
-}
-</style>
+}</style>
