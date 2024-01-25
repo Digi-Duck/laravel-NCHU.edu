@@ -29,41 +29,43 @@ export default {
 </script>
 
 <template >
-    <div class="w-[85%] h-[100vh] mb-[25vw] m-auto mt-[4.3vw] ">
-        <transition name="left-in" @after-enter="showTwo">
-            <div v-show="show" class=" font-title  row-one ">創新教育</div>
-        </transition>
-        <transition name="right-in" @after-enter="showThree">
-            <div v-show="show" class=" font-title ml-[15.15vw] mt-[-3.4vw] row-two ">開啟無限可能</div>
-        </transition>
-        <transition name="right-in" @after-enter="showThree">
-            <div v-show="show" class="font-large ml-[22.34vw] mt-[-1.3vw] row-three z-[1]">Innovative education, </div>
-        </transition>
-        <transition>
-            <div v-show="stage >= 2" class="left-p w-0 h-0 z-[0]"></div>
-        </transition>
-        <transition name="left-in" @after-enter="showTwo">
-            <div v-show="show" class="z-[2] font-large ml-[10.3vw]  mt-[-1.56vw] row-four">unlocking limitless</div>
-        </transition>
-        <transition>
-            <div v-show="stage >= 2" class="circle-p w-0 h-0 z-[0]"></div>
-        </transition>
-        <transition>
-            <div v-show="stage >= 2" class="right-p w-0 h-0"></div>
-        </transition>
-        <transition name="right-in" @after-enter="showThree">
-            <div v-show="show" class="font-large ml-[36vw] mt-[-2.23vw] row-five">possibilities.</div>
-        </transition>
-        <transition name="left-in" @after-enter="showTwo">
-            <div v-show="show" class=" flex ml-[15.36vw] mb-[4.68vw] ">
-                <img class="z-[2] mr-[2.7vw] w-[4.68vw] h-[4.68vw]" :src="images.blackRow" alt="">
-                <img class="z-[2] mr-[2.7vw] w-[4.68vw] h-[4.68vw]" :src="images.blackRow" alt="">
-                <img class="z-[2] mr-[2.7vw] w-[4.68vw] h-[4.68vw]" :src="images.blackRow" alt="">
-            </div>
-        </transition>
-        <transition>
-            <img v-show="stage >= 2" class=" indexP w-[98%] m-auto" :src="images.indexP" alt="">
-        </transition>
+    <div class="w-[80%] m-auto">
+        <div class="w-[85%] h-[100vh] mb-[25vw] m-auto   mt-[30%] sm:mt-[15%] md:mt-[11%]  lg:mt-[8%]  xl:mt-[6%] ">
+            <transition name="left-in" @after-enter="showTwo">
+                <div v-show="show" class=" font-title  row-one ">創新教育</div>
+            </transition>
+            <transition name="right-in" @after-enter="showThree">
+                <div v-show="show" class=" font-title ml-[15.15vw] mt-[-3.4vw] row-two ">開啟無限可能</div>
+            </transition>
+            <transition name="right-in" @after-enter="showThree">
+                <div v-show="show" class="font-large ml-[22.34vw] mt-[-1.3vw] row-three z-[1]">Innovative education, </div>
+            </transition>
+            <transition>
+                <div v-show="stage >= 2" class="left-p w-0 h-0 z-[0]"></div>
+            </transition>
+            <transition name="left-in" @after-enter="showTwo">
+                <div v-show="show" class="z-[2] font-large ml-[10.3vw]  mt-[-1.56vw] row-four">unlocking limitless</div>
+            </transition>
+            <transition>
+                <div v-show="stage >= 2" class="circle-p w-0 h-0 z-[0]"></div>
+            </transition>
+            <transition>
+                <div v-show="stage >= 2" class="right-p w-0 h-0"></div>
+            </transition>
+            <transition name="right-in" @after-enter="showThree">
+                <div v-show="show" class="font-large ml-[36vw] mt-[-2.23vw] row-five">possibilities.</div>
+            </transition>
+            <transition name="left-in" @after-enter="showTwo">
+                <div v-show="show" class=" flex ml-[15.36vw] mb-[4.68vw] ">
+                    <img class="z-[2] mr-[2.7vw] w-[4.68vw] h-[4.68vw]" :src="images.blackRow" alt="">
+                    <img class="z-[2] mr-[2.7vw] w-[4.68vw] h-[4.68vw]" :src="images.blackRow" alt="">
+                    <img class="z-[2] mr-[2.7vw] w-[4.68vw] h-[4.68vw]" :src="images.blackRow" alt="">
+                </div>
+            </transition>
+            <transition>
+                <img v-show="stage >= 2" class=" indexP w-[98%] m-auto" :src="images.indexP" alt="">
+            </transition>
+        </div>
     </div>
 </template>
 
@@ -112,13 +114,14 @@ export default {
 
 /* CSS */
 img {
-    filter: grayscale(100%);
+    @apply grayscale;
     /* transition: 0.3s; */
-
 }
-.indexP{
+
+.indexP {
     animation: upAnimation 1.3s ease;
 }
+
 img:hover {
     @apply filter-none;
 }
@@ -166,10 +169,9 @@ img:hover {
 }
 
 .left-p:before {
-    @apply absolute left-[0.52vw] top-[-11.45vw] h-[10.46vw] w-[28.59vw] bg-no-repeat bg-left duration-300 hover:filter-none;
+    @apply absolute left-[0.52vw] top-[-11.45vw] h-[10.46vw] w-[28.59vw] bg-no-repeat bg-left duration-300 grayscale bg-[length:17.23vw_10.45vw] hover:filter-none;
     content: "";
     background-image: url('/images/banner/left-p.svg');
-    filter: grayscale(100%);
     animation: upAnimation 1.3s ease;
 }
 
@@ -180,18 +182,20 @@ img:hover {
 }
 
 .right-p:after {
-    @apply absolute left-[53.12vw] top-[-3.02vw] h-[11.25vw] w-[13.07vw] bg-no-repeat duration-300 hover:filter-none;
+    @apply absolute left-[53.12vw] top-[-3.02vw] h-[11.25vw] w-[13.07vw] bg-no-repeat duration-300 bg-[length:13.07vw_11.25vw] grayscale hover:filter-none;
     content: "";
     background-image: url('/images/banner/right-p.svg');
-    filter: grayscale(100%);
     animation: upAnimation 1.3s ease;
 }
 
 .circle-p:after {
-    @apply absolute left-[38.54vw] bottom-[12.9vw] h-[8.64vw] w-[8.64vw] bg-no-repeat duration-300;
+    @apply absolute left-[38.54vw] bottom-[12.9vw] h-[8.64vw] w-[8.64vw] bg-no-repeat duration-300 grayscale bg-[length:8.64vw_8.64vw];
     content: "";
     background-image: url('/images/banner/circle-p.svg');
-    filter: grayscale(100%);
     animation: upAnimation 1.3s ease;
+}
+
+@media (max-width: 769px ) {
+
 }
 </style>
