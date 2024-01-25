@@ -30,7 +30,7 @@ export default {
 
 <template >
     <div class=" w-[90%] md:w-[80%] m-auto">
-        <div class="  w-full md:w-[85%]   m-auto mb-[10%] mt-[25%] 2sm:mt-[15%] md:mt-[8%]  lg:mt-[8%]  xl:mt-[6%] ">
+        <div class="  w-full md:w-[85%] m-auto mb-[10%] mt-[25%] 2sm:mt-[15%] md:mt-[8%]  lg:mt-[8%]  xl:mt-[6%] ">
             <div class="md:ml-0">
                 <transition name="left-in" @after-enter="showTwo">
                     <div v-show="show" class=" font-title  row-one ">創新教育</div>
