@@ -44,8 +44,8 @@ export default {
 <template>
     <div class="flex justify-center items-center ">
         <section class=" w-[1294px] h-[100vh] flex justify-center items-center  overflow-hidden" @mouseleave="resetCards">
-            <div class="w-[776px] h-[72%]">
-                <div class="cards h-[72%] relative" @wheel.prevent="handleMouseWheel">
+            <div class="w-[776px] h-[650px]">
+                <div class="cards h-[468px] relative" @wheel.prevent="handleMouseWheel">
                     <div v-for="card in cards" :key="card.id" class="card"
                         :style="{ transform: card.transform, backgroundColor: card.color, opacity: card.opacity }">
                         <a :href="card.link">
@@ -61,47 +61,47 @@ export default {
                     </div>
                 </div>
             </div>
-            <div class="w-[517px] h-[72%] ">
-                <div class="mt-[-10%]  w-[100%] h-[40%]  ">
-                    <div class="provide w-[100%] h-[100%] ">
-                        <div class="w-[517px] pl-[21%]  arrow tracking-[-3px] "><span class="mr-[20px]">Latest</span>最新
+            <div class="w-[517px] h-[650px] ">
+                <div class="mt-[-65px]  w-[517px] h-[260px]  ">
+                    <div class="provide w-[517px] h-[260px] ">
+                        <div class="w-[517px] pl-[108px]  arrow tracking-[-3px] "><span class="mr-[20px]">Latest</span>最新
                         </div>
-                        <div class=" w-[517px]  pl-[31%] mt-[-10%] flex gap-[15px] tracking-[-3px] row ">課程<span
+                        <div class=" w-[517px]  pl-[160.27px] mt-[-52px] flex gap-[15px] tracking-[-3px] row ">課程<span
                                 class="mt-[15px] tracking-[-3px]">course</span>
                         </div>
                     </div>
                 </div>
-                <div class="w-[100%] h-[60%] mt-[10%] relative flex flex-col justify-end ">
+                <div class="w-[517px] h-[390px] mt-[51.7px] relative flex flex-col justify-end ">
                     <transition name="slide-down">
-                        <div v-if="topCardIndex === 0" class="trans-title w-[100%]  h-[40%] title pl-[15%]  mb-[1px]">
+                        <div v-if="topCardIndex === 0" class="trans-title w-[517px]  h-[156px] title pl-[77.5px]  mb-[1px]">
                             {{ cards[0].title }}</div>
-                        <div v-else-if="topCardIndex === 1" class="trans-title w-[100%]  h-[40%] title pl-[15%]  mb-[1px]">
+                        <div v-else-if="topCardIndex === 1" class="trans-title w-[517px]  h-[156px] title pl-[77.5px]  mb-[1px]">
                             {{ cards[1].title }}</div>
-                        <div v-else-if="topCardIndex === 2" class="trans-title w-[100%]  h-[40%] title pl-[15%]  mb-[1px]">
+                        <div v-else-if="topCardIndex === 2" class="trans-title w-[517px]  h-[156px] title pl-[77.5px]  mb-[1px]">
                             {{ cards[2].title }}</div>
-                        <div v-else-if="topCardIndex === 3" class="trans-title w-[100%]  h-[40%] title pl-[15%]  mb-[1px] ">
+                        <div v-else-if="topCardIndex === 3" class="trans-title w-[517px]  h-[156px] title pl-[77.5px]  mb-[1px] ">
                             {{ cards[3].title }}</div>
                     </transition>
                     <transition name="slide-down-content">
                         <div v-if="topCardIndex === 0"
-                            class="trans-content w-[100%] h-[43%] intro pl-[15%] pt-[4%] mb-[1px]">{{ cards[0].text }}</div>
+                            class="trans-content w-[517px] h-[167px] intro pl-[77.5px] pt-[20.6px] mb-[1px]">{{ cards[0].text }}</div>
                         <div v-else-if="topCardIndex === 1"
-                            class="trans-content w-[100%] h-[43%] intro pl-[15%] pt-[4%] mb-[1px]">{{ cards[1].text }}</div>
+                            class="trans-content w-[517px] h-[167px] intro pl-[77.5px] pt-[20.6px] mb-[1px]">{{ cards[1].text }}</div>
                         <div v-else-if="topCardIndex === 2"
-                            class="trans-content w-[100%] h-[43%] intro pl-[15%] pt-[4%] mb-[1px]">{{ cards[2].text }}</div>
+                            class="trans-content w-[517px] h-[167px] intro pl-[77.5px] pt-[20.6px] mb-[1px]">{{ cards[2].text }}</div>
                         <div v-else-if="topCardIndex === 3"
-                            class="trans-content w-[100%] h-[43%] intro pl-[15%] pt-[4%] mb-[1px] ">{{ cards[3].text }}
+                            class="trans-content w-[517px] h-[167px] intro pl-[77.5px] pt-[20.6px] mb-[1px] ">{{ cards[3].text }}
                         </div>
                     </transition>
                     <transition name="slide-down-more">
-                        <div v-if="topCardIndex === 0" class="trans-more w-[100%] flex justify-end more "><a
+                        <div v-if="topCardIndex === 0" class="trans-more w-[517px] flex justify-end more "><a
                                 :href="cards[0].link">了解更多<i class="fa-solid fa-arrow-right"></i>
                             </a></div>
-                        <div v-else-if="topCardIndex === 1" class="trans-more w-[100%] flex justify-end more "><a
+                        <div v-else-if="topCardIndex === 1" class="trans-more w-[517px] flex justify-end more "><a
                                 :href="cards[1].link">了解更多<i class="fa-solid fa-arrow-right"></i> </a></div>
-                        <div v-else-if="topCardIndex === 2" class="trans-more w-[100%] flex justify-end more "><a
+                        <div v-else-if="topCardIndex === 2" class="trans-more w-[517px] flex justify-end more "><a
                                 :href="cards[2].link">了解更多 <i class="fa-solid fa-arrow-right"></i> </a></div>
-                        <div v-else-if="topCardIndex === 3" class="trans-more w-[100%] flex justify-end more "><a
+                        <div v-else-if="topCardIndex === 3" class="trans-more w-[517px] flex justify-end more "><a
                                 :href="cards[3].link">了解更多 <i class="fa-solid fa-arrow-right"></i> </a></div>
                     </transition>
                 </div>
@@ -120,15 +120,15 @@ export default {
 }
 
 .trans-title {
-    top: 10%;
+    top: 39px;
 }
 
 .trans-content {
-    top: 52%;
+    top: 202.8px;
 }
 
 .trans-more {
-    top: 92%;
+    top: 358.8px;
 }
 
 /* transition-title */
@@ -192,8 +192,8 @@ export default {
 
 /* Card Styles */
 .card {
-    /* w-95% */
-    @apply w-[737px] h-[100%] p-[30px] absolute cursor-pointer border-dotted;
+
+    @apply w-[737px] h-[468px] p-[30px] absolute cursor-pointer border-dotted;
     transition: 0.5s ease-in-out;
     transform-origin: bottom center;
     will-change: transform;
@@ -206,19 +206,19 @@ export default {
 }
 
 .card:nth-child(2) {
-    top: 13%;
+    top: 60.84px;
     left: 0;
     /* background-color: #ffcc00; */
 }
 
 .card:nth-child(3) {
-    top: 26%;
+    top: 121.68px;
     left: 0;
     /* background-color: #db5621 */
 }
 
 .card:nth-child(4) {
-    top: 39%;
+    top: 182.52px;
     /* background-color: #7dbda8; */
 }
 
@@ -234,7 +234,7 @@ export default {
 }
 
 .card-type {
-    @apply w-[18%] py-[1%] text-[19px] mb-[2%] text-white border-white border-2 border-solid rounded-full font-semibold flex justify-center items-center;
+    @apply w-[139.6px] py-[7.76px] text-[19px] mb-[15.52px] text-white border-white border-2 border-solid rounded-full font-semibold flex justify-center items-center;
     font-family: 'Inter', sans-serif;
 }
 
@@ -255,7 +255,7 @@ export default {
 }
 
 .row:after {
-    @apply absolute top-[58%] left-[78%] w-[120px] h-[110px] bg-no-repeat bg-right bg-[length:85px_85px] rotate-90;
+    @apply absolute top-[80.8px] left-[410px] w-[120px] h-[110px] bg-no-repeat bg-right bg-[length:85px_85px] rotate-90;
     content: "";
     background-image: url('/images/banner/blue-row.png');
 }
