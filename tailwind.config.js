@@ -29,6 +29,16 @@ export default {
         'main-brown': '#795642',
         'main-yellow': '#FFFAAB',
       },
+      screens: {
+        '2sm':'375px',
+        'sm':'640px',
+        '2md':'500px',
+        'md':'768px',
+        'lg':'1024px',
+        'xl':'1280px',
+        'xll': '1400px',
+        '2xl':'1536px',
+      },
       fontFamily: {
         sans: ['Noto Sans TC, sans-serif', 'Microsoft JhengHei'],
       },
