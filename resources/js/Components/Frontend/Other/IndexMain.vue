@@ -49,44 +49,46 @@ export default {
 }
 </script>
 <template>
-    <div class="main">
-        <div class="main-top">
-            <div class="big-title">
-                <img :src="images.provide" alt="">
+    <main class="w-[90%] md:w-[80%] m-auto">
+        <div class="main">
+            <div class="main-top">
+                <div class="big-title">
+                    <img :src="images.provide" alt="">
+                </div>
+                <ul class="list">
+                    <li>
+                        <Link href="">01兒童營隊</Link>
+                    </li>|
+                    <li>
+                        <Link href="">02單元手作</Link>
+                    </li>|
+                    <li>
+                        <Link href="">03運動課程</Link>
+                    </li>|
+                    <li>
+                        <Link href="">04職業訓練</Link>
+                    </li>|
+                    <li>
+                        <Link href="">05專業證照</Link>
+                    </li>
+                </ul>
             </div>
-            <ul class="list">
-                <li>
-                    <Link href="">01兒童營隊</Link>
-                </li>|
-                <li>
-                    <Link href="">02單元手作</Link>
-                </li>|
-                <li>
-                    <Link href="">03運動課程</Link>
-                </li>|
-                <li>
-                    <Link href="">04職業訓練</Link>
-                </li>|
-                <li>
-                    <Link href="">05專業證照</Link>
-                </li>
-            </ul>
-        </div>
-        <div class="main-bottom">
-            <div class="main-cards" v-for="item in pro" :key="item.id">
-                <div class="card">
-                    <div class="main-card">
-                        <div class="title">0{{ item.id }}</div>
-                        <div class="title float-right mt-[-6%]">{{ item.name }}</div>
-                        <div class="content">{{ item.content }}</div>
-                        <Link href="" class="more">了解更多&nbsp<i class="fa-solid fa-arrow-right"></i>
-                        </Link>
+            <div class="main-bottom">
+                <div class="main-cards" v-for="item in pro" :key="item.id">
+                    <div class="card">
+                        <div class="main-card">
+                            <div class="title ml-[-10px]">0{{ item.id }}</div>
+                            <div class="title-name">{{ item.name }}</div>
+                            <div class="content">{{ item.content }}</div>
+                            <Link href="" class="more">了解更多&nbsp<i class="fa-solid fa-arrow-right"></i>
+                            </Link>
+                        </div>
+                        <div class="card-img"><img :src="item.img" alt=""></div>
                     </div>
-                    <div class="card-img"><img :src="item.img" alt=""></div>
                 </div>
             </div>
         </div>
-    </div>
+    </main>
 </template>
 <style scoped>
 .main-top {
@@ -113,16 +115,11 @@ export default {
 
 @media(max-width:768px) {
     .main-top {
-        @apply pt-[20%] flex-col;
+        @apply flex-col pt-0;
     }
 
     .big-title {
         @apply w-[41%];
-        font-size: 60px;
-    }
-
-    .bid-title span {
-        font-size: 45px;
     }
 
     .list {
@@ -142,8 +139,13 @@ export default {
     @apply w-[30%] py-[10%];
 }
 
-.title {
+.title,
+.title-name {
     @apply text-[4vw] text-[#0057ff] font-[900];
+}
+
+.title-name {
+    @apply float-right mt-[-6%];
 }
 
 .content {
@@ -151,11 +153,7 @@ export default {
 }
 
 .more {
-    @apply text-[1vw] font-[700] mt-[30px] float-right;
-}
-
-.more:hover {
-    color: #0057FF;
+    @apply text-[1vw] font-[700] mt-[30px] float-right hover:text-[#0057ff];
 }
 
 .card-img {
@@ -176,19 +174,19 @@ export default {
     .main-cards {
         @apply w-[95%];
     }
-    .title{
+
+    .title,
+    .title-name {
         @apply text-[4.3vw];
     }
-    .content, .more{
+
+    .content,
+    .more {
         @apply text-[1.3vw];
     }
 }
 
 @media(max-width:768px) {
-    .main {
-        @apply w-[100%];
-    }
-
     .list {
         @apply mb-[30px];
     }
@@ -201,20 +199,51 @@ export default {
         @apply justify-between;
     }
 
-    .title {
-        font-size: 5.2vw;
-        margin-bottom: -10px;
+    .title,
+    .title-name {
+        @apply text-[5.2vw] mb-[-10px];
     }
 
     .content {
-        /* @apply ml-0; */
+        @apply text-[1.6vw] pt-[8px];
         clear: right;
-        font-size: 1.6vw;
     }
 
     .more {
-        font-size: 1.6vw;
-        margin-top: 10px;
-        /* float: none; */
+        @apply text-[1.6vw] mt-[10px];
     }
-}</style>
+}
+
+@media(max-width:500px) {
+    .main-cards {
+        @apply mb-[20px];
+    }
+
+    .card {
+        @apply flex flex-col items-center;
+    }
+
+    .main-card {
+        @apply w-[100%] order-2;
+    }
+
+    .title,
+    .title-name {
+        @apply text-[9.6vw] m-0 inline-block text-left;
+    }
+
+    .card-img {
+        @apply w-[100%];
+    }
+
+    .content {
+        @apply ml-0 text-[4.3vw];
+    }
+
+    .more {
+        @apply text-[3.8vw];
+    }
+
+
+}
+</style>
