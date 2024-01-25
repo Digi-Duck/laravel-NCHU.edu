@@ -181,7 +181,7 @@ img:hover {
 }
 
 .row-five:before {
-    @apply absolute left-[-6.8vw] bottom-[-5.7vw] md:left-[-6.25vw] md:bottom-[-3.64vw] h-[18.45vw] md:h-[11.45vw] w-[39.2vw] md:w-[30.20vw] bg-no-repeat bg-[length:39.2vw_18.45vw] md:bg-[length:30.2vw_11.45vw];
+    @apply absolute left-[-7.8vw] bottom-[-5.7vw] md:left-[-6.25vw] md:bottom-[-3.64vw] h-[18.45vw] md:h-[11.45vw] w-[43.2vw] md:w-[30.20vw] bg-no-repeat bg-[length:43.2vw_18.45vw] md:bg-[length:30.2vw_11.45vw];
     content: "";
     background-image: url('/images/banner/draw_circle.gif');
 }
