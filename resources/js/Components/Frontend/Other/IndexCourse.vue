@@ -1,7 +1,12 @@
 <script>
+import laptopCourse from '/images/Course/laptopCourse.png';
 export default {
+
     data() {
         return {
+            imgs:{
+                laptopCourse,
+            },
             cards: [
                 { title: '一般專案經理證照培訓班', type: '專業證照', tag1: '新手', tag2: '培訓班', tag3: '專案管理', tag4: 'APMA證照', color: '#21d2db', text: '專案經理是現在團隊中不可或缺的角色，擁有專業的證照能夠提升個人競爭力並開啟更廣況的職業發展道路。', link: 1 },
                 { title: '一般專案經理證照培訓班', type: '專業證照', tag1: '新手', tag2: '培訓班', tag3: '專案管理', tag4: 'APMA證照', color: '#ffcc00', text: '專案經理是現在團隊中不可或缺的角色，擁有專業的證照能夠提升個人競爭力並開啟更廣況的職業發展道路。', link: 2 },
@@ -11,7 +16,9 @@ export default {
             topCardIndex: 3,
         }
     },
+
     methods: {
+
         handleMouseWheel(event) {
             const deltaY = event.deltaY;
             const direction = deltaY > 0 ? 'down' : 'up';
@@ -43,7 +50,33 @@ export default {
 </script>
 <template>
     <div class="w-[90%] md:w-[80%] m-auto">
-        <div class="flex justify-center items-center mb-[5%]">
+        <div class="hidden-on-desktop flex justify-center items-center mb-[5%]">
+            <section class=" w-[90vw] py-[3%] flex flex-col justify-center items-center  "
+                @mouseleave="resetCards">
+                <div class="ml-[65vw] mb-[2vw] w-[214px] h-[142px]">
+                    <img class="w-[192px] h-[156px]" :src="imgs.laptopCourse" alt="">
+                </div>
+                <div class="card-tip"><i class="fa-solid fa-arrow-left"></i>左右滑動圖片<i class="fa-solid fa-arrow-right"></i></div>
+                <div class="w-[40.41vw] h-[33.85vw]">
+                    <div class="cards h-[24.37vw] relative" @wheel.prevent="handleMouseWheel">
+                        <div v-for="card in cards" :key="card.id" class="card"
+                            :style="{ transform: card.transform, backgroundColor: card.color, opacity: card.opacity }">
+                            <a :href="card.link">
+                                <div class="card flex flex-col justify-end">
+                                    <div class="card-type">{{ card.type }}</div>
+                                    <div class="card-title">{{ card.title }}</div>
+                                    <div class="card-tags flex">
+                                        <div v-for="tag in [card.tag1, card.tag2, card.tag3, card.tag4]" :key="tag.id"
+                                            class="card-tag">{{ tag }}</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class=" hidden-on-laptop flex justify-center items-center mb-[5%]">
             <section class=" w-[67.39vw] py-[3%] flex justify-center items-center  overflow-hidden"
                 @mouseleave="resetCards">
                 <div class="w-[40.41vw] h-[33.85vw]">
@@ -203,50 +236,36 @@ export default {
 
 
 /* Card Styles */
+.card:nth-child(1) {top: 0; left: 0;}
+.card:nth-child(2) {top: 3.125vw; left: 0;}
+.card:nth-child(3) {top: 6.33vw; left: 0;}
+.card:nth-child(4) {top: 9.5vw;}
+
+.card-tip{
+    @apply text-[24px] font-bold;
+    font-family: 'Inter', sans-serif;
+}
 .card {
 
-    @apply w-[38.38vw] h-[24.37vw] p-[1.56vw] absolute cursor-pointer border-dotted;
+    @apply w-[38.38vw] h-[24.37vw] p-[1.56vw] /* 變版||原版 */  md:w-[38.38vw] md:h-[24.37vw] md:p-[1.56vw] absolute cursor-pointer border-dotted;
     transition: 0.5s ease-in-out;
     transform-origin: bottom center;
     will-change: transform;
 }
 
-.card:nth-child(1) {
-    top: 0;
-    left: 0;
-    /* background-color: #21d2db; */
-}
-
-.card:nth-child(2) {
-    top: 3.125vw;
-    left: 0;
-    /* background-color: #ffcc00; */
-}
-
-.card:nth-child(3) {
-    top: 6.33vw;
-    left: 0;
-    /* background-color: #db5621 */
-}
-
-.card:nth-child(4) {
-    top: 9.5vw;
-    /* background-color: #7dbda8; */
-}
-
 /* Card Content Styles */
 .card-title {
-    @apply text-[#ffffff] text-[1.97vw] font-bold;
+    @apply   text-[1.97vw] /* 變版||原版 */ md:text-[1.97vw]  font-bold text-[#ffffff] ;
     font-family: 'Noto Sans TC', sans-serif;
 }
 
 .card-tag {
-    @apply bg-[#ffffff] text-[0.98vw] mr-[0.52vw] rounded-full px-[1.04vw] py-[0.41vw] font-bold mt-[0.78vw];
+    @apply bg-[#ffffff] text-[0.98vw] mr-[0.52vw] px-[1.04vw] py-[0.41vw] mt-[0.78vw] /* 變版||原版 */  md:text-[0.98vw] md:mr-[0.52vw] md:px-[1.04vw] md:py-[0.41vw] md:mt-[0.78vw] font-bold rounded-full ;
     font-family: 'Inter', sans-serif;
 }
 
 .card-type {
-    @apply w-[7.11vw] py-[0.40vw] text-[0.98vw] mb-[0.82vw] text-white border-white border-2 border-solid rounded-full font-semibold flex justify-center items-center;
+    @apply  w-[7.11vw] py-[0.40vw] text-[0.98vw] mb-[0.82vw]  /* 變版||原版 */  md:w-[7.11vw] md:py-[0.40vw] md:text-[0.98vw] md:mb-[0.82vw] text-white border-white border-2 border-solid rounded-full font-semibold flex justify-center items-center;
     font-family: 'Inter', sans-serif;
 }
 
@@ -290,6 +309,21 @@ export default {
 .more {
     @apply text-[1.04vw] font-extrabold text-[#0057ff];
     font-family: 'Inter', sans-serif;
-}</style>
+}
+
+/* 小於 768 像素時隱藏某個區塊 */
+@media screen and (max-width: 767px) {
+    .hidden-on-laptop {
+        display: none;
+    }
+}
+
+/* 大於等於 768 像素時隱藏某個區塊 */
+@media screen and (min-width: 768px) {
+    .hidden-on-desktop {
+        display: none;
+    }
+}
+</style>
 
 
