@@ -38,10 +38,10 @@ export default {
                 <img class="small-logo" :src="images.smallLogo" alt="">
                 <ul class="list">
                     <li>
-                        <Link href="">首頁</Link>
+                        <Link href="/">首頁</Link>
                     </li>
                     <li>
-                        <Link href="">關於我們</Link>
+                        <Link :href="route('about.index')">關於我們</Link>
                     </li>
                     <li>
                         <Link href="">課程資訊</Link>

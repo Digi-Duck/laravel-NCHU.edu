@@ -6,4 +6,4 @@ use App\Http\Controllers\Frontend\IndexController;
 
 Route::get('/', [IndexController::class, 'index'])->name('home');
 
-Route::get('/about',[AboutController::class,'index'])->name('About.index');
+Route::get('/about',[AboutController::class,'index'])->name('about.index');
