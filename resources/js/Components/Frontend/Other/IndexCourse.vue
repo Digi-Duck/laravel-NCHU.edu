@@ -51,14 +51,14 @@ export default {
 <template>
     <div class="w-[90%] md:w-[80%] m-auto">
         <div class="hidden-on-desktop flex justify-center items-center mb-[5%]">
-            <section class=" w-[90vw] py-[3%] flex flex-col justify-center items-center  "
+            <section class=" w-[90vw] py-[3%] flex flex-col justify-center items-center overflow-hidden "
                 @mouseleave="resetCards">
-                <div class="ml-[65vw] mb-[2vw] w-[214px] h-[142px]">
-                    <img class="w-[192px] h-[156px]" :src="imgs.laptopCourse" alt="">
+                <div class="  mb-[8vw]  w-[45.7vw]  2sm:ml-[58vw] 2sm:mb-[2vw] 2sm:w-[27.97vw] 2sm:h-[18.51vw]">
+                    <img  :src="imgs.laptopCourse" alt="">
                 </div>
-                <div class="card-tip"><i class="fa-solid fa-arrow-left"></i>左右滑動圖片<i class="fa-solid fa-arrow-right"></i></div>
-                <div class="w-[40.41vw] h-[33.85vw]">
-                    <div class="cards h-[24.37vw] relative" @wheel.prevent="handleMouseWheel">
+                <div class="card-tip"><i class="fa-solid fa-arrow-left"></i> 左右滑動圖片 <i class="fa-solid fa-arrow-right"></i></div>
+                <div class=" w-[118.8vw] h-[85.8vw] 2sm:w-[90vw] 2sm:h-[65vw] ">
+                    <div class="cards  ml-[16.24vw]  2sm:ml-[11vw] h-[70vw]  relative" @wheel.prevent="handleMouseWheel">
                         <div v-for="card in cards" :key="card.id" class="card"
                             :style="{ transform: card.transform, backgroundColor: card.color, opacity: card.opacity }">
                             <a :href="card.link">
@@ -67,7 +67,7 @@ export default {
                                     <div class="card-title">{{ card.title }}</div>
                                     <div class="card-tags flex">
                                         <div v-for="tag in [card.tag1, card.tag2, card.tag3, card.tag4]" :key="tag.id"
-                                            class="card-tag">{{ tag }}</div>
+                                            class="card-tag">#{{ tag }}</div>
                                     </div>
                                 </div>
                             </a>
@@ -89,7 +89,7 @@ export default {
                                     <div class="card-title">{{ card.title }}</div>
                                     <div class="card-tags flex">
                                         <div v-for="tag in [card.tag1, card.tag2, card.tag3, card.tag4]" :key="tag.id"
-                                            class="card-tag">{{ tag }}</div>
+                                            class="card-tag">#{{ tag }}</div>
                                     </div>
                                 </div>
                             </a>
@@ -236,18 +236,18 @@ export default {
 
 
 /* Card Styles */
-.card:nth-child(1) {top: 0; left: 0;}
-.card:nth-child(2) {top: 3.125vw; left: 0;}
-.card:nth-child(3) {top: 6.33vw; left: 0;}
-.card:nth-child(4) {top: 9.5vw;}
+.card:nth-child(1) {@apply  top-[0] 2sm:top-[0] md:top-[0];}
+.card:nth-child(2) {@apply  top-[6.7vw] 2sm:top-[5.6vw] md:top-[3.125vw];}
+.card:nth-child(3) {@apply  top-[13.4vw] 2sm:top-[11.2vw] md:top-[6.33vw];}
+.card:nth-child(4) {@apply  top-[20.1vw] 2sm:top-[16.8vw] md:top-[9.5vw];}
 
 .card-tip{
-    @apply text-[24px] font-bold;
+    @apply  text-[4.12vw]  2sm:text-[3.12vw] font-bold mb-[1.5vw];
     font-family: 'Inter', sans-serif;
 }
 .card {
 
-    @apply w-[38.38vw] h-[24.37vw] p-[1.56vw] /* 變版||原版 */  md:w-[38.38vw] md:h-[24.37vw] md:p-[1.56vw] absolute cursor-pointer border-dotted;
+    @apply w-[86.26vw] h-[56.95vw] p-[2.05vw]  /*變版*/   2sm:w-[65.35vw] 2sm:h-[43.15vw] sm:p-[1.56vw]  /* 變版||原版 */  md:w-[38.38vw] md:h-[24.37vw] md:p-[1.56vw] absolute cursor-pointer border-dotted;
     transition: 0.5s ease-in-out;
     transform-origin: bottom center;
     will-change: transform;
@@ -255,17 +255,17 @@ export default {
 
 /* Card Content Styles */
 .card-title {
-    @apply   text-[1.97vw] /* 變版||原版 */ md:text-[1.97vw]  font-bold text-[#ffffff] ;
+    @apply   text-[4.54vw] /* 變版 */ 2sm:text-[3.54vw] /* 變版||原版 */ md:text-[1.97vw]  font-bold text-[#ffffff] ;
     font-family: 'Noto Sans TC', sans-serif;
 }
 
 .card-tag {
-    @apply bg-[#ffffff] text-[0.98vw] mr-[0.52vw] px-[1.04vw] py-[0.41vw] mt-[0.78vw] /* 變版||原版 */  md:text-[0.98vw] md:mr-[0.52vw] md:px-[1.04vw] md:py-[0.41vw] md:mt-[0.78vw] font-bold rounded-full ;
+    @apply bg-[#ffffff] text-[2.25vw] mr-[1.19vw] px-[2.39vw] py-[0.93vw] mt-[1.79vw] /* 變版 */   2sm:text-[1.76vw] 2sm:mr-[0.93vw] 2sm:px-[1.87vw] 2sm:py-[0.73vw] 2sm:mt-[1.4vw] /* 變版||原版 */  md:text-[0.98vw] md:mr-[0.52vw] md:px-[1.04vw] md:py-[0.41vw] md:mt-[0.78vw] font-bold rounded-full ;
     font-family: 'Inter', sans-serif;
 }
 
 .card-type {
-    @apply  w-[7.11vw] py-[0.40vw] text-[0.98vw] mb-[0.82vw]  /* 變版||原版 */  md:w-[7.11vw] md:py-[0.40vw] md:text-[0.98vw] md:mb-[0.82vw] text-white border-white border-2 border-solid rounded-full font-semibold flex justify-center items-center;
+    @apply   w-[16.37vw] py-[0.92vw] text-[2.25vw] mb-[1.88vw] /* 變版 */ 2sm:w-[12.79vw] 2sm:py-[0.72vw] 2sm:text-[1.76vw] 2sm:mb-[1.47vw]  /* 變版||原版 */  md:w-[7.11vw] md:py-[0.40vw] md:text-[0.98vw] md:mb-[0.82vw] text-white border-white border-2 border-solid rounded-full font-semibold flex justify-center items-center;
     font-family: 'Inter', sans-serif;
 }
 
