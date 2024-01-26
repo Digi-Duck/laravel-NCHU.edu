@@ -44,7 +44,11 @@ export default {
                 content: '適合想要考取證照的你，由課程專業講師帶領你了解各種專業知識，得到專業認證。',
                 img: certificate,
             },],
+            show: false,
         }
+    },
+    mounted() {
+        this.show = true;
     },
 }
 </script>
@@ -52,39 +56,48 @@ export default {
     <main class="w-[90%] md:w-[80%] m-auto">
         <div class="main">
             <div class="main-top">
-                <div class="big-title">
-                    <img :src="images.provide" alt="">
-                </div>
-                <ul class="list">
-                    <li>
-                        <Link href="">01兒童營隊</Link>
-                    </li>|
-                    <li>
-                        <Link href="">02單元手作</Link>
-                    </li>|
-                    <li>
-                        <Link href="">03運動課程</Link>
-                    </li><span>|</span>
-                    <li>
-                        <Link href="">04職業訓練</Link>
-                    </li>|
-                    <li>
-                        <Link href="">05專業證照</Link>
-                    </li>
-                </ul>
+                <Transition name="slide-fade-left">
+                    <div v-if="show" class="big-title">
+                        <img :src="images.provide" alt="">
+                    </div>
+                </Transition>
+                <Transition name="slide-fade-right">
+                    <ul v-if="show" class="list">
+                        <li>
+                            <Link href="">01兒童營隊</Link>
+                        </li>|
+                        <li>
+                            <Link href="">02單元手作</Link>
+                        </li>|
+                        <li>
+                            <Link href="">03運動課程</Link>
+                        </li><span>|</span>
+                        <li>
+                            <Link href="">04職業訓練</Link>
+                        </li>|
+                        <li>
+                            <Link href="">05專業證照</Link>
+                        </li>
+                    </ul>
+                </Transition>
+
             </div>
             <div class="main-bottom">
-                <div class="main-cards" v-for="item in pro" :key="item.id">
-                    <div class="card">
-                        <div class="main-card">
-                            <div class="title ml-[-10px]">0{{ item.id }}</div>
-                            <div class="title-name">{{ item.name }}</div>
-                            <div class="content">{{ item.content }}</div>
-                            <Link href="" class="more">了解更多&nbsp<i class="fa-solid fa-arrow-right"></i>
-                            </Link>
+                <div class="main-cards" v-for="item in pro" :key="item.id"
+                    :class="{ 'card-border': item.id == pro.length }">
+                    <Transition name="slide-fade-up">
+                        <div v-if="show" class="card">
+                            <div class="main-card">
+                                <div class="title ml-[-10px]">0{{ item.id }}</div>
+                                <div class="title-name">{{ item.name }}</div>
+                                <div class="content">{{ item.content }}</div>
+                                <Link href="" class="more">了解更多&nbsp<i class="fa-solid fa-arrow-right"></i>
+                                </Link>
+                            </div>
+                            <div class="card-img"><img :src="item.img" alt=""></div>
                         </div>
-                        <div class="card-img"><img :src="item.img" alt=""></div>
-                    </div>
+                    </Transition>
+
                 </div>
             </div>
         </div>
@@ -107,9 +120,7 @@ export default {
     @apply text-[#0057FF];
 }
 
-@media(max-width:1400px) {
-
-}
+@media(max-width:1400px) {}
 
 .main-cards {
     @apply w-[85%] mt-[-7%];
@@ -154,10 +165,37 @@ export default {
     @apply flex items-center flex-col ml-[4%];
 }
 
+.slide-fade-left-enter-active {
+    transition: all 1s ease-out;
+}
+
+.slide-fade-left-enter-from {
+    transform: translate(-300px);
+    opacity: 0;
+}
+
+.slide-fade-right-enter-active {
+    transition: all 1s ease-out;
+}
+
+.slide-fade-right-enter-from {
+    transform: translate(300px);
+    opacity: 0;
+}
+.slide-fade-up-enter-active {
+    transition: all 1s ease-out;
+}
+
+.slide-fade-up-enter-from {
+    transform: translate(0px, 100px);
+    opacity: 0;
+}
+
 @media(max-width:1400px) {
     .list {
         @apply text-[1.4vw];
     }
+
     .main-cards {
         @apply w-[95%];
     }
@@ -185,9 +223,11 @@ export default {
     .list {
         @apply text-[2.3vw] mb-[30px];
     }
+
     .main-bottom {
         @apply gap-[40px];
     }
+
     .main-card {
         @apply w-[35%] py-[6%];
     }
@@ -227,9 +267,11 @@ export default {
     .list span {
         @apply hidden;
     }
-    .main-bottom{
+
+    .main-bottom {
         @apply gap-[20px];
     }
+
     .main-cards {
         @apply pt-[60px] border-b-[0.5vw] border-black;
     }
@@ -255,6 +297,10 @@ export default {
         @apply w-[100%];
     }
 
+    .card-border {
+        @apply border-0;
+    }
+
     .content {
         @apply ml-0 text-[4.3vw];
     }
@@ -263,5 +309,5 @@ export default {
         @apply text-[3.8vw];
     }
 
-
-}</style>
+}
+</style>

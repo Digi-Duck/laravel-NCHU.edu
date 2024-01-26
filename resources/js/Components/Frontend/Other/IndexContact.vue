@@ -6,36 +6,44 @@ export default {
         return {
             images: {
                 facebook, contact,
-            }
+            },
+            show: false,
         }
+    },
+    mounted() {
+        this.show = true;
     }
 }
 </script>
 <template>
     <main class="w-[90%] md:w-[80%] m-auto">
         <div class="contact">
-            <div class="frame-1">
-                <iframe class="w-[100%]"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3641.446104629765!2d120.67400941162171!3d24.1209667783293!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693d02fbdf00cf%3A0xca558b13873d5a59!2zNDAy5Y-w5Lit5biC5Y2X5Y2A6IiI5aSn6LevMTQ16Jmf!5e0!3m2!1szh-TW!2stw!4v1705892760083!5m2!1szh-TW!2stw"
-                    style="border:0;" allowfullscreen="" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-            <div class="con-right">
-                <div class=" con-img">
-                    <img :src="images.contact" alt="">
+            <Transition name="slide-fade-left">
+                <div v-if="show" class="frame-1">
+                    <iframe class="w-[100%]"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3641.446104629765!2d120.67400941162171!3d24.1209667783293!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693d02fbdf00cf%3A0xca558b13873d5a59!2zNDAy5Y-w5Lit5biC5Y2X5Y2A6IiI5aSn6LevMTQ16Jmf!5e0!3m2!1szh-TW!2stw!4v1705892760083!5m2!1szh-TW!2stw"
+                        style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
-                <iframe class="frame-2"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3641.446104629765!2d120.67400941162171!3d24.1209667783293!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693d02fbdf00cf%3A0xca558b13873d5a59!2zNDAy5Y-w5Lit5biC5Y2X5Y2A6IiI5aSn6LevMTQ16Jmf!5e0!3m2!1szh-TW!2stw!4v1705892760083!5m2!1szh-TW!2stw"
-                    style="border:0;" allowfullscreen="" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"></iframe>
-                <div class="con-r-b">
-                    <Link href="" class=""><img class="face" :src="images.facebook" alt=""></Link>
-                    <pre class="phone"><i class="fa-solid fa-phone mr-[11%]"></i> 04 2284 0455</pre>
-                    <pre class="mail"><i class="fa-solid fa-envelope mr-[11%] "></i> hello20131005@gmail.com</pre>
-                    <pre class="address"><i class="fa-solid fa-location-dot mr-[15%]"></i>40227台中市南區興大路145號</pre>
-                    <pre class="ps-[28%]">(綜合教學大樓8樓804、805室)</pre>
+            </Transition>
+            <Transition name="slide-fade-right">
+                <div v-if="show" class="con-right">
+                    <div class=" con-img">
+                        <img :src="images.contact" alt="">
+                    </div>
+                    <iframe class="frame-2"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3641.446104629765!2d120.67400941162171!3d24.1209667783293!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693d02fbdf00cf%3A0xca558b13873d5a59!2zNDAy5Y-w5Lit5biC5Y2X5Y2A6IiI5aSn6LevMTQ16Jmf!5e0!3m2!1szh-TW!2stw!4v1705892760083!5m2!1szh-TW!2stw"
+                        style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <div class="con-r-b">
+                        <Link href="" class=""><img class="face" :src="images.facebook" alt=""></Link>
+                        <pre class="phone"><i class="fa-solid fa-phone mr-[11%]"></i> 04 2284 0455</pre>
+                        <pre class="mail"><i class="fa-solid fa-envelope mr-[11%] "></i> hello20131005@gmail.com</pre>
+                        <pre class="address"><i class="fa-solid fa-location-dot mr-[15%]"></i>40227台中市南區興大路145號</pre>
+                        <pre class="ps-[28%]">(綜合教學大樓8樓804、805室)</pre>
+                    </div>
                 </div>
-            </div>
+            </Transition>
         </div>
     </main>
 </template>
@@ -106,6 +114,24 @@ iframe {
 
 .con-r-b {
     @apply w-[50%] pl-[6%] mt-[-10px];
+}
+
+.slide-fade-left-enter-active {
+    transition: all 1s ease-out;
+}
+
+.slide-fade-left-enter-from {
+    transform: translate(-300px);
+    opacity: 0;
+}
+
+.slide-fade-right-enter-active {
+    transition: all 1s ease-out;
+}
+
+.slide-fade-right-enter-from {
+    transform: translate(300px);
+    opacity: 0;
 }
 
 @media(max-width:1200px) {
@@ -223,4 +249,5 @@ iframe {
     .face {
         @apply h-[6vw];
     }
-}</style>
+}
+</style>

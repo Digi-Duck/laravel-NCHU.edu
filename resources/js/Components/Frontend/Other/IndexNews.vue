@@ -5,48 +5,62 @@ export default {
         return {
             images: {
                 latest,
-            }
+            },
+            show: false,
         }
+    },
+    mounted() {
+        this.show = true;
     }
 }
 </script>
 <template>
     <main class="w-[90%] md:w-[80%] m-auto">
-        <div class="w-[83%] m-auto">
-            <img :src="images.latest" alt="">
-            <Link class="more">了解更多</Link>
-            <div class="all-news">
-                <Link class="news">
-                <div>2023.01.01</div>
-                <div>包含職業訓練、兒童營隊、專業證照、運動課程</div>
-                <div><i class="fa-solid fa-arrow-right"></i></div>
-                </Link>
-                <Link class="news">
-                <div>2023.01.01</div>
-                <div>包含職業訓練、兒童營隊、專業證照、運動課程</div>
-                <div><i class="fa-solid fa-arrow-right"></i></div>
-                </Link>
-                <Link class="news">
-                <div>2023.01.01</div>
-                <div>包含職業訓練、兒童營隊、專業證照、運動課程</div>
-                <div><i class="fa-solid fa-arrow-right"></i></div>
-                </Link>
-                <Link class="news">
-                <div>2023.01.01</div>
-                <div>包含職業訓練、兒童營隊、專業證照、運動課程</div>
-                <div><i class="fa-solid fa-arrow-right"></i></div>
-                </Link>
-                <Link class="news">
-                <div>2023.01.01</div>
-                <div>包含職業訓練、兒童營隊、專業證照、運動課程</div>
-                <div><i class="fa-solid fa-arrow-right"></i></div>
-                </Link>
-            </div>
+        <div class="all">
+            <Transition name="slide-fade-left">
+                <img v-if="show" :src="images.latest" alt="">
+            </Transition>
+            <Transition name="slide-fade-up">
+                <div v-if="show">
+                    <Link class="more">了解更多</Link>
+                    <div class="all-news">
+                        <Link class="news">
+                        <div>2023.01.01</div>
+                        <div>包含職業訓練、兒童營隊、專業證照、運動課程</div>
+                        <div><i class="fa-solid fa-arrow-right"></i></div>
+                        </Link>
+                        <Link class="news">
+                        <div>2023.01.01</div>
+                        <div>包含職業訓練、兒童營隊、專業證照、運動課程</div>
+                        <div><i class="fa-solid fa-arrow-right"></i></div>
+                        </Link>
+                        <Link class="news">
+                        <div>2023.01.01</div>
+                        <div>包含職業訓練、兒童營隊、專業證照、運動課程</div>
+                        <div><i class="fa-solid fa-arrow-right"></i></div>
+                        </Link>
+                        <Link class="news">
+                        <div>2023.01.01</div>
+                        <div>包含職業訓練、兒童營隊、專業證照、運動課程</div>
+                        <div><i class="fa-solid fa-arrow-right"></i></div>
+                        </Link>
+                        <Link class="news">
+                        <div>2023.01.01</div>
+                        <div>包含職業訓練、兒童營隊、專業證照、運動課程</div>
+                        <div><i class="fa-solid fa-arrow-right"></i></div>
+                        </Link>
+                    </div>
+                </div>
 
+            </Transition>
         </div>
     </main>
 </template>
 <style scoped>
+.all {
+    @apply w-[83%] m-auto;
+}
+
 .title {
     @apply w-[32%] h-[252px] text-[95px] font-[700] pt-[10px] flex flex-col;
 }
@@ -85,6 +99,24 @@ img {
     @apply text-[#0057ff] duration-500;
 }
 
+.slide-fade-left-enter-active {
+    transition: all 1s ease-out;
+}
+
+.slide-fade-left-enter-from {
+    transform: translate(-300px);
+    opacity: 0;
+}
+
+.slide-fade-up-enter-active {
+    transition: all 1s ease-out;
+}
+
+.slide-fade-up-enter-from {
+    transform: translate(0px, 100px);
+    opacity: 0;
+}
+
 @media(max-width:768px) {
     img {
         @apply w-[25vw] ms-[-10%];
@@ -104,6 +136,10 @@ img {
 }
 
 @media(max-width:500px) {
+    .all {
+        @apply w-[90%];
+    }
+
     img {
         @apply w-[40vw] m-auto;
     }
@@ -123,4 +159,5 @@ img {
     i {
         @apply hidden;
     }
-}</style>
+}
+</style>

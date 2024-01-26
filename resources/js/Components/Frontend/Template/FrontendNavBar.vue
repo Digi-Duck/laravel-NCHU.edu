@@ -10,6 +10,7 @@ export default {
                 smallLogo,
             },
             flag: false,
+            drop:false,
         };
     },
     methods: {
@@ -25,7 +26,6 @@ export default {
         //         return this.images.logo;
         //     }
         // },
-
     }
 };
 </script>
@@ -150,11 +150,9 @@ export default {
 }
 
 .logo {
-    width: 98px;
-    height: 40px;
+    @apply w-[98px] h-[40px] mr-auto;
     background-size: contain;
     background-repeat: no-repeat;
-    margin-right: auto;
 }
 
 .fun-menu {
@@ -181,11 +179,8 @@ export default {
 }
 
 .ham-menu {
-    width: 28px;
-    height: 24px;
+    @apply w-[28px] h-[24px] block relative;
     background-color: transparent;
-    display: block;
-    position: relative;
 }
 
 .ham-menu .line {
@@ -199,13 +194,12 @@ export default {
 }
 
 .ham {
-    @apply w-[200px] text-[18px] bg-[#0057FF] absolute top-[60px] right-[-200px] text-white flex flex-col items-center gap-[20px] pt-[20px] z-[3] rounded-bl-[300px];
-    transition: 1s;
+    @apply w-[200px] text-[white] bg-[#0057FF] absolute top-[60px] right-[-200px] flex flex-col items-center gap-[20px] pt-[20px] z-[-1] rounded-bl-[300px] truncate;
+    transition: 0.7s;
     height: calc(100vh - 60px);
 }
-
 .ham .sub-dropdown-menu {
-    @apply text-[14px] ml-[1px] truncate;
+    @apply text-[14px] truncate;
 }
 
 .ham .sub-dropdown-menu li {
@@ -285,13 +279,9 @@ export default {
     width: 100%;
     height: calc(100vh - 60px);
     position: absolute;
-    z-index: 2;
+    z-index: -2;
     background-color: black;
     opacity: 0.5;
-}
-
-@media(max-width:1400px) {
-
 }
 
 @media(max-width:768px) {
@@ -308,16 +298,18 @@ export default {
     .menu {
         @apply m-0 justify-between;
     }
-    .menu ul{
+
+    .menu ul {
         @apply w-[60%] justify-between;
     }
+
     .menu ul li {
         font-size: 14px;
         margin: 0px;
     }
 
     .ham {
-        @apply w-[180px] h-[80vh] text-[16px] pl-[10px] right-[-200px];
+        @apply w-0 h-0 text-[16px] p-0;
     }
 
     .ham .sub-dropdown-menu {
@@ -339,16 +331,22 @@ export default {
     .fa-solid {
         @apply text-[10px];
     }
+    .active{
+        @apply w-[180px] h-[80vh] pl-[10px] pt-[20px];
+    }
 }
 
 @media(max-width:500px) {
-    .ham{
-        @apply w-[100%] h-auto text-[18px] right-0  text-white flex flex-col items-center gap-[20px] py-[20px] z-[3] rounded-bl-[0px];
-        top:-161px;
+    .ham {
+        @apply w-[100%] h-auto text-[18px] right-0 text-white flex flex-col items-center gap-[20px] p-0 z-[-1] rounded-bl-[0px];
+        top: -261px;
     }
+
     .active {
-    transform: translate(0, 221px);
-}
+        @apply py-[20px];
+        transform: translate(0, 321px);
+    }
+
     .logo {
         @apply hidden;
     }
@@ -360,11 +358,24 @@ export default {
         margin: auto;
         transform: translate(50%, 0%);
     }
-    .list li{
+
+    .ham label {
+        @apply ml-[5px];
+    }
+
+    .ham .sub-dropdown-menu {
+        @apply text-[12px] flex flex-col ml-[15px];
+    }
+
+    .list li {
         @apply border-b-[1px] border-[white];
     }
+
     .menu ul {
         display: none;
     }
-}
-</style>
+
+    .mask {
+        @apply z-[-2];
+    }
+}</style>
