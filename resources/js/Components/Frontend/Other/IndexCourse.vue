@@ -62,12 +62,12 @@ export default {
         <div class="hidden-on-desktop flex justify-center items-center mb-[5%]">
             <section class=" w-[90vw] py-[3%] flex flex-col justify-center items-center overflow-hidden "
                 @mouseleave="resetCards">
-                <div class="  mb-[8vw]  w-[45.7vw]  2sm:ml-[58vw] 2sm:mb-[2vw] 2sm:w-[27.97vw] 2sm:h-[18.51vw]">
+                <div class="  mb-[18vw]  w-[45.7vw] h-[20.51vw]  2md:ml-[58vw] 2md:mb-[2vw] 2md:w-[27.97vw] ">
                     <img :src="imgs.laptopCourse" alt="">
                 </div>
                 <div class="card-tip"><i class="fa-solid fa-arrow-left"></i> 左右滑動圖片 <i class="fa-solid fa-arrow-right"></i>
                 </div>
-                <div class=" w-[118.8vw] h-[85.8vw] 2sm:w-[90vw] 2sm:h-[45vw] ">
+                <div class=" w-[118.8vw] h-[60.8vw] 2sm:w-[90vw] 2sm:h-[45vw] ">
                     <swiper class=" swiper  ml-[16.24vw]  2sm:ml-[11vw] h-[70vw]  relative" :effect="'cards'"
                         :grabCursor="true" :modules="modules" :loop="true">
                         <swiper-slide v-for="(card, index) in cards" :key="index" class="swiper-slide"
@@ -168,7 +168,7 @@ export default {
 </template>
 <style scoped>
 .swiper {
-@apply w-[75.26vw] h-[59.95vw]
+@apply w-[71vw] h-[57.95vw]
 2sm:w-[67.35vw] 2sm:h-[44.15vw];
 }
 .swiper-slide{
