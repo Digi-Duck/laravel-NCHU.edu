@@ -1,11 +1,13 @@
 <script>
 import FrontendLayout from '@/Layouts/FrontendLayout.vue';
 import BannerLayout from '@/Layouts/BannerLayout.vue';
+import Information from '@/Components/Frontend/Other/Information.vue';
 
 export default {
     components: {
         FrontendLayout,
         BannerLayout,
+        Information,
     },
     data() {
 
@@ -16,7 +18,7 @@ export default {
     <FrontendLayout>
         <BannerLayout>
             <div>
-                footer的那個網站資訊
+                <Information />
             </div>
         </BannerLayout>
     </FrontendLayout>
