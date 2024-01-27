@@ -15,8 +15,8 @@ export default {
 <template>
     <FrontendLayout>
         <BannerLayout>
-            <div class="test-card">
-                1234
+            <div >
+                關於我們的頁面
             </div>
         </BannerLayout>
     </FrontendLayout>

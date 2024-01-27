@@ -29,7 +29,3 @@
 .backend-table-td {
   @apply border border-gray-700 px-2 py-2;
 }
-
-.test-card{
-    @apply w-[100px] h-[100px] bg-red-300/50;
-}

@@ -16,7 +16,7 @@ export default {
     <FrontendLayout>
         <BannerLayout>
             <div>
-                
+                footer的那個網站資訊
             </div>
         </BannerLayout>
     </FrontendLayout>

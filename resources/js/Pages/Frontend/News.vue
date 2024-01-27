@@ -16,7 +16,7 @@ export default {
     <FrontendLayout>
         <BannerLayout>
             <div>
-
+                新聞的頁面
             </div>
         </BannerLayout>
     </FrontendLayout>
