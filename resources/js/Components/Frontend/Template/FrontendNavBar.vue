@@ -44,7 +44,7 @@ export default {
                         <Link :href="route('about.index')">關於我們</Link>
                     </li>
                     <li>
-                        <Link href="">課程資訊</Link>
+                        <Link :href="route('all.course')">課程資訊</Link>
                     </li>
                     <li>
                         <Link href="">最新消息</Link>
@@ -94,25 +94,25 @@ export default {
                     </li>
                     <ul class="sub-dropdown-menu sub-2">
                         <li>
-                            <Link href="">全部課程</Link>
+                            <Link :href="route('all.course')">全部課程</Link>
                         </li>
                         <li>
-                            <Link href="">最新課程</Link>
+                            <Link :href="route('latest.course')">最新課程</Link>
                         </li>
                         <li>
-                            <Link href="">兒童營隊</Link>
+                            <Link :href="route('child.course')">兒童營隊</Link>
                         </li>
                         <li>
-                            <Link href="">單元手作</Link>
+                            <Link :href="route('diy.course')">單元手作</Link>
                         </li>
                         <li>
-                            <Link href="">運動課程</Link>
+                            <Link :href="route('sport.course')">運動課程</Link>
                         </li>
                         <li>
-                            <Link href="">職業訓練</Link>
+                            <Link :href="route('train.course')">職業訓練</Link>
                         </li>
                         <li>
-                            <Link href="">專業證照</Link>
+                            <Link :href="route('major.course')">專業證照</Link>
                         </li>
                     </ul>
                 </label>
