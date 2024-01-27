@@ -15,7 +15,7 @@ export default {
 </script>
 
 <template>
-    <footer class="w-[100%]  flex bg-slate-400 justify-center ">
+    <footer class="w-[100%]  flex justify-center ">
         <div class="main w-[64%]">
             <div class="top">
                 <div class="top-left">
