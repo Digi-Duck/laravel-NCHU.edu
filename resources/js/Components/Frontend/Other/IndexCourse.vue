@@ -293,25 +293,25 @@ export default {
 .card-title {
     @apply text-[4.54vw]
     /* 變版 */
-    2sm:text-[3.54vw]
+    2md:text-[3.54vw]
     /* 變版||原版 */
     md:text-[1.97vw] font-bold text-[#ffffff];
     font-family: 'Noto Sans TC', sans-serif;
 }
 
 .card-tag {
-    @apply bg-[#ffffff] text-[2.25vw] mr-[1.19vw] px-[2.39vw] py-[0.93vw] mt-[1.79vw]
+    @apply bg-[#ffffff] text-[1.6vw] mr-[1.19vw] px-[2.39vw] py-[0.93vw] mt-[1.79vw]
     /* 變版 */
-    2sm:text-[1.76vw] 2sm:mr-[0.93vw] 2sm:px-[1.87vw] 2sm:py-[0.73vw] 2sm:mt-[1.4vw]
+    2md:text-[1.76vw] 2md:mr-[0.93vw] 2md:px-[1.87vw] 2md:py-[0.73vw] 2md:mt-[1.4vw]
     /* 變版||原版 */
     md:text-[0.98vw] md:mr-[0.52vw] md:px-[1.04vw] md:py-[0.41vw] md:mt-[0.78vw] font-bold rounded-full;
     font-family: 'Inter', sans-serif;
 }
 
 .card-type {
-    @apply w-[16.37vw] py-[0.92vw] text-[2.25vw] mb-[1.88vw]
+    @apply w-[16.37vw] py-[0.92vw] text-[2vw] mb-[1.88vw]
     /* 變版 */
-    2sm:w-[12.79vw] 2sm:py-[0.72vw] 2sm:text-[1.76vw] 2sm:mb-[1.47vw]
+    2md:w-[12.79vw] 2md:py-[0.72vw] 2md:text-[1.76vw] 2md:mb-[1.47vw]
     /* 變版||原版 */
     md:w-[7.11vw] md:py-[0.40vw] md:text-[0.98vw] md:mb-[0.82vw] text-white border-white border-2 border-solid rounded-full font-semibold flex justify-center items-center;
     font-family: 'Inter', sans-serif;
