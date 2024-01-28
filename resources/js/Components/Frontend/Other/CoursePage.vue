@@ -67,7 +67,7 @@ export default {
                 <option>專業證照</option>
             </select>
         </div>
-        <div class="w-[90%] md:w-[80%] m-auto py-[1%]  flex gap-[3%] flex-wrap justify-center">
+        <div class="w-[90%]  ml-[13.8vw] 2sm:ml-[7.2vw] md:ml-[10.5vw] md:w-[80%]  py-[1%]  flex gap-[3%] flex-wrap justify-start">
             <div v-for="course in courses" :key="course.id" class="flex 2sm:flex-col bg-[#ffffff] w-[55vw] mb-[2.5vw] 2sm:w-[22vw] 2sm:h-[29.72vw] 2sm:mb-[2.5vw]
             md:mb-[1.5vw] md:w-[14.32vw] md:h-[19.06vw]">
                 <div class=" w-[22vw] h-[14.34vw] md:w-[14.32vw] md:h-[9.37vw]">
@@ -82,9 +82,6 @@ export default {
                     <div class="flex  ml-auto mt-auto mb-[1.04vw] px-[0.78vw] card-more"><a :href="course.link">了解更多 <i class="fa-solid fa-arrow-right"></i></a></div>
                 </div>
             </div>
-            <div class="flex flex-col bg-[#ffffff] z-[-1] w-[22vw] h-[29.72vw] md:w-[14.32vw] md:h-[19.06vw] opacity-0"></div>
-            <div class="flex flex-col bg-[#ffffff] z-[-1] w-[22vw] h-[29.72vw] md:w-[14.32vw] md:h-[19.06vw] opacity-0"></div>
-            <div class="flex flex-col bg-[#ffffff] z-[-1] w-[22vw] h-[29.72vw] md:w-[14.32vw] md:h-[19.06vw] opacity-0"></div>
         </div>
     </div>
 </template>
