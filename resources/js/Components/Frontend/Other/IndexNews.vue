@@ -24,27 +24,27 @@ export default {
                 <div v-if="show">
                     <Link class="more">了解更多</Link>
                     <div class="all-news">
-                        <Link class="news">
+                        <Link class="news" href="">
                         <div>2023.01.01</div>
                         <div>包含職業訓練、兒童營隊、專業證照、運動課程</div>
                         <div><i class="fa-solid fa-arrow-right"></i></div>
                         </Link>
-                        <Link class="news">
+                        <Link class="news" href="">
                         <div>2023.01.01</div>
                         <div>包含職業訓練、兒童營隊、專業證照、運動課程</div>
                         <div><i class="fa-solid fa-arrow-right"></i></div>
                         </Link>
-                        <Link class="news">
+                        <Link class="news" href="">
                         <div>2023.01.01</div>
                         <div>包含職業訓練、兒童營隊、專業證照、運動課程</div>
                         <div><i class="fa-solid fa-arrow-right"></i></div>
                         </Link>
-                        <Link class="news">
+                        <Link class="news" href="">
                         <div>2023.01.01</div>
                         <div>包含職業訓練、兒童營隊、專業證照、運動課程</div>
                         <div><i class="fa-solid fa-arrow-right"></i></div>
                         </Link>
-                        <Link class="news">
+                        <Link class="news" href="">
                         <div>2023.01.01</div>
                         <div>包含職業訓練、兒童營隊、專業證照、運動課程</div>
                         <div><i class="fa-solid fa-arrow-right"></i></div>
@@ -71,16 +71,6 @@ img {
 
 .title span {
     @apply text-[53%] font-[800];
-}
-
-.title .arrow {
-    position: relative;
-}
-
-.title .arrow::after {
-    content: "";
-    @apply absolute top-[75%] left-[-5%] w-[120px] h-[110px] bg-no-repeat bg-right bg-[length:85px_85px];
-    background-image: url('/images/banner/blue-row.png');
 }
 
 .more {

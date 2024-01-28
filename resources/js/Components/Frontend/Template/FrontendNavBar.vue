@@ -10,22 +10,28 @@ export default {
                 smallLogo,
             },
             flag: false,
-            drop:false,
+            about: false,
+            lesson: false,
+            news: false,
+            screenWidth: false
         };
+    },
+    mounted() {
+        this.checkScreenWidth();
+        window.addEventListener('resize', this.checkScreenWidth);
     },
     methods: {
         check() {
             const ease = document.querySelector('.ham');
             ease.classList.toggle('active');
             this.flag = !this.flag;
+            this.about = false;
+            this.lesson = false;
+            this.news = false;
         },
-        // logoChange(){
-        //     if (window.innerWidth <= 500){
-        //         return this.images.smallLogo;
-        //     } else{
-        //         return this.images.logo;
-        //     }
-        // },
+        checkScreenWidth() {
+            this.screenWidth = window.innerWidth > 500;
+        }
     }
 };
 </script>
@@ -34,8 +40,7 @@ export default {
     <nav class="fixed w-[100%] z-[4] top-0">
         <div class="all">
             <div class="menu">
-                <img class="logo" :src="images.logo" alt="">
-                <img class="small-logo" :src="images.smallLogo" alt="">
+                <img class="logo" :src="screenWidth ? images.logo : images.smallLogo" alt="">
                 <ul class="list">
                     <li>
                         <Link href="/">首頁</Link>
@@ -47,27 +52,25 @@ export default {
                         <Link :href="route('all.course')">課程資訊</Link>
                     </li>
                     <li>
-                        <Link href="">最新消息</Link>
+                        <Link :href="route('news.index')">最新消息</Link>
                     </li>
                 </ul>
                 <div class="fun-menu">
-                    <input id="ham-menu-switch" type="checkbox" @click="check()">
-                    <label for="ham-menu-switch" class="ham-menu">
-                        <div class="line line-1"></div>
-                        <div class="line line-2"></div>
-                        <div class="line line-3"></div>
+                    <label for="ham-menu-switch" class="ham-menu" @click="check()">
+                        <div class="line line-1" :class="{ 'act': flag }"></div>
+                        <div v-if="!flag" class="line line-2"></div>
+                        <div class="line line-3" :class="{ 'act': flag }"></div>
                     </label>
                 </div>
             </div>
             <ul class="ham">
-                <input type="checkbox" id="chevron-switch-1" class="chevron-switch hidden">
-                <label for="chevron-switch-1" class="chevron-label">
+                <label for="chevron-switch-1" class="chevron-label" @click="about = !about">
                     <li class="ham-list">
                         <span>關於我們</span> &nbsp
-                        <i class="fa-solid fa-chevron-down"></i>
-                        <i class="fa-solid fa-chevron-up hidden"></i>
+                        <i class="fa-solid fa-chevron-down" :style="{ 'display': about ? 'none' : 'inline-block' }"></i>
+                        <i class="fa-solid fa-chevron-up" :style="{ 'display': about ? 'inline-block' : 'none' }"></i>
                     </li>
-                    <ul class="sub-dropdown-menu">
+                    <ul class="sub-dropdown-menu" :class="{ 'sub-1': about, 'sub': !about }">
                         <li>
                             <Link href="">單位介紹</Link>
                         </li>
@@ -85,14 +88,13 @@ export default {
                         </li>
                     </ul>
                 </label>
-                <input type="checkbox" id="chevron-switch-2" class="chevron-switch hidden">
-                <label for="chevron-switch-2" class="chevron-label">
+                <label for="chevron-switch-2" class="chevron-label" @click="lesson = !lesson">
                     <li class="ham-list">
                         <span>課程資訊</span> &nbsp
-                        <i class="fa-solid fa-chevron-down"></i>
-                        <i class="fa-solid fa-chevron-up hidden"></i>
+                        <i class="fa-solid fa-chevron-down" :style="{ 'display': lesson ? 'none' : 'inline-block' }"></i>
+                        <i class="fa-solid fa-chevron-up" :style="{ 'display': lesson ? 'inline-block' : 'none' }"></i>
                     </li>
-                    <ul class="sub-dropdown-menu sub-2">
+                    <ul class="sub-dropdown-menu" :class="{ 'sub-2': lesson, 'sub': !lesson }">
                         <li>
                             <Link :href="route('all.course')">全部課程</Link>
                         </li>
@@ -116,14 +118,13 @@ export default {
                         </li>
                     </ul>
                 </label>
-                <input type="checkbox" id="chevron-switch-3" class="chevron-switch hidden">
-                <label for="chevron-switch-3" class="chevron-label">
+                <label for="chevron-switch-3" class="chevron-label" @click="news = !news">
                     <li class="ham-list">
                         <span>消息資訊</span> &nbsp
-                        <i class="fa-solid fa-chevron-down"></i>
-                        <i class="fa-solid fa-chevron-up hidden"></i>
+                        <i class="fa-solid fa-chevron-down" :style="{ 'display': news ? 'none' : 'inline-block' }"></i>
+                        <i class="fa-solid fa-chevron-up" :style="{ 'display': news ? 'inline-block' : 'none' }"></i>
                     </li>
-                    <ul class="sub-dropdown-menu">
+                    <ul class="sub-dropdown-menu" :class="{ 'sub-3': news, 'sub': !news }">
                         <li>
                             <Link href="">本週消息</Link>
                         </li>
@@ -150,17 +151,11 @@ export default {
 }
 
 .logo {
-    @apply w-[98px] h-[40px] mr-auto;
-    background-size: contain;
-    background-repeat: no-repeat;
+    @apply w-[98px] h-[40px] mr-auto bg-contain bg-no-repeat;
 }
 
 .fun-menu {
     @apply w-[28px] flex items-center;
-}
-
-.small-logo {
-    @apply hidden;
 }
 
 .list {
@@ -172,32 +167,25 @@ export default {
 }
 
 .menu ul li {
-    font-size: 16px;
-    color: #4f4f4f;
-    margin-right: 55px;
-    font-weight: 900;
+    @apply text-[16px] text-[#4f4f4f] font-[900] mr-[55px];
 }
 
 .ham-menu {
-    @apply w-[28px] h-[24px] block relative;
-    background-color: transparent;
+    @apply w-[28px] h-[24px] bg-transparent block relative;
 }
 
 .ham-menu .line {
-    width: 22px;
-    height: 1px;
-    background-color: black;
-    position: absolute;
-    left: 50%;
+    @apply w-[22px] h-[1px] bg-black absolute left-[50%];
     transform: translate(-50%, -50%);
     transition: 0.7s;
 }
 
 .ham {
-    @apply w-[200px] text-[white] bg-[#0057FF] absolute top-[60px] right-[-200px] flex flex-col items-center gap-[20px] pt-[20px] z-[-1] rounded-bl-[300px] truncate;
+    @apply w-[200px] text-[18px] text-[white] bg-[#0057FF] absolute top-[60px] right-[-200px] flex flex-col items-center gap-[20px] pt-[20px] z-[-1] rounded-bl-[300px] truncate;
     transition: 0.7s;
     height: calc(100vh - 60px);
 }
+
 .ham .sub-dropdown-menu {
     @apply text-[14px] truncate;
 }
@@ -210,31 +198,20 @@ export default {
     @apply ml-[10px];
 }
 
-.chevron-switch:checked+label li i:nth-of-type(1) {
-    display: none;
-}
-
-.chevron-switch:checked+label li i:nth-of-type(2) {
-    display: inline-block;
-}
-
-.chevron-switch:checked+label .sub-dropdown-menu {
+.sub-1,
+.sub-3 {
     height: 160px;
     transition: 0.5s;
 }
 
-.chevron-switch:checked+label .sub-2 {
+.sub-2 {
     height: 220px;
     transition: 0.5s;
 }
 
-.chevron-switch:not(:checked)+label .sub-dropdown-menu {
+.sub {
     height: 0;
     transition: 0.5s;
-}
-
-.chevron-label {
-    @apply flex flex-col;
 }
 
 .fa-solid {
@@ -257,20 +234,13 @@ export default {
     top: 17.5px;
 }
 
-#ham-menu-switch {
-    display: none;
-}
 
-#ham-menu-switch:checked+.ham-menu .line-1 {
+.line-1.act {
     transform: translate(-50%, -50%) rotate(45deg);
     top: 50%;
 }
 
-#ham-menu-switch:checked+.ham-menu .line-2 {
-    display: none;
-}
-
-#ham-menu-switch:checked+.ham-menu .line-3 {
+.line-3.act {
     transform: translate(-50%, -50%) rotate(-45deg);
     top: 50%;
 }
@@ -290,9 +260,7 @@ export default {
     }
 
     .logo {
-        width: 86px;
-        height: 32px;
-        margin: 0;
+        @apply w-[86px] h-[32px] m-0;
     }
 
     .menu {
@@ -316,66 +284,74 @@ export default {
         @apply text-[12px];
     }
 
-    .chevron-switch:checked+label .sub-dropdown-menu {
-        @apply h-[120px];
+    .sub-1,
+    .sub-3 {
+        @apply h-[140px];
     }
 
-    .chevron-switch:checked+label .sub-2 {
+    .sub-2 {
         @apply h-[200px];
     }
 
     .ham label {
-        @apply ml-[-10px];
+        @apply ml-[0px] pr-[10px];
     }
 
     .fa-solid {
         @apply text-[10px];
     }
-    .active{
+
+    .active {
         @apply w-[180px] h-[80vh] pl-[10px] pt-[20px];
     }
 }
 
 @media(max-width:500px) {
     .ham {
-        @apply w-[100%] h-auto text-[18px] right-0 text-white flex flex-col items-center gap-[20px] p-0 z-[-1] rounded-bl-[0px];
+        @apply w-[100%] h-auto text-[18px] right-0 text-white gap-0 p-0 rounded-bl-[0px];
         top: -261px;
     }
 
+    .ham-list {
+        @apply text-center pl-[20px] py-[10px] border-y-[1px] border-white;
+    }
+
     .active {
-        @apply py-[20px];
         transform: translate(0, 321px);
     }
 
     .logo {
-        @apply hidden;
-    }
-
-    .small-logo {
-        width: 28px;
-        height: 30px;
-        display: block;
-        margin: auto;
+        @apply w-[28px] h-[30px] block m-auto;
         transform: translate(50%, 0%);
     }
 
     .ham label {
-        @apply ml-[5px];
+        @apply w-full pr-0;
     }
 
     .ham .sub-dropdown-menu {
-        @apply text-[12px] flex flex-col ml-[15px];
+        @apply text-[14px] flex flex-col items-center;
     }
 
-    .list li {
-        @apply border-b-[1px] border-[white];
+    .sub-1,
+    .sub-2,
+    .sub-3 {
+        @apply mb-[10px];
+    }
+
+    .sub-1 {
+        @apply h-[160px];
+    }
+
+    .sub-2 {
+        @apply h-[230px];
+    }
+
+    .sub-3 {
+        @apply h-[130px];
     }
 
     .menu ul {
         display: none;
-    }
-
-    .mask {
-        @apply z-[-2];
     }
 }</style>

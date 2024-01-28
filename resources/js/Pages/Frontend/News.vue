@@ -1,11 +1,13 @@
 <script>
 import FrontendLayout from '@/Layouts/FrontendLayout.vue';
 import BannerLayout from '@/Layouts/BannerLayout.vue';
+import News from '@/Components/Frontend/Other/NewsPage.vue';
 
 export default {
     components: {
         FrontendLayout,
         BannerLayout,
+        News,
     },
     data() {
 
@@ -16,7 +18,7 @@ export default {
     <FrontendLayout>
         <BannerLayout>
             <div>
-                新聞的頁面
+                <News />
             </div>
         </BannerLayout>
     </FrontendLayout>

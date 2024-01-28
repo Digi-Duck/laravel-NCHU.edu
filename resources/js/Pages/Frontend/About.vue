@@ -1,14 +1,20 @@
 <script>
 import FrontendLayout from '@/Layouts/FrontendLayout.vue';
 import BannerLayout from '@/Layouts/BannerLayout.vue';
+import About from '@/Components/Frontend/Other/AboutPage.vue';
 
 export default {
     components: {
         FrontendLayout,
         BannerLayout,
+        About,
     },
     data() {
+        return{
+            images:{
 
+            }
+        }
     }
 }
 </script>
@@ -16,7 +22,7 @@ export default {
     <FrontendLayout>
         <BannerLayout>
             <div >
-                關於我們的頁面
+                <About />
             </div>
         </BannerLayout>
     </FrontendLayout>

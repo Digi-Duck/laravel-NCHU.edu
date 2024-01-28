@@ -49,8 +49,7 @@ export default {
 </template>
 <style scoped>
 .contact {
-    @apply flex justify-center gap-[5vw] items-center;
-    height: calc(100vh - 60px);
+    @apply flex justify-center gap-[5vw] items-center my-[15vw];
 }
 
 .frame-1 {
@@ -153,10 +152,6 @@ iframe {
 }
 
 @media(max-width:768px) {
-    .contact {
-        height: calc(60vh - 60px);
-    }
-
     .con-right {
         @apply mt-[-50px];
     }
@@ -200,7 +195,6 @@ iframe {
 
 @media (max-width:500px) {
     .contact {
-        height: calc(100vh - 60px);
         @apply w-[100%];
     }
 

@@ -1,7 +1,29 @@
-<script></script>
+<script>
+import bannerPC from '/images/banner/bannerPC.svg';
+import bannerPhone from '/images/banner/bannerPhone.svg';
+export default {
+    data() {
+        return {
+            images: {
+                bannerPC, bannerPhone,
+            },
+            screenWidth:false,
+        }
+    },
+    mounted() {
+        this.checkScreenWidth();
+        window.addEventListener('resize', this.checkScreenWidth);
+    },
+    methods: {
+        checkScreenWidth() {
+            this.screenWidth = window.innerWidth > 375;
+        }
+    }
+}
+</script>
 <template>
-    <div>
-<div class="bg-red-500 w-full h-[528px]"></div>
-<slot></slot>
+    <div class="mt-[60px]">
+        <div class="w-full"><img class="w-full" :src="screenWidth ? images.bannerPC : images.bannerPhone" alt=""></div>
+        <slot></slot>
     </div>
 </template>
