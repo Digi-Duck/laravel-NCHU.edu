@@ -30,7 +30,7 @@ export default {
         'main-yellow': '#FFFAAB',
       },
       screens: {
-        '2sm':'376px',
+        '2sm':'377px',
         'sm':'640px',
         '2md':'500px',
         'md':'768px',

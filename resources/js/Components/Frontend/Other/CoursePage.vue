@@ -54,8 +54,9 @@ export default {
 }
 </script>
 <template>
-    <div class="w-[85%] h-[100vh] m-auto flex justify-center flex-col">
-        <div class="">
+    <div class="w-[85%]  m-auto flex  flex-col">
+        <div class="title w-[100%] ">網站資訊</div>
+        <div class="w-[90%] md:w-[80%] m-auto">
             <select v-model="selectedCourse.title" class="w-full cursor-pointer ">
                 <option>全部課程</option>
                 <option>最新課程</option>
@@ -66,37 +67,42 @@ export default {
                 <option>專業證照</option>
             </select>
         </div>
-        <div class="w-full h-[80%] py-[4%]  flex gap-[3%] flex-wrap justify-center">
-            <div v-for="course in courses" :key="course.id" class="flex flex-col bg-[#ffffff] w-[22%] h-[55%]">
-                <div class=" h-[195px]">
+        <div class="w-[90%] md:w-[80%] m-auto py-[1%]  flex gap-[3%] flex-wrap justify-center">
+            <div v-for="course in courses" :key="course.id" class="flex 2sm:flex-col bg-[#ffffff] w-[55vw] mb-[2.5vw] 2sm:w-[22vw] 2sm:h-[29.72vw] 2sm:mb-[2.5vw]
+            md:mb-[1.5vw] md:w-[14.32vw] md:h-[19.06vw]">
+                <div class=" w-[22vw] h-[14.34vw] md:w-[14.32vw] md:h-[9.37vw]">
                     <img class="w-full" :src="img.fake" alt="">
                 </div>
-                <div class="flex flex-col justify-start items-start h-[52%] px-[6%] pt-[10%]">
-                    <h1 class="card-name">{{ course.name }}</h1>
+                <div class="flex flex-col justify-start items-start h-[100%] w-[33vw] 2sm:w-[22vw] md:w-[14.32vw] px-[1.6vw] pt-[1.3vw] md:px-[0.78vw] md:pt-[0.52vw]">
+                    <h1 class="card-name ">{{ course.name }}</h1>
                     <ul>
-                        <li class="card-text">課程日期 | {{ course.start_time }} </li>
-                        <li class="card-text">課程價格 | ${{ course.price }}</li>
+                        <li class="card-text ">課程日期 | {{ course.start_time }} </li>
+                        <li class="card-text ">課程價格 | ${{ course.price }}</li>
                     </ul>
+                    <div class="flex  ml-auto mt-auto mb-[1.04vw] px-[0.78vw] card-more"><a :href="course.link">了解更多 <i class="fa-solid fa-arrow-right"></i></a></div>
                 </div>
-                <div class="flex justify-end mt-auto mb-[20px] px-[6%] card-more"><a :href="course.link">了解更多 <i class="fa-solid fa-arrow-right"></i></a></div>
             </div>
-            <div class="flex flex-col bg-[#ffffff] w-[22%] h-[55%] opacity-0"></div>
-            <div class="flex flex-col bg-[#ffffff] w-[22%] h-[55%] opacity-0"></div>
-            <div class="flex flex-col bg-[#ffffff] w-[22%] h-[55%] opacity-0"></div>
+            <div class="flex flex-col bg-[#ffffff] z-[-1] w-[22vw] h-[29.72vw] md:w-[14.32vw] md:h-[19.06vw] opacity-0"></div>
+            <div class="flex flex-col bg-[#ffffff] z-[-1] w-[22vw] h-[29.72vw] md:w-[14.32vw] md:h-[19.06vw] opacity-0"></div>
+            <div class="flex flex-col bg-[#ffffff] z-[-1] w-[22vw] h-[29.72vw] md:w-[14.32vw] md:h-[19.06vw] opacity-0"></div>
         </div>
     </div>
 </template>
 <style scoped>
+.title {
+    @apply text-[6.7vw] 2sm:text-[5.38vw] md:text-[3.38vw] font-bold;
+    font-family: 'Inter', sans-serif;
+}
 .card-name{
-    @apply text-[22px] font-black text-[#0057ff] ;
+    @apply text-[2.6vw] 2sm:text-[1.92vw]  md:text-[1.2vw] font-black text-[#0057ff] ;
     font-family: 'Noto Sans TC', sans-serif;
 }
 .card-text{
-    @apply text-[18] font-medium text-[#00000] mt-[10px] tracking-[1.5px];
+    @apply text-[1.68vw]  2sm:text-[1.28vw]  md:text-[0.8vw] font-medium text-[#00000] mt-[0.50.8vw] tracking-[1.5px];
     font-family: 'Noto Sans TC', sans-serif;
 }
 .card-more{
-    @apply text-[16px] text-[#0057ff] font-bold ;
+    @apply text-[1.68vw] 2sm:text-[1.28vw]  md:text-[0.8vw] text-[#0057ff] font-bold ;
     font-family: 'Inter', sans-serif;
 }
 </style>

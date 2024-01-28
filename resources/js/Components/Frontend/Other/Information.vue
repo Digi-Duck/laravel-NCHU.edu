@@ -22,7 +22,7 @@ export default {
 <template>
     <div class="w-[100%] flex justify-center">
         <div class="main w-[67%]">
-            <div class="title w-[100%] font-bold">網站資訊</div>
+            <div class="title w-[100%] font-bold">課程資訊</div>
             <div :class="ClickNum == 1 ? 'all-2' : 'all'">
                 <button @click="toggle()" class="OptionClick" type="button" v-if="Num == 1">隱私權聲明 V</button>
                 <button @click="toggle()" class="OptionClick" type="button" v-if="Num == 2">智慧財產權聲明 V</button>
