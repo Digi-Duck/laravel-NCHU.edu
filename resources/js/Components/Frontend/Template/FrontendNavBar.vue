@@ -64,7 +64,7 @@ export default {
                 </div>
             </div>
             <ul class="ham">
-                <label for="chevron-switch-1" class="chevron-label" @click="about = !about">
+                <label for="chevron-switch-1" @click="about = !about">
                     <li class="ham-list">
                         <span>關於我們</span> &nbsp
                         <i class="fa-solid fa-chevron-down" :style="{ 'display': about ? 'none' : 'inline-block' }"></i>
@@ -88,7 +88,7 @@ export default {
                         </li>
                     </ul>
                 </label>
-                <label for="chevron-switch-2" class="chevron-label" @click="lesson = !lesson">
+                <label for="chevron-switch-2" @click="lesson = !lesson">
                     <li class="ham-list">
                         <span>課程資訊</span> &nbsp
                         <i class="fa-solid fa-chevron-down" :style="{ 'display': lesson ? 'none' : 'inline-block' }"></i>
@@ -118,7 +118,7 @@ export default {
                         </li>
                     </ul>
                 </label>
-                <label for="chevron-switch-3" class="chevron-label" @click="news = !news">
+                <label for="chevron-switch-3" @click="news = !news">
                     <li class="ham-list">
                         <span>消息資訊</span> &nbsp
                         <i class="fa-solid fa-chevron-down" :style="{ 'display': news ? 'none' : 'inline-block' }"></i>
@@ -138,6 +138,12 @@ export default {
                             <Link href="">所有消息</Link>
                         </li>
                     </ul>
+                </label>
+                <label for="chevron-switch" class="2md:hidden">
+                    <li class="ham-list">
+                        <Link href="/">回到首頁</Link> &nbsp
+                        <i class="fa-solid fa-chevron-down text-transparent"></i>
+                    </li>
                 </label>
             </ul>
         </div>
@@ -354,4 +360,5 @@ export default {
     .menu ul {
         display: none;
     }
-}</style>
+}
+</style>

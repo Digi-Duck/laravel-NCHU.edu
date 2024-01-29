@@ -3,13 +3,13 @@ import about from '/images/About/aboutPC.png';
 import aboutPhone from '/images/About/aboutPhone.png';
 import member from '/images/About/member.svg';
 import memberPhone from '/images/About/memberPhone.svg';
-import wallpaper from '/images/News/wallpaper.svg';
+import result from '/images/About/result.svg';
 
 export default {
     data() {
         return {
             images: {
-                about, wallpaper, aboutPhone,member, memberPhone,
+                about, aboutPhone, member, memberPhone, result
             },
             Num: 1,
             ClickNum: 1,
@@ -39,7 +39,8 @@ export default {
 <template>
     <div class="w-[100%] flex justify-center">
         <div class="main w-[100%] 2sm:w-[67%] mb-[70px]">
-            <div class="title"><img :src="screenWidth ? images.about : images.aboutPhone" alt="" class="m-auto 2md:m-0"></div>
+            <div class="title"><img :src="screenWidth ? images.about : images.aboutPhone" alt="" class="m-auto 2md:m-0">
+            </div>
             <div :class="ClickNum == 1 ? 'all-2' : 'all'">
                 <button @click="toggle()" class="OptionClick" type="button" v-if="Num == 1">單位介紹 V</button>
                 <button @click="toggle()" class="OptionClick" type="button" v-if="Num == 2">成員介紹 V</button>
@@ -77,25 +78,21 @@ export default {
                 </div>
                 <div class="content">
                     <span class="h1">發展使命</span><br>
-                    <span
-                        class="h2">配合政府政策 以優良的教育訓練品質 引領產業朝趨勢前進。</span>
+                    <span class="h2">配合政府政策 以優良的教育訓練品質 引領產業朝趨勢前進。</span>
                 </div>
                 <div class="content">
                     <span class="h1">核心價值</span><br>
-                    <span
-                        class="h2">終生學習、多元發展、創造價值。</span>
+                    <span class="h2">終生學習、多元發展、創造價值。</span>
                 </div>
                 <div class="content">
                     <span class="h1">經營目標</span><br>
-                    <span
-                        class="h2">1.提供「人才與產業需求無縫接軌」所需之課程<br>
+                    <span class="h2">1.提供「人才與產業需求無縫接軌」所需之課程<br>
                         2.打造終身學習機會<br>
                         3.培育具創新思維之人才</span>
                 </div>
                 <div class="content">
                     <span class="h1">訓練政策</span><br>
-                    <span
-                        class="h2">1.配合政府政策推動，結合學術專業優勢，開拓人才培訓資源，發展特色培訓課程。<br>
+                    <span class="h2">1.配合政府政策推動，結合學術專業優勢，開拓人才培訓資源，發展特色培訓課程。<br>
                         2.結合各學院教育特色、應用產業與核心訓練類別，提供優質教育訓練。<br>
                         3.運用社會資源，提供多元專業訓練，以提升產業人才職能與競爭力，創造產官學訓四贏局面。</span>
                 </div>
@@ -114,7 +111,9 @@ export default {
                         <p class="text-[22px] md:text-[30px] text-[#0057ff]">王大詹</p>
                         <div>
                             <p>電話 | 0212312312 #1234</p>
-                            <p>信箱 | a123456789123456789@gmail.com</p>
+                            <p>信箱 | <span></span>
+                                a123456789123456789 <br>
+                                @gmail.com</p>
                         </div>
                     </div>
                 </div>
@@ -278,8 +277,87 @@ export default {
                 <div><i class="fa-solid fa-arrow-right"></i></div>
                 </Link>
             </div>
-            <div v-if="Num == 4" class="w-[100%]">
-
+            <div v-if="Num == 5" class="w-[100%] flex flex-wrap justify-evenly md:justify-evenly">
+                <div class="results">
+                    <div><img class="reimg" :src="images.result" alt=""></div>
+                    <div class="recard">
+                        <p>2022.01.01</p>
+                        <p class="card-title">有氧鬆筋雕塑</p>
+                        <p>一個人走得快，一群人走得遠，一同在教室揮灑汗水。</p>
+                        <Link href="" class="more">了解更多<i
+                                class="fa-solid fa-arrow-right"></i></Link>
+                    </div>
+                </div>
+                <div class="results">
+                    <div><img class="reimg" :src="images.result" alt=""></div>
+                    <div class="recard">
+                        <p>2022.01.01</p>
+                        <p class="card-title">有氧鬆筋雕塑</p>
+                        <p>一個人走得快，一群人走得遠，一同在教室揮灑汗水。</p>
+                        <Link href="" class="more">了解更多<i
+                                class="fa-solid fa-arrow-right"></i></Link>
+                    </div>
+                </div>
+                <div class="results">
+                    <div><img class="reimg" :src="images.result" alt=""></div>
+                    <div class="recard">
+                        <p>2022.01.01</p>
+                        <p class="card-title">有氧鬆筋雕塑</p>
+                        <p>一個人走得快，一群人走得遠，一同在教室揮灑汗水。</p>
+                        <Link href="" class="more">了解更多<i
+                                class="fa-solid fa-arrow-right"></i></Link>
+                    </div>
+                </div>
+                <div class="results">
+                    <div><img class="reimg" :src="images.result" alt=""></div>
+                    <div class="recard">
+                        <p>2022.01.01</p>
+                        <p class="card-title">有氧鬆筋雕塑</p>
+                        <p>一個人走得快，一群人走得遠，一同在教室揮灑汗水。</p>
+                        <Link href="" class="more">了解更多<i
+                                class="fa-solid fa-arrow-right"></i></Link>
+                    </div>
+                </div>
+                <div class="results">
+                    <div><img class="reimg" :src="images.result" alt=""></div>
+                    <div class="recard">
+                        <p>2022.01.01</p>
+                        <p class="card-title">有氧鬆筋雕塑</p>
+                        <p>一個人走得快，一群人走得遠，一同在教室揮灑汗水。</p>
+                        <Link href="" class="more">了解更多<i
+                                class="fa-solid fa-arrow-right"></i></Link>
+                    </div>
+                </div>
+                <div class="results">
+                    <div><img class="reimg" :src="images.result" alt=""></div>
+                    <div class="recard">
+                        <p>2022.01.01</p>
+                        <p class="card-title">有氧鬆筋雕塑</p>
+                        <p>一個人走得快，一群人走得遠，一同在教室揮灑汗水。</p>
+                        <Link href="" class="more">了解更多<i
+                                class="fa-solid fa-arrow-right"></i></Link>
+                    </div>
+                </div>
+                <div class="results">
+                    <div><img class="reimg" :src="images.result" alt=""></div>
+                    <div class="recard">
+                        <p>2022.01.01</p>
+                        <p class="card-title">有氧鬆筋雕塑</p>
+                        <p>一個人走得快，一群人走得遠，一同在教室揮灑汗水。</p>
+                        <Link href="" class="more">了解更多<i
+                                class="fa-solid fa-arrow-right"></i></Link>
+                    </div>
+                </div>
+                <div class="results opacity-0">
+                    <div><img class="reimg" :src="images.result" alt=""></div>
+                    <div class="recard">
+                        <p>2022.01.01</p>
+                        <p class="card-title">有氧鬆筋雕塑</p>
+                        <p>一個人走得快，一群人走得遠，一同在教室揮灑汗水。</p>
+                        <Link href="" class="more">了解更多<i
+                                class="fa-solid fa-arrow-right"></i></Link>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -370,35 +448,56 @@ export default {
 }
 
 .news {
-    @apply w-[100%] py-[10px] md:py-[20px] text-[3vw] 2sm:text-[1.8vw] md:text-[2vw] xl:text-[1.4vw] font-[800] border-b-[0.25vw] border-black flex justify-between md:gap-[4vw] xl:gap-[5vw];
+    @apply w-[100%] py-[10px] md:py-[20px] text-[3vw] 2sm:text-[1.8vw] md:text-[2vw] xl:text-[1.4vw] font-[800] border-b-[1px] border-black flex justify-between md:gap-[4vw] xl:gap-[5vw];
 }
 
 .news:hover {
     @apply text-[#0057ff] duration-500;
 }
+
 .h1 {
-    font-size: 1.35vw;
-    color: rgb(0, 87, 255);
-    font-weight: 900;
+    @apply text-[16px] 2sm:text-[14px] md:text-[1.35vw] font-[900] text-[#0057ff];
 }
 
 .h2 {
-    font-size: 1.146vw;
+    @apply text-[14px] 2sm:text-[12px] md:text-[1.146vw];
 }
+
 .content {
     margin-top: 2.604vw;
     padding: 0px 1.04vw;
     font-family: Noto Sans TC;
 }
-.members{
+
+.members {
     @apply w-[334px] h-[361px] 2md:w-[406px] 2md:h-[173px] md:w-[538px] md:h-[230px] mt-[20px] flex flex-col 2md:flex-row bg-white shadow-lg;
 
 }
-.mem{
+
+.mem {
     @apply 2md:w-[173px] 2md:h-[173px] md:w-[230px] md:h-[230px];
 }
-.info{
+
+.results {
+    @apply w-[334px] h-[385px] 2md:w-[169px] 2md:h-[242px] md:w-[275px] md:h-[394px] bg-white mt-[20px] shadow-lg;
+}
+
+.reimg {
+    @apply w-[100%];
+}
+
+.info {
     @apply text-[14px] 2md:text-[12px] px-[20px] pt-[20px] md:px-[40px] md:pt-[40px] md:text-[16px] break-all;
+}
+
+.recard {
+    @apply text-[14px] 2md:text-[10px] md:text-[16px] font-[600] p-[10px] md:p-[25px] flex flex-col gap-[12px] 2md:gap-[9px] md:gap-[15px];
+}
+.card-title{
+    @apply text-[22px] 2md:text-[14px] md:text-[22px] text-[#0057ff] font-[800];
+}
+.more{
+    @apply text-[#0057ff] text-[14px] 2md:text-[8px] md:text-[14px] font-[800] mt-[3px] md:mt-[5px] ml-auto;
 }
 @media (max-width:500px) {
 

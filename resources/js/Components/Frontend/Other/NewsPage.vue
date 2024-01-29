@@ -38,7 +38,7 @@ export default {
     <div class="w-[100%] flex justify-center">
         <div class="main w-[100%] 2sm:w-[67%] mb-[70px]">
             <div class="title order-1"><img :src="screenWidth ? images.news : images.newsPhone" alt="" class="m-auto 2md:m-0"></div>
-            <input type="date" class="w-[177px] h-[30px] m-auto mt-[10px] xl:w-[244px] xl:h-[41px] xl:mb-[40px] order-3">
+            <input type="date" class="w-[177px] h-[30px] text-[12px] md:text-[16px] m-auto mt-[10px] xl:w-[244px] xl:h-[41px] xl:mb-[40px] order-3">
             <div :class="ClickNum == 1 ? 'all-2' : 'all'" class="order-2">
                 <button @click="toggle()" class="OptionClick" type="button" v-if="Num == 1">所有消息 V</button>
                 <button @click="toggle()" class="OptionClick" type="button" v-if="Num == 2">本週消息 V</button>
@@ -360,7 +360,7 @@ export default {
 } */
 
 .news {
-    @apply w-[100%] py-[10px] md:py-[20px] text-[3vw] 2sm:text-[1.8vw] md:text-[2vw] xl:text-[1.4vw] font-[800] border-b-[0.25vw] border-black flex justify-between md:gap-[4vw] xl:gap-[5vw];
+    @apply w-[100%] py-[10px] md:py-[20px] text-[3vw] 2sm:text-[1.8vw] md:text-[2vw] xl:text-[1.4vw] font-[500] border-b-[1px] border-black flex justify-between md:gap-[4vw] xl:gap-[5vw];
 }
 
 .news:hover {
