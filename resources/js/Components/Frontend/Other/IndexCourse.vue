@@ -94,7 +94,7 @@ export default {
                     <div class="cards h-[24.37vw] relative" @wheel.prevent="handleMouseWheel">
                         <div v-for="card in cards" :key="card.id" class="card"
                             :style="{ transform: card.transform, backgroundColor: card.color}">
-                            <a :href="card.link">
+                            <a>
                                 <div class="card flex flex-col justify-end">
                                     <div class="card-type">{{ card.type }}</div>
                                     <div class="card-title">{{ card.title }}</div>
