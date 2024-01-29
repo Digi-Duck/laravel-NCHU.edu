@@ -84,13 +84,13 @@ export default {
                 <div class="h4">©2024 International College of Innovation and Industry Liaison, N.C.H.U. </div>
                 <div class="flex gap-1 tabs">
                     <div>
-                        <Link class="h4" href="">隱私權聲明 |</Link>
+                        <Link class="h4" :href="route('web.index')">隱私權聲明 |</Link>
                     </div>
                     <div>
-                        <Link class="h4" href="">智慧財產權聲明 |</Link>
+                        <Link class="h4" :href="route('web.index')">智慧財產權聲明 |</Link>
                     </div>
                     <div>
-                        <Link class="h4" href="">網站導覽 |</Link>
+                        <Link class="h4" :href="route('web.index')">網站導覽 |</Link>
                     </div>
                     <div>
                         <Link class="h4" href="">網站意見回饋</Link>
