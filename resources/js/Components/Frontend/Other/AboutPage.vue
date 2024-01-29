@@ -30,7 +30,7 @@ export default {
             }
         },
         checkScreenWidth() {
-            this.screenWidth = window.innerWidth > 500;
+            this.screenWidth = window.innerWidth >= 500;
         },
     }
 }
@@ -39,7 +39,7 @@ export default {
 <template>
     <div class="w-[100%] flex justify-center">
         <div class="main w-[100%] 2sm:w-[67%] mb-[70px]">
-            <div class="title"><img class="m-auto 2md:m-0" :src="screenWidth ? images.about : images.aboutPhone" alt=""></div>
+            <div class="title"><img :src="screenWidth ? images.about : images.aboutPhone" alt="" class="m-auto 2md:m-0"></div>
             <div :class="ClickNum == 1 ? 'all-2' : 'all'">
                 <button @click="toggle()" class="OptionClick" type="button" v-if="Num == 1">單位介紹 V</button>
                 <button @click="toggle()" class="OptionClick" type="button" v-if="Num == 2">成員介紹 V</button>
@@ -312,7 +312,7 @@ export default {
 
 
 .title {
-    @apply mt-[20px] md:mt-[60px] md:mb-[20px];
+    @apply mt-[20px] md:mt-[60px] md:mb-[20px] 2md:w-[185px] md:w-[315px];
 }
 
 .SelectionBar {
@@ -404,12 +404,6 @@ export default {
 
     .SelectionBar {
         display: none;
-    }
-
-    .title {
-        font-size: 5.2vw;
-        text-align: center;
-        margin-bottom: 2.5vw;
     }
 
     .OptionClick {

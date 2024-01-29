@@ -14,7 +14,8 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             course_types_table_seeder::class,
-            // courses_table_seeder::class,
+            courses_table_seeder::class,
+            // course_tags_table_seeder::class,
         ]);
     }
 }

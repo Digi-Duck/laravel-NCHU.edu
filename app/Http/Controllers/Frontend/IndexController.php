@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Frontend;
 use Inertia\Inertia;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\CourseType;
 
 class IndexController extends Controller
 {
@@ -15,6 +16,7 @@ class IndexController extends Controller
     // 前往前台首頁
     public function index()
     {
-        return Inertia::render('Frontend/Index');
+        $courseType = CourseType::select(['sort', 'name', 'content', 'img_path'])->get();
+        return Inertia::render('Frontend/Index', ['response' => rtFormat($courseType) ?? []]);
     }
 }

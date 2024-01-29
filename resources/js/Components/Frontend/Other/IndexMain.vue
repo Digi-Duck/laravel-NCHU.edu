@@ -8,8 +8,12 @@ import blueRow from '/images/banner/blue-row.png';
 import provide from '/images/main/provide.png';
 
 export default {
+    props: {
+        resType: Array,
+    },
     data() {
         return {
+            course: this.resType ?? [],
             images: {
                 camp, certificate, handmade, sport, training, blueRow, provide,
             },
@@ -62,10 +66,10 @@ export default {
                 </Transition>
                 <Transition name="slide-fade-right">
                     <ul v-if="show" class="list">
-                        <li>
-                            <Link href="">01兒童營隊</Link>
-                        </li>|
-                        <li>
+                        <li v-for="item in course.rt_data" :key="item.id">
+                            <Link href="">0{{item.sort}}{{ item.name }}</Link><span class="ml-[10px]">|</span>
+                        </li>
+                        <!-- <li>
                             <Link href="">02單元手作</Link>
                         </li>|
                         <li>
@@ -76,27 +80,25 @@ export default {
                         </li>|
                         <li>
                             <Link href="">05專業證照</Link>
-                        </li>
+                        </li> -->
                     </ul>
                 </Transition>
-
             </div>
             <div class="main-bottom">
-                <div class="main-cards" v-for="item in pro" :key="item.id"
-                    :class="{ 'card-border': item.id == pro.length }">
+                <div class="main-cards" v-for="item in course.rt_data" :key="item.id"
+                    :class="{ 'card-border': item.sort == course.rt_data.length }">
                     <Transition name="slide-fade-up">
                         <div v-if="show" class="card">
                             <div class="main-card">
-                                <div class="title ml-[-10px]">0{{ item.id }}</div>
+                                <div class="title ml-[-10px]">0{{ item.sort }}</div>
                                 <div class="title-name">{{ item.name }}</div>
                                 <div class="content">{{ item.content }}</div>
                                 <Link href="" class="more">了解更多&nbsp<i class="fa-solid fa-arrow-right"></i>
                                 </Link>
                             </div>
-                            <div class="card-img"><img :src="item.img" alt=""></div>
+                            <div class="card-img"><img :src="item.img_path" alt=""></div>
                         </div>
                     </Transition>
-
                 </div>
             </div>
         </div>
@@ -181,6 +183,7 @@ export default {
     transform: translate(300px);
     opacity: 0;
 }
+
 .slide-fade-up-enter-active {
     transition: all 1s ease-out;
 }
@@ -261,10 +264,6 @@ export default {
 
     .list {
         @apply text-[3.8vw] gap-[2vw] mb-0;
-    }
-
-    .list span {
-        @apply hidden;
     }
 
     .main-bottom {

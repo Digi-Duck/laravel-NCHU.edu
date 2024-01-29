@@ -17,8 +17,9 @@ class courses_table_seeder extends Seeder
     public function run(): void
     {
         Course::truncate();
-        
-        $names = file_get_contents(database_path('seeders/course_texts/courses_names.txt'));
+
+        // $names = file_get_contents(database_path('seeders/course_texts/courses_names.txt'));
+        $names = ['兒童營隊','單元手作','運動課程','職業訓練','專業證照'];
         $contents = file_get_contents(database_path('seeders/course_texts/courses_contents.txt'));
         $start_times = file_get_contents(database_path('seeders/course_texts/courses_start_times.txt'));
         $end_times = file_get_contents(database_path('seeders/course_texts/courses_end_times.txt'));
