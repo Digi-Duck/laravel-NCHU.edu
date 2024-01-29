@@ -5,14 +5,13 @@ import handmade from '/images/main/hand-made.svg';
 import sport from '/images/main/sport.svg';
 import training from '/images/main/training.svg';
 import blueRow from '/images/banner/blue-row.png';
-import vector from '/images/main/vector.svg';
 import provide from '/images/main/provide.png';
 
 export default {
     data() {
         return {
             images: {
-                camp, certificate, handmade, sport, training, blueRow, vector, provide,
+                camp, certificate, handmade, sport, training, blueRow, provide,
             },
             pro: [{
                 id: 1,
