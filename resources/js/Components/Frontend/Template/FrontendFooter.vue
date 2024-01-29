@@ -1,20 +1,29 @@
 <!-- 前台頁尾組件 -->
 
 <script>
+import { document } from 'postcss';
 import logo from '/images/logo/logo.svg';
+import top from '/images/logo/top.png';
 
 export default {
     data() {
         return {
             images: {
                 logo,
+                top,
             },
         };
     },
+    methods: {
+
+    }
 };
 </script>
 
 <template>
+    <button class="gotop">
+        <Link href=""><img :src="images.top" alt=""></Link>
+    </button>
     <footer class="w-[100%]  bg-white flex justify-center ">
         <div class="main w-[64%]">
             <div class="top">
@@ -102,6 +111,14 @@ export default {
 </template>
 
 <style scoped>
+.gotop {
+    width: 100px;
+    height: 100px;
+    position: sticky;
+    bottom: 15vh;
+    left: 90vw;
+}
+
 .word-small {
     display: none;
     flex-direction: column;
@@ -710,7 +727,8 @@ export default {
         line-height: 10px;
     }
 
-    .logo{
+    .logo {
         width: 80%;
     }
-}</style>
+}
+</style>
