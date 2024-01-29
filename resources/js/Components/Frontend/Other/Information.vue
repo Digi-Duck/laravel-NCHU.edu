@@ -34,7 +34,7 @@ export default {
 </script>
 
 <template>
-    <div class="w-[100%] flex justify-center">
+    <div class="w-[100%] mb-[5vh] flex justify-center">
         <div class="main w-[67%]">
             <div class="title"><img :src="screenWidth ? images.webPC : images.webPhone" alt="" class=" m-auto 2md:m-0">
             </div>
