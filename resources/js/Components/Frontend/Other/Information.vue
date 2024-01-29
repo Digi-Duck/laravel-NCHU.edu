@@ -1,11 +1,13 @@
 <script>
 import webPC from '/images/Information/webPC.png';
 import webPhone from '/images/Information/webPhone.png';
+import angleDown from '/images/Information/angle-down.svg';
+
 export default {
     data() {
         return {
-            images:{
-                webPC, webPhone,
+            images: {
+                webPC, webPhone, angleDown,
             },
             Num: 1,
             ClickNum: 1,
@@ -34,12 +36,15 @@ export default {
 <template>
     <div class="w-[100%] flex justify-center">
         <div class="main w-[67%]">
-            <!-- <div class="title w-[100%] font-bold">課程資訊</div> -->
-            <div class="title"><img :src="screenWidth ? images.webPC : images.webPhone" alt="" class=" m-auto 2md:m-0"></div>
+            <div class="title"><img :src="screenWidth ? images.webPC : images.webPhone" alt="" class=" m-auto 2md:m-0">
+            </div>
             <div :class="ClickNum == 1 ? 'all-2' : 'all'">
-                <button @click="toggle()" class="OptionClick" type="button" v-if="Num == 1">隱私權聲明 V</button>
-                <button @click="toggle()" class="OptionClick" type="button" v-if="Num == 2">智慧財產權聲明 V</button>
-                <button @click="toggle()" class="OptionClick" type="button" v-if="Num == 3">網站導覽 V</button>
+                <button @click="toggle()" class="OptionClick" type="button" v-if="Num == 1">隱私權聲明<img
+                        class="w-[3vw] mt-1.5 ml-1 " :src="images.angleDown" alt=""></button>
+                <button @click="toggle()" class="OptionClick" type="button" v-if="Num == 2">智慧財產權聲明<img
+                        class="w-[3vw] mt-1.5 ml-1 " :src="images.angleDown" alt=""></button>
+                <button @click="toggle()" class="OptionClick" type="button" v-if="Num == 3">網站導覽<img
+                        class="w-[3vw] mt-1.5 ml-1 " :src="images.angleDown" alt=""></button>
                 <div :class="ClickNum == 2 ? 'SelectionOptionClick' : 'SelectionOption'">
                     <button @click="Num = 1, ClickNum = 1" class="OptionBtn" type="button">隱私權聲明</button>
                     <button @click="Num = 2, ClickNum = 1" class="OptionBtn" type="button">智慧財產權聲明</button>
@@ -284,8 +289,9 @@ export default {
     padding: 0;
 } */
 .title {
-    @apply mt-[20px] md:mt-[60px] md:mb-[20px];
+    @apply mt-[20px] md:mt-[60px] md:mb-[20px] 2md:w-[185px] md:w-[315px];
 }
+
 .all {
     max-height: 12.4vh;
     overflow: hidden;
@@ -311,10 +317,6 @@ export default {
 }
 
 
-.title {
-    font-size: 3.38vw;
-    font-family: inter;
-}
 
 .SelectionBar {
     border-bottom: 2px solid black;
@@ -355,7 +357,6 @@ export default {
 
 .OptionClick {
     width: 100%;
-    text-align: center;
     border-bottom: 1px black solid;
     display: none;
 }
@@ -432,7 +433,9 @@ li {
     }
 
     .OptionClick {
-        display: block;
+        display: inline-flex;
+        justify-content: center;
+        font-size: 3.2vw;
     }
 
     .Guide {
