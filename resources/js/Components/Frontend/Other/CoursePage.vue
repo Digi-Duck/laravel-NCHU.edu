@@ -70,8 +70,8 @@ export default {
         <div class="w-[90%]  ml-[13.8vw] 2sm:ml-[7.2vw] md:ml-[10.5vw] md:w-[80%]  py-[1%]  flex gap-[3%] flex-wrap justify-start">
             <div v-for="course in courses" :key="course.id" class="flex 2sm:flex-col bg-[#ffffff] w-[55vw] mb-[2.5vw] 2sm:w-[22vw] 2sm:h-[29.72vw] 2sm:mb-[2.5vw]
             md:mb-[1.5vw] md:w-[14.32vw] md:h-[19.06vw]">
-                <div class=" w-[22vw] h-[14.34vw] md:w-[14.32vw] md:h-[9.37vw]">
-                    <img class="w-full" :src="img.fake" alt="">
+                <div class=" w-[22vw] h-[14.34vw]  md:w-[14.32vw] md:h-[9.37vw] flex ">
+                    <img class="h-full mt-[0.8vw]" :src="img.fake" alt="">
                 </div>
                 <div class="flex flex-col justify-start items-start h-[100%] w-[33vw] 2sm:w-[22vw] md:w-[14.32vw] px-[1.6vw] pt-[1.3vw] md:px-[0.78vw] md:pt-[0.52vw]">
                     <h1 class="card-name ">{{ course.name }}</h1>
