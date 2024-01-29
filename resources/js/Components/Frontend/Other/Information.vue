@@ -1,11 +1,20 @@
 <script>
-
+import webPC from '/images/Information/webPC.png';
+import webPhone from '/images/Information/webPhone.png';
 export default {
     data() {
         return {
+            images:{
+                webPC, webPhone,
+            },
             Num: 1,
             ClickNum: 1,
+            screenWidth: false,
         }
+    },
+    mounted() {
+        this.checkScreenWidth();
+        window.addEventListener('resize', this.checkScreenWidth);
     },
     methods: {
         toggle() {
@@ -14,7 +23,10 @@ export default {
             } else {
                 return this.ClickNum = 1;
             }
-        }
+        },
+        checkScreenWidth() {
+            this.screenWidth = window.innerWidth >= 500;
+        },
     }
 }
 </script>
@@ -22,7 +34,8 @@ export default {
 <template>
     <div class="w-[100%] flex justify-center">
         <div class="main w-[67%]">
-            <div class="title w-[100%] font-bold">課程資訊</div>
+            <!-- <div class="title w-[100%] font-bold">課程資訊</div> -->
+            <div class="title"><img :src="screenWidth ? images.webPC : images.webPhone" alt="" class=" m-auto 2md:m-0"></div>
             <div :class="ClickNum == 1 ? 'all-2' : 'all'">
                 <button @click="toggle()" class="OptionClick" type="button" v-if="Num == 1">隱私權聲明 V</button>
                 <button @click="toggle()" class="OptionClick" type="button" v-if="Num == 2">智慧財產權聲明 V</button>
@@ -265,12 +278,14 @@ export default {
 </template>
 
 <style scoped>
-* {
+/* * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+} */
+.title {
+    @apply mt-[20px] md:mt-[60px] md:mb-[20px];
 }
-
 .all {
     max-height: 12.4vh;
     overflow: hidden;
