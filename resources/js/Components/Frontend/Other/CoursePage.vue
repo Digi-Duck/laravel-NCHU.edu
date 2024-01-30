@@ -1,4 +1,6 @@
 <script>
+import coursePC from '/images/coursePage/coursePC.png';
+import coursePhone from '/images/coursePage/coursePhone.png';
 export default {
     props: {
         resCourse: Array,
@@ -10,7 +12,14 @@ export default {
             ClickNum: 1,
             detail: false,
             screenWidth: false,
+            images: {
+                coursePC, coursePhone,
+            }
         }
+    },
+    mounted() {
+        this.checkScreenWidth();
+        window.addEventListener('resize', this.checkScreenWidth);
     },
     methods: {
         toggle() {
@@ -28,24 +37,25 @@ export default {
 </script>
 <template>
     <div class="w-[85%]  m-auto flex  flex-col">
-        <div class="title w-[100%] ">網站資訊</div>
+        <div class="title"><img :src="screenWidth ? images.coursePC : images.coursePhone" alt="" class="m-auto 2md:m-0">
+        </div>
         <div class="w-[90%] md:w-[80%] m-auto">
             <div :class="ClickNum == 1 ? 'all-2' : 'all'">
-                <button  class="OptionClick" type="button">全部課程 V</button>
-                <button  class="OptionClick" type="button">最新課程 V</button>
-                <button  class="OptionClick" type="button">兒童營隊 V</button>
-                <button  class="OptionClick" type="button">單元手作 V</button>
-                <button  class="OptionClick" type="button">運動課程 V</button>
-                <button  class="OptionClick" type="button">職業訓練 V</button>
-                <button  class="OptionClick" type="button">專業證照 V</button>
+                <button class="OptionClick" type="button">全部課程 <i class="fa-solid fa-chevron-down"></i></button>
+                <button class="OptionClick" type="button">最新課程 <i class="fa-solid fa-chevron-down"></i></button>
+                <button class="OptionClick" type="button">兒童營隊 <i class="fa-solid fa-chevron-down"></i></button>
+                <button class="OptionClick" type="button">單元手作 <i class="fa-solid fa-chevron-down"></i></button>
+                <button class="OptionClick" type="button">運動課程 <i class="fa-solid fa-chevron-down"></i></button>
+                <button class="OptionClick" type="button">職業訓練 <i class="fa-solid fa-chevron-down"></i></button>
+                <button class="OptionClick" type="button">專業證照 <i class="fa-solid fa-chevron-down"></i></button>
                 <div :class="ClickNum == 2 ? 'SelectionOptionClick' : 'SelectionOption'">
-                    <button  class="OptionBtn" type="button">全部課程</button>
-                    <button  class="OptionBtn" type="button">最新課程</button>
-                    <button  class="OptionBtn" type="button">兒童營隊</button>
-                    <button  class="OptionBtn" type="button">單元手作</button>
-                    <button  class="OptionBtn" type="button">運動課程</button>
-                    <button  class="OptionBtn" type="button">職業訓練</button>
-                    <button  class="OptionBtn" type="button">專業證照</button>
+                    <button class="OptionBtn" type="button">全部課程</button>
+                    <button class="OptionBtn" type="button">最新課程</button>
+                    <button class="OptionBtn" type="button">兒童營隊</button>
+                    <button class="OptionBtn" type="button">單元手作</button>
+                    <button class="OptionBtn" type="button">運動課程</button>
+                    <button class="OptionBtn" type="button">職業訓練</button>
+                    <button class="OptionBtn" type="button">專業證照</button>
                 </div>
             </div>
             <div class="SelectionBar w-[100%]">
@@ -62,24 +72,31 @@ export default {
             class="w-[90%]  ml-[13.8vw] 2sm:ml-[7.2vw] md:ml-[10.5vw] md:w-[80%]  py-[1%]  flex gap-[3%] flex-wrap justify-start">
             <div v-for="course in courses.rt_data" :key="course.id" class="flex 2sm:flex-col bg-[#ffffff] w-[55vw] mb-[2.5vw] 2sm:w-[22vw] 2sm:h-[29.72vw] 2sm:mb-[2.5vw]
             md:mb-[1.5vw] md:w-[14.32vw] md:h-[19.06vw]">
-                <div class=" w-[22vw] h-[19.34vw 2sm:w-[22vw] 2sm:h-[28.34vw]  md:w-[14.32vw] md:h-[18.37vw] flex " :style="{ backgroundImage: 'url(' + course.img_path + ')', backgroundSize: 'cover', backgroundPosition:'center'}" >
+                <div class=" w-[22vw] h-[19.34vw 2sm:w-[22vw] 2sm:h-[28.34vw]  md:w-[14.32vw] md:h-[18.37vw] flex "
+                    :style="{ backgroundImage: 'url(' + course.img_path + ')', backgroundSize: 'cover', backgroundPosition: 'center' }">
                 </div>
-                <div class="flex flex-col justify-start items-start h-[100%] w-[33vw] 2sm:w-[22vw] md:w-[14.32vw] px-[1.6vw]  pt-[1.3vw] md:px-[0.78vw] md:pt-[0.52vw]">
+                <div
+                    class="flex flex-col justify-start items-start h-[100%] w-[33vw] 2sm:w-[22vw] md:w-[14.32vw] px-[1.6vw]  pt-[1.3vw] md:px-[0.78vw] md:pt-[0.52vw]">
                     <h1 class="card-name ">{{ course.name }}</h1>
                     <ul>
                         <li class="card-text ">課程日期 | {{ course.start_time.slice(0, 10) }} </li>
                         <li class="card-text ">課程價格 | {{ course.price === 0 ? 'Free' : '$' + course.price }}</li>
                     </ul>
-                    <div class="flex  ml-auto mt-auto mb-[1.04vw] px-[0.78vw] card-more"><a :href="course.link" class=" border-b-[2px] border-[#ffffff]  hover:border-b-[2px] hover:border-[#0057ff] ">了解更多 <i class="fa-solid fa-arrow-right"></i></a></div>
+                    <div class="flex  ml-auto mt-auto mb-[1.04vw] px-[0.78vw] card-more"><a :href="course.link"
+                            class=" border-b-[2px] border-[#ffffff]  hover:border-b-[2px] hover:border-[#0057ff] ">了解更多 <i
+                                class="fa-solid fa-arrow-right"></i></a></div>
                 </div>
             </div>
         </div>
     </div>
 </template>
 <style scoped>
-.title {
+/* .title {
     @apply text-[6.7vw] 2sm:text-[5.38vw] md:text-[3.38vw] font-bold;
     font-family: 'Inter', sans-serif;
+} */
+.title {
+    @apply mt-[20px] md:mt-[60px] md:mb-[20px] 2md:w-[185px] md:w-[315px];
 }
 
 .card-name {
@@ -179,5 +196,4 @@ export default {
 
 .SelectionOption {
     display: none;
-}
-</style>
+}</style>

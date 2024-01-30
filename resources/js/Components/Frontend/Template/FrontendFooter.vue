@@ -122,17 +122,17 @@ export default {
 </template>
 
 <style scoped>
-html{
+* {
     scroll-behavior: smooth;
 }
+
 .gotop {
-    width: 100px;
-    height: 100px;
     position: sticky;
+    margin-bottom: 30px;
     bottom: 30px;
     /* left: 93vw; */
     float: right;
-    right: 10px;
+    right: 30px;
 }
 
 .word-small {
@@ -440,6 +440,11 @@ html{
 }
 
 @media (max-width:768px) {
+    .gotop {
+        margin-bottom: 10px;
+        right: 10px;
+        bottom: 10px;
+    }
 
     .logo {
         width: 80%;
@@ -681,9 +686,11 @@ html{
         height: auto;
         position: relative;
     }
-    .h1{
+
+    .h1 {
         font-size: 3.8vw;
     }
+
     .word {
         display: none;
     }

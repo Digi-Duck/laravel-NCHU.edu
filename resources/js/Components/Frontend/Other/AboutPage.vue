@@ -4,16 +4,17 @@ import aboutPhone from '/images/About/aboutPhone.png';
 import member from '/images/About/member.svg';
 import memberPhone from '/images/About/memberPhone.svg';
 import result from '/images/About/result.svg';
+import resultPhone from '/images/About/resultPhone.svg';
 
 export default {
     data() {
         return {
             images: {
-                about, aboutPhone, member, memberPhone, result
+                about, aboutPhone, member, memberPhone, result, resultPhone,
             },
             Num: 1,
             ClickNum: 1,
-            detail: false,
+            show: false,
             screenWidth: false,
         }
     },
@@ -42,11 +43,16 @@ export default {
             <div class="title"><img :src="screenWidth ? images.about : images.aboutPhone" alt="" class="m-auto 2md:m-0">
             </div>
             <div :class="ClickNum == 1 ? 'all-2' : 'all'">
-                <button @click="toggle()" class="OptionClick" type="button" v-if="Num == 1">單位介紹 V</button>
-                <button @click="toggle()" class="OptionClick" type="button" v-if="Num == 2">成員介紹 V</button>
-                <button @click="toggle()" class="OptionClick" type="button" v-if="Num == 3">相關法規 V</button>
-                <button @click="toggle()" class="OptionClick" type="button" v-if="Num == 4">表單下載 V</button>
-                <button @click="toggle()" class="OptionClick" type="button" v-if="Num == 5">成果展示 V</button>
+                <button @click="toggle()" class="OptionClick" type="button" v-if="Num == 1">單位介紹<i
+                        class="fa-solid fa-chevron-down"></i></button>
+                <button @click="toggle()" class="OptionClick" type="button" v-if="Num == 2">成員介紹<i
+                        class="fa-solid fa-chevron-down"></i></button>
+                <button @click="toggle()" class="OptionClick" type="button" v-if="Num == 3">相關法規<i
+                        class="fa-solid fa-chevron-down"></i></button>
+                <button @click="toggle()" class="OptionClick" type="button" v-if="Num == 4">表單下載<i
+                        class="fa-solid fa-chevron-down"></i></button>
+                <button @click="toggle()" class="OptionClick" type="button" v-if="Num == 5">成果展示<i
+                        class="fa-solid fa-chevron-down"></i></button>
                 <div :class="ClickNum == 2 ? 'SelectionOptionClick' : 'SelectionOption'">
                     <button @click="Num = 1, ClickNum = 1" class="OptionBtn" type="button">單位介紹</button>
                     <button @click="Num = 2, ClickNum = 1" class="OptionBtn" type="button">成員介紹</button>
@@ -62,7 +68,7 @@ export default {
                 <button @click="Num = 4" :class="Num == 4 ? 'ClickColor' : 'SelectionBtn'" type="button">表單下載</button>
                 <button @click="Num = 5" :class="Num == 5 ? 'ClickColor' : 'SelectionBtn'" type="button">成果展示</button>
             </div>
-            <div v-if="Num == 1" class="w-[100%]">
+            <div v-if="Num == 1" class="w-[90%] 2sm:w-[100%] m-auto">
                 <div class="content">
                     <span
                         class="h2">中興大學推廣教育組以履行高等技職回流教育使命及推動終身學習為核心目標。我們充分運用學校充沛的資源，舉辦委託培訓等專業推廣教育計畫。同時，根據社會需求精心規劃學分班和非學分班課程，旨在為有志於進修的社會成員提供寶貴機會，協助其深化專業領域，同時提升生活技能。</span>
@@ -108,8 +114,64 @@ export default {
                     <div><img class="mem" :src="screenWidth ? images.member : images.memberPhone" alt=""></div>
                     <div class="info">
                         <p>主任秘書</p>
-                        <p class="text-[22px] md:text-[30px] text-[#0057ff] my-[15px]">王大詹</p>
-                        <div class="flex flex-col gap-[5px]">
+                        <p class="name">王大詹</p>
+                        <div class="contact">
+                            <p>電話 | 0212312312 #1234</p>
+                            <p>信箱 | <span></span>
+                                a123456789123456789 <br>
+                                &emsp; &emsp; @gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="members">
+                    <div><img class="mem" :src="screenWidth ? images.member : images.memberPhone" alt=""></div>
+                    <div class="info">
+                        <p>主任秘書</p>
+                        <p class="name">王大詹</p>
+                        <div class="contact">
+                            <div>
+                                <p>電話 |</p>
+                                <p>信箱 |</p>
+                            </div>
+                            <div>
+                                <p>0212312312 #1234</p>
+                                <p>a123456789123456789@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="members">
+                    <div><img class="mem" :src="screenWidth ? images.member : images.memberPhone" alt=""></div>
+                    <div class="info">
+                        <p>主任秘書</p>
+                        <p class="name">王大詹</p>
+                        <div class="contact">
+                            <p>電話 | 0212312312 #1234</p>
+                            <p>信箱 | <span></span>
+                                a123456789123456789 <br>
+                                &emsp; &emsp; @gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="members">
+                    <div><img class="mem" :src="screenWidth ? images.member : images.memberPhone" alt=""></div>
+                    <div class="info">
+                        <p>主任秘書</p>
+                        <p class="name">王大詹</p>
+                        <div class="contact">
+                            <p>電話 | 0212312312 #1234</p>
+                            <p>信箱 | <span></span>
+                                a123456789123456789 <br>
+                                &emsp; &emsp; @gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="members">
+                    <div><img class="mem" :src="screenWidth ? images.member : images.memberPhone" alt=""></div>
+                    <div class="info">
+                        <p>主任秘書</p>
+                        <p class="name">王大詹</p>
+                        <div class="contact">
                             <p>電話 | 0212312312 #1234</p>
                             <p>信箱 | <span></span>
                                 a123456789123456789 <br>
@@ -130,60 +192,8 @@ export default {
                         </div>
                     </div>
                 </div>
-                <div class="members">
-                    <div><img class="mem" :src="screenWidth ? images.member : images.memberPhone" alt=""></div>
-                    <div class="info">
-                        <p>主任秘書</p>
-                        <p class="text-[22px] md:text-[30px] text-[#0057ff]">王大詹</p>
-                        <div>
-                            <p>電話 | 0212312312 #1234</p>
-                            <p>信箱 | <span></span>
-                                a123456789123456789 <br>
-                                @gmail.com</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="members">
-                    <div><img class="mem" :src="screenWidth ? images.member : images.memberPhone" alt=""></div>
-                    <div class="info">
-                        <p>主任秘書</p>
-                        <p class="text-[22px] md:text-[30px] text-[#0057ff]">王大詹</p>
-                        <div>
-                            <p>電話 | 0212312312 #1234</p>
-                            <p>信箱 | <span></span>
-                                a123456789123456789 <br>
-                                @gmail.com</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="members">
-                    <div><img class="mem" :src="screenWidth ? images.member : images.memberPhone" alt=""></div>
-                    <div class="info">
-                        <p>主任秘書</p>
-                        <p class="text-[22px] md:text-[30px] text-[#0057ff]">王大詹</p>
-                        <div>
-                            <p>電話 | 0212312312 #1234</p>
-                            <p>信箱 | <span></span>
-                                a123456789123456789 <br>
-                                @gmail.com</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="members">
-                    <div><img class="mem" :src="screenWidth ? images.member : images.memberPhone" alt=""></div>
-                    <div class="info">
-                        <p>主任秘書</p>
-                        <p class="text-[22px] md:text-[30px] text-[#0057ff]">王大詹</p>
-                        <div>
-                            <p>電話 | 0212312312 #1234</p>
-                            <p>信箱 | <span></span>
-                                a123456789123456789 <br>
-                                @gmail.com</p>
-                        </div>
-                    </div>
-                </div>
             </div>
-            <div v-if="Num == 3" class="w-[100%]">
+            <div v-if="Num == 3" class="w-[90%] 2sm:w-[100%] m-auto">
                 <Link class="news" href="">
                 <div>2024.01.01</div>
                 <div>國立中興大學辦理推廣教育注意事項(95.12.18修訂)</div>
@@ -235,67 +245,66 @@ export default {
                 <div><i class="fa-solid fa-arrow-right"></i></div>
                 </Link>
             </div>
-            <div v-if="Num == 4" class="w-[100%]">
+            <div v-if="Num == 4" class="w-[90%] 2sm:w-[100%] m-auto">
                 <Link class="news" href="">
                 <div>2024.01.01</div>
-                <div>國立中興大學辦理推廣教育注意事項(95.12.18修訂)</div>
+                <div class="truncate">國立中興大學辦理推廣教育注意事項(95.12.18修訂)</div>
                 <div><i class="fa-solid fa-arrow-right"></i></div>
                 </Link>
                 <Link class="news" href="">
                 <div>2024.01.01</div>
-                <div>國立中興大學辦理推廣教育注意事項(95.12.18修訂)</div>
+                <div class="truncate">國立中興大學辦理推廣教育注意事項(95.12.18修訂)</div>
                 <div><i class="fa-solid fa-arrow-right"></i></div>
                 </Link>
                 <Link class="news" href="">
                 <div>2024.01.01</div>
-                <div>國立中興大學辦理推廣教育注意事項(95.12.18修訂)</div>
+                <div class="truncate">國立中興大學辦理推廣教育注意事項(95.12.18修訂)</div>
                 <div><i class="fa-solid fa-arrow-right"></i></div>
                 </Link>
                 <Link class="news" href="">
                 <div>2024.01.01</div>
-                <div>國立中興大學辦理推廣教育注意事項(95.12.18修訂)</div>
+                <div class="truncate">國立中興大學辦理推廣教育注意事項(95.12.18修訂)</div>
                 <div><i class="fa-solid fa-arrow-right"></i></div>
                 </Link>
                 <Link class="news" href="">
                 <div>2024.01.01</div>
-                <div>國立中興大學辦理推廣教育注意事項(95.12.18修訂)</div>
+                <div class="truncate">國立中興大學辦理推廣教育注意事項(95.12.18修訂)</div>
                 <div><i class="fa-solid fa-arrow-right"></i></div>
                 </Link>
                 <Link class="news" href="">
                 <div>2024.01.01</div>
-                <div>國立中興大學辦理推廣教育注意事項(95.12.18修訂)</div>
+                <div class="truncate">國立中興大學辦理推廣教育注意事項(95.12.18修訂)</div>
                 <div><i class="fa-solid fa-arrow-right"></i></div>
                 </Link>
                 <Link class="news" href="">
                 <div>2024.01.01</div>
-                <div>國立中興大學辦理推廣教育注意事項(95.12.18修訂)</div>
+                <div class="truncate">國立中興大學辦理推廣教育注意事項(95.12.18修訂)</div>
                 <div><i class="fa-solid fa-arrow-right"></i></div>
                 </Link>
                 <Link class="news" href="">
                 <div>2024.01.01</div>
-                <div>國立中興大學辦理推廣教育注意事項(95.12.18修訂)</div>
+                <div class="truncate">國立中興大學辦理推廣教育注意事項(95.12.18修訂)</div>
                 <div><i class="fa-solid fa-arrow-right"></i></div>
                 </Link>
                 <Link class="news" href="">
                 <div>2024.01.01</div>
-                <div>國立中興大學辦理推廣教育注意事項(95.12.18修訂)</div>
+                <div class="truncate">國立中興大學辦理推廣教育注意事項(95.12.18修訂)</div>
                 <div><i class="fa-solid fa-arrow-right"></i></div>
                 </Link>
                 <Link class="news" href="">
                 <div>2024.01.01</div>
-                <div>國立中興大學辦理推廣教育注意事項(95.12.18修訂)</div>
+                <div class="truncate">國立中興大學辦理推廣教育注意事項(95.12.18修訂)</div>
                 <div><i class="fa-solid fa-arrow-right"></i></div>
                 </Link>
             </div>
             <div v-if="Num == 5" class="w-[100%] flex flex-wrap justify-evenly md:justify-evenly">
                 <div class="results">
-                    <div><img class="reimg" :src="images.result" alt=""></div>
+                    <div><img class="reimg" :src="screenWidth ? images.result : images.resultPhone" alt=""></div>
                     <div class="recard">
                         <p>2022.01.01</p>
                         <p class="card-title">有氧鬆筋雕塑</p>
-                        <p class="content">一個人走得快，一群人走得遠，一同在教室揮灑汗水。</p>
-                        <Link href="" class="more">了解更多<i
-                                class="fa-solid fa-arrow-right"></i></Link>
+                        <p class="card-content">一個人走得快，一群人走得遠，一同在教室揮灑汗水。</p>
+                        <button type="button" class="more" @click="show = true">了解更多<i class="fa-solid fa-arrow-right"></i></button>
                     </div>
                 </div>
                 <div class="results">
@@ -303,9 +312,8 @@ export default {
                     <div class="recard">
                         <p>2022.01.01</p>
                         <p class="card-title">有氧鬆筋雕塑</p>
-                        <p class="content">一個人走得快，一群人走得遠，一同在教室揮灑汗水。</p>
-                        <Link href="" class="more">了解更多<i
-                                class="fa-solid fa-arrow-right"></i></Link>
+                        <p class="card-content">一個人走得快，一群人走得遠，一同在教室揮灑汗水。</p>
+                        <button type="button" class="more">了解更多<i class="fa-solid fa-arrow-right"></i></button>
                     </div>
                 </div>
                 <div class="results">
@@ -313,9 +321,8 @@ export default {
                     <div class="recard">
                         <p>2022.01.01</p>
                         <p class="card-title">有氧鬆筋雕塑</p>
-                        <p class="content">一個人走得快，一群人走得遠，一同在教室揮灑汗水。</p>
-                        <Link href="" class="more">了解更多<i
-                                class="fa-solid fa-arrow-right"></i></Link>
+                        <p class="card-content">一個人走得快，一群人走得遠，一同在教室揮灑汗水。</p>
+                        <button type="button" class="more">了解更多<i class="fa-solid fa-arrow-right"></i></button>
                     </div>
                 </div>
                 <div class="results">
@@ -323,9 +330,8 @@ export default {
                     <div class="recard">
                         <p>2022.01.01</p>
                         <p class="card-title">有氧鬆筋雕塑</p>
-                        <p class="content">一個人走得快，一群人走得遠，一同在教室揮灑汗水。</p>
-                        <Link href="" class="more">了解更多<i
-                                class="fa-solid fa-arrow-right"></i></Link>
+                        <p class="card-content">一個人走得快，一群人走得遠，一同在教室揮灑汗水。</p>
+                        <button type="button" class="more">了解更多<i class="fa-solid fa-arrow-right"></i></button>
                     </div>
                 </div>
                 <div class="results">
@@ -333,9 +339,8 @@ export default {
                     <div class="recard">
                         <p>2022.01.01</p>
                         <p class="card-title">有氧鬆筋雕塑</p>
-                        <p class="content">一個人走得快，一群人走得遠，一同在教室揮灑汗水。</p>
-                        <Link href="" class="more">了解更多<i
-                                class="fa-solid fa-arrow-right"></i></Link>
+                        <p class="card-content">一個人走得快，一群人走得遠，一同在教室揮灑汗水。</p>
+                        <button type="button" class="more">了解更多<i class="fa-solid fa-arrow-right"></i></button>
                     </div>
                 </div>
                 <div class="results">
@@ -343,9 +348,8 @@ export default {
                     <div class="recard">
                         <p>2022.01.01</p>
                         <p class="card-title">有氧鬆筋雕塑</p>
-                        <p class="content">一個人走得快，一群人走得遠，一同在教室揮灑汗水。</p>
-                        <Link href="" class="more">了解更多<i
-                                class="fa-solid fa-arrow-right"></i></Link>
+                        <p class="card-content">一個人走得快，一群人走得遠，一同在教室揮灑汗水。</p>
+                        <button type="button" class="more">了解更多<i class="fa-solid fa-arrow-right"></i></button>
                     </div>
                 </div>
                 <div class="results">
@@ -353,13 +357,28 @@ export default {
                     <div class="recard">
                         <p>2022.01.01</p>
                         <p class="card-title">有氧鬆筋雕塑</p>
-                        <p class="content">一個人走得快，一群人走得遠，一同在教室揮灑汗水。</p>
-                        <Link href="" class="more">了解更多<i
-                                class="fa-solid fa-arrow-right"></i></Link>
+                        <p class="card-content">一個人走得快，一群人走得遠，一同在教室揮灑汗水。</p>
+                        <button type="button" class="more">了解更多<i class="fa-solid fa-arrow-right"></i></button>
                     </div>
                 </div>
                 <div class="w-[334px] 2md:w-[169px] md:w-[275px] opacity-0"></div>
                 <div class="w-[334px] 2md:w-[169px] md:w-[275px] opacity-0"></div>
+            </div>
+        </div>
+        <div v-if="show" class="w-[100%] h-[100%] absolute top-0">
+            <div class="mask w-full h-full fixed z-[5] top-0 left-0 bg-black/50">
+                <div class="modal absolute z-[6] top-[5%] left-[16%] w-[68%] h-[90dvh] px-[3%] bg-white overflow-y-scroll">
+                    <div class="my-[20px] text-center relative">
+                        <div class="text-[14px] 2sm:text-[24px] md:text-[26px] font-[600] text-[#0057ff]">有氧鬆筋雕塑
+                        </div>
+                        <button type="button" @click="show = false"><i
+                                class="fa-solid fa-xmark text-[21px] absolute top-[25%] right-0"></i></button>
+                    </div>
+                    <div class="flex flex-col text-[12px] 2sm:text-[20px] md:text-[22px] font-[500] text-center">
+                        <div class="mb-[20px]">一個人走得快，一群人走得遠，一同在教室揮灑汗水。</div>
+                    </div>
+                    <img :src="images.wallpaper" alt="" class="m-auto mb-[30px] h-[300px] 2sm:h-[504px] md:h-[632px]">
+                </div>
             </div>
         </div>
     </div>
@@ -379,15 +398,19 @@ export default {
     max-height: 12.4vh;
     overflow: hidden;
 }
-.all button{
+
+.all button {
     font-weight: 800;
 }
-.all-2 button{
+
+.all-2 button {
     font-weight: 800;
 }
-.SelectionBar button{
+
+.SelectionBar button {
     font-weight: 800;
 }
+
 @keyframes up {
     from {
         max-height: 12.4vh;
@@ -447,6 +470,10 @@ export default {
     display: none;
 }
 
+.OptionClick i {
+    font-size: 12px;
+}
+
 .SelectionOptionClick {
     display: flex;
     flex-direction: column;
@@ -476,11 +503,10 @@ export default {
 .content {
     margin-top: 2.604vw;
     padding: 0px 1.04vw;
-    font-family: Noto Sans TC;
 }
 
 .members {
-    @apply w-[334px] h-[361px] 2md:w-[406px] 2md:h-[173px] md:w-[538px] md:h-[230px] mt-[20px] font-[700] flex flex-col 2md:flex-row bg-white shadow-lg;
+    @apply w-[334px] h-[361px] 2md:w-[386px] 2md:h-[173px] md:w-[538px] md:h-[230px] mt-[20px] font-[700] flex flex-col 2md:flex-row bg-white shadow-lg;
 
 }
 
@@ -489,30 +515,74 @@ export default {
 }
 
 .results {
-    @apply w-[334px] h-[430px] 2md:w-[169px] 2md:h-[242px] md:w-[275px] md:h-[404px] bg-white mt-[20px] shadow-lg;
+    @apply w-[334px] h-[430px] 2sm:w-[242px] 2sm:h-[385px] 2md:w-[169px] 2md:h-[242px] md:w-[275px] md:h-[404px] bg-white mt-[20px] shadow-lg;
 }
 
 .reimg {
+    /* @apply w-[334px] 2sm:w-[169px]; */
     @apply w-[100%];
 }
 
 .info {
-    @apply text-[14px] 2md:text-[12px] px-[20px] pt-[20px] md:px-[40px] md:text-[16px] break-all;
+    @apply text-[14px] px-[20px] pt-[20px] md:px-[40px] md:text-[16px] break-all;
 }
 
 .recard {
-    @apply text-[14px] 2md:text-[10px] md:text-[16px] font-[600] p-[25px] md:p-[25px] flex flex-col gap-[12px] 2md:gap-[9px] md:gap-[15px];
+    @apply text-[14px] 2md:text-[10px] md:text-[16px] font-[600] p-[25px] 2md:p-[15px] md:p-[25px] flex flex-col gap-[12px] 2md:gap-[9px] md:gap-[15px];
 }
-.card-title{
+
+.card-title {
     @apply text-[22px] 2md:text-[14px] md:text-[22px] text-[#0057ff] font-[800];
 }
-.content{
-    @apply text-[16px];
+
+.name {
+    @apply text-[22px] md:text-[30px] text-[#0057ff] my-[15px];
 }
-.more{
+
+.contact {
+    @apply flex flex-col gap-[5px];
+}
+
+.card-content {
+    @apply text-[16px] 2md:text-[10px] md:text-[16px];
+}
+
+.more {
     @apply text-[#0057ff] text-[14px] 2md:text-[8px] md:text-[14px] font-[800] mt-[3px] md:mt-[5px] ml-auto;
 }
+
+@media(max-width:800px) {
+    .info {
+        @apply text-[14px];
+    }
+}
+
+@media(max-width:767px) {
+    .info {
+        @apply text-[12px] pt-[10px];
+    }
+
+    .SelectionBtn {
+        border-radius: 1.56vw 1.56vw 0px 0px;
+        font-size: 1.56vw;
+    }
+
+    .ClickColor {
+        border-radius: 1.56vw 1.56vw 0px 0px;
+        font-size: 1.56vw;
+    }
+}
+
+@media (max-width:568px) {
+    .info {
+        @apply text-[8px];
+    }
+}
+
 @media (max-width:500px) {
+    .info {
+        @apply text-[12px];
+    }
 
     .SelectionBar {
         display: none;

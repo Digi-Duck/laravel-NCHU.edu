@@ -403,6 +403,18 @@ li {
     display: none;
 }
 
+@media(max-width:768px) {
+    .SelectionBtn {
+        border-radius: 1.56vw 1.56vw 0px 0px;
+        font-size: 1.56vw;
+    }
+
+    .ClickColor {
+        border-radius: 1.56vw 1.56vw 0px 0px;
+        font-size: 1.56vw;
+    }
+}
+
 @media (max-width:500px) {
 
     .SelectionBar {

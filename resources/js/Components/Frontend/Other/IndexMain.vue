@@ -69,18 +69,6 @@ export default {
                         <li v-for="item in course.rt_data" :key="item.id">
                             <Link href="">0{{ item.sort }}{{ item.name }}</Link><span class="ml-[10px]" :class="{ 'hidden': item.sort == course.rt_data.length }">|</span>
                         </li>
-                        <!-- <li>
-                            <Link href="">02單元手作</Link>
-                        </li>|
-                        <li>
-                            <Link href="">03運動課程</Link>
-                        </li><span>|</span>
-                        <li>
-                            <Link href="">04職業訓練</Link>
-                        </li>|
-                        <li>
-                            <Link href="">05專業證照</Link>
-                        </li> -->
                     </ul>
                 </Transition>
             </div>
@@ -300,7 +288,7 @@ export default {
     }
 
     .content {
-        @apply ml-0 text-[4.3vw];
+        @apply ml-0 px-[5%] text-[4.3vw] font-[600];
     }
 
     .more {
