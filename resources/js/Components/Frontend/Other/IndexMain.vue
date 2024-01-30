@@ -67,7 +67,7 @@ export default {
                 <Transition name="slide-fade-right">
                     <ul v-if="show" class="list">
                         <li v-for="item in course.rt_data" :key="item.id">
-                            <Link href="">0{{item.sort}}{{ item.name }}</Link><span class="ml-[10px]">|</span>
+                            <Link href="">0{{ item.sort }}{{ item.name }}</Link><span class="ml-[10px]">|</span>
                         </li>
                         <!-- <li>
                             <Link href="">02單元手作</Link>
