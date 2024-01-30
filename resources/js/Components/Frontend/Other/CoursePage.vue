@@ -39,7 +39,7 @@ export default {
     <div class="w-[85%]  m-auto flex  flex-col">
         <div class="title"><img :src="screenWidth ? images.coursePC : images.coursePhone" alt="" class="m-auto 2md:m-0">
         </div>
-        <a :href="'/course/type' + courses.rt_data[0].course_type_id"><button type="button">TEST</button></a>
+        <a :href="'/course/type/' + courses.rt_data[0].course_type_id"><button type="button">TEST</button></a>
         <div class="w-[90%] md:w-[80%] m-auto">
             <div :class="ClickNum == 1 ? 'all-2' : 'all'">
                 <button class="OptionClick" type="button">全部課程 <i class="fa-solid fa-chevron-down"></i></button>
