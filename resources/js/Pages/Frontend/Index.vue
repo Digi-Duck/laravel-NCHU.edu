@@ -22,7 +22,7 @@ export default {
     },
     data() {
         return {
-            
+
         };
     },
     methods: {
@@ -32,7 +32,7 @@ export default {
 </script>
 
 <template>
-    <FrontendLayout>
+    <FrontendLayout >
         <div>
             <IndexBanner />
         </div>

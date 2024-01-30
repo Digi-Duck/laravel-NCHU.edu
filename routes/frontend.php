@@ -14,6 +14,7 @@ Route::get('/news',[NewController::class,'index'])->name('news.index');
 Route::get('/web',[WebInformationController::class,'index'])->name('web.index');
 
 Route::prefix('course')->group(function () {
+    Route::get('/type/{input}', [CourseController::class, 'get_course']);
     Route::get('/all', [CourseController::class, 'all'])->name('all.course');
     Route::get('/latest', [CourseController::class, 'latest'])->name('latest.course');
     Route::get('/child', [CourseController::class, 'child'])->name('child.course');

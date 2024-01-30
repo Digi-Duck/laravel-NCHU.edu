@@ -10,6 +10,11 @@ use App\Models\Course;
 class CourseController extends Controller
 {
 
+    public function get_course($input){
+        $courses = [];
+        $courses = Course::where('course_type_id', $input)->select(['course_type_id', 'name', 'start_time', 'price', 'link', 'img_path'])->get();
+        return Inertia::render('Frontend/Course', ['response' => rtFormat($courses) ?? []]);
+    }
     public function all()
     {
         $courses = [];
