@@ -1,6 +1,4 @@
 <script>
-import { Container } from 'postcss';
-import fake from '/images/coursePage/fakeIMG.svg';
 export default {
     props: {
         resCourse: Array,
@@ -8,69 +6,57 @@ export default {
     data() {
         return {
             courses: this.resCourse ?? [],
-            img: {
-                fake
-            },
-            // courses: [
-            //     {
-            //         type: '單元手作',
-            //         name: '樂活陶 No10',
-            //         start_time: '2024.2.22',
-            //         price: '2600',
-            //         link: 'https://www.siileec.com/subject.php?sn=4346&fbclid=IwAR0NY-qTpIUc9M1FlK5-4kIfyjS8zi85ik-JIchGmuQzVL8tKJIm8XvPso4',
-            //         img_path: '/images/coursePage/fakeIMG.svg',
-            //     },
-            //     {
-            //         type: '兒童營隊',
-            //         name: '鹿角蕨上板x水苔實作體驗',
-            //         start_time: '2024.1.27',
-            //         price: '600',
-            //         link: 'https://www.siileec.com/subject.php?sn=4289',
-            //         img_path: '/resources/images/coursePage/fakeIMG.svg',
-            //     },
-            //     {
-            //         type: '運動課程',
-            //         name: '功能性運動訓練',
-            //         start_time: '2024.2.23',
-            //         price: '2500',
-            //         link: 'https://siileec.com/subject.php?sn=4384&fbclid=IwAR24E_g4DnDJsphbhOk9OrTqnCNXBDeSOm9pTAIwusKzG1AL77I_Nih6z9k',
-            //         img_path: '/resources/images/coursePage/fakeIMG.svg',
-            //     },
-            //     {
-            //         type: '職業訓練',
-            //         name: '綠能溫室智慧環控與植物栽培管理實務班',
-            //         start_time: '2024.3.21',
-            //         price: '0',
-            //         link: 'https://elite.taiwanjobs.gov.tw/ClassSearch/Detail?UUID=B38ED0FDE9B34989A0DA2D56403CBEBE&SOURCE_TYPE=ELIT&fbclid=IwAR0JwbuW0bb_YR8W127wlIALqepRInPjsx8aja0hIwlZbrqvw08S82XAKhI',
-            //         img_path: '/resources/images/coursePage/fakeIMG.svg',
-            //     },
-            //     {
-            //         type: '專業證照',
-            //         name: '色彩學證照輔導：配色技巧Ｘ實戰運用',
-            //         start_time: '2024.1.23',
-            //         price: '6300',
-            //         link: 'https://www.siileec.com/subject.php?sn=4341',
-            //         img_path: '/resources/images/coursePage/fakeIMG.svg',
-            //     },
-            // ],
-            selectedCourse: { title: '全部課程', },
+            Num: 1,
+            ClickNum: 1,
+            detail: false,
+            screenWidth: false,
         }
+    },
+    methods: {
+        toggle() {
+            if (this.ClickNum == 1) {
+                return this.ClickNum = 2;
+            } else {
+                return this.ClickNum = 1;
+            }
+        },
+        checkScreenWidth() {
+            this.screenWidth = window.innerWidth >= 500;
+        },
     },
 }
 </script>
 <template>
     <div class="w-[85%]  m-auto flex  flex-col">
-        <div class="title w-[100%] ">課程資訊</div>
+        <div class="title w-[100%] ">網站資訊</div>
         <div class="w-[90%] md:w-[80%] m-auto">
-            <select v-model="selectedCourse.title" class="w-full cursor-pointer ">
-                <option>全部課程</option>
-                <option>最新課程</option>
-                <option>兒童營隊</option>
-                <option>單元手作</option>
-                <option>運動課程</option>
-                <option>職業訓練</option>
-                <option>專業證照</option>
-            </select>
+            <div :class="ClickNum == 1 ? 'all-2' : 'all'">
+                <button  class="OptionClick" type="button">全部課程 V</button>
+                <button  class="OptionClick" type="button">最新課程 V</button>
+                <button  class="OptionClick" type="button">兒童營隊 V</button>
+                <button  class="OptionClick" type="button">單元手作 V</button>
+                <button  class="OptionClick" type="button">運動課程 V</button>
+                <button  class="OptionClick" type="button">職業訓練 V</button>
+                <button  class="OptionClick" type="button">專業證照 V</button>
+                <div :class="ClickNum == 2 ? 'SelectionOptionClick' : 'SelectionOption'">
+                    <button  class="OptionBtn" type="button">全部課程</button>
+                    <button  class="OptionBtn" type="button">最新課程</button>
+                    <button  class="OptionBtn" type="button">兒童營隊</button>
+                    <button  class="OptionBtn" type="button">單元手作</button>
+                    <button  class="OptionBtn" type="button">運動課程</button>
+                    <button  class="OptionBtn" type="button">職業訓練</button>
+                    <button  class="OptionBtn" type="button">專業證照</button>
+                </div>
+            </div>
+            <div class="SelectionBar w-[100%]">
+                <button @click="Num = 1" :class="Num == 1 ? 'ClickColor' : 'SelectionBtn'" type="button">全部課程</button>
+                <button @click="Num = 2" :class="Num == 2 ? 'ClickColor' : 'SelectionBtn'" type="button">最新課程</button>
+                <button @click="Num = 3" :class="Num == 3 ? 'ClickColor' : 'SelectionBtn'" type="button">兒童營隊</button>
+                <button @click="Num = 4" :class="Num == 4 ? 'ClickColor' : 'SelectionBtn'" type="button">單元手作</button>
+                <button @click="Num = 5" :class="Num == 5 ? 'ClickColor' : 'SelectionBtn'" type="button">運動課程</button>
+                <button @click="Num = 6" :class="Num == 6 ? 'ClickColor' : 'SelectionBtn'" type="button">職業訓練</button>
+                <button @click="Num = 7" :class="Num == 7 ? 'ClickColor' : 'SelectionBtn'" type="button">專業證照</button>
+            </div>
         </div>
         <div
             class="w-[90%]  ml-[13.8vw] 2sm:ml-[7.2vw] md:ml-[10.5vw] md:w-[80%]  py-[1%]  flex gap-[3%] flex-wrap justify-start">
@@ -84,7 +70,7 @@ export default {
                         <li class="card-text ">課程日期 | {{ course.start_time.slice(0, 10) }} </li>
                         <li class="card-text ">課程價格 | {{ course.price === 0 ? 'Free' : '$' + course.price }}</li>
                     </ul>
-                    <div class="flex  ml-auto mt-auto mb-[1.04vw] px-[0.78vw] card-more"><a :href="course.link" class=" border-b-[1px] border-[#ffffff]  hover:border-b-[1px] hover:border-[#0057ff] ">了解更多 <i class="fa-solid fa-arrow-right"></i></a></div>
+                    <div class="flex  ml-auto mt-auto mb-[1.04vw] px-[0.78vw] card-more"><a :href="course.link" class=" border-b-[2px] border-[#ffffff]  hover:border-b-[2px] hover:border-[#0057ff] ">了解更多 <i class="fa-solid fa-arrow-right"></i></a></div>
                 </div>
             </div>
         </div>
@@ -109,4 +95,89 @@ export default {
 .card-more {
     @apply text-[1.68vw] 2sm:text-[1.28vw] md:text-[0.8vw] text-[#0057ff] font-bold;
     font-family: 'Inter', sans-serif;
-}</style>
+}
+
+/*barton*/
+.all {
+    max-height: 12.4vh;
+    overflow: hidden;
+    animation-name: up;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+
+.all-2 {
+    max-height: 12.4vh;
+    overflow: hidden;
+}
+
+@keyframes up {
+    from {
+        max-height: 12.4vh;
+    }
+
+    to {
+        max-height: 30vh;
+    }
+}
+
+
+.title {
+    @apply mt-[20px] md:mt-[60px] md:mb-[20px] 2md:w-[185px] md:w-[315px];
+}
+
+.SelectionBar {
+    border-bottom: 2px solid black;
+}
+
+.SelectionBtn {
+    padding: 0.48vw 1.46vw;
+    border-radius: 1.04vw 1.04vw 0px 0px;
+    font-size: 1.04vw;
+    font-family: inter;
+    background-color: transparent;
+    margin-right: 1vw;
+}
+
+.ClickColor {
+    padding: 0.48vw 1.46vw;
+    border-radius: 20px 20px 0px 0px;
+    font-size: 1.04vw;
+    font-family: inter;
+    color: white;
+    background-color: rgb(0, 87, 255);
+    margin-right: 1vw;
+}
+
+.SelectionBtn:hover {
+    background-color: rgb(210, 210, 210);
+}
+
+
+.OptionBtn {
+    text-align: center;
+    background-color: rgb(0, 87, 255);
+    color: white;
+    padding: 1.5vw 0px;
+    border-bottom: 0.2vw solid rgba(255, 255, 255, 0.35);
+    font-size: 2.8vw;
+}
+
+.OptionClick {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px black solid;
+    display: none;
+}
+
+.SelectionOptionClick {
+    display: flex;
+    flex-direction: column;
+    font-size: 2.8vw;
+}
+
+.SelectionOption {
+    display: none;
+}
+</style>
