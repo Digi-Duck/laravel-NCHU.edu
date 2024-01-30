@@ -8,7 +8,6 @@ use Illuminate\Database\Seeder;
 use App\Models\CourseType;
 use App\Models\Course;
 
-
 class courses_table_seeder extends Seeder
 {
     /**
@@ -18,27 +17,29 @@ class courses_table_seeder extends Seeder
     {
         Course::truncate();
 
-        // $names = file_get_contents(database_path('seeders/course_texts/courses_names.txt'));
-        $names = ['兒童營隊','單元手作','運動課程','職業訓練','專業證照'];
-        $contents = file_get_contents(database_path('seeders/course_texts/courses_contents.txt'));
-        $start_times = file_get_contents(database_path('seeders/course_texts/courses_start_times.txt'));
-        $end_times = file_get_contents(database_path('seeders/course_texts/courses_end_times.txt'));
-        $prices = file_get_contents(database_path('seeders/course_texts/courses_prices.txt'));
-        $links = file_get_contents(database_path('seeders/course_texts/courses_links.txt'));
-        $img_paths = file_get_contents(database_path('seeders/course_texts/courses_img_paths.txt'));
+        $names = explode("\n", file_get_contents(database_path('seeders/course_texts/courses_names.txt')));
+        $contents = explode("\n", file_get_contents(database_path('seeders/course_texts/courses_contents.txt')));
+        $start_times = explode("\n", file_get_contents(database_path('seeders/course_texts/courses_start_times.txt')));
+        $end_times = explode("\n", file_get_contents(database_path('seeders/course_texts/courses_end_times.txt')));
+        $prices = explode("\n", file_get_contents(database_path('seeders/course_texts/courses_prices.txt')));
+        $links = explode("\n", file_get_contents(database_path('seeders/course_texts/courses_links.txt')));
+        $img_paths = explode("\n", file_get_contents(database_path('seeders/course_texts/courses_img_paths.txt')));
+
         $index = 0;
         $courseTypes = CourseType::all();
 
         foreach ($courseTypes as $courseType) {
             Course::insert([
+                'created_at' => now()->format('Y-m-d'),
+                'updated_at' => now()->format('Y-m-d'),
                 'name' => $names[$index],
                 'course_type_id' => $courseType->id,
-                'start_time' => now()->format('Y-m-d'),
-                'end_time' => now()->addDays(30)->format('Y-m-d'),
-                'price' => rand(0, 5000),
-                'content' => '',
-                'link' => 'https://www.instagram.com/weiwei_0731_/?hl=zh-tw',
-                'img_path' => '/test/wei.svg',
+                'start_time' => $start_times[$index],
+                'end_time' => $end_times[$index],
+                'price' => $prices[$index],
+                'content' => $contents[$index],
+                'link' => $links[$index],
+                'img_path' => $img_paths[$index],
             ]);
             $index++;
         }

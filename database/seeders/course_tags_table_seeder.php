@@ -23,6 +23,8 @@ class course_tags_table_seeder extends Seeder
             $tags = ['標籤一','標籤二','標籤三','標籤四'];
             foreach ($tags as $tag) {
                 CourseTag::insert([
+                    'created_at' => now()->format('Y-m-d'),
+                    'updated_at' => now()->format('Y-m-d'),
                     'tag_name' => $tag,
                     'course_id' => $course->id,
                 ]);
