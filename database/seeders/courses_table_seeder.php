@@ -10,6 +10,7 @@ use App\Models\Course;
 
 class courses_table_seeder extends Seeder
 {
+    
     /**
      * Run the database seeds.
      */

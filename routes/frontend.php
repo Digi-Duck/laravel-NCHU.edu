@@ -14,12 +14,12 @@ Route::get('/news',[NewController::class,'index'])->name('news.index');
 Route::get('/web',[WebInformationController::class,'index'])->name('web.index');
 
 Route::prefix('course')->group(function () {
-    Route::get('/all', [CourseController::class, 'show'])->name('all.course')->defaults('category', 'all');
-    Route::get('/latest', [CourseController::class, 'show'])->name('latest.course')->defaults('category', 'latest');
-    Route::get('/child', [CourseController::class, 'show'])->name('child.course')->defaults('category', 'child');
-    Route::get('/diy', [CourseController::class, 'show'])->name('diy.course')->defaults('category', 'diy');
-    Route::get('/sport', [CourseController::class, 'show'])->name('sport.course')->defaults('category', 'sport');
-    Route::get('/train', [CourseController::class, 'show'])->name('train.course')->defaults('category', 'train');
-    Route::get('/major', [CourseController::class, 'show'])->name('major.course')->defaults('category', 'major');
+    Route::get('/all', [CourseController::class, 'all'])->name('all.course');
+    Route::get('/latest', [CourseController::class, 'latest'])->name('latest.course');
+    Route::get('/child', [CourseController::class, 'child'])->name('child.course');
+    Route::get('/diy', [CourseController::class, 'diy'])->name('diy.course');
+    Route::get('/sport', [CourseController::class, 'sport'])->name('sport.course');
+    Route::get('/train', [CourseController::class, 'train'])->name('train.course');
+    Route::get('/major', [CourseController::class, 'major'])->name('major.course');
 });
 

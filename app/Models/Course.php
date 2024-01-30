@@ -21,7 +21,7 @@ class Course extends Model
 {
     public function courseType()
     {
-        return $this->hasMany(CourseType::class, 'course_type_id', 'id');
+        return $this->belongsTo('App\Models\CourseType', 'course_type_id');
     }
 
     /**

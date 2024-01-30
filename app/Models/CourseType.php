@@ -15,6 +15,11 @@ use Illuminate\Database\Eloquent\Model;
  */
 class CourseType extends Model
 {
+    public function courses()
+    {
+        return $this->hasMany('App\Models\Course', 'course_type_id');
+    }
+
     /**
      * @var array
      */
