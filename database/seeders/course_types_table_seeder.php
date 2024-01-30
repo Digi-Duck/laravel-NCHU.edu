@@ -55,7 +55,7 @@ class course_types_table_seeder extends Seeder
                     'created_at' => now()->format('Y-m-d'),
                     'updated_at' => now()->format('Y-m-d'),
                     'name' => '專業證照',
-                    'content' => '適合想要考取證照的你，由課程專業講師帶領你了解各種專業知識，得到專業認證。',
+                    'content' => '由課程專業講師帶領你了解各種專業知識，得到專業認證。',
                     'img_path' => '/images/main/certificate.svg',
                     'sort' => 5,
                 ],
