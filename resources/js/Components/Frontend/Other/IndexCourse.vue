@@ -71,7 +71,7 @@ export default {
                     <swiper class=" swiper  ml-[16.24vw]  2sm:ml-[11vw] h-[70vw]  relative" :effect="'cards'"
                         :grabCursor="true" :modules="modules" :loop="true">
                         <swiper-slide v-for="(card, index) in cards" :key="index" class="swiper-slide"
-                        :style="{ backgroundColor: card.color }" >
+                        :style="{ backgroundColor: card.color, backgroundImage: 'url(' + card.img + ')' }">
                             <a>
                                 <div class="card flex flex-col justify-end">
                                     <div class="card-type">{{ card.type }}</div>
@@ -93,7 +93,7 @@ export default {
                 <div class="w-[40.41vw] h-[33.85vw]">
                     <div class="cards h-[24.37vw] relative" @wheel.prevent="handleMouseWheel">
                         <div v-for="card in cards" :key="card.id" class="card"
-                            :style="{ transform: card.transform, backgroundColor: card.color}">
+                            :style="{ transform: card.transform, backgroundColor: card.color }">
                             <a>
                                 <div class="card flex flex-col justify-end">
                                     <div class="card-type">{{ card.type }}</div>
@@ -168,11 +168,11 @@ export default {
 </template>
 <style scoped>
 .swiper {
-@apply w-[71vw] h-[57.95vw]
-2sm:w-[67.35vw] 2sm:h-[44.15vw];
+    @apply w-[71vw] h-[57.95vw] 2sm:w-[67.35vw] 2sm:h-[44.15vw];
 }
-.swiper-slide{
-@apply px-[2vw]
+
+.swiper-slide {
+    @apply px-[2vw]
 }
 
 
