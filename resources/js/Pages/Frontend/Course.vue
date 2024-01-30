@@ -4,9 +4,7 @@ import BannerLayout from '@/Layouts/BannerLayout.vue';
 import CoursePage from '@/Components/Frontend/Other/CoursePage.vue';
 
 export default {
-    props: {
-        courses: Array
-    },
+    props: { response: Array },
     components: {
         FrontendLayout,
         BannerLayout,
@@ -21,7 +19,7 @@ export default {
     <FrontendLayout>
         <BannerLayout>
             <div>
-                <CoursePage />
+                <CoursePage :res-course="response" />
             </div>
         </BannerLayout>
     </FrontendLayout>
