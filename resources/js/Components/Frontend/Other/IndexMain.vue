@@ -60,14 +60,14 @@ export default {
         <div class="main">
             <div class="main-top">
                 <Transition name="slide-fade-left">
-                    <div v-if="show" class="big-title">
+                    <div v-if="show" class="big-title mb-[30px]">
                         <img :src="images.provide" alt="">
                     </div>
                 </Transition>
                 <Transition name="slide-fade-right">
                     <ul v-if="show" class="list">
                         <li v-for="item in course.rt_data" :key="item.id">
-                            <Link href="">0{{ item.sort }}{{ item.name }}</Link><span class="ml-[10px]">|</span>
+                            <Link href="">0{{ item.sort }}{{ item.name }}</Link><span class="ml-[10px]" :class="{ 'hidden': item.sort == course.rt_data.length }">|</span>
                         </li>
                         <!-- <li>
                             <Link href="">02單元手作</Link>
@@ -141,11 +141,11 @@ export default {
 }
 
 .title-name {
-    @apply float-right mt-[-6%];
+    @apply float-right mt-[-6%] mb-[10px];
 }
 
 .content {
-    @apply text-[1vw] font-[900] ml-[25%] tracking-[1px];
+    @apply text-[1vw] font-[900] ml-[28%] md:ml-[20%] text-justify;
 }
 
 .more {
@@ -244,12 +244,12 @@ export default {
     }
 
     .content {
-        @apply text-[1.6vw] pt-[8px];
+        @apply text-[1.6vw] pt-[16px];
         clear: right;
     }
 
     .more {
-        @apply text-[1.6vw] mt-[10px];
+        @apply text-[1.5vw] mt-[10px] font-[900];
     }
 }
 

@@ -1,58 +1,69 @@
 <script>
 import latest from '/images/main/news.png';
+import latestPhone from '/images/main/newsPhone.png';
+
 export default {
     data() {
         return {
             images: {
                 latest,
+                latestPhone,
             },
             show: false,
+            screenWidth: false,
         }
     },
     mounted() {
         this.show = true;
-    }
+        this.checkScreenWidth();
+        window.addEventListener('resize', this.checkScreenWidth);
+    },
+    methods:{
+        checkScreenWidth() {
+            this.screenWidth = window.innerWidth >= 500;
+        },
+    },
 }
 </script>
 <template>
     <main class="w-[90%] md:w-[80%] m-auto">
         <div class="all">
             <Transition name="slide-fade-left">
-                <img v-if="show" :src="images.latest" alt="">
+                <img v-if="show" :src="screenWidth ? images.latest : images.latestPhone" alt="">
             </Transition>
-            <Transition name="slide-fade-up">
-                <div v-if="show">
-                    <Link class="more">了解更多</Link>
-                    <div class="all-news">
-                        <Link class="news" href="">
-                        <div>2023.01.01</div>
-                        <div>包含職業訓練、兒童營隊、專業證照、運動課程</div>
-                        <div><i class="fa-solid fa-arrow-right"></i></div>
-                        </Link>
-                        <Link class="news" href="">
-                        <div>2023.01.01</div>
-                        <div>包含職業訓練、兒童營隊、專業證照、運動課程</div>
-                        <div><i class="fa-solid fa-arrow-right"></i></div>
-                        </Link>
-                        <Link class="news" href="">
-                        <div>2023.01.01</div>
-                        <div>包含職業訓練、兒童營隊、專業證照、運動課程</div>
-                        <div><i class="fa-solid fa-arrow-right"></i></div>
-                        </Link>
-                        <Link class="news" href="">
-                        <div>2023.01.01</div>
-                        <div>包含職業訓練、兒童營隊、專業證照、運動課程</div>
-                        <div><i class="fa-solid fa-arrow-right"></i></div>
-                        </Link>
-                        <Link class="news" href="">
-                        <div>2023.01.01</div>
-                        <div>包含職業訓練、兒童營隊、專業證照、運動課程</div>
-                        <div><i class="fa-solid fa-arrow-right"></i></div>
-                        </Link>
-                    </div>
+            <!-- <Transition name="slide-fade-up"> -->
+            <div data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
+                <Link class="more">了解更多</Link>
+                <div class="all-news">
+                    <Link class="news" href="">
+                    <div>2023.01.01</div>
+                    <div>包含職業訓練、兒童營隊、專業證照、運動課程</div>
+                    <div><i class="fa-solid fa-arrow-right"></i></div>
+                    </Link>
+                    <Link class="news" href="">
+                    <div>2023.01.01</div>
+                    <div>包含職業訓練、兒童營隊、專業證照、運動課程</div>
+                    <div><i class="fa-solid fa-arrow-right"></i></div>
+                    </Link>
+                    <Link class="news" href="">
+                    <div>2023.01.01</div>
+                    <div>包含職業訓練、兒童營隊、專業證照、運動課程</div>
+                    <div><i class="fa-solid fa-arrow-right"></i></div>
+                    </Link>
+                    <Link class="news" href="">
+                    <div>2023.01.01</div>
+                    <div>包含職業訓練、兒童營隊、專業證照、運動課程</div>
+                    <div><i class="fa-solid fa-arrow-right"></i></div>
+                    </Link>
+                    <Link class="news" href="">
+                    <div>2023.01.01</div>
+                    <div>包含職業訓練、兒童營隊、專業證照、運動課程</div>
+                    <div><i class="fa-solid fa-arrow-right"></i></div>
+                    </Link>
                 </div>
+            </div>
 
-            </Transition>
+            <!-- </Transition> -->
         </div>
     </main>
 </template>
@@ -133,9 +144,8 @@ img {
     img {
         @apply w-[40vw] m-auto;
     }
-
-    .more {
-        @apply hidden;
+    .more{
+        @apply text-[2.5vw];
     }
 
     .all-news {

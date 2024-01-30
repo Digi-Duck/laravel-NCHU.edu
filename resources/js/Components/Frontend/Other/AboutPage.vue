@@ -108,6 +108,19 @@ export default {
                     <div><img class="mem" :src="screenWidth ? images.member : images.memberPhone" alt=""></div>
                     <div class="info">
                         <p>主任秘書</p>
+                        <p class="text-[22px] md:text-[30px] text-[#0057ff] my-[15px]">王大詹</p>
+                        <div class="flex flex-col gap-[5px]">
+                            <p>電話 | 0212312312 #1234</p>
+                            <p>信箱 | <span></span>
+                                a123456789123456789 <br>
+                                &emsp; &emsp; @gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="members">
+                    <div><img class="mem" :src="screenWidth ? images.member : images.memberPhone" alt=""></div>
+                    <div class="info">
+                        <p>主任秘書</p>
                         <p class="text-[22px] md:text-[30px] text-[#0057ff]">王大詹</p>
                         <div>
                             <p>電話 | 0212312312 #1234</p>
@@ -124,7 +137,9 @@ export default {
                         <p class="text-[22px] md:text-[30px] text-[#0057ff]">王大詹</p>
                         <div>
                             <p>電話 | 0212312312 #1234</p>
-                            <p>信箱 | a123456789123456789@gmail.com</p>
+                            <p>信箱 | <span></span>
+                                a123456789123456789 <br>
+                                @gmail.com</p>
                         </div>
                     </div>
                 </div>
@@ -135,7 +150,9 @@ export default {
                         <p class="text-[22px] md:text-[30px] text-[#0057ff]">王大詹</p>
                         <div>
                             <p>電話 | 0212312312 #1234</p>
-                            <p>信箱 | a123456789123456789@gmail.com</p>
+                            <p>信箱 | <span></span>
+                                a123456789123456789 <br>
+                                @gmail.com</p>
                         </div>
                     </div>
                 </div>
@@ -146,7 +163,9 @@ export default {
                         <p class="text-[22px] md:text-[30px] text-[#0057ff]">王大詹</p>
                         <div>
                             <p>電話 | 0212312312 #1234</p>
-                            <p>信箱 | a123456789123456789@gmail.com</p>
+                            <p>信箱 | <span></span>
+                                a123456789123456789 <br>
+                                @gmail.com</p>
                         </div>
                     </div>
                 </div>
@@ -157,18 +176,9 @@ export default {
                         <p class="text-[22px] md:text-[30px] text-[#0057ff]">王大詹</p>
                         <div>
                             <p>電話 | 0212312312 #1234</p>
-                            <p>信箱 | a123456789123456789@gmail.com</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="members">
-                    <div><img class="mem" :src="screenWidth ? images.member : images.memberPhone" alt=""></div>
-                    <div class="info">
-                        <p>主任秘書</p>
-                        <p class="text-[22px] md:text-[30px] text-[#0057ff]">王大詹</p>
-                        <div>
-                            <p>電話 | 0212312312 #1234</p>
-                            <p>信箱 | a123456789123456789@gmail.com</p>
+                            <p>信箱 | <span></span>
+                                a123456789123456789 <br>
+                                @gmail.com</p>
                         </div>
                     </div>
                 </div>
@@ -283,7 +293,7 @@ export default {
                     <div class="recard">
                         <p>2022.01.01</p>
                         <p class="card-title">有氧鬆筋雕塑</p>
-                        <p>一個人走得快，一群人走得遠，一同在教室揮灑汗水。</p>
+                        <p class="content">一個人走得快，一群人走得遠，一同在教室揮灑汗水。</p>
                         <Link href="" class="more">了解更多<i
                                 class="fa-solid fa-arrow-right"></i></Link>
                     </div>
@@ -293,7 +303,7 @@ export default {
                     <div class="recard">
                         <p>2022.01.01</p>
                         <p class="card-title">有氧鬆筋雕塑</p>
-                        <p>一個人走得快，一群人走得遠，一同在教室揮灑汗水。</p>
+                        <p class="content">一個人走得快，一群人走得遠，一同在教室揮灑汗水。</p>
                         <Link href="" class="more">了解更多<i
                                 class="fa-solid fa-arrow-right"></i></Link>
                     </div>
@@ -303,7 +313,7 @@ export default {
                     <div class="recard">
                         <p>2022.01.01</p>
                         <p class="card-title">有氧鬆筋雕塑</p>
-                        <p>一個人走得快，一群人走得遠，一同在教室揮灑汗水。</p>
+                        <p class="content">一個人走得快，一群人走得遠，一同在教室揮灑汗水。</p>
                         <Link href="" class="more">了解更多<i
                                 class="fa-solid fa-arrow-right"></i></Link>
                     </div>
@@ -313,7 +323,7 @@ export default {
                     <div class="recard">
                         <p>2022.01.01</p>
                         <p class="card-title">有氧鬆筋雕塑</p>
-                        <p>一個人走得快，一群人走得遠，一同在教室揮灑汗水。</p>
+                        <p class="content">一個人走得快，一群人走得遠，一同在教室揮灑汗水。</p>
                         <Link href="" class="more">了解更多<i
                                 class="fa-solid fa-arrow-right"></i></Link>
                     </div>
@@ -323,7 +333,7 @@ export default {
                     <div class="recard">
                         <p>2022.01.01</p>
                         <p class="card-title">有氧鬆筋雕塑</p>
-                        <p>一個人走得快，一群人走得遠，一同在教室揮灑汗水。</p>
+                        <p class="content">一個人走得快，一群人走得遠，一同在教室揮灑汗水。</p>
                         <Link href="" class="more">了解更多<i
                                 class="fa-solid fa-arrow-right"></i></Link>
                     </div>
@@ -333,7 +343,7 @@ export default {
                     <div class="recard">
                         <p>2022.01.01</p>
                         <p class="card-title">有氧鬆筋雕塑</p>
-                        <p>一個人走得快，一群人走得遠，一同在教室揮灑汗水。</p>
+                        <p class="content">一個人走得快，一群人走得遠，一同在教室揮灑汗水。</p>
                         <Link href="" class="more">了解更多<i
                                 class="fa-solid fa-arrow-right"></i></Link>
                     </div>
@@ -343,21 +353,13 @@ export default {
                     <div class="recard">
                         <p>2022.01.01</p>
                         <p class="card-title">有氧鬆筋雕塑</p>
-                        <p>一個人走得快，一群人走得遠，一同在教室揮灑汗水。</p>
+                        <p class="content">一個人走得快，一群人走得遠，一同在教室揮灑汗水。</p>
                         <Link href="" class="more">了解更多<i
                                 class="fa-solid fa-arrow-right"></i></Link>
                     </div>
                 </div>
-                <div class="results opacity-0">
-                    <div><img class="reimg" :src="images.result" alt=""></div>
-                    <div class="recard">
-                        <p>2022.01.01</p>
-                        <p class="card-title">有氧鬆筋雕塑</p>
-                        <p>一個人走得快，一群人走得遠，一同在教室揮灑汗水。</p>
-                        <Link href="" class="more">了解更多<i
-                                class="fa-solid fa-arrow-right"></i></Link>
-                    </div>
-                </div>
+                <div class="w-[334px] 2md:w-[169px] md:w-[275px] opacity-0"></div>
+                <div class="w-[334px] 2md:w-[169px] md:w-[275px] opacity-0"></div>
             </div>
         </div>
     </div>
@@ -377,7 +379,15 @@ export default {
     max-height: 12.4vh;
     overflow: hidden;
 }
-
+.all button{
+    font-weight: 800;
+}
+.all-2 button{
+    font-weight: 800;
+}
+.SelectionBar button{
+    font-weight: 800;
+}
 @keyframes up {
     from {
         max-height: 12.4vh;
@@ -448,7 +458,7 @@ export default {
 }
 
 .news {
-    @apply w-[100%] py-[10px] md:py-[20px] text-[3vw] 2sm:text-[1.8vw] md:text-[2vw] xl:text-[1.4vw] font-[800] border-b-[1px] border-black flex justify-between md:gap-[4vw] xl:gap-[5vw];
+    @apply w-[100%] py-[10px] md:py-[20px] text-[3vw] 2sm:text-[1.8vw] md:text-[2vw] xl:text-[1.28vw] font-[800] border-b-[2px] border-black flex justify-between md:gap-[4vw] xl:gap-[5vw];
 }
 
 .news:hover {
@@ -470,7 +480,7 @@ export default {
 }
 
 .members {
-    @apply w-[334px] h-[361px] 2md:w-[406px] 2md:h-[173px] md:w-[538px] md:h-[230px] mt-[20px] flex flex-col 2md:flex-row bg-white shadow-lg;
+    @apply w-[334px] h-[361px] 2md:w-[406px] 2md:h-[173px] md:w-[538px] md:h-[230px] mt-[20px] font-[700] flex flex-col 2md:flex-row bg-white shadow-lg;
 
 }
 
@@ -479,7 +489,7 @@ export default {
 }
 
 .results {
-    @apply w-[334px] h-[385px] 2md:w-[169px] 2md:h-[242px] md:w-[275px] md:h-[394px] bg-white mt-[20px] shadow-lg;
+    @apply w-[334px] h-[430px] 2md:w-[169px] 2md:h-[242px] md:w-[275px] md:h-[404px] bg-white mt-[20px] shadow-lg;
 }
 
 .reimg {
@@ -487,14 +497,17 @@ export default {
 }
 
 .info {
-    @apply text-[14px] 2md:text-[12px] px-[20px] pt-[20px] md:px-[40px] md:pt-[40px] md:text-[16px] break-all;
+    @apply text-[14px] 2md:text-[12px] px-[20px] pt-[20px] md:px-[40px] md:text-[16px] break-all;
 }
 
 .recard {
-    @apply text-[14px] 2md:text-[10px] md:text-[16px] font-[600] p-[10px] md:p-[25px] flex flex-col gap-[12px] 2md:gap-[9px] md:gap-[15px];
+    @apply text-[14px] 2md:text-[10px] md:text-[16px] font-[600] p-[25px] md:p-[25px] flex flex-col gap-[12px] 2md:gap-[9px] md:gap-[15px];
 }
 .card-title{
     @apply text-[22px] 2md:text-[14px] md:text-[22px] text-[#0057ff] font-[800];
+}
+.content{
+    @apply text-[16px];
 }
 .more{
     @apply text-[#0057ff] text-[14px] 2md:text-[8px] md:text-[14px] font-[800] mt-[3px] md:mt-[5px] ml-auto;

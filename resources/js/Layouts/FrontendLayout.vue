@@ -5,6 +5,7 @@ import FrontendHeader from '@/Components/Frontend/Template/FrontendHeader.vue';
 import FrontendFooter from '@/Components/Frontend/Template/FrontendFooter.vue';
 
 import frontendBackground from '/images/body/grid.svg';
+import frontendBackgroundPad from '/images/body/smallGrid.svg';
 
 export default {
   components: {
@@ -14,7 +15,7 @@ export default {
   data() {
     return {
       images: {
-        frontendBackground,
+        frontendBackground, frontendBackgroundPad,
       },
     };
   },

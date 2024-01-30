@@ -60,27 +60,27 @@ export default {
             <div v-if="Num == 1" class="w-[100%] order-4">
                 <div class="all-news">
                     <button type="button" class="news" href="" @click="detail = true">
-                        <div>2024.01.01</div>
+                        <div>2024.01.29</div>
                         <div>【探索系列】2024鑑識推理偵查營 （1/29-1/31）</div>
                         <div><i class="fa-solid fa-arrow-right"></i></div>
                     </button>
                     <button class="news" href="">
-                    <div>2024.01.01</div>
+                    <div>2024.01.29</div>
                     <div>【探索系列】2024鑑識推理偵查營 （1/29-1/31）</div>
                     <div><i class="fa-solid fa-arrow-right"></i></div>
                     </button>
                     <button type="button" class="news" href="">
-                    <div>2024.01.01</div>
+                    <div>2024.01.29</div>
                     <div>【探索系列】2024鑑識推理偵查營 （1/29-1/31）</div>
                     <div><i class="fa-solid fa-arrow-right"></i></div>
                     </button>
                     <button type="button" class="news" href="">
-                    <div>2024.01.01</div>
+                    <div>2024.01.29</div>
                     <div>【探索系列】2024鑑識推理偵查營 （1/29-1/31）</div>
                     <div><i class="fa-solid fa-arrow-right"></i></div>
                     </button>
                     <button type="button" class="news" href="">
-                    <div>2024.01.01</div>
+                    <div>2024.01.29</div>
                     <div>【探索系列】2024鑑識推理偵查營 （1/29-1/31）</div>
                     <div><i class="fa-solid fa-arrow-right"></i></div>
                     </button>
@@ -296,7 +296,15 @@ export default {
     }
 }
 
-
+.all button{
+    font-weight: 800;
+}
+.all-2 button{
+    font-weight: 800;
+}
+.SelectionBar button{
+    font-weight: 800;
+}
 .title {
     @apply mt-[20px] md:mt-[60px] md:mb-[20px] 2md:w-[185px] md:w-[315px];
 }
@@ -360,7 +368,7 @@ export default {
 } */
 
 .news {
-    @apply w-[100%] py-[10px] md:py-[20px] text-[3vw] 2sm:text-[1.8vw] md:text-[2vw] xl:text-[1.4vw] font-[500] border-b-[1px] border-black flex justify-between md:gap-[4vw] xl:gap-[5vw];
+    @apply w-[100%] py-[10px] md:py-[20px] text-[3vw] 2sm:text-[1.8vw] md:text-[2vw] xl:text-[1.4vw] font-[800] border-b-[2px] border-black flex justify-between md:gap-[4vw] xl:gap-[5vw];
 }
 
 .news:hover {

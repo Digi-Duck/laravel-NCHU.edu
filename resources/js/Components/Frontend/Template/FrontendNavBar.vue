@@ -37,10 +37,10 @@ export default {
 </script>
 
 <template>
-    <nav class="fixed w-[100%] z-[4] top-0">
+    <nav class="fixed w-[100%] z-[4] top-0 shadow-[0_5px_5px_0_rgba(0,0,0,0.07)]">
         <div class="all">
             <div class="menu">
-                <img class="logo" :src="screenWidth ? images.logo : images.smallLogo" alt="">
+                <Link href="/" class="logo"><img :src="screenWidth ? images.logo : images.smallLogo" alt=""></Link>
                 <ul class="list">
                     <li>
                         <Link href="/">首頁</Link>
@@ -319,7 +319,7 @@ export default {
     }
 
     .ham-list {
-        @apply text-center pl-[20px] py-[10px] border-y-[1px] border-white;
+        @apply text-center pl-[20px] py-[10px];
     }
 
     .active {
@@ -336,7 +336,7 @@ export default {
     }
 
     .ham .sub-dropdown-menu {
-        @apply text-[14px] flex flex-col items-center;
+        @apply text-[14px] flex flex-col items-center font-[100];
     }
 
     .sub-1,

@@ -5,6 +5,10 @@ import { document } from 'postcss';
 import logo from '/images/logo/logo.svg';
 import top from '/images/logo/top.png';
 
+window.onscroll = function () {
+    scrollFunction();
+}
+
 export default {
     data() {
         return {
@@ -15,17 +19,24 @@ export default {
         };
     },
     methods: {
+        scrollFunction() {
+            if (document.documentElement.scrollTop > 300) {
+                this.documentElement.style.display = "block";
+            } else {
+                this.documentElement.style.display = "none";
+            }
+        }
+    },
 
-    }
 };
 </script>
 
 <template>
     <button class="gotop">
-        <Link href=""><img :src="images.top" alt=""></Link>
+        <Link href="#"><img :src="images.top" alt="" class="w-[40px] md:w-[63px]"></Link>
     </button>
     <footer class="w-[100%]  bg-white flex justify-center ">
-        <div class="main w-[64%]">
+        <div class="main w-[79%] md:w-[64%]">
             <div class="top">
                 <div class="top-left">
                     <div class="logo">
@@ -86,7 +97,7 @@ export default {
             <div class="word-small">
                 <pre class="h1">聯絡電話  04 2284 0455</pre>
                 <pre class="h1">電子信箱  hello20131005@gmail.com</pre>
-                <pre class="h1">學校地址  40227台中市南區興大路145號(綜合教學大樓8樓804、805室)</pre>
+                <p class="h1 flex flex-wrap">學校地址 &nbsp;40227台中市南區興大路145號(綜合教學大樓8樓804、805室)</p>
                 <pre class="h1">製作人員  王亞筑 陳喬旭 蘇煒峻 林聖翰 陳瑋祥</pre>
             </div>
             <div class="bottom flex ">
@@ -111,12 +122,17 @@ export default {
 </template>
 
 <style scoped>
+html{
+    scroll-behavior: smooth;
+}
 .gotop {
     width: 100px;
     height: 100px;
     position: sticky;
-    bottom: 15vh;
-    left: 90vw;
+    bottom: 30px;
+    /* left: 93vw; */
+    float: right;
+    right: 10px;
 }
 
 .word-small {
@@ -665,14 +681,16 @@ export default {
         height: auto;
         position: relative;
     }
-
+    .h1{
+        font-size: 3.8vw;
+    }
     .word {
         display: none;
     }
 
     .top {
         flex-direction: column;
-
+        margin-top: 40px;
     }
 
     .top-right {
@@ -682,11 +700,12 @@ export default {
 
     .top-left {
         height: 10%;
-        margin-bottom: 5%;
+        margin-bottom: 50px;
     }
 
     .content-3 {
-        margin: 0;
+        margin-left: 0;
+        margin-bottom: 25px;
         align-items: flex-start;
         height: auto;
     }
@@ -697,12 +716,14 @@ export default {
     }
 
     .bottom::before {
-        display: none;
+        /* display: none; */
+        height: 16px;
+        left: -7%;
     }
 
     .h3 {
         line-height: 32px;
-        font-size: 3vw;
+        font-size: 3.8vw;
     }
 
     .bottom {
