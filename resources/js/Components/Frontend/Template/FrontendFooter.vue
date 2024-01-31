@@ -102,7 +102,7 @@ export default {
             </div>
             <div class="bottom flex ">
                 <div class="formatH5">
-                    <div class="h5">©2024 International College of Innovation and Industry Liaison, N.C.H.U. </div>
+                    <div class="h5 md:text-[0.8vw]">©2024 International College of Innovation and Industry Liaison, N.C.H.U. </div>
                 </div>
                 <div class="flex gap-1 tabs">
                     <div class="informationBar">
@@ -200,6 +200,13 @@ export default {
     line-height: 27px;
     font-size: 16px;
     font-family: 'Noto Sans TC', sans-serif;
+}
+
+.formatH5{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top:0.5vw;
 }
 
 .content-3 {
@@ -487,6 +494,14 @@ export default {
         font-size: 12px;
         line-height: 12px;
         text-align: center;
+    }
+
+    .formatH5{
+        display: flex;
+        justify-content: center;
+    }
+    .h5{
+        font-size:1.5vw;
     }
 
     .tabs {

@@ -28,7 +28,7 @@ export default {
 }
 </script>
 <template>
-    <main class="w-[90%] mb-[40vw] md:w-[80%] m-auto">
+    <main class="w-[90%] mb-[40vw] 2sm:mb-[20vw] md:w-[80%] m-auto">
         <div class="all">
             <Transition name="slide-fade-left">
                 <img v-if="show" :src="screenWidth ? images.latest : images.latestPhone" alt="">

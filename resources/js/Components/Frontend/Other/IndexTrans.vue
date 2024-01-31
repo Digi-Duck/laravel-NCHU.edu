@@ -15,7 +15,7 @@ export default {
 }
 </script>
 <template>
-    <main class="w-[100%] h-[100dvh] bg-[#0057ff] flex flex-col items-center px-[10%] mb-[26.6vw] 2sm:px-[15%] md:px-0">
+    <main class="w-[100%] h-[100dvh] bg-[#0057ff] flex flex-col items-center px-[10%] mb-[26.6vw] 2sm:px-[15%] 2sm:mb-[12vw] md:px-0">
         <!-- <img :src="images.vector" alt="" class="w-[72px] h-[72px]">
         <img :src="images.trans" alt="transitionLogo" class="h-[250px]"> -->
         <img :src="images.transition" alt="">
