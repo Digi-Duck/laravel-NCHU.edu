@@ -17,44 +17,7 @@ export default {
             images: {
                 camp, certificate, handmade, sport, training, blueRow, provide,
             },
-            pro: [{
-                id: 1,
-                name: '兒童營隊',
-                content: '體驗平日上課較無機會接觸到的課程，讓小朋友有個難忘且充實的寒暑假。',
-                img: camp,
-            },
-            {
-                id: 2,
-                name: '單元手作',
-                content: '短時間的學習課程，適合生活忙碌的、想要體驗不同領域或是培養其他興趣的你。',
-                img: handmade,
-            },
-            {
-                id: 3,
-                name: '運動課程',
-                content: '為期2~3個月運動課程，適合想要運動、喜歡運動或是想挑戰不同以往運動的你。',
-                img: sport,
-            },
-            {
-                id: 4,
-                name: '職業訓練',
-                content: '適合有較充裕時間，想要了解、學習、體驗更完整不同領域知識的你。',
-                img: training,
-            },
-            {
-                id: 5,
-                name: '專業證照',
-                content: '適合想要考取證照的你，由課程專業講師帶領你了解各種專業知識，得到專業認證。',
-                img: certificate,
-            },],
-            show: false,
         }
-    },
-    mounted() {
-        this.show = true;
-    },
-    methods: {
-
     },
 }
 </script>
@@ -62,25 +25,21 @@ export default {
     <main class="w-[90%] mb-[13.3vw] md:w-[80%] 2sm:mb-[4vw] m-auto">
         <div class="main">
             <div class="main-top">
-                <Transition name="slide-fade-left">
-                    <div v-if="show" class="big-title mb-[30px]">
-                        <img :src="images.provide" alt="">
-                    </div>
-                </Transition>
-                <Transition name="slide-fade-right">
-                    <ul v-if="show" class="list">
-                        <li v-for="item in course.rt_data" :key="item.id">
-                            <Link href="">0{{ item.sort }}{{ item.name }}</Link><span class="ml-[10px]"
-                                :class="{ 'hidden': item.sort == course.rt_data.length }">|</span>
-                        </li>
-                    </ul>
-                </Transition>
+                <div v-motion :initial="{ opacity: 0, x: -300 }" :visibleOnce="{ opacity: 1, x: 0 }"
+                    class="big-title mb-[30px]">
+                    <img :src="images.provide" alt="">
+                </div>
+                <ul v-motion :initial="{ opacity: 0, x: 300 }" :visibleOnce="{ opacity: 1, x: 0 }" class="list">
+                    <li v-for="item in course.rt_data" :key="item.id">
+                        <Link href="">0{{ item.sort }}{{ item.name }}</Link><span class="ml-[10px]"
+                            :class="{ 'hidden': item.sort == course.rt_data.length }">|</span>
+                    </li>
+                </ul>
             </div>
             <div class="main-bottom">
                 <div class="main-cards" v-for="item in course.rt_data" :key="item.id"
                     :class="{ 'card-border': item.sort == course.rt_data.length }">
-                    <Transition name="slide-fade-up">
-                    <div v-if="show" class="card">
+                    <div v-motion :initial="{ opacity: 0, y: 300 }" :visibleOnce="{ opacity: 1, y: 0 }" class="card">
                         <div class="main-card">
                             <div class="title ml-[-10px]">0{{ item.sort }}</div>
                             <div class="title-name">{{ item.name }}</div>
@@ -90,7 +49,6 @@ export default {
                         </div>
                         <div class="card-img"><img :src="item.img_path" alt=""></div>
                     </div>
-                    </Transition>
                 </div>
             </div>
         </div>
@@ -158,36 +116,11 @@ export default {
     @apply flex items-center flex-col ml-[4%];
 }
 
-.slide-fade-left-enter-active {
-    transition: all 1s ease-out;
-}
-
-.slide-fade-left-enter-from {
-    transform: translate(-300px);
-    opacity: 0;
-}
-
-.slide-fade-right-enter-active {
-    transition: all 1s ease-out;
-}
-
-.slide-fade-right-enter-from {
-    transform: translate(300px);
-    opacity: 0;
-}
-
-.slide-fade-up-enter-active {
-    transition: all 1s ease-out;
-}
-
-.slide-fade-up-enter-from {
-    transform: translate(0px, 100px);
-    opacity: 0;
-}
 .main-cards.active {
-  opacity: 1;
-  transform: translateX(0%) scale(1);
+    opacity: 1;
+    transform: translateX(0%) scale(1);
 }
+
 @media(max-width:1400px) {
     .list {
         @apply text-[1.4vw];
@@ -302,5 +235,4 @@ export default {
         @apply text-[3.8vw] mr-[22px] mt-[20px] font-[600];
     }
 
-}
-</style>
+}</style>

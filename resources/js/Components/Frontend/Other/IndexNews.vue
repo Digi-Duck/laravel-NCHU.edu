@@ -8,33 +8,26 @@ export default {
                 latest,
                 latestPhone,
             },
-            show: false,
             screenWidth: false,
         }
-    },
-    computed: {
-    },
-    mounted() {
-        this.show = true;
-        this.checkScreenWidth();
-        window.addEventListener('resize', this.checkScreenWidth);
-
     },
     methods: {
         checkScreenWidth() {
             this.screenWidth = window.innerWidth >= 500;
         },
     },
+    mounted() {
+        this.checkScreenWidth();
+        window.addEventListener('resize', this.checkScreenWidth);
+    },
 }
 </script>
 <template>
     <main class="w-[90%] mb-[40vw] 2sm:mb-[20vw] md:w-[80%] m-auto">
         <div class="all">
-            <Transition name="slide-fade-left">
-                <img v-if="show" :src="screenWidth ? images.latest : images.latestPhone" alt="">
-            </Transition>
-            <!-- <Transition name="slide-fade-up"> -->
-            <div ref="slide">
+            <img v-motion :initial="{ opacity: 0, x: -300 }" :visibleOnce="{ opacity: 1, x: 0 }"
+                :src="screenWidth ? images.latest : images.latestPhone" alt="">
+            <div ref="slide" v-motion :initial="{ opacity: 0, y: 300 }" :visibleOnce="{ opacity: 1, y: 0 }">
                 <Link class="more">了解更多</Link>
                 <div class="all-news">
                     <Link class="news" href="">
@@ -64,7 +57,6 @@ export default {
                     </Link>
                 </div>
             </div>
-            <!-- </Transition> -->
         </div>
     </main>
 </template>
@@ -103,23 +95,6 @@ img {
     @apply text-[#0057ff] duration-500;
 }
 
-.slide-fade-left-enter-active {
-    transition: all 1s ease-out;
-}
-
-.slide-fade-left-enter-from {
-    transform: translate(-300px);
-    opacity: 0;
-}
-
-.slide-fade-up-enter-active {
-    transition: all 1s ease-out;
-}
-
-.slide-fade-up-enter-from {
-    transform: translate(0px, 100px);
-    opacity: 0;
-}
 
 @media(max-width:768px) {
     img {
