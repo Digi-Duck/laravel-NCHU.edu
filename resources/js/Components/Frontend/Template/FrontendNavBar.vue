@@ -46,7 +46,7 @@ export default {
                         <Link :href="route('about.index')">關於我們</Link>
                     </li>
                     <li>
-                        <Link :href="route('course.all')">課程資訊</Link>
+                        <Link :href="route('course.type','all')">課程資訊</Link>
                     </li>
                     <li>
                         <Link :href="route('news.index')">最新消息</Link>
