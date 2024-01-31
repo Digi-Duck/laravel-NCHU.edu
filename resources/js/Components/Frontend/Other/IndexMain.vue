@@ -292,7 +292,7 @@ export default {
     }
 
     .more {
-        @apply text-[3.8vw] mr-[22px] mt-[20px];
+        @apply text-[3.8vw] mr-[22px] mt-[20px] font-[600];
     }
 
 }
