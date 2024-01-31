@@ -75,8 +75,8 @@ export default {
                             <a>
                                 <div class="card flex flex-col justify-end">
                                     <div class="card-type">{{ card.type }}</div>
-                                    <div class="card-title flex flex-wrap w-[230px] mb-[2vw]">{{ card.title }}</div>
-                                    <div class="card-tags flex flex-wrap w-[230px]">
+                                    <div class="card-title flex flex-wrap w-[230px] mb-[2vw] 2sm:w-[800px] 2sm:mb-[0px]">{{ card.title }}</div>
+                                    <div class="card-tags flex flex-wrap w-[230px] 2sm:w-[800px]">
                                         <div v-for="tag in [card.tag1, card.tag2, card.tag3, card.tag4]" :key="tag.id"
                                             class="card-tag">#{{ tag }}</div>
                                     </div>
