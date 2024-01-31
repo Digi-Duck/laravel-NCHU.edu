@@ -75,21 +75,9 @@ export default {
                         </div>
                     </div>
                     <div class="content-3">
-                        <div class="h2">課程資訊</div>
-                        <div>
-                            <Link class="h3" href="">兒童營隊</Link>
-                        </div>
-                        <div>
-                            <Link class="h3" href="">單元手作</Link>
-                        </div>
-                        <div>
-                            <Link class="h3" href="">運動課程</Link>
-                        </div>
-                        <div>
-                            <Link class="h3" href="">專業訓練</Link>
-                        </div>
-                        <div>
-                            <Link class="h3" href="">專業證照</Link>
+                        <div class="h2"><a :href="route('course.type','all')">課程資訊</a></div>
+                         <div v-for="type in $page.props.classType.type" :key="type.id">
+                            <Link :href="route('course.type', type.id)">{{type.name}}</Link>
                         </div>
                     </div>
                 </div>
