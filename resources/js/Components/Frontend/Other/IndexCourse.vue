@@ -356,7 +356,7 @@ export default {
 
 /* More Styles */
 .more {
-    @apply text-[1.04vw] font-extrabold text-[#000000];
+    @apply text-[1.04vw] font-extrabold text-[#000000] font-[800];
     font-family: 'Inter', sans-serif;
 }
 
