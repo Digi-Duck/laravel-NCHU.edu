@@ -7,25 +7,34 @@ export default {
     },
     data() {
         return {
+            Num: 1,
+            ClickNum: 1,
             courses: this.resCourse.rt_data.courses  ?? [],
             inputData: this.resCourse.rt_data.input ?? '',
             screenWidth: false,
             images: {
                 coursePC, coursePhone,
             },
+            screenScroll:0,
         }
     },
     mounted() {
         this.checkScreenWidth();
         window.addEventListener('resize', this.checkScreenWidth);
     },
+    computed:{
+        getType(){
+            if(this.inputData === 'all') return '全部課程';
+            if(this.inputData === 'latest') return '最新課程';
+            if(this.inputData == 1) return '兒童營隊';
+            if(this.inputData == 2) return '單元手作';
+            if(this.inputData == 3) return '運動課程';
+            if(this.inputData == 4) return '職業訓練';
+        },
+    },
     methods: {
         toggle() {
-            if (this.ClickNum == 1) {
-                return this.ClickNum = 2;
-            } else {
-                return this.ClickNum = 1;
-            }
+            this.ClickNum = this.ClickNum === 1 ? 2 : 1;
         },
         checkScreenWidth() {
             this.screenWidth = window.innerWidth >= 500;
@@ -39,12 +48,20 @@ export default {
         <div class="title"><img :src="screenWidth ? images.coursePC : images.coursePhone" alt="" class="m-auto 2md:m-0">
         </div>
         <div class="w-[90%] md:w-[80%] m-auto">
-            <div class="SelectionBar w-[100%] flex">
-                <a :href="route('course.type','all')" :class="{'ClickColor' : inputData == 'all'}"><div class="SelectionBtn">全部課程</div></a>
-                <a :href="route('course.type','latest')" :class="{'ClickColor' : inputData == 'latest'}"><div  class="SelectionBtn">最新課程</div></a>
-                <a :href="route('course.type', type.id)" v-for="type in $page.props.classType.type" :key="type.id" :class="{'ClickColor' : inputData == type.id }">
-                    <div class="SelectionBtn"  >{{ type.name }}</div>
-                </a>
+            <div :class="ClickNum == 1 ? 'all-2' : 'all'">
+                <button @click="toggle()" class="OptionClick" type="button" v-if="Num == 1">{{getType}}<img class="w-[3vw] mt-1.5 ml-1 " :src="images.angleDown" alt=""></button>
+                <a :href="route('course.type','latest')"><button @click="toggle()" class="OptionClick" type="button" v-if="Num == 2">最新課程<img class="w-[3vw] mt-1.5 ml-1 " :src="images.angleDown" alt=""></button></a>
+                <a :href="route('course.type',type.id)" v-for="type in $page.props.classType.type" :key="type.id" ><button @click="toggle()" class="OptionClick" type="button" v-if="Num == 3">{{ type.name }}<img class="w-[3vw] mt-1.5 ml-1 " :src="images.angleDown" alt=""></button></a>
+                <div :class="ClickNum == 2 ? 'SelectionOptionClick' : 'SelectionOption'">
+                    <a :href="route('course.type', 'all')"><div @click="Num = 1, ClickNum = 1" class="OptionBtn" >全部課程</div></a>
+                    <a :href="route('course.type','latest')"><div @click="Num = 2, ClickNum = 1" class="OptionBtn" >最新課程</div></a>
+                    <a :href="route('course.type',type.id)" v-for="type in $page.props.classType.type" :key="type.id"><div @click="Num = 3, ClickNum = 1" class="OptionBtn" >{{ type.name }}</div></a>
+                </div>
+            </div>
+            <div class="SelectionBar w-[100%]">
+                <a :href="route('course.type', 'all')"><button  class="SelectionBtn" :class="{'ClickColor' : inputData == 'all'}" type="button">全部課程</button></a>
+                <a :href="route('course.type','latest')"><button  class="SelectionBtn"  :class="{'ClickColor' : inputData == 'latest'}" type="button">最新課程</button></a>
+                <a :href="route('course.type',type.id)" v-for="type in $page.props.classType.type" :key="type.id" ><button   class="SelectionBtn" :class="{'ClickColor' : inputData == type.id}" type="button">{{ type.name }}</button></a>
             </div>
         </div>
         <div class="w-[90%]  ml-[13.8vw] 2sm:ml-[7.2vw] md:ml-[10.5vw] md:w-[80%]  py-[1%]  flex gap-[3%] flex-wrap justify-start">
@@ -133,7 +150,7 @@ export default {
 }
 
 .ClickColor {
-    @apply py-[0.48vw] px-[1.46vw] text-[1.04vw] text-[#ffffff] bg-[#0057ff] mr-[1vw];
+    @apply py-[0.48vw] px-[1.46vw] text-[1.04vw] text-[#ffffff] bg-[#0057ff] mr-[1vw] ;
     border-radius: 20px 20px 0px 0px;
     font-family: inter;
 
@@ -168,4 +185,58 @@ export default {
 
 .SelectionOption {
     display: none;
-}</style>
+}
+@media(max-width:768px) {
+    .SelectionBtn {
+        border-radius: 1.56vw 1.56vw 0px 0px;
+        font-size: 1.56vw;
+    }
+
+    .ClickColor {
+        border-radius: 1.56vw 1.56vw 0px 0px;
+        font-size: 1.56vw;
+    }
+}
+@media (max-width:500px) {
+
+.SelectionBar {
+    display: none;
+}
+
+.title {
+    font-size: 5.2vw;
+    text-align: center;
+    margin-bottom: 2.5vw;
+}
+
+.h1 {
+    font-size: 3.2vw;
+}
+
+.h2 {
+    font-size: 2.8vw;
+}
+
+.h3 {
+    font-size: 4vw;
+}
+
+li {
+    font-size: 3.2vw;
+    margin-left: 5vw;
+}
+
+.OptionClick {
+    display: inline-flex;
+    justify-content: center;
+    font-size: 3.2vw;
+}
+
+.Guide {
+    flex-direction: column;
+}
+}
+
+</style>
+
+
