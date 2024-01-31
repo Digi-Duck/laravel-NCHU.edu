@@ -78,6 +78,7 @@ export default {
 
 img {
     @apply w-[18vw];
+    margin-bottom: 30px;
 }
 
 .title span {
@@ -85,15 +86,16 @@ img {
 }
 
 .more {
-    @apply text-[1.15vw] font-[700] border-b-[0.25vw] border-black hover:text-[#0057ff] hover:border-[#0057ff] float-right translate-y-[-2.5vw] translate-x-[-5vw] mt-[20px];
+    @apply text-[1.15vw] font-[700] border-b-[0.2vw] border-black hover:text-[#0057ff] hover:border-[#0057ff] float-right translate-y-[-2.5vw] translate-x-[-5vw] mt-[20px];
+    margin-bottom:20px;
 }
 
 .all-news {
-    @apply w-[100%] flex flex-col justify-center ml-[8vw] translate-y-[-2vw] mt-[];
+    @apply w-[100%] flex flex-col justify-center ml-[8vw] translate-y-[-2vw];
 }
 
 .news {
-    @apply w-[80%] py-[10px] text-[1.53vw] font-[800] border-b-[0.25vw] border-black flex justify-between gap-[5vw];
+    @apply w-[80%] py-[10px] text-[1.53vw] font-[800] border-b-[0.2vw] border-black flex justify-between gap-[5vw];
 }
 
 .news:hover {
@@ -124,7 +126,7 @@ img {
     }
 
     .more {
-        @apply translate-x-0;
+        @apply translate-x-0 text-[1.5vw];
     }
 
     .all-news {
@@ -132,7 +134,7 @@ img {
     }
 
     .news {
-        @apply w-[100%] text-[1.9vw];
+        @apply w-[100%] text-[1.9vw] border-b-[0.1vw] font-[700];
     }
 }
 
@@ -145,7 +147,7 @@ img {
         @apply w-[40vw] m-auto;
     }
     .more{
-        @apply text-[3vw];
+        @apply text-[3vw] mb-[0px];
     }
 
     .all-news {
