@@ -10,10 +10,22 @@ use App\Models\Course;
 class CourseController extends Controller
 {
 
-    public function get_course($input){
+    public function get_course($input = 'all'){
         $courses = [];
+        if($input === 'all'){
+            $courses = Course::select(['course_type_id', 'name', 'start_time', 'price', 'link', 'img_path'])->get();
+        }else if($input === 'latest'){
+            $courses = Course::select(['course_type_id', 'name', 'start_time', 'price', 'link', 'img_path'])->orderBy('start_time', 'asc')->take(3)->get();
+        }else {
+            $courses = Course::where('course_type_id', $input)->select(['course_type_id', 'name', 'start_time', 'price', 'link', 'img_path'])->get();
+        }
+        $data = (object)[
+            'courses' => $courses,
+            'input' =>$input,
+        ];
         $courses = Course::where('course_type_id', $input)->select(['course_type_id', 'name', 'start_time', 'price', 'link', 'img_path'])->get();
-        return Inertia::render('Frontend/Course', ['response' => rtFormat($courses) ?? []]);
+        // dd($data);
+        return Inertia::render('Frontend/Course', ['response' => rtFormat($data) ?? []]);
     }
     public function all()
     {

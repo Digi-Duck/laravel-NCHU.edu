@@ -3,17 +3,16 @@ import coursePC from '/images/coursePage/coursePC.png';
 import coursePhone from '/images/coursePage/coursePhone.png';
 export default {
     props: {
-        resCourse: Array,
+        resCourse: Object,
     },
     data() {
         return {
-            courses: this.resCourse ?? [],
-            flag: false,
-            detail: false,
+            courses: this.resCourse.rt_data.courses  ?? [],
+            inputData: this.resCourse.rt_data.input ?? '',
             screenWidth: false,
             images: {
                 coursePC, coursePhone,
-            }
+            },
         }
     },
     mounted() {
@@ -31,6 +30,7 @@ export default {
         checkScreenWidth() {
             this.screenWidth = window.innerWidth >= 500;
         },
+
     },
 }
 </script>
@@ -38,24 +38,17 @@ export default {
     <div class="w-[85%]  m-auto flex  flex-col">
         <div class="title"><img :src="screenWidth ? images.coursePC : images.coursePhone" alt="" class="m-auto 2md:m-0">
         </div>
-        <a :href="'/course/type/' + $page.props.classType.type[0]"><button type="button">TEST</button></a>
         <div class="w-[90%] md:w-[80%] m-auto">
             <div class="SelectionBar w-[100%] flex">
-                <a :href="route('course.all')"><button @click="flag != flag" class="SelectionBtn"
-                        :class="flag ? SelectionBtn : ClickColor" type="button">全部課程</button></a>
-                <a :href="route('course.latest')"><button @click="flag != flag" class="SelectionBtn"
-                        :class="flag ? SelectionBtn : ClickColor">最新課程</button></a>
-                <a :href="route('course.type', type.id)" v-for="type in $page.props.classType.type" :key="type.id">
-                    <div @click="flag != flag" class="SelectionBtn" :class="flag ? SelectionBtn : ClickColor">
-                        {{ type.name }}
-                    </div>
+                <a :href="route('course.type','all')" :class="{'ClickColor' : inputData == 'all'}"><div class="SelectionBtn">全部課程</div></a>
+                <a :href="route('course.type','latest')" :class="{'ClickColor' : inputData == 'latest'}"><div  class="SelectionBtn">最新課程</div></a>
+                <a :href="route('course.type', type.id)" v-for="type in $page.props.classType.type" :key="type.id" :class="{'ClickColor' : inputData == type.id }">
+                    <div class="SelectionBtn"  >{{ type.name }}</div>
                 </a>
             </div>
-
         </div>
-        <div
-            class="w-[90%]  ml-[13.8vw] 2sm:ml-[7.2vw] md:ml-[10.5vw] md:w-[80%]  py-[1%]  flex gap-[3%] flex-wrap justify-start">
-            <div v-for="course in courses.rt_data" :key="course.id" class="flex 2sm:flex-col bg-[#ffffff] w-[55vw] mb-[2.5vw] 2sm:w-[22vw] 2sm:h-[29.72vw] 2sm:mb-[2.5vw]
+        <div class="w-[90%]  ml-[13.8vw] 2sm:ml-[7.2vw] md:ml-[10.5vw] md:w-[80%]  py-[1%]  flex gap-[3%] flex-wrap justify-start">
+            <div v-for="course in courses" :key="course.id" class="flex 2sm:flex-col bg-[#ffffff] w-[55vw] mb-[2.5vw] 2sm:w-[22vw] 2sm:h-[29.72vw] 2sm:mb-[2.5vw]
             md:mb-[1.5vw] md:w-[14.32vw] md:h-[19.06vw]">
                 <div class=" w-[22vw] h-[19.34vw 2sm:w-[22vw] 2sm:h-[28.34vw]  md:w-[14.32vw] md:h-[18.37vw] flex "
                     :style="{ backgroundImage: 'url(' + course.img_path + ')', backgroundSize: 'cover', backgroundPosition: 'center' }">

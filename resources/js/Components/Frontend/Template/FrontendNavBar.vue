@@ -99,7 +99,7 @@ export default {
                             <Link :href="route('course.latest')">最新課程</Link>
                         </li>
                         <li v-for="type in $page.props.classType.type" :key="type.id">
-                            <Link :href="route('course.latest')">{{type.name}}</Link>
+                            <Link :href="route('course.type', type.id)">{{type.name}}</Link>
                         </li>
                     </ul>
                 </label>
