@@ -17,10 +17,10 @@ export default {
                 laptopCourse,
             },
             cards: [
-                { title: '一般專案經理證照培訓班', type: '專業證照', tag1: '新手', tag2: '培訓班', tag3: '專案管理', tag4: 'APMA證照', color: '#21d2db', text: '專案經理是現在團隊中不可或缺的角色，擁有專業的證照能夠提升個人競爭力並開啟更廣況的職業發展道路。', link: 1 },
-                { title: '一般專案經理證照培訓班', type: '專業證照', tag1: '新手', tag2: '培訓班', tag3: '專案管理', tag4: 'APMA證照', color: '#ffcc00', text: '專案經理是現在團隊中不可或缺的角色，擁有專業的證照能夠提升個人競爭力並開啟更廣況的職業發展道路。', link: 2 },
-                { title: '一般專案經理證照培訓班', type: '專業證照', tag1: '新手', tag2: '培訓班', tag3: '專案管理', tag4: 'APMA證照', color: '#db5621', text: '專案經理是現在團隊中不可或缺的角色，擁有專業的證照能夠提升個人競爭力並開啟更廣況的職業發展道路。', link: 3 },
-                { title: '一般專案經理證照培訓班', type: '專業證照', tag1: '新手', tag2: '培訓班', tag3: '專案管理', tag4: 'APMA證照', color: '#7dbda8', text: '專案經理是現在團隊中不可或缺的角色，擁有專業的證照能夠提升個人競爭力並開啟更廣況的職業發展道路。', link: 4 },
+                { title: '一般專案經理證照培訓班', type: '專業證照', tag1: '新手', tag2: '培訓班', tag3: '管理', tag4: '證照', color: '#21d2db', text: '專案經理是現在團隊中不可或缺的角色，擁有專業的證照能夠提升個人競爭力並開啟更廣況的職業發展道路。', link: 1 },
+                { title: '一般專案經理證照培訓班', type: '專業證照', tag1: '新手', tag2: '培訓班', tag3: '管理', tag4: '證照', color: '#ffcc00', text: '專案經理是現在團隊中不可或缺的角色，擁有專業的證照能夠提升個人競爭力並開啟更廣況的職業發展道路。', link: 2 },
+                { title: '一般專案經理證照培訓班', type: '專業證照', tag1: '新手', tag2: '培訓班', tag3: '管理', tag4: '證照', color: '#db5621', text: '專案經理是現在團隊中不可或缺的角色，擁有專業的證照能夠提升個人競爭力並開啟更廣況的職業發展道路。', link: 3 },
+                { title: '一般專案經理證照培訓班', type: '專業證照', tag1: '新手', tag2: '培訓班', tag3: '管理', tag4: '證照', color: '#7dbda8', text: '專案經理是現在團隊中不可或缺的角色，擁有專業的證照能夠提升個人競爭力並開啟更廣況的職業發展道路。', link: 4 },
             ],
             topCardIndex: 3,
         }
@@ -75,8 +75,8 @@ export default {
                             <a>
                                 <div class="card flex flex-col justify-end">
                                     <div class="card-type">{{ card.type }}</div>
-                                    <div class="card-title">{{ card.title }}</div>
-                                    <div class="card-tags flex">
+                                    <div class="card-title flex flex-wrap w-[230px] mb-[2vw]">{{ card.title }}</div>
+                                    <div class="card-tags flex flex-wrap w-[230px]">
                                         <div v-for="tag in [card.tag1, card.tag2, card.tag3, card.tag4]" :key="tag.id"
                                             class="card-tag">#{{ tag }}</div>
                                     </div>
@@ -98,10 +98,11 @@ export default {
                                 <div class="card flex flex-col justify-end">
                                     <div class="card-type">{{ card.type }}</div>
                                     <div class="card-title">{{ card.title }}</div>
-                                    <div class="card-tags flex">
-                                        <div v-for="tag in [card.tag1, card.tag2, card.tag3, card.tag4]" :key="tag.id"
-                                            class="card-tag">#{{ tag }}</div>
-                                    </div>
+                                        <div class="card-tags flex">
+                                            <div v-for="tag in [card.tag1, card.tag2, card.tag3, card.tag4]" :key="tag.id"
+                                                class="card-tag">#{{ tag }}
+                                            </div>
+                                        </div>
                                 </div>
                             </a>
                         </div>
@@ -279,7 +280,7 @@ export default {
 
 .card {
 
-    @apply w-[86.26vw] h-[56.95vw] p-[2.05vw]
+    @apply w-[86.26vw] h-[78vw] p-[2.05vw]
     /*變版*/
     2sm:w-[65.35vw] 2sm:h-[43.15vw] sm:p-[1.56vw]
     /* 變版||原版 */
@@ -291,7 +292,7 @@ export default {
 
 /* Card Content Styles */
 .card-title {
-    @apply text-[4.54vw]
+    @apply text-[5.5vw]
     /* 變版 */
     2md:text-[3.54vw]
     /* 變版||原版 */
@@ -300,7 +301,7 @@ export default {
 }
 
 .card-tag {
-    @apply bg-[#ffffff] text-[1.6vw] mr-[1.19vw] px-[2.39vw] py-[0.93vw] mt-[1.79vw]
+    @apply bg-[#ffffff] text-[3vw] mr-[1.19vw] px-[2.39vw] py-[0.93vw] mt-[1vw]
     /* 變版 */
     2md:text-[1.76vw] 2md:mr-[0.93vw] 2md:px-[1.87vw] 2md:py-[0.73vw] 2md:mt-[1.4vw]
     /* 變版||原版 */
@@ -309,11 +310,11 @@ export default {
 }
 
 .card-type {
-    @apply w-[16.37vw] py-[0.92vw] text-[2vw] mb-[1.88vw]
+    @apply w-[18vw] py-[0.92vw] text-[3vw] mb-[1.88vw]
     /* 變版 */
     2md:w-[12.79vw] 2md:py-[0.72vw] 2md:text-[1.76vw] 2md:mb-[1.47vw]
     /* 變版||原版 */
-    md:w-[7.11vw] md:py-[0.40vw] md:text-[0.98vw] md:mb-[0.82vw] text-white border-white border-2 border-solid rounded-full font-semibold flex justify-center items-center;
+    md:w-[7.11vw] md:py-[0.40vw] md:text-[0.98vw] md:mb-[0.82vw] text-white border-white border-[1px] border-solid rounded-full font-semibold flex justify-center items-center;
     font-family: 'Inter', sans-serif;
 }
 
