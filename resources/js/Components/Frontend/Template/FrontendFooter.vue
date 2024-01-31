@@ -33,7 +33,7 @@ export default {
 
 <template>
     <button class="gotop">
-        <Link href="#"><img :src="images.top" alt="" class="w-[40px] md:w-[63px]"></Link>
+        <Link href="#"><img :src="images.top" alt="" class="w-[50px] md:w-[63px]"></Link>
     </button>
     <footer class="w-[100%]  bg-white flex justify-center ">
         <div class="main w-[79%] md:w-[64%]">
@@ -133,6 +133,7 @@ export default {
     /* left: 93vw; */
     float: right;
     right: 30px;
+    z-index: 10;
 }
 
 .word-small {
