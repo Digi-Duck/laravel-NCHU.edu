@@ -16,7 +16,7 @@ export default {
 }
 </script>
 <template>
-    <main class="w-[90%] md:w-[80%] m-auto">
+    <main class="w-[90%] mb-[-5vw] md:w-[80%] m-auto">
         <div class="contact">
             <Transition name="slide-fade-left">
                 <div v-if="show" class="frame-1">

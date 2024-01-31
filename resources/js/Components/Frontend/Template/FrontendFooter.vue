@@ -136,6 +136,7 @@ export default {
     float: right;
     right: 30px;
     z-index: 10;
+    opacity: 0.9;
 }
 
 .word-small {
