@@ -5,9 +5,6 @@ import member from '/images/About/member.svg';
 import memberPhone from '/images/About/memberPhone.svg';
 import result from '/images/About/result.svg';
 import resultPhone from '/images/About/resultPhone.svg';
-import yoga1 from '/images/About/yoga-1.jpg';
-import yoga2 from '/images/About/yoga-2.jpg';
-import yoga3 from '/images/About/yoga-3.jpg';
 
 import { Navigation, Pagination, Mousewheel, Keyboard } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/vue';
@@ -25,7 +22,7 @@ export default {
     data() {
         return {
             images: {
-                about, aboutPhone, member, memberPhone, result, resultPhone, yoga1, yoga2, yoga3,
+                about, aboutPhone, member, memberPhone, result, resultPhone,
             },
             modules: [Navigation, Pagination, Mousewheel, Keyboard],
             Num: 1,
@@ -132,24 +129,11 @@ export default {
                         <p>主任秘書</p>
                         <p class="name">王大詹</p>
                         <div class="contact">
-                            <p>電話 | 0212312312 #1234</p>
-                            <p>信箱 | <span></span>
-                                a123456789123456789 <br>
-                                &emsp; &emsp; @gmail.com</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="members">
-                    <div><img class="mem" :src="screenWidth ? images.member : images.memberPhone" alt=""></div>
-                    <div class="info">
-                        <p>主任秘書</p>
-                        <p class="name">王大詹</p>
-                        <div class="contact">
-                            <div class="w-[40%]">
+                            <div class="w-[16%]">
                                 <p>電話 |</p>
                                 <p>信箱 |</p>
                             </div>
-                            <div>
+                            <div class="w-[70%]">
                                 <p>0212312312 #1234</p>
                                 <p>a123456789123456789@gmail.com</p>
                             </div>
@@ -162,10 +146,14 @@ export default {
                         <p>主任秘書</p>
                         <p class="name">王大詹</p>
                         <div class="contact">
-                            <p>電話 | 0212312312 #1234</p>
-                            <p>信箱 | <span></span>
-                                a123456789123456789 <br>
-                                &emsp; &emsp; @gmail.com</p>
+                            <div class="w-[16%]">
+                                <p>電話 |</p>
+                                <p>信箱 |</p>
+                            </div>
+                            <div class="w-[70%]">
+                                <p>0212312312 #1234</p>
+                                <p>a123456789123456789@gmail.com</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -175,10 +163,14 @@ export default {
                         <p>主任秘書</p>
                         <p class="name">王大詹</p>
                         <div class="contact">
-                            <p>電話 | 0212312312 #1234</p>
-                            <p>信箱 | <span></span>
-                                a123456789123456789 <br>
-                                &emsp; &emsp; @gmail.com</p>
+                            <div class="w-[16%]">
+                                <p>電話 |</p>
+                                <p>信箱 |</p>
+                            </div>
+                            <div class="w-[70%]">
+                                <p>0212312312 #1234</p>
+                                <p>a123456789123456789@gmail.com</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -188,10 +180,14 @@ export default {
                         <p>主任秘書</p>
                         <p class="name">王大詹</p>
                         <div class="contact">
-                            <p>電話 | 0212312312 #1234</p>
-                            <p>信箱 | <span></span>
-                                a123456789123456789 <br>
-                                &emsp; &emsp; @gmail.com</p>
+                            <div class="w-[16%]">
+                                <p>電話 |</p>
+                                <p>信箱 |</p>
+                            </div>
+                            <div class="w-[70%]">
+                                <p>0212312312 #1234</p>
+                                <p>a123456789123456789@gmail.com</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -199,12 +195,33 @@ export default {
                     <div><img class="mem" :src="screenWidth ? images.member : images.memberPhone" alt=""></div>
                     <div class="info">
                         <p>主任秘書</p>
-                        <p class="text-[22px] md:text-[30px] text-[#0057ff]">王大詹</p>
-                        <div>
-                            <p>電話 | 0212312312 #1234</p>
-                            <p>信箱 | <span></span>
-                                a123456789123456789 <br>
-                                @gmail.com</p>
+                        <p class="name">王大詹</p>
+                        <div class="contact">
+                            <div class="w-[16%]">
+                                <p>電話 |</p>
+                                <p>信箱 |</p>
+                            </div>
+                            <div class="w-[70%]">
+                                <p>0212312312 #1234</p>
+                                <p>a123456789123456789@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="members">
+                    <div><img class="mem" :src="screenWidth ? images.member : images.memberPhone" alt=""></div>
+                    <div class="info">
+                        <p>主任秘書</p>
+                        <p class="name">王大詹</p>
+                        <div class="contact">
+                            <div class="w-[16%]">
+                                <p>電話 |</p>
+                                <p>信箱 |</p>
+                            </div>
+                            <div class="w-[70%]">
+                                <p>0212312312 #1234</p>
+                                <p>a123456789123456789@gmail.com</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -396,7 +413,6 @@ export default {
                     </div>
                     <swiper :cssMode="true" :navigation="true" :pagination="true" :mousewheel="true" :keyboard="true"
                         :modules="modules" class="mySwiper">
-                        <!-- <swiper-slide> <div class="w-[100%] h-[100%]" :style="{backgroundImage: 'url(' + /images/About/yoga-1.jpg + ')'}"></div> </swiper-slide> -->
                         <swiper-slide></swiper-slide>
                         <swiper-slide></swiper-slide>
                     </swiper>
@@ -530,7 +546,7 @@ export default {
 }
 
 .members {
-    @apply w-[334px] h-[361px] 2md:w-[386px] 2md:h-[173px] md:w-[538px] md:h-[230px] mt-[20px] font-[700] flex flex-col 2md:flex-row bg-white shadow-lg;
+    @apply w-[334px] h-[361px] 2md:w-[386px] 2md:h-[173px] md:w-[600px] md:h-[230px] mt-[20px] font-[700] flex flex-col 2md:flex-row bg-white shadow-lg;
 
 }
 
@@ -548,7 +564,7 @@ export default {
 }
 
 .info {
-    @apply text-[14px] px-[20px] pt-[20px] md:px-[40px] md:text-[16px] break-all;
+    @apply text-[14px] pt-[20px] md:pl-[40px] md:text-[16px] break-all;
 }
 
 .recard {
@@ -564,7 +580,7 @@ export default {
 }
 
 .contact {
-    @apply flex flex-col gap-[5px];
+    @apply flex gap-[5px];
 }
 
 .card-content {
@@ -574,15 +590,16 @@ export default {
 .more {
     @apply text-[#0057ff] text-[14px] 2md:text-[8px] md:text-[14px] font-[800] mt-[3px] md:mt-[5px] ml-auto;
 }
-@media(max-width:800px) {
+
+@media(max-width:900px) {
     .info {
-        @apply text-[14px];
+        @apply text-[12px] pt-[40px] pl-[40px];
     }
 }
 
 @media(max-width:767px) {
     .info {
-        @apply text-[12px] pt-[10px];
+        @apply text-[12px] pt-[15px] pl-[20px];
     }
 
     .SelectionBtn {
