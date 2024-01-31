@@ -259,7 +259,7 @@ export default {
     }
 
     .main-cards {
-        @apply pt-[60px] border-b-[0.5vw] border-black;
+        @apply pt-[60px] border-b-[0.2vw] border-black;
     }
 
     .card {
@@ -292,7 +292,7 @@ export default {
     }
 
     .more {
-        @apply text-[3.8vw];
+        @apply text-[3.8vw] mr-[22px] mt-[20px];
     }
 
 }
