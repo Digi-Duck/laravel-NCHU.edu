@@ -56,7 +56,7 @@ export default {
 }
 </script>
 <template>
-    <main class="w-[90%] md:w-[80%] m-auto">
+    <main class="w-[90%] mb-[13.3vw] md:w-[80%] m-auto">
         <div class="main">
             <div class="main-top">
                 <Transition name="slide-fade-left">

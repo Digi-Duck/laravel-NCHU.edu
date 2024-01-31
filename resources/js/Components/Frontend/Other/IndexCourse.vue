@@ -58,7 +58,7 @@ export default {
 }
 </script>
 <template>
-    <div class="w-[90%] md:w-[80%] m-auto">
+    <div class="w-[90%] mb-[26.6vw] md:w-[80%] m-auto">
         <div class="hidden-on-desktop flex justify-center items-center mb-[5%]">
             <section class=" w-[90vw] py-[3%] flex flex-col justify-center items-center overflow-hidden "
                 @mouseleave="resetCards">

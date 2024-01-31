@@ -26,7 +26,7 @@ export default {
 }
 </script>
 <template>
-    <main class="w-[90%] md:w-[80%] m-auto">
+    <main class="w-[90%] mb-[40vw] md:w-[80%] m-auto">
         <div class="all">
             <Transition name="slide-fade-left">
                 <img v-if="show" :src="screenWidth ? images.latest : images.latestPhone" alt="">
@@ -144,7 +144,7 @@ img {
     }
 
     img {
-        @apply w-[40vw] m-auto;
+        @apply w-[47vw] m-auto;
     }
     .more{
         @apply text-[3vw] mb-[0px];
