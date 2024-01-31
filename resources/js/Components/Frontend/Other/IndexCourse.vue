@@ -67,7 +67,7 @@ export default {
                 </div>
                 <div class="card-tip"><i class="fa-solid fa-arrow-left"></i> 左右滑動圖片 <i class="fa-solid fa-arrow-right"></i>
                 </div>
-                <div class=" w-[118.8vw] h-[60.8vw] 2md:w-[90vw] 2md:h-[45vw] ">
+                <div class=" w-[118.8vw] h-[80vw] 2md:w-[90vw] 2md:h-[45vw] ">
                     <swiper class=" swiper  ml-[16.24vw]  2sm:ml-[11vw] h-[70vw]  relative" :effect="'cards'"
                         :grabCursor="true" :modules="modules" :loop="true">
                         <swiper-slide v-for="(card, index) in cards" :key="index" class="swiper-slide"
@@ -168,7 +168,7 @@ export default {
 </template>
 <style scoped>
 .swiper {
-    @apply w-[71vw] h-[57.95vw] 2sm:w-[67.35vw] 2sm:h-[44.15vw];
+    @apply w-[69vw] h-[100%] 2sm:w-[67.35vw] 2sm:h-[44.15vw];
 }
 
 .swiper-slide {
