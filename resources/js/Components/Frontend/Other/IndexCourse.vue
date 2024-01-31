@@ -62,7 +62,7 @@ export default {
         <div class="hidden-on-desktop flex justify-center items-center mb-[5%]">
             <section class=" w-[90vw] py-[3%] flex flex-col justify-center items-center overflow-hidden "
                 @mouseleave="resetCards">
-                <div class="  mb-[18vw]  w-[45.7vw] h-[20.51vw]  2md:ml-[58vw] 2md:mb-[2vw] 2md:w-[27.97vw] ">
+                <div class="  mb-[15vw]  w-[45.7vw] h-[20.51vw]  2md:ml-[58vw] 2md:mb-[2vw] 2md:w-[27.97vw] ">
                     <img :src="imgs.laptopCourse" alt="">
                 </div>
                 <div class="card-tip"><i class="fa-solid fa-arrow-left"></i> 左右滑動圖片 <i class="fa-solid fa-arrow-right"></i>
@@ -273,7 +273,7 @@ export default {
 }
 
 .card-tip {
-    @apply text-[4.12vw] 2sm:text-[3.12vw] font-bold mb-[1.5vw];
+    @apply text-[3vw] 2sm:text-[2.5vw] font-bold mb-[1.5vw];
     font-family: 'Inter', sans-serif;
 }
 
@@ -355,8 +355,12 @@ export default {
 
 /* More Styles */
 .more {
-    @apply text-[1.04vw] font-extrabold text-[#0057ff];
+    @apply text-[1.04vw] font-extrabold text-[#000000];
     font-family: 'Inter', sans-serif;
+}
+
+.more:hover{
+    @apply text-[#0057FF];
 }
 
 /* 小於 768 像素時隱藏某個區塊 */
