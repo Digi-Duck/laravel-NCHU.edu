@@ -17,10 +17,10 @@ export default {
                 laptopCourse,
             },
             cards: [
-                { title: '一般專案經理證照培訓班', type: '專業證照', tag1: '新手', tag2: '培訓班', tag3: '管理', tag4: '證照', color: '#21d2db', text: '專案經理是現在團隊中不可或缺的角色，擁有專業的證照能夠提升個人競爭力並開啟更廣況的職業發展道路。', link: 1 },
-                { title: '一般專案經理證照培訓班', type: '專業證照', tag1: '新手', tag2: '培訓班', tag3: '管理', tag4: '證照', color: '#ffcc00', text: '專案經理是現在團隊中不可或缺的角色，擁有專業的證照能夠提升個人競爭力並開啟更廣況的職業發展道路。', link: 2 },
-                { title: '一般專案經理證照培訓班', type: '專業證照', tag1: '新手', tag2: '培訓班', tag3: '管理', tag4: '證照', color: '#db5621', text: '專案經理是現在團隊中不可或缺的角色，擁有專業的證照能夠提升個人競爭力並開啟更廣況的職業發展道路。', link: 3 },
-                { title: '一般專案經理證照培訓班', type: '專業證照', tag1: '新手', tag2: '培訓班', tag3: '管理', tag4: '證照', color: '#7dbda8', text: '專案經理是現在團隊中不可或缺的角色，擁有專業的證照能夠提升個人競爭力並開啟更廣況的職業發展道路。', link: 4 },
+                { title: '樂活陶-No10', type: '單元手作', tag1: '樂齡', tag2: '手作學習', tag3: '陶藝', tag4: '藝術', color: '#21d2db', text: '捏陶能幫助樂齡們訓練手部的靈活度，還能幫助大腦不斷運作，思考捏陶步驟或發想新造型，最重要的是周圍都是同年齡層...', link: 'https://www.siileec.com/subject.php?sn=4346&fbclid=IwAR0NY-qTpIUc9M1FlK5-4kIfyjS8zi85ik-JIchGmuQzVL8tKJIm8XvPso4', img_path:'/images/course/made.png' },
+                { title: '功能性運動訓練', type: '運動課程', tag1: '臀腿雕塑', tag2: '放鬆伸展', tag3: '有氧', tag4: 'TRX懸吊', color: '#ffcc00', text: '此堂課以三種課程為核心主軸，達到不同的訓練效果並籍由多元化的內容，功能性訓練全方位提升，從增強肌肉力量...', link:  'https://siileec.com/subject.php?sn=4384&fbclid=IwAR24E_g4DnDJsphbhOk9OrTqnCNXBDeSOm9pTAIwusKzG1AL77I_Nih6z9k', img_path:'/images/main/sport.svg' },
+                { title: '一般專案經理證照培訓班', type: '專業證照', tag1: '新手', tag2: '培訓班', tag3: '管理', tag4: '證照', color: '#db5621', text: '專案經理是現在團隊中不可或缺的角色，擁有專業的證照能夠提升個人競爭力並開啟更廣況的職業發展道路。', link:  'https://www.siileec.com/subject.php?sn=4312', img_path:'/images/course/fakeIMG.svg' },
+                { title: '綠能溫室智慧環控實務班', type: '專業證照', tag1: '團隊', tag2: '實務班', tag3: '管理', tag4: '科技農業', color: '#7dbda8', text: '在物聯網遠端控制催生第四波農業革命下，本計畫積極打造俱備環控自動化及農業生產知識人才，以垂直立體種植為架構，學習善用溫室設施...', link: 'https://elite.taiwanjobs.gov.tw/ClassSearch/Detail?UUID=B38ED0FDE9B34989A0DA2D56403CBEBE&SOURCE_TYPE=ELIT&fbclid=IwAR0JwbuW0bb_YR8W127wlIALqepRInPjsx8aja0hIwlZbrqvw08S82XAKhI', img_path:'/images/course/training.jpg' },
             ],
             topCardIndex: 3,
         }
@@ -71,7 +71,7 @@ export default {
                     <swiper class=" swiper  ml-[16.24vw]  2sm:ml-[11vw] h-[70vw]  relative" :effect="'cards'"
                         :grabCursor="true" :modules="modules" :loop="true">
                         <swiper-slide v-for="(card, index) in cards" :key="index" class="swiper-slide"
-                            :style="{ backgroundColor: card.color, backgroundImage: 'url(' + card.img + ')' }">
+                            :style="{ backgroundColor: card.color,backgroundImage: 'url(' + card.img_path + ')', backgroundSize: '100%', backgroundPosition:'50%  2%', boxShadow: 'inset 0px -40vw 100px 1px rgba(0, 0, 0, 0.3)',backgroundRepeat: 'no-repeat'}">
                             <a>
                                 <div class="card flex flex-col justify-end">
                                     <div class="card-type">{{ card.type }}</div>
@@ -92,9 +92,9 @@ export default {
                 @mouseleave="resetCards">
                 <div class="w-[40.41vw] h-[33.85vw]">
                     <div class="cards h-[24.37vw] relative" @wheel.prevent="handleMouseWheel">
-                        <div v-for="card in cards" :key="card.id" class="card"
-                            :style="{ transform: card.transform, backgroundColor: card.color }">
-                            <a>
+                        <div v-for="card in cards" :key="card.id" class="card "
+                            :style="{ transform: card.transform, backgroundColor: card.color ,backgroundImage: 'url(' + card.img_path + ')', backgroundSize: 'cover', backgroundPosition:'50%  2%', boxShadow: 'inset 0px -12.5vw 50px 1px rgba(0, 0, 0, 0.3)' }">
+                            <a :herf="card.link">
                                 <div class="card flex flex-col justify-end">
                                     <div class="card-type">{{ card.type }}</div>
                                     <div class="card-title">{{ card.title }}</div>

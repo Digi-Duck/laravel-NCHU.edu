@@ -93,10 +93,10 @@ export default {
                     </li>
                     <ul class="sub-dropdown-menu" :class="{ 'sub-2': turn == 2, 'sub': turn != 2 }">
                         <li>
-                            <Link :href="route('course.all')">全部課程</Link>
+                            <Link :href="route('course.type','all')">全部課程</Link>
                         </li>
                         <li>
-                            <Link :href="route('course.latest')">最新課程</Link>
+                            <Link :href="route('course.type', 'latest')">最新課程</Link>
                         </li>
                         <li v-for="type in $page.props.classType.type" :key="type.id">
                             <Link :href="route('course.type', type.id)">{{type.name}}</Link>
