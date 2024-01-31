@@ -421,11 +421,11 @@ export default {
     overflow: hidden;
 }
 
-.all button {
+.all .OptionClick {
     font-weight: 800;
 }
 
-.all-2 button {
+.all-2 .OptionClick {
     font-weight: 800;
 }
 
@@ -445,10 +445,11 @@ export default {
 
 
 .title {
-    @apply mt-[20px] md:mt-[60px] md:mb-[20px] 2md:w-[185px] md:w-[315px];
+    @apply mt-[20px] md:mt-[60px] mb-[10px] md:mb-[20px] 2md:w-[185px] md:w-[315px];
 }
 
 .SelectionBar {
+    @apply md:font-[800];
     border-bottom: 2px solid black;
 }
 
@@ -490,6 +491,7 @@ export default {
     text-align: center;
     border-bottom: 1px black solid;
     display: none;
+    padding-bottom:5px;
 }
 
 .OptionClick i {
@@ -601,6 +603,9 @@ export default {
 }
 
 @media (max-width:500px) {
+    .OptionBtn{
+        @apply font-[100];
+    }
     .info {
         @apply text-[12px];
     }
