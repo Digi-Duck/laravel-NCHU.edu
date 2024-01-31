@@ -10,9 +10,7 @@ export default {
                 smallLogo,
             },
             flag: false,
-            about: false,
-            lesson: false,
-            news: false,
+            turn: 0,
             screenWidth: false
         };
     },
@@ -25,9 +23,7 @@ export default {
             const ease = document.querySelector('.ham');
             ease.classList.toggle('active');
             this.flag = !this.flag;
-            this.about = false;
-            this.lesson = false;
-            this.news = false;
+            this.turn = 0;
         },
         checkScreenWidth() {
             this.screenWidth = window.innerWidth > 500;
@@ -64,13 +60,13 @@ export default {
                 </div>
             </div>
             <ul class="ham">
-                <label for="chevron-switch-1" @click="about = !about">
+                <label for="chevron-switch-1" @click="turn = 1">
                     <li class="ham-list">
                         <span>關於我們</span> &nbsp
-                        <i class="fa-solid fa-chevron-down" :style="{ 'display': about ? 'none' : 'inline-block' }"></i>
-                        <i class="fa-solid fa-chevron-up" :style="{ 'display': about ? 'inline-block' : 'none' }"></i>
+                        <i class="fa-solid fa-chevron-down" :style="{ 'display': turn == 1 ? 'none' : 'inline-block' }"></i>
+                        <i class="fa-solid fa-chevron-up" :style="{ 'display': turn == 1 ? 'inline-block' : 'none' }"></i>
                     </li>
-                    <ul class="sub-dropdown-menu" :class="{ 'sub-1': about, 'sub': !about }">
+                    <ul class="sub-dropdown-menu" :class="{ 'sub-1': turn == 1, 'sub' : turn != 1}">
                         <li>
                             <Link href="">單位介紹</Link>
                         </li>
@@ -88,13 +84,13 @@ export default {
                         </li>
                     </ul>
                 </label>
-                <label for="chevron-switch-2" @click="lesson = !lesson">
+                <label for="chevron-switch-2" @click="turn = 2">
                     <li class="ham-list">
                         <span>課程資訊</span> &nbsp
-                        <i class="fa-solid fa-chevron-down" :style="{ 'display': lesson ? 'none' : 'inline-block' }"></i>
-                        <i class="fa-solid fa-chevron-up" :style="{ 'display': lesson ? 'inline-block' : 'none' }"></i>
+                        <i class="fa-solid fa-chevron-down" :style="{ 'display': turn == 2 ? 'none' : 'inline-block' }"></i>
+                        <i class="fa-solid fa-chevron-up" :style="{ 'display': turn == 2 ? 'inline-block' : 'none' }"></i>
                     </li>
-                    <ul class="sub-dropdown-menu" :class="{ 'sub-2': lesson, 'sub': !lesson }">
+                    <ul class="sub-dropdown-menu" :class="{ 'sub-2': turn == 2, 'sub': turn != 2 }">
                         <li>
                             <Link :href="route('all.course')">全部課程</Link>
                         </li>
@@ -118,13 +114,13 @@ export default {
                         </li>
                     </ul>
                 </label>
-                <label for="chevron-switch-3" @click="news = !news">
+                <label for="chevron-switch-3" @click="turn = 3">
                     <li class="ham-list">
                         <span>消息資訊</span> &nbsp
-                        <i class="fa-solid fa-chevron-down" :style="{ 'display': news ? 'none' : 'inline-block' }"></i>
-                        <i class="fa-solid fa-chevron-up" :style="{ 'display': news ? 'inline-block' : 'none' }"></i>
+                        <i class="fa-solid fa-chevron-down" :style="{ 'display': turn == 3 ? 'none' : 'inline-block' }"></i>
+                        <i class="fa-solid fa-chevron-up" :style="{ 'display': turn == 3 ? 'inline-block' : 'none' }"></i>
                     </li>
-                    <ul class="sub-dropdown-menu" :class="{ 'sub-3': news, 'sub': !news }">
+                    <ul class="sub-dropdown-menu" :class="{ 'sub-3': turn == 3, 'sub': turn != 3 }">
                         <li>
                             <Link href="">本週消息</Link>
                         </li>
