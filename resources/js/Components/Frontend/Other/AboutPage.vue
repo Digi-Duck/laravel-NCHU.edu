@@ -129,7 +129,7 @@ export default {
                         <p>主任秘書</p>
                         <p class="name">王大詹</p>
                         <div class="contact">
-                            <div class="w-[16%]">
+                            <div class="w-[12%] 2sm:w-[15%] md:w-[16%]">
                                 <p>電話 |</p>
                                 <p>信箱 |</p>
                             </div>
@@ -146,7 +146,7 @@ export default {
                         <p>主任秘書</p>
                         <p class="name">王大詹</p>
                         <div class="contact">
-                            <div class="w-[16%]">
+                            <div class="w-[12%] 2sm:w-[15%] md:w-[16%]">
                                 <p>電話 |</p>
                                 <p>信箱 |</p>
                             </div>
@@ -163,7 +163,7 @@ export default {
                         <p>主任秘書</p>
                         <p class="name">王大詹</p>
                         <div class="contact">
-                            <div class="w-[16%]">
+                            <div class="w-[12%] 2sm:w-[15%] md:w-[16%]">
                                 <p>電話 |</p>
                                 <p>信箱 |</p>
                             </div>
@@ -180,7 +180,7 @@ export default {
                         <p>主任秘書</p>
                         <p class="name">王大詹</p>
                         <div class="contact">
-                            <div class="w-[16%]">
+                            <div class="w-[12%] 2sm:w-[15%] md:w-[16%]">
                                 <p>電話 |</p>
                                 <p>信箱 |</p>
                             </div>
@@ -197,7 +197,7 @@ export default {
                         <p>主任秘書</p>
                         <p class="name">王大詹</p>
                         <div class="contact">
-                            <div class="w-[16%]">
+                            <div class="w-[12%] 2sm:w-[15%] md:w-[16%]">
                                 <p>電話 |</p>
                                 <p>信箱 |</p>
                             </div>
@@ -214,7 +214,7 @@ export default {
                         <p>主任秘書</p>
                         <p class="name">王大詹</p>
                         <div class="contact">
-                            <div class="w-[16%]">
+                            <div class="w-[12%] 2sm:w-[15%] md:w-[16%]">
                                 <p>電話 |</p>
                                 <p>信箱 |</p>
                             </div>
@@ -401,7 +401,7 @@ export default {
         </div>
         <div v-if="show" class="w-[100%] h-[100%] absolute top-0">
             <div class="mask w-full h-full fixed z-[5] top-0 left-0 bg-black/50">
-                <div class="modal absolute z-[6] top-[5%] left-[16%] w-[68%] h-[90dvh] px-[3%] bg-white overflow-y-scroll">
+                <div class="modal">
                     <div class="my-[20px] text-center relative">
                         <div class="text-[14px] 2sm:text-[24px] md:text-[26px] font-[600] text-[#0057ff]">有氧鬆筋雕塑
                         </div>
@@ -412,7 +412,8 @@ export default {
                         <div class="mb-[20px]">一個人走得快，一群人走得遠，一同在教室揮灑汗水。</div>
                     </div>
                     <swiper :cssMode="true" :navigation="true" :pagination="true" :mousewheel="true" :keyboard="true"
-                        :modules="modules" class="mySwiper">
+                        :modules="modules" class="mySwiper h-[50%] mt-[30px]">
+                        <swiper-slide></swiper-slide>
                         <swiper-slide></swiper-slide>
                         <swiper-slide></swiper-slide>
                     </swiper>
@@ -448,7 +449,9 @@ export default {
 .SelectionBar button {
     font-weight: 800;
 }
-
+.modal{
+    @apply absolute z-[6] top-[5%] left-[16%] w-[68%] h-[90dvh] px-[3%] bg-white overflow-y-scroll;
+}
 @keyframes up {
     from {
         max-height: 12.4vh;
@@ -507,7 +510,7 @@ export default {
     text-align: center;
     border-bottom: 1px black solid;
     display: none;
-    padding-bottom:5px;
+    padding-bottom: 5px;
 }
 
 .OptionClick i {
@@ -544,9 +547,24 @@ export default {
     margin-top: 2.604vw;
     padding: 0px 1.04vw;
 }
-
+.swiper-slide{
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.swiper-slide:nth-child(1){
+    background-image: url('/images/About/yoga-1.jpg');
+}
+.swiper-slide:nth-child(2){
+    background-image: url('/images/About/yoga-2.jpg');
+}
+.swiper-slide:nth-child(3){
+    background-image: url('/images/About/yoga-3.jpg');
+}
 .members {
-    @apply w-[334px] h-[361px] 2md:w-[386px] 2md:h-[173px] md:w-[600px] md:h-[230px] mt-[20px] font-[700] flex flex-col 2md:flex-row bg-white shadow-lg;
+    @apply w-[334px] h-[361px] 2md:w-[440px] 2md:h-[173px] md:w-[600px] md:h-[230px] mt-[20px] font-[700] flex flex-col 2md:flex-row bg-white shadow-lg;
 
 }
 
@@ -619,10 +637,11 @@ export default {
     }
 }
 
-@media (max-width:500px) {
-    .OptionBtn{
+@media (max-width:499px) {
+    .OptionBtn {
         @apply font-[100];
     }
+
     .info {
         @apply text-[12px];
     }

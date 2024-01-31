@@ -1,7 +1,6 @@
 <script>
 import latest from '/images/main/news.png';
 import latestPhone from '/images/main/newsPhone.png';
-
 export default {
     data() {
         return {
@@ -13,12 +12,15 @@ export default {
             screenWidth: false,
         }
     },
+    computed: {
+    },
     mounted() {
         this.show = true;
         this.checkScreenWidth();
         window.addEventListener('resize', this.checkScreenWidth);
+
     },
-    methods:{
+    methods: {
         checkScreenWidth() {
             this.screenWidth = window.innerWidth >= 500;
         },
@@ -32,7 +34,7 @@ export default {
                 <img v-if="show" :src="screenWidth ? images.latest : images.latestPhone" alt="">
             </Transition>
             <!-- <Transition name="slide-fade-up"> -->
-            <div data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
+            <div ref="slide">
                 <Link class="more">了解更多</Link>
                 <div class="all-news">
                     <Link class="news" href="">
@@ -62,7 +64,6 @@ export default {
                     </Link>
                 </div>
             </div>
-
             <!-- </Transition> -->
         </div>
     </main>
@@ -87,7 +88,7 @@ img {
 
 .more {
     @apply text-[1.15vw] font-[700] border-b-[0.2vw] border-black hover:text-[#0057ff] hover:border-[#0057ff] float-right translate-y-[-2.5vw] translate-x-[-5vw] mt-[20px];
-    margin-bottom:20px;
+    margin-bottom: 20px;
 }
 
 .all-news {
@@ -146,7 +147,8 @@ img {
     img {
         @apply w-[47vw] m-auto;
     }
-    .more{
+
+    .more {
         @apply text-[3vw] mb-[0px];
     }
 

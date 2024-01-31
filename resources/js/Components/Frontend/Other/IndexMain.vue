@@ -53,6 +53,9 @@ export default {
     mounted() {
         this.show = true;
     },
+    methods: {
+
+    },
 }
 </script>
 <template>
@@ -67,7 +70,8 @@ export default {
                 <Transition name="slide-fade-right">
                     <ul v-if="show" class="list">
                         <li v-for="item in course.rt_data" :key="item.id">
-                            <Link href="">0{{ item.sort }}{{ item.name }}</Link><span class="ml-[10px]" :class="{ 'hidden': item.sort == course.rt_data.length }">|</span>
+                            <Link href="">0{{ item.sort }}{{ item.name }}</Link><span class="ml-[10px]"
+                                :class="{ 'hidden': item.sort == course.rt_data.length }">|</span>
                         </li>
                     </ul>
                 </Transition>
@@ -76,16 +80,16 @@ export default {
                 <div class="main-cards" v-for="item in course.rt_data" :key="item.id"
                     :class="{ 'card-border': item.sort == course.rt_data.length }">
                     <Transition name="slide-fade-up">
-                        <div v-if="show" class="card">
-                            <div class="main-card">
-                                <div class="title ml-[-10px]">0{{ item.sort }}</div>
-                                <div class="title-name">{{ item.name }}</div>
-                                <div class="content">{{ item.content }}</div>
-                                <Link href="" class="more">了解更多&nbsp<i class="fa-solid fa-arrow-right"></i>
-                                </Link>
-                            </div>
-                            <div class="card-img"><img :src="item.img_path" alt=""></div>
+                    <div v-if="show" class="card">
+                        <div class="main-card">
+                            <div class="title ml-[-10px]">0{{ item.sort }}</div>
+                            <div class="title-name">{{ item.name }}</div>
+                            <div class="content">{{ item.content }}</div>
+                            <Link href="" class="more">了解更多&nbsp<i class="fa-solid fa-arrow-right"></i>
+                            </Link>
                         </div>
+                        <div class="card-img"><img :src="item.img_path" alt=""></div>
+                    </div>
                     </Transition>
                 </div>
             </div>
@@ -180,7 +184,10 @@ export default {
     transform: translate(0px, 100px);
     opacity: 0;
 }
-
+.main-cards.active {
+  opacity: 1;
+  transform: translateX(0%) scale(1);
+}
 @media(max-width:1400px) {
     .list {
         @apply text-[1.4vw];

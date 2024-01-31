@@ -71,7 +71,7 @@ export default {
                     <swiper class=" swiper  ml-[16.24vw]  2sm:ml-[11vw] h-[70vw]  relative" :effect="'cards'"
                         :grabCursor="true" :modules="modules" :loop="true">
                         <swiper-slide v-for="(card, index) in cards" :key="index" class="swiper-slide"
-                        :style="{ backgroundColor: card.color, backgroundImage: 'url(' + card.img + ')' }">
+                            :style="{ backgroundColor: card.color, backgroundImage: 'url(' + card.img + ')' }">
                             <a>
                                 <div class="card flex flex-col justify-end">
                                     <div class="card-type">{{ card.type }}</div>
@@ -111,11 +111,11 @@ export default {
                 <div class="w-[27.7vw] h-[34.59] ">
                     <div class="mt-[-3.47vw]  w-[27.7vw] h-[13.84vw]  ">
                         <div class="provide w-[27.7vw] h-[13.84vw] ">
-                            <div class="w-[27.7vw] pl-[5.76vw]  arrow tracking-[-3px] "><span
+                            <div class="w-[27.7vw] pl-[5.76vw]  arrow tracking-[-1px] xl:tracking-[-3px]"><span
                                     class="mr-[1.07vw]">Latest</span>最新
                             </div>
                             <div class=" w-[27.7vw]  pl-[8.54vw] mt-[-2.78vw] flex gap-[0.81vw] tracking-[-3px] row ">
-                                課程<span class="mt-[0.81vw] tracking-[-3px]">course</span>
+                                課程<span class="mt-[0.81vw] tracking-[-1px] xl:tracking-[-3px]">course</span>
                             </div>
                         </div>
                     </div>
