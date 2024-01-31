@@ -101,18 +101,20 @@ export default {
                 <pre class="h1">製作人員  王亞筑 陳喬旭 蘇煒峻 林聖翰 陳瑋祥</pre>
             </div>
             <div class="bottom flex ">
-                <div class="h4">©2024 International College of Innovation and Industry Liaison, N.C.H.U. </div>
+                <div class="formatH5">
+                    <div class="h5">©2024 International College of Innovation and Industry Liaison, N.C.H.U. </div>
+                </div>
                 <div class="flex gap-1 tabs">
-                    <div>
+                    <div class="informationBar">
                         <Link class="h4" :href="route('web.index')">隱私權聲明 |</Link>
                     </div>
-                    <div>
+                    <div class="informationBar">
                         <Link class="h4" :href="route('web.index')">智慧財產權聲明 |</Link>
                     </div>
-                    <div>
+                    <div class="informationBar">
                         <Link class="h4" :href="route('web.index')">網站導覽 |</Link>
                     </div>
-                    <div>
+                    <div class="informationBar">
                         <Link class="h4" href="">網站意見回饋</Link>
                     </div>
                 </div>
@@ -747,17 +749,29 @@ export default {
     }
 
     .tabs {
-        justify-content: left;
+        justify-content: center;
     }
 
+    .informationBar{
+        padding-top:80px;
+    }
     .h4 {
         text-align: left;
-        font-size: 2.5vw;
+        font-size: 3vw;
         line-height: 10px;
     }
 
     .logo {
         width: 80%;
+    }
+
+    .formatH5{
+        display: flex;
+        justify-content: center;
+        padding-top: 5px;
+    }
+    .h5{
+        font-size: 2.2vw;
     }
 }
 </style>
