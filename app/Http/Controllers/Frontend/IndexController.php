@@ -16,7 +16,7 @@ class IndexController extends Controller
     // 前往前台首頁
     public function index()
     {
-        $courseType = CourseType::select(['sort', 'name', 'content', 'img_path'])->get();
+        $courseType = CourseType::select(['id','sort', 'name', 'content', 'img_path'])->get();
         return Inertia::render('Frontend/Index', ['response' => rtFormat($courseType) ?? []]);
     }
 }

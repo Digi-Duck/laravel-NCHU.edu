@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use App\Models\CourseType;
 use Inertia\Middleware;
 use Tightenco\Ziggy\Ziggy;
 use Illuminate\Http\Request;
@@ -38,6 +39,9 @@ class HandleInertiaRequests extends Middleware
             ...parent::share($request),
             'auth' => [
                 'user' => $request->user(),
+            ],
+            'classType' =>[
+                'type' => CourseType::select('id', 'name')->get(),
             ],
             'ziggy' => fn () => [
                 ...(new Ziggy())->toArray(),

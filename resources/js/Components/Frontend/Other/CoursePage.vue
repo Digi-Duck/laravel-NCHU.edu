@@ -8,8 +8,7 @@ export default {
     data() {
         return {
             courses: this.resCourse ?? [],
-            Num: 1,
-            ClickNum: 1,
+            flag: false,
             detail: false,
             screenWidth: false,
             images: {
@@ -39,35 +38,20 @@ export default {
     <div class="w-[85%]  m-auto flex  flex-col">
         <div class="title"><img :src="screenWidth ? images.coursePC : images.coursePhone" alt="" class="m-auto 2md:m-0">
         </div>
-        <a :href="'/course/type/' + courses.rt_data[0].course_type_id"><button type="button">TEST</button></a>
+        <a :href="'/course/type/' + $page.props.classType.type[0]"><button type="button">TEST</button></a>
         <div class="w-[90%] md:w-[80%] m-auto">
-            <div :class="ClickNum == 1 ? 'all-2' : 'all'">
-                <button class="OptionClick" type="button">全部課程 <i class="fa-solid fa-chevron-down"></i></button>
-                <button class="OptionClick" type="button">最新課程 <i class="fa-solid fa-chevron-down"></i></button>
-                <button class="OptionClick" type="button">兒童營隊 <i class="fa-solid fa-chevron-down"></i></button>
-                <button class="OptionClick" type="button">單元手作 <i class="fa-solid fa-chevron-down"></i></button>
-                <button class="OptionClick" type="button">運動課程 <i class="fa-solid fa-chevron-down"></i></button>
-                <button class="OptionClick" type="button">職業訓練 <i class="fa-solid fa-chevron-down"></i></button>
-                <button class="OptionClick" type="button">專業證照 <i class="fa-solid fa-chevron-down"></i></button>
-                <div :class="ClickNum == 2 ? 'SelectionOptionClick' : 'SelectionOption'">
-                    <button class="OptionBtn" type="button">全部課程</button>
-                    <button class="OptionBtn" type="button">最新課程</button>
-                    <button class="OptionBtn" type="button">兒童營隊</button>
-                    <button class="OptionBtn" type="button">單元手作</button>
-                    <button class="OptionBtn" type="button">運動課程</button>
-                    <button class="OptionBtn" type="button">職業訓練</button>
-                    <button class="OptionBtn" type="button">專業證照</button>
-                </div>
+            <div class="SelectionBar w-[100%] flex">
+                <a :href="route('course.all')"><button @click="flag != flag" class="SelectionBtn"
+                        :class="flag ? SelectionBtn : ClickColor" type="button">全部課程</button></a>
+                <a :href="route('course.latest')"><button @click="flag != flag" class="SelectionBtn"
+                        :class="flag ? SelectionBtn : ClickColor">最新課程</button></a>
+                <a :href="route('course.type', type.id)" v-for="type in $page.props.classType.type" :key="type.id">
+                    <div @click="flag != flag" class="SelectionBtn" :class="flag ? SelectionBtn : ClickColor">
+                        {{ type.name }}
+                    </div>
+                </a>
             </div>
-            <div class="SelectionBar w-[100%]">
-                <button @click="Num = 1" :class="Num == 1 ? 'ClickColor' : 'SelectionBtn'" type="button">全部課程</button>
-                <button @click="Num = 2" :class="Num == 2 ? 'ClickColor' : 'SelectionBtn'" type="button">最新課程</button>
-                <button @click="Num = 3" :class="Num == 3 ? 'ClickColor' : 'SelectionBtn'" type="button">兒童營隊</button>
-                <button @click="Num = 4" :class="Num == 4 ? 'ClickColor' : 'SelectionBtn'" type="button">單元手作</button>
-                <button @click="Num = 5" :class="Num == 5 ? 'ClickColor' : 'SelectionBtn'" type="button">運動課程</button>
-                <button @click="Num = 6" :class="Num == 6 ? 'ClickColor' : 'SelectionBtn'" type="button">職業訓練</button>
-                <button @click="Num = 7" :class="Num == 7 ? 'ClickColor' : 'SelectionBtn'" type="button">專業證照</button>
-            </div>
+
         </div>
         <div
             class="w-[90%]  ml-[13.8vw] 2sm:ml-[7.2vw] md:ml-[10.5vw] md:w-[80%]  py-[1%]  flex gap-[3%] flex-wrap justify-start">
@@ -150,22 +134,16 @@ export default {
 }
 
 .SelectionBtn {
-    padding: 0.48vw 1.46vw;
+    @apply py-[0.48vw] px-[1.46vw] text-[1.04vw] bg-transparent mr-[1vw];
     border-radius: 1.04vw 1.04vw 0px 0px;
-    font-size: 1.04vw;
     font-family: inter;
-    background-color: transparent;
-    margin-right: 1vw;
 }
 
 .ClickColor {
-    padding: 0.48vw 1.46vw;
+    @apply py-[0.48vw] px-[1.46vw] text-[1.04vw] text-[#ffffff] bg-[#0057ff] mr-[1vw];
     border-radius: 20px 20px 0px 0px;
-    font-size: 1.04vw;
     font-family: inter;
-    color: white;
-    background-color: rgb(0, 87, 255);
-    margin-right: 1vw;
+
 }
 
 .SelectionBtn:hover {
@@ -197,5 +175,4 @@ export default {
 
 .SelectionOption {
     display: none;
-}
-</style>
+}</style>
