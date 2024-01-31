@@ -5,13 +5,29 @@ import member from '/images/About/member.svg';
 import memberPhone from '/images/About/memberPhone.svg';
 import result from '/images/About/result.svg';
 import resultPhone from '/images/About/resultPhone.svg';
+import yoga1 from '/images/About/yoga-1.jpg';
+import yoga2 from '/images/About/yoga-2.jpg';
+import yoga3 from '/images/About/yoga-3.jpg';
+
+import { Navigation, Pagination, Mousewheel, Keyboard } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import 'swiper/css';
+
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
 
 export default {
+    components: {
+        Swiper,
+        SwiperSlide,
+    },
     data() {
         return {
             images: {
-                about, aboutPhone, member, memberPhone, result, resultPhone,
+                about, aboutPhone, member, memberPhone, result, resultPhone, yoga1, yoga2, yoga3,
             },
+            modules: [Navigation, Pagination, Mousewheel, Keyboard],
             Num: 1,
             ClickNum: 1,
             show: false,
@@ -129,7 +145,7 @@ export default {
                         <p>主任秘書</p>
                         <p class="name">王大詹</p>
                         <div class="contact">
-                            <div>
+                            <div class="w-[40%]">
                                 <p>電話 |</p>
                                 <p>信箱 |</p>
                             </div>
@@ -304,7 +320,8 @@ export default {
                         <p>2022.01.01</p>
                         <p class="card-title">有氧鬆筋雕塑</p>
                         <p class="card-content">一個人走得快，一群人走得遠，一同在教室揮灑汗水。</p>
-                        <button type="button" class="more" @click="show = true">了解更多<i class="fa-solid fa-arrow-right"></i></button>
+                        <button type="button" class="more" @click="show = true">了解更多<i
+                                class="fa-solid fa-arrow-right"></i></button>
                     </div>
                 </div>
                 <div class="results">
@@ -377,7 +394,12 @@ export default {
                     <div class="flex flex-col text-[12px] 2sm:text-[20px] md:text-[22px] font-[500] text-center">
                         <div class="mb-[20px]">一個人走得快，一群人走得遠，一同在教室揮灑汗水。</div>
                     </div>
-                    <img :src="images.wallpaper" alt="" class="m-auto mb-[30px] h-[300px] 2sm:h-[504px] md:h-[632px]">
+                    <swiper :cssMode="true" :navigation="true" :pagination="true" :mousewheel="true" :keyboard="true"
+                        :modules="modules" class="mySwiper">
+                        <!-- <swiper-slide> <div class="w-[100%] h-[100%]" :style="{backgroundImage: 'url(' + /images/About/yoga-1.jpg + ')'}"></div> </swiper-slide> -->
+                        <swiper-slide></swiper-slide>
+                        <swiper-slide></swiper-slide>
+                    </swiper>
                 </div>
             </div>
         </div>
@@ -550,7 +572,6 @@ export default {
 .more {
     @apply text-[#0057ff] text-[14px] 2md:text-[8px] md:text-[14px] font-[800] mt-[3px] md:mt-[5px] ml-auto;
 }
-
 @media(max-width:800px) {
     .info {
         @apply text-[14px];

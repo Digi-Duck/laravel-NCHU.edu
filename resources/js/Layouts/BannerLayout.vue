@@ -7,7 +7,7 @@ export default {
             images: {
                 bannerPC, bannerPhone,
             },
-            screenWidth:false,
+            screenWidth: false,
         }
     },
     mounted() {
@@ -27,3 +27,11 @@ export default {
         <slot></slot>
     </div>
 </template>
+<style scoped>
+    img {
+        filter: grayscale(100%);
+    }
+    img:hover{
+        filter: none;
+    }
+</style>
