@@ -36,7 +36,7 @@ export default {
         <Link href="#"><img :src="images.top" alt="" class="w-[50px] md:w-[63px]"></Link>
     </button>
     <footer class="w-[100%]  bg-white flex justify-center ">
-        <div class="main w-[79%] md:w-[64%]">
+        <div class="main w-[79%]">
             <div class="top">
                 <div class="top-left">
                     <div class="logo">
@@ -75,9 +75,9 @@ export default {
                         </div>
                     </div>
                     <div class="content-3">
-                        <div class="h2"><a :href="route('course.type','all')">課程資訊</a></div>
-                         <div  v-for="type in $page.props.classType.type" :key="type.id">
-                            <Link class="h3" :href="route('course.type', type.id)">{{type.name}}</Link>
+                        <div class="h2"><a :href="route('course.type', 'all')">課程資訊</a></div>
+                        <div v-for="type in $page.props.classType.type" :key="type.id">
+                            <Link class="h3" :href="route('course.type', type.id)">{{ type.name }}</Link>
                         </div>
                     </div>
                 </div>
@@ -90,7 +90,8 @@ export default {
             </div>
             <div class="bottom flex ">
                 <div class="formatH5">
-                    <div class="h5 md:text-[0.8vw]">©2024 International College of Innovation and Industry Liaison, N.C.H.U. </div>
+                    <div class="h5 md:text-[0.8vw]">©2024 International College of Innovation and Industry Liaison, N.C.H.U.
+                    </div>
                 </div>
                 <div class="flex gap-1 tabs">
                     <div class="informationBar">
@@ -137,13 +138,14 @@ export default {
 .main {
     display: flex;
     align-items: center;
+    height: 100%;
     flex-direction: column;
 }
 
 .top {
     height: 70%;
     width: 100%;
-    margin-top: 5%;
+    margin-top: 40px;
     display: flex;
 }
 
@@ -190,11 +192,11 @@ export default {
     font-family: 'Noto Sans TC', sans-serif;
 }
 
-.formatH5{
+.formatH5 {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top:0.5vw;
+    padding-top: 0.5vw;
 }
 
 .content-3 {
@@ -219,13 +221,19 @@ export default {
     position: absolute;
     right: -21%;
     top: -250%;
-    background-image: url('/images/FooterIcon/FaceBookIcon.svg');
+    background-image: url('/images/FooterIcon/Facebook-blue.svg');
+    filter: grayscale(100%);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
     width: 50%;
     height: 80%;
 }
+
+.bottom:hover::before {
+    filter: none;
+}
+
 
 
 @media (max-width:1440px) {
@@ -350,7 +358,6 @@ export default {
 
     .logo {
         width: 48%;
-        margin-bottom: 18%;
     }
 
     .h1 {
@@ -387,10 +394,6 @@ export default {
 
 @media (max-width:860px) {
 
-    .logo {
-        width: 48%;
-        margin-bottom: 18%;
-    }
 
     .h1 {
         font-size: 8px;
@@ -451,12 +454,11 @@ export default {
     }
 
     .bottom {
-        justify-content: center;
         flex-direction: column-reverse;
     }
 
     .bottom::before {
-        top: -640%;
+        top: -28vh;
         left: -18.5%;
         width: 50%;
         height: 50%;
@@ -484,12 +486,8 @@ export default {
         text-align: center;
     }
 
-    .formatH5{
-        display: flex;
-        justify-content: center;
-    }
-    .h5{
-        font-size:1.5vw;
+    .h5 {
+        font-size: 1.5vw;
     }
 
     .tabs {
@@ -498,22 +496,24 @@ export default {
 
     .word {
         width: 100%;
-        margin-bottom: 50%;
+        margin-bottom: 40%;
     }
+
+    .main {
+        width: 64%;
+    }
+
 }
+
 
 @media (max-width:740px) {
 
     .logo {
         width: 75%;
-        margin-bottom: 55%;
     }
 
     .bottom::before {
-        top: -640%;
-        left: -18.5%;
-        width: 50%;
-        height: 50%;
+        top: -26vh;
     }
 
     .h1 {
@@ -534,26 +534,16 @@ export default {
         line-height: 11px;
     }
 
-
-    .word {
-        width: 100%;
-        margin-bottom: 50%;
-    }
-
 }
 
 @media (max-width:691px) {
 
     .logo {
         width: 70%;
-        margin-bottom: 80%;
     }
 
     .bottom::before {
-        top: -640%;
-        left: -18.5%;
-        width: 50%;
-        height: 50%;
+        top: -25vh;
     }
 
     .h1 {
@@ -574,19 +564,10 @@ export default {
         line-height: 10px;
     }
 
-
-    .word {
-        width: 100%;
-        margin-bottom: 50%;
-    }
 }
 
 @media (max-width:640px) {
 
-    .logo {
-        width: 70%;
-        margin-bottom: 90%;
-    }
 
     .h1 {
         font-size: 11px;
@@ -606,19 +587,17 @@ export default {
         line-height: 9px;
     }
 
-
-    .word {
-        width: 100%;
-        margin-bottom: 50%;
-    }
-
 }
 
 @media (max-width:592px) {
 
+    .bottom::before {
+        top: -21vh;
+        height: 45%;
+    }
+
     .logo {
         width: 60%;
-        margin-bottom: 90%;
     }
 
     .h1 {
@@ -639,20 +618,10 @@ export default {
         line-height: 8px;
     }
 
-
-    .word {
-        width: 100%;
-        margin-bottom: 50%;
-    }
-
 }
 
 @media (max-width:543px) {
 
-    .logo {
-        width: 60%;
-        margin-bottom: 90%;
-    }
 
     .h1 {
         font-size: 9px;
@@ -673,15 +642,8 @@ export default {
     }
 
 
-    .word {
-        width: 100%;
-        margin-bottom: 50%;
-    }
-
     .bottom::before {
-        top: -530%;
-        left: -12%;
-        width: 40%;
+        top: -19vh;
         height: 40%;
     }
 
@@ -690,8 +652,8 @@ export default {
 @media (max-width:500px) {
 
     .main {
-        height: auto;
         position: relative;
+        height: 200vw;
     }
 
     .h1 {
@@ -704,24 +666,23 @@ export default {
 
     .top {
         flex-direction: column;
-        margin-top: 40px;
+        height: auto;
     }
 
     .top-right {
         flex-direction: column;
-        justify-content: flex-start;
+        height: auto;
     }
 
     .top-left {
         height: 10%;
-        margin-bottom: 50px;
     }
 
     .content-3 {
         margin-left: 0;
         margin-bottom: 25px;
-        align-items: flex-start;
         height: auto;
+        align-items: flex-start;
     }
 
     .h2 {
@@ -730,9 +691,9 @@ export default {
     }
 
     .bottom::before {
-        /* display: none; */
-        height: 16px;
-        left: -7%;
+        height: 3.4vw;
+        left: -8.5vw;
+        top: -17vh;
     }
 
     .h3 {
@@ -742,26 +703,30 @@ export default {
 
     .bottom {
         width: 100%;
-        height: 27px;
+        height: auto;
         position: absolute;
-        bottom: 5%;
+        bottom: 0;
     }
 
     .word-small {
-        display: flex;
-        font-size: 3vw;
+        display: block;
+    }
+
+    .word-small .h1 {
+        font-size: 3.5vw;
     }
 
     .tabs {
         justify-content: center;
     }
 
-    .informationBar{
-        padding-top:80px;
+    .informationBar {
+        padding-top: 80px;
     }
+
     .h4 {
         text-align: left;
-        font-size: 3vw;
+        font-size: 2.6vw;
         line-height: 10px;
     }
 
@@ -769,13 +734,22 @@ export default {
         width: 80%;
     }
 
-    .formatH5{
-        display: flex;
-        justify-content: center;
-        padding-top: 5px;
-    }
-    .h5{
+
+    .h5 {
         font-size: 2.2vw;
     }
+}
+
+@media (max-width:451px) {
+
+.bottom::before {
+    height: 3.4vw;
+    left: -8.5vw;
+    top: -10vh;
+}
+.word-small .h1 {
+        font-size: 3vw;
+    }
+
 }
 </style>
