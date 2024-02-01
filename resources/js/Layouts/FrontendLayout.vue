@@ -6,6 +6,7 @@ import FrontendFooter from '@/Components/Frontend/Template/FrontendFooter.vue';
 
 import frontendBackground from '/images/body/grid.svg';
 import frontendBackgroundPad from '/images/body/smallGrid.svg';
+import top from '/images/logo/top.png';
 
 export default {
     components: {
@@ -15,7 +16,7 @@ export default {
     data() {
         return {
             images: {
-                frontendBackground, frontendBackgroundPad,
+                frontendBackground, frontendBackgroundPad, top,
             },
             screenWidth: false,
         };
@@ -23,15 +24,14 @@ export default {
     mounted() {
         this.checkScreenWidth();
         window.addEventListener('resize', this.checkScreenWidth);
-        console.log(this.$refs.frontendLayout);
     },
     methods: {
         checkScreenWidth() {
             this.screenWidth = window.innerWidth <= 768;
         },
-        totop() {
+        toTop() {
             this.$refs.frontendLayout.scrollTo({ top: 0, behavior: 'smooth' });
-        }
+        },
     },
     watch: {
         // 監聽路由變化，回到頁面頂端
@@ -58,9 +58,31 @@ export default {
                 <main>
                     <slot />
                 </main>
-                <button class="absolute right-0 bottom-0" type="button" @click="totop">test</button>
+                <button @click="toTop()" :class="yScrollValue < 100 ? 'goTop':''"><img :src="images.top" alt="" class="w-[50px] md:w-[63px]"></button>
                 <FrontendFooter />
             </div>
         </section>
     </div>
 </template>
+
+<style scoped>
+.goTop {
+    position: sticky;
+    margin-bottom: 30px;
+    bottom: 30px;
+    /* left: 93vw; */
+    float: right;
+    right: 30px;
+    z-index: 10;
+    opacity: 0.9;
+}
+
+
+@media (max-width:768px) {
+    .goTop {
+        margin-bottom: 10px;
+        right: 10px;
+        bottom: 10px;
+    }
+}
+</style>
