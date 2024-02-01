@@ -24,7 +24,7 @@ export default {
 </script>
 
 <template>
-    <footer class="w-[100%]  bg-white flex justify-center ">
+    <footer class="w-[100%]  bg-white flex justify-center all">
         <div class="main w-[79%]">
             <div class="top">
                 <div class="top-left">
@@ -42,29 +42,31 @@ export default {
                     <div class="content-3">
                         <div class="h2">消息資訊</div>
                         <div>
-                            <Link class="h3" :href="route('news.type','2')">最新消息</Link>
+                            <Link class="h3" :href="route('news.type', '2')">最新消息</Link>
                         </div>
                     </div>
                     <div class="content-3">
                         <div class="h2">關於我們</div>
                         <div>
-                            <Link class="h3" :href="route('about.type','1')">單位介紹</Link>
+                            <Link class="h3" :href="route('about.type', '1')">單位介紹</Link>
                         </div>
                         <div>
-                            <Link class="h3" :href="route('about.type','2')">成員介紹</Link>
+                            <Link class="h3" :href="route('about.type', '2')">成員介紹</Link>
                         </div>
                         <div>
-                            <Link class="h3" :href="route('about.type','3')">相關法規</Link>
+                            <Link class="h3" :href="route('about.type', '3')">相關法規</Link>
                         </div>
                         <div>
-                            <Link class="h3" :href="route('about.type','4')">表單下載</Link>
+                            <Link class="h3" :href="route('about.type', '4')">表單下載</Link>
                         </div>
                         <div>
-                            <Link class="h3" :href="route('about.type','5')">成果展示</Link>
+                            <Link class="h3" :href="route('about.type', '5')">成果展示</Link>
                         </div>
                     </div>
                     <div class="content-3">
-                        <div class="h2"><a :href="route('course.type', 'all')">課程資訊</a></div>
+                        <div class="h2">
+                            <Link :href="route('course.type', 'all')">課程資訊</Link>
+                        </div>
                         <div v-for="type in $page.props.classType.type" :key="type.id">
                             <Link class="h3" :href="route('course.type', type.id)">{{ type.name }}</Link>
                         </div>
@@ -79,21 +81,21 @@ export default {
             </div>
             <div class="bottom flex ">
                 <div class="formatH5">
-                    <div class="h5 md:text-[0.8vw]">©2024 International College of Innovation and Industry Liaison, N.C.H.U.
+                    <div class="h4">©2024 International College of Innovation and Industry Liaison, N.C.H.U.
                     </div>
                 </div>
                 <div class="flex gap-1 tabs">
                     <div class="informationBar">
-                        <Link class="h4" :href="route('web.type','1')">隱私權聲明 |</Link>
+                        <Link class="h4" :href="route('web.type', '1')">隱私權聲明 |</Link>
                     </div>
                     <div class="informationBar">
-                        <Link class="h4" :href="route('web.type','2')">智慧財產權聲明 |</Link>
+                        <Link class="h4" :href="route('web.type', '2')">智慧財產權聲明 |</Link>
                     </div>
                     <div class="informationBar">
-                        <Link class="h4" :href="route('web.type','3')">網站導覽 |</Link>
+                        <Link class="h4" :href="route('web.type', '3')">網站導覽 |</Link>
                     </div>
                     <div class="informationBar">
-                        <Link class="h4" :href="route('web.type','4')">網站意見回饋</Link>
+                        <Link class="h4" :href="route('web.type', '4')">網站意見回饋</Link>
                     </div>
                 </div>
             </div>
@@ -143,7 +145,7 @@ export default {
 }
 
 .h1 {
-    font-size: 18px;
+    font-size: 1.2vw;
     margin-bottom: 1%;
     font-weight: bold;
     font-family: 'Noto Sans TC', sans-serif;
@@ -155,18 +157,19 @@ export default {
 }
 
 .h2 {
-    margin-bottom: 1%;
-    font-size: 24px;
+    margin-bottom: 2.2vh;
+    font-size: 1.35vw;
     font-weight: bold;
 }
 
 .h3 {
-    font-size: 20px;
+    font-size: 1vw;
+    display: block;
+    padding-bottom: 4vh;
 }
 
 .h4 {
-    line-height: 27px;
-    font-size: 16px;
+    font-size: 0.9vw;
     font-family: 'Noto Sans TC', sans-serif;
 }
 
@@ -181,9 +184,7 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100%;
-    margin-left: 8%;
-    gap: 4%;
+    margin-left: 3vw;
 }
 
 .bottom {
@@ -197,8 +198,8 @@ export default {
 .bottom::before {
     content: "";
     position: absolute;
-    right: -21%;
-    top: -250%;
+    right: -17vw;
+    top: -7vh;
     background-image: url('/images/FooterIcon/Facebook-blue.svg');
     filter: grayscale(100%);
     background-repeat: no-repeat;
@@ -206,6 +207,7 @@ export default {
     background-position: center;
     width: 50%;
     height: 80%;
+    
 }
 
 .bottom:hover::before {
@@ -213,209 +215,29 @@ export default {
 }
 
 
+@media (max-width:1280px) {
 
-@media (max-width:1440px) {
-
-    .logo {
-        width: 60%;
-        margin-bottom: 20%;
-    }
-
-    .h1 {
-        font-size: 13px;
-        margin-bottom: 5px;
-        font-weight: bold;
-    }
-
-    .h2 {
-        margin-bottom: 10px;
-        font-size: 17px;
-        font-weight: bold;
-    }
-
-    .h3 {
-        font-size: 15px;
-    }
-
-    .content-3 {
-        gap: 3.5%;
-    }
-
-    .h4 {
-        font-size: 13px;
-    }
 
     .bottom::before {
-        top: -200%;
-        right: -21%;
-        width: 50%;
+        top: -4vh;
+        right: -16.5vw;
         height: 50%;
     }
 }
 
-@media (max-width:1220px) {
-
-    .logo {
-        width: 50%;
-        margin-bottom: 18%;
-    }
-
-    .h1 {
-        font-size: 11px;
-        margin-bottom: 5px;
-        font-weight: bold;
-    }
-
-    .h2 {
-        margin-bottom: 10px;
-        font-size: 15px;
-        font-weight: bold;
-    }
-
-    .h3 {
-        font-size: 13px;
-    }
-
-    .h4 {
-        font-size: 11px;
-    }
-
-    .bottom::before {
-        top: -180%;
-        right: -21%;
-        width: 50%;
-        height: 50%;
-    }
-}
-
-@media (max-width:1150px) {
-    .bottom::before {
-        top: -100%;
-        right: -20%;
-        width: 50%;
-        height: 55%;
-    }
-}
-
-@media (max-width:1024px) {
-
-    .logo {
-        width: 50%;
-        margin-bottom: 18%;
-    }
-
-    .h1 {
-        font-size: 10px;
-        margin-bottom: 5px;
-        font-weight: bold;
-    }
-
-    .h2 {
-        margin-bottom: 10px;
-        font-size: 14px;
-        font-weight: bold;
-    }
-
-    .h3 {
-        font-size: 12px;
-    }
-
-    .h4 {
-        font-size: 10px;
-    }
-
-    .bottom::before {
-        top: -90%;
-        right: -21%;
-        width: 50%;
-        height: 40%;
-    }
-}
 
 @media (max-width:960px) {
 
-    .logo {
-        width: 48%;
-    }
-
-    .h1 {
-        font-size: 9px;
-        margin-bottom: 5px;
-        font-weight: bold;
-    }
-
-    .h2 {
-        margin-bottom: 10px;
-        font-size: 13px;
-        font-weight: bold;
-    }
-
-    .h3 {
-        font-size: 11px;
-    }
-
-    .content-3 {
-        gap: 3%;
-    }
-
-    .h4 {
-        font-size: 9px;
-    }
-
     .bottom::before {
-        top: -65%;
-        right: -16%;
-        width: 40%;
-        height: 30%;
-    }
-}
-
-@media (max-width:860px) {
-
-
-    .h1 {
-        font-size: 8px;
-        margin-bottom: 5px;
-        font-weight: bold;
-    }
-
-    .h2 {
-        margin-bottom: 10px;
-        font-size: 12px;
-        font-weight: bold;
-    }
-
-    .h3 {
-        font-size: 10px;
-    }
-
-    .content-3 {
-        gap: 2%;
-    }
-
-    .h4 {
-        font-size: 8px;
-    }
-
-    .bottom::before {
-        top: -60%;
-        right: -16%;
-        width: 40%;
-        height: 25%;
+        top: -3vh;
+        height: 1.3vw;
     }
 }
 
 @media (max-width:800px) {
 
     .bottom::before {
-        top: -70%;
-        right: -16%;
-        width: 40%;
-        height: 25%;
-    }
-
-    .content-3 {
-        gap: 1%;
+        top: -2vh;
     }
 }
 
@@ -423,7 +245,7 @@ export default {
 
     .logo {
         width: 80%;
-        margin-bottom: 55%;
+        margin-bottom: 26vh;
     }
 
     .bottom {
@@ -431,36 +253,29 @@ export default {
     }
 
     .bottom::before {
-        top: -28vh;
-        left: -18.5%;
-        width: 50%;
-        height: 50%;
+        top: -26.5vh;
+        left: -11.5vw;
+        height: 2vh;
     }
 
     .h1 {
-        font-size: 14px;
+        font-size: 1.8vw;
         margin-bottom: 5px;
         font-weight: bold;
     }
 
     .h2 {
-        margin-bottom: 10px;
-        font-size: 15px;
+        font-size: 1.9vw;
         font-weight: bold;
     }
 
     .h3 {
-        font-size: 13px;
+        font-size: 1.5vw;
     }
 
     .h4 {
-        font-size: 12px;
-        line-height: 12px;
-        text-align: center;
-    }
-
-    .h5 {
         font-size: 1.5vw;
+        text-align: center;
     }
 
     .tabs {
@@ -468,8 +283,7 @@ export default {
     }
 
     .word {
-        width: 100%;
-        margin-bottom: 40%;
+        margin-bottom: 9vh;
     }
 
     .main {
@@ -478,160 +292,26 @@ export default {
 
 }
 
-
-@media (max-width:740px) {
-
-    .logo {
-        width: 75%;
-    }
+@media (max-width:600px) {
 
     .bottom::before {
-        top: -27vh;
-    }
-
-    .h1 {
-        font-size: 13px;
-        margin-bottom: 4px;
-    }
-
-    .h2 {
-        font-size: 14px;
-    }
-
-    .h3 {
-        font-size: 12px;
-    }
-
-    .h4 {
-        font-size: 11px;
-        line-height: 11px;
-    }
-
-}
-
-@media (max-width:690px) {
-
-    .logo {
-        width: 70%;
-    }
-
-    .bottom::before {
-        top: -25vh;
-    }
-
-    .h1 {
-        font-size: 12px;
-        margin-bottom: 4px;
-    }
-
-    .h2 {
-        font-size: 13px;
-    }
-
-    .h3 {
-        font-size: 11px;
-    }
-
-    .h4 {
-        font-size: 10px;
-        line-height: 10px;
-    }
-
-}
-
-@media (max-width:640px) {
-
-
-    .h1 {
-        font-size: 11px;
-        margin-bottom: 4px;
-    }
-
-    .h2 {
-        font-size: 12px;
-    }
-
-    .h3 {
-        font-size: 10px;
-    }
-
-    .h4 {
-        font-size: 9px;
-        line-height: 9px;
-    }
-
-}
-
-@media (max-width:592px) {
-
-    .bottom::before {
-        top: -21vh;
-        height: 45%;
-    }
-
-    .logo {
-        width: 60%;
-    }
-
-    .h1 {
-        font-size: 10px;
-        margin-bottom: 4px;
-    }
-
-    .h2 {
-        font-size: 11px;
-    }
-
-    .h3 {
-        font-size: 9px;
-    }
-
-    .h4 {
-        font-size: 8px;
-        line-height: 8px;
-    }
-
-}
-
-@media (max-width:543px) {
-
-
-    .h1 {
-        font-size: 9px;
-        margin-bottom: 4px;
-    }
-
-    .h2 {
-        font-size: 10px;
-    }
-
-    .h3 {
-        font-size: 8px;
-    }
-
-    .h4 {
-        font-size: 7px;
-        line-height: 7px;
-    }
-
-
-    .bottom::before {
-        top: -19vh;
-        height: 40%;
+        top: -23vh;
+        left: -11vw;
     }
 
 }
 
 @media (max-width:500px) {
 
+    .all {
+        height: 130vh;
+    }
+
     .main {
         position: relative;
         height: 200vh;
     }
 
-    .h1 {
-        font-size: 3.8vw;
-    }
 
     .word {
         display: none;
@@ -640,7 +320,9 @@ export default {
     .top {
         flex-direction: column;
         height: auto;
-        height: 80vh;
+        height: 90vh;
+        margin-top: 0;
+        padding-top: 5vh;
     }
 
     .top-right {
@@ -654,7 +336,7 @@ export default {
 
     .content-3 {
         margin-left: 0;
-        margin-bottom: 25px;
+        padding-bottom: 1.5vh;
         height: auto;
         align-items: flex-start;
     }
@@ -665,21 +347,18 @@ export default {
     }
 
     .bottom::before {
-        height: 2vh;
-        left: -7.5vw;
-        top: -23vh;
+        left: -9vw;
+        top: -21vh;
     }
 
     .h3 {
-        line-height: 32px;
         font-size: 3.8vw;
+        padding-bottom: 1.5vh;
     }
 
     .bottom {
-        width: 100%;
         height: auto;
-        position: absolute;
-        bottom: 0;
+        padding-top: 5vh;
     }
 
     .word-small {
@@ -687,33 +366,34 @@ export default {
     }
 
     .word-small .h1 {
-        font-size: 3.5vw;
-    }
-
-    .tabs {
-        justify-content: center;
-    }
-
-    .informationBar {
-        padding-top: 0;
+        font-size: 3vw;
     }
 
     .h4 {
         text-align: left;
         font-size: 2.5vw;
-        line-height: 10px;
+        line-height: 2.5vh;
     }
 
-    .logo {
-        width: 80%;
-    }
-
-
-    .h5 {
-        font-size: 2.2vw;
-    }
-    .main{
-        height: 120vh;
+    .main {
+        height: 100%;
     }
 }
+
+
+@media (max-width:376px) {
+
+    .top{
+        height: 80vh;
+    }
+
+    .all{
+        height: 100vh;
+    }
+    .bottom::before {
+        left: -7vw;
+        top: -18vh;
+    }
+}
+
 </style>
