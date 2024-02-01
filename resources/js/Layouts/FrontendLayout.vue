@@ -16,6 +16,8 @@ export default {
     },
     data() {
         return {
+            show: false,
+            stage:1,
             images: {
                 frontendBackground, frontendBackgroundPad, top, logo,
             },
@@ -23,6 +25,7 @@ export default {
         };
     },
     mounted() {
+        this.show = true
         this.checkScreenWidth();
         window.addEventListener('resize', this.checkScreenWidth);
     },
@@ -32,6 +35,9 @@ export default {
         },
         toTop() {
             this.$refs.frontendLayout.scrollTo({ top: 0, behavior: 'smooth' });
+        },
+        afterEnter(){
+            this.stage = 2
         },
     },
     watch: {
@@ -50,13 +56,13 @@ export default {
 
 <template>
     <div>
-        <!-- <section id="frontend-layout" ref="frontendLayout" class="h-[100dvh] overflow-x-hidden flex justify-center items-center"
+        <section v-if="stage == 1" id="frontend-layout" ref="frontendLayout" class="h-[100dvh] overflow-x-hidden flex justify-center items-center"
             :style="{ backgroundImage: `url(${screenWidth ? images.frontendBackgroundPad : images.frontendBackground})` }">
-            <transition>
-                <div class="w-[90px] h-[100px] load" :style="{ backgroundImage: `url(${images.logo})`}"></div>
+            <transition name="fade" @after-enter="afterEnter">
+                <div v-show="show" class="w-[90px] h-[100px] load" :style="{ backgroundImage: `url(${images.logo})`}"></div>
             </transition>
-        </section> -->
-        <section id="frontend-layout" ref="frontendLayout" class="h-[100dvh] overflow-x-hidden"
+        </section>
+        <section v-show="stage == 2" id="frontend-layout" ref="frontendLayout" class="h-[100dvh] overflow-x-hidden"
             :style="{ backgroundImage: `url(${screenWidth ? images.frontendBackgroundPad : images.frontendBackground})` }">
             <div>
                 <FrontendHeader />
@@ -72,6 +78,11 @@ export default {
 </template>
 
 <style scoped>
+.fade-enter-active,
+.fade-leave-active {
+  animation: loading 2s;
+}
+
 @keyframes loading{
     0%{
         @apply w-[90px];
