@@ -7,7 +7,6 @@ import FrontendFooter from '@/Components/Frontend/Template/FrontendFooter.vue';
 import frontendBackground from '/images/body/grid.svg';
 import frontendBackgroundPad from '/images/body/smallGrid.svg';
 import top from '/images/logo/top.png';
-import logo from '/images/logo/logo-loading.svg';
 
 export default {
     components: {
@@ -16,16 +15,13 @@ export default {
     },
     data() {
         return {
-            show: false,
-            stage:1,
             images: {
-                frontendBackground, frontendBackgroundPad, top, logo,
+                frontendBackground, frontendBackgroundPad, top,
             },
             screenWidth: false,
         };
     },
     mounted() {
-        this.show = true
         this.checkScreenWidth();
         window.addEventListener('resize', this.checkScreenWidth);
     },
@@ -35,9 +31,6 @@ export default {
         },
         toTop() {
             this.$refs.frontendLayout.scrollTo({ top: 0, behavior: 'smooth' });
-        },
-        afterEnter(){
-            this.stage = 2
         },
     },
     watch: {
@@ -55,47 +48,26 @@ export default {
 </script>
 
 <template>
-    <div>
-        <section v-if="stage == 1" id="frontend-layout" ref="frontendLayout" class="h-[100dvh] overflow-x-hidden flex justify-center items-center"
-            :style="{ backgroundImage: `url(${screenWidth ? images.frontendBackgroundPad : images.frontendBackground})` }">
-            <transition name="fade" @after-enter="afterEnter">
-                <div v-show="show" class="w-[90px] h-[100px] load" :style="{ backgroundImage: `url(${images.logo})`}"></div>
-            </transition>
-        </section>
-        <section v-if="stage == 2" id="frontend-layout" ref="frontendLayout" class="h-[100dvh] overflow-x-hidden"
-            :style="{ backgroundImage: `url(${screenWidth ? images.frontendBackgroundPad : images.frontendBackground})` }">
-            <div>
-                <FrontendHeader />
+    <section id="frontend-layout" ref="frontendLayout" class="h-[100dvh] overflow-x-hidden"
+        :style="{ backgroundImage: `url(${screenWidth ? images.frontendBackgroundPad : images.frontendBackground})` }">
+        <div>
+            <FrontendHeader />
 
-                <main>
-                    <slot />
-                </main>
-                <button @click="toTop()" class="goTop"><img :src="images.top" alt="" class="w-[50px] md:w-[63px]"></button>
-                <FrontendFooter />
-            </div>
-        </section>
-    </div>
+            <main>
+                <slot />
+            </main>
+            <button @click="toTop()" class="goTop"><img :src="images.top" alt="" class="w-[50px] md:w-[63px]"></button>
+            <FrontendFooter />
+        </div>
+    </section>
 </template>
 
 <style scoped>
-.fade-enter-active,
-.fade-leave-active {
-  animation: loading 1.5s;
-}
 
-@keyframes loading{
-    0%{
-        @apply w-[90px];
-    }
-    100%{
-        @apply w-[245px];
-    }
-}
 .goTop {
     position: sticky;
     margin-bottom: 30px;
     bottom: 30px;
-    /* left: 93vw; */
     float: right;
     right: 30px;
     z-index: 10;
@@ -109,5 +81,4 @@ export default {
         right: 10px;
         bottom: 10px;
     }
-}
-</style>
+}</style>
