@@ -32,7 +32,7 @@ export default {
                 <ul v-motion :initial="{ opacity: 0, x: 300 }"
                     :visibleOnce="{ opacity: 1, x: 0, transition: { duration: 800, } }" class="list">
                     <li v-for="item in course.rt_data" :key="item.id">
-                        <Link href="">0{{ item.sort }}{{ item.name }}</Link><span class="ml-[10px]"
+                        <Link :href="route('course.type', item.id)">0{{ item.sort }}{{ item.name }}</Link><span class="ml-[10px]"
                             :class="{ 'hidden': item.sort == course.rt_data.length }">|</span>
                     </li>
                 </ul>
@@ -59,10 +59,10 @@ export default {
                             <div class="title ml-[-10px]">0{{ item.sort }}</div>
                             <div class="title-name">{{ item.name }}</div>
                             <div class="content">{{ item.content }}</div>
-                            <Link href="" class="more">了解更多&nbsp<i class="fa-solid fa-arrow-right"></i>
+                            <Link :href="route('course.type', item.id)" class="more">了解更多&nbsp<i class="fa-solid fa-arrow-right"></i>
                             </Link>
                         </div>
-                        <div class="card-img"><img :src="item.img_path" alt=""></div>
+                        <a :href="route('course.type', item.id)" class="card-img"><img :src="item.img_path" alt=""></a>
                     </div>
                 </div>
             </div>

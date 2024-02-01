@@ -42,7 +42,7 @@ export default {
                     <div class="content-3">
                         <div class="h2">消息資訊</div>
                         <div>
-                            <Link class="h3" :href="route('news.type','1')">最新消息</Link>
+                            <Link class="h3" :href="route('news.type','2')">最新消息</Link>
                         </div>
                     </div>
                     <div class="content-3">
@@ -57,10 +57,10 @@ export default {
                             <Link class="h3" :href="route('about.type','3')">相關法規</Link>
                         </div>
                         <div>
-                            <Link class="h3" :href="route('about.type','4')">成果展示</Link>
+                            <Link class="h3" :href="route('about.type','4')">表單下載</Link>
                         </div>
                         <div>
-                            <Link class="h3" :href="route('about.type','5')">表單下載</Link>
+                            <Link class="h3" :href="route('about.type','5')">成果展示</Link>
                         </div>
                     </div>
                     <div class="content-3">
