@@ -1,4 +1,5 @@
 <script>
+import { Link } from '@inertiajs/vue3';
 import coursePC from '/images/coursePage/coursePC.png';
 import coursePhone from '/images/coursePage/coursePhone.png';
 export default {
@@ -9,27 +10,33 @@ export default {
         return {
             Num: 1,
             ClickNum: 1,
-            courses: this.resCourse.rt_data.courses  ?? [],
+            courses: this.resCourse.rt_data.courses ?? [],
             inputData: this.resCourse.rt_data.input ?? '',
             screenWidth: false,
             images: {
                 coursePC, coursePhone,
             },
-            screenScroll:0,
-        }
+            screenScroll: 0,
+        };
     },
     mounted() {
         this.checkScreenWidth();
         window.addEventListener('resize', this.checkScreenWidth);
     },
-    computed:{
-        getType(){
-            if(this.inputData === 'all') return '全部課程';
-            if(this.inputData === 'latest') return '最新課程';
-            if(this.inputData == 1) return '兒童營隊';
-            if(this.inputData == 2) return '單元手作';
-            if(this.inputData == 3) return '運動課程';
-            if(this.inputData == 4) return '職業訓練';
+    computed: {
+        getType() {
+            if (this.inputData === 'all')
+                return '全部課程';
+            if (this.inputData === 'latest')
+                return '最新課程';
+            if (this.inputData == 1)
+                return '兒童營隊';
+            if (this.inputData == 2)
+                return '單元手作';
+            if (this.inputData == 3)
+                return '運動課程';
+            if (this.inputData == 4)
+                return '職業訓練';
         },
     },
     methods: {
@@ -39,8 +46,8 @@ export default {
         checkScreenWidth() {
             this.screenWidth = window.innerWidth >= 500;
         },
-
     },
+    components: { Link }
 }
 </script>
 <template>
@@ -50,18 +57,18 @@ export default {
         <div class="w-[90%] md:w-[80%] m-auto">
             <div :class="ClickNum == 1 ? 'all-2' : 'all'">
                 <button @click="toggle()" class="OptionClick" type="button" v-if="Num == 1">{{getType}}<img class="w-[3vw] mt-1.5 ml-1 " :src="images.angleDown" alt=""></button>
-                <a :href="route('course.type','latest')"><button @click="toggle()" class="OptionClick" type="button" v-if="Num == 2">最新課程<img class="w-[3vw] mt-1.5 ml-1 " :src="images.angleDown" alt=""></button></a>
-                <a :href="route('course.type',type.id)" v-for="type in $page.props.classType.type" :key="type.id" ><button @click="toggle()" class="OptionClick" type="button" v-if="Num == 3">{{ type.name }}<img class="w-[3vw] mt-1.5 ml-1 " :src="images.angleDown" alt=""></button></a>
+                <Link  :href="route('course.type','latest')"><button @click="toggle()" class="OptionClick" type="button" v-if="Num == 2">最新課程<img class="w-[3vw] mt-1.5 ml-1 " :src="images.angleDown" alt=""></button></Link >
+                <Link  :href="route('course.type',type.id)" v-for="type in $page.props.classType.type" :key="type.id" ><button @click="toggle()" class="OptionClick" type="button" v-if="Num == 3">{{ type.name }}<img class="w-[3vw] mt-1.5 ml-1 " :src="images.angleDown" alt=""></button></Link >
                 <div :class="ClickNum == 2 ? 'SelectionOptionClick' : 'SelectionOption'">
-                    <a :href="route('course.type', 'all')"><div @click="Num = 1, ClickNum = 1" class="OptionBtn" >全部課程</div></a>
-                    <a :href="route('course.type','latest')"><div @click="Num = 2, ClickNum = 1" class="OptionBtn" >最新課程</div></a>
-                    <a :href="route('course.type',type.id)" v-for="type in $page.props.classType.type" :key="type.id"><div @click="Num = 3, ClickNum = 1" class="OptionBtn" >{{ type.name }}</div></a>
+                    <Link :href="route('course.type', 'all')"><div @click="Num = 1, ClickNum = 1" class="OptionBtn" >全部課程</div></Link >
+                    <Link  :href="route('course.type','latest')"><div @click="Num = 2, ClickNum = 1" class="OptionBtn" >最新課程</div></Link >
+                    <Link  :href="route('course.type',type.id)" v-for="type in $page.props.classType.type" :key="type.id"><div @click="Num = 3, ClickNum = 1" class="OptionBtn" >{{ type.name }}</div></Link >
                 </div>
             </div>
             <div class="SelectionBar w-[100%]">
-                <a :href="route('course.type', 'all')"><button  class="SelectionBtn" :class="{'ClickColor' : inputData == 'all'}" type="button">全部課程</button></a>
-                <a :href="route('course.type','latest')"><button  class="SelectionBtn"  :class="{'ClickColor' : inputData == 'latest'}" type="button">最新課程</button></a>
-                <a :href="route('course.type',type.id)" v-for="type in $page.props.classType.type" :key="type.id" ><button   class="SelectionBtn" :class="{'ClickColor' : inputData == type.id}" type="button">{{ type.name }}</button></a>
+                <Link  :href="route('course.type', 'all')"><button  class="SelectionBtn" :class="{'ClickColor' : inputData == 'all'}" type="button">全部課程</button></Link >
+                <Link  :href="route('course.type','latest')"><button  class="SelectionBtn"  :class="{'ClickColor' : inputData == 'latest'}" type="button">最新課程</button></Link >
+                <Link  :href="route('course.type',type.id)" v-for="type in $page.props.classType.type" :key="type.id"><button class="SelectionBtn" :class="{'ClickColor' : inputData == type.id}" type="button">{{ type.name }}</button></Link >
             </div>
         </div>
         <div class="w-[90%]  ml-[13.8vw] 2sm:ml-[7.2vw] md:ml-[10.5vw] md:w-[80%]  py-[1%]  flex gap-[3%] flex-wrap justify-start">
