@@ -1,13 +1,13 @@
 <script>
 import FrontendLayout from '@/Layouts/FrontendLayout.vue';
 import BannerLayout from '@/Layouts/BannerLayout.vue';
-import News from '@/Components/Frontend/Other/NewsPage.vue';
+import NewsPage from '@/Components/Frontend/Other/NewsPage.vue';
 
 export default {
     components: {
         FrontendLayout,
         BannerLayout,
-        News,
+        NewsPage,
     },
     data() {
 
@@ -18,7 +18,7 @@ export default {
     <FrontendLayout>
         <BannerLayout>
             <div>
-                <News />
+                <NewsPage />
             </div>
         </BannerLayout>
     </FrontendLayout>

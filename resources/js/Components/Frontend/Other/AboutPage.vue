@@ -86,7 +86,7 @@ export default {
                 <button @click="Num = 4" :class="Num == 4 ? 'ClickColor' : 'SelectionBtn'" type="button">表單下載</button>
                 <button @click="Num = 5" :class="Num == 5 ? 'ClickColor' : 'SelectionBtn'" type="button">成果展示</button>
             </div>
-            <div v-if="Num == 1" class="w-[90%] 2sm:w-[100%] m-auto">
+            <div v-if="Num == 1" class="w-[90%] 2sm:w-[100%] m-auto md:mt-[-1.5vw]">
                 <div class="content">
                     <span
                         class="h2">中興大學推廣教育組以履行高等技職回流教育使命及推動終身學習為核心目標。我們充分運用學校充沛的資源，舉辦委託培訓等專業推廣教育計畫。同時，根據社會需求精心規劃學分班和非學分班課程，旨在為有志於進修的社會成員提供寶貴機會，協助其深化專業領域，同時提升生活技能。</span>
@@ -234,104 +234,104 @@ export default {
             <div v-if="Num == 3" class="w-[90%] 2sm:w-[100%] m-auto">
                 <Link class="news" href="">
                 <div>2024.01.01</div>
-                <div>國立中興大學辦理推廣教育注意事項(95.12.18修訂)</div>
+                <div>國立中興大學辦理推廣教育注意事項</div>
                 <div><i class="fa-solid fa-arrow-right"></i></div>
                 </Link>
                 <Link class="news" href="">
                 <div>2024.01.01</div>
-                <div>國立中興大學辦理推廣教育注意事項(95.12.18修訂)</div>
+                <div>國立中興大學辦理推廣教育注意事項</div>
                 <div><i class="fa-solid fa-arrow-right"></i></div>
                 </Link>
                 <Link class="news" href="">
                 <div>2024.01.01</div>
-                <div>國立中興大學辦理推廣教育注意事項(95.12.18修訂)</div>
+                <div>國立中興大學辦理推廣教育注意事項</div>
                 <div><i class="fa-solid fa-arrow-right"></i></div>
                 </Link>
                 <Link class="news" href="">
                 <div>2024.01.01</div>
-                <div>國立中興大學辦理推廣教育注意事項(95.12.18修訂)</div>
+                <div>國立中興大學辦理推廣教育注意事項</div>
                 <div><i class="fa-solid fa-arrow-right"></i></div>
                 </Link>
                 <Link class="news" href="">
                 <div>2024.01.01</div>
-                <div>國立中興大學辦理推廣教育注意事項(95.12.18修訂)</div>
+                <div>國立中興大學辦理推廣教育注意事項</div>
                 <div><i class="fa-solid fa-arrow-right"></i></div>
                 </Link>
                 <Link class="news" href="">
                 <div>2024.01.01</div>
-                <div>國立中興大學辦理推廣教育注意事項(95.12.18修訂)</div>
+                <div>國立中興大學辦理推廣教育注意事項</div>
                 <div><i class="fa-solid fa-arrow-right"></i></div>
                 </Link>
                 <Link class="news" href="">
                 <div>2024.01.01</div>
-                <div>國立中興大學辦理推廣教育注意事項(95.12.18修訂)</div>
+                <div>國立中興大學辦理推廣教育注意事項</div>
                 <div><i class="fa-solid fa-arrow-right"></i></div>
                 </Link>
                 <Link class="news" href="">
                 <div>2024.01.01</div>
-                <div>國立中興大學辦理推廣教育注意事項(95.12.18修訂)</div>
+                <div>國立中興大學辦理推廣教育注意事項</div>
                 <div><i class="fa-solid fa-arrow-right"></i></div>
                 </Link>
                 <Link class="news" href="">
                 <div>2024.01.01</div>
-                <div>國立中興大學辦理推廣教育注意事項(95.12.18修訂)</div>
+                <div>國立中興大學辦理推廣教育注意事項</div>
                 <div><i class="fa-solid fa-arrow-right"></i></div>
                 </Link>
                 <Link class="news" href="">
                 <div>2024.01.01</div>
-                <div>國立中興大學辦理推廣教育注意事項(95.12.18修訂)</div>
+                <div>國立中興大學辦理推廣教育注意事項</div>
                 <div><i class="fa-solid fa-arrow-right"></i></div>
                 </Link>
             </div>
             <div v-if="Num == 4" class="w-[90%] 2sm:w-[100%] m-auto">
                 <Link class="news" href="">
                 <div>2024.01.01</div>
-                <div class="truncate">國立中興大學辦理推廣教育注意事項(95.12.18修訂)</div>
+                <div class="truncate">國立中興大學辦理推廣教育注意事項</div>
                 <div><i class="fa-solid fa-arrow-right"></i></div>
                 </Link>
                 <Link class="news" href="">
                 <div>2024.01.01</div>
-                <div class="truncate">國立中興大學辦理推廣教育注意事項(95.12.18修訂)</div>
+                <div class="truncate">國立中興大學辦理推廣教育注意事項</div>
                 <div><i class="fa-solid fa-arrow-right"></i></div>
                 </Link>
                 <Link class="news" href="">
                 <div>2024.01.01</div>
-                <div class="truncate">國立中興大學辦理推廣教育注意事項(95.12.18修訂)</div>
+                <div class="truncate">國立中興大學辦理推廣教育注意事項</div>
                 <div><i class="fa-solid fa-arrow-right"></i></div>
                 </Link>
                 <Link class="news" href="">
                 <div>2024.01.01</div>
-                <div class="truncate">國立中興大學辦理推廣教育注意事項(95.12.18修訂)</div>
+                <div class="truncate">國立中興大學辦理推廣教育注意事項</div>
                 <div><i class="fa-solid fa-arrow-right"></i></div>
                 </Link>
                 <Link class="news" href="">
                 <div>2024.01.01</div>
-                <div class="truncate">國立中興大學辦理推廣教育注意事項(95.12.18修訂)</div>
+                <div class="truncate">國立中興大學辦理推廣教育注意事項</div>
                 <div><i class="fa-solid fa-arrow-right"></i></div>
                 </Link>
                 <Link class="news" href="">
                 <div>2024.01.01</div>
-                <div class="truncate">國立中興大學辦理推廣教育注意事項(95.12.18修訂)</div>
+                <div class="truncate">國立中興大學辦理推廣教育注意事項</div>
                 <div><i class="fa-solid fa-arrow-right"></i></div>
                 </Link>
                 <Link class="news" href="">
                 <div>2024.01.01</div>
-                <div class="truncate">國立中興大學辦理推廣教育注意事項(95.12.18修訂)</div>
+                <div class="truncate">國立中興大學辦理推廣教育注意事項</div>
                 <div><i class="fa-solid fa-arrow-right"></i></div>
                 </Link>
                 <Link class="news" href="">
                 <div>2024.01.01</div>
-                <div class="truncate">國立中興大學辦理推廣教育注意事項(95.12.18修訂)</div>
+                <div class="truncate">國立中興大學辦理推廣教育注意事項</div>
                 <div><i class="fa-solid fa-arrow-right"></i></div>
                 </Link>
                 <Link class="news" href="">
                 <div>2024.01.01</div>
-                <div class="truncate">國立中興大學辦理推廣教育注意事項(95.12.18修訂)</div>
+                <div class="truncate">國立中興大學辦理推廣教育注意事項</div>
                 <div><i class="fa-solid fa-arrow-right"></i></div>
                 </Link>
                 <Link class="news" href="">
                 <div>2024.01.01</div>
-                <div class="truncate">國立中興大學辦理推廣教育注意事項(95.12.18修訂)</div>
+                <div class="truncate">國立中興大學辦理推廣教育注意事項</div>
                 <div><i class="fa-solid fa-arrow-right"></i></div>
                 </Link>
             </div>
@@ -533,7 +533,7 @@ export default {
 }
 
 .news {
-    @apply w-[100%] py-[10px] md:py-[20px] text-[3vw] 2sm:text-[1.8vw] md:text-[2vw] xl:text-[1.28vw] font-[800] border-b-[2px] border-black flex justify-between md:gap-[4vw] xl:gap-[5vw];
+    @apply w-[100%] py-[10px] md:py-[20px] text-[3vw] 2sm:text-[1.8vw] md:text-[2vw] xl:text-[1.28vw] font-[800] border-b-[1px] 2sm:border-b-[2px] border-black flex justify-between md:gap-[4vw] xl:gap-[5vw];
 }
 
 .news:hover {

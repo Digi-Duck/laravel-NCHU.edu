@@ -24,12 +24,26 @@ export default {
 <template>
     <main class="w-[90%] mb-[13.3vw] md:w-[80%] 2sm:mb-[4vw] m-auto">
         <div class="main">
-            <div class="main-top">
-                <div v-motion :initial="{ opacity: 0, x: -300 }" :visibleOnce="{ opacity: 1, x: 0 }"
-                    class="big-title mb-[30px]">
+            <div class="main-top top-1">
+                <div v-motion :initial="{ opacity: 0, x: -300 }"
+                    :visibleOnce="{ opacity: 1, x: 0, transition: { duration: 800, } }" class="big-title mb-[30px]">
                     <img :src="images.provide" alt="">
                 </div>
-                <ul v-motion :initial="{ opacity: 0, x: 300 }" :visibleOnce="{ opacity: 1, x: 0 }" class="list">
+                <ul v-motion :initial="{ opacity: 0, x: 300 }"
+                    :visibleOnce="{ opacity: 1, x: 0, transition: { duration: 800, } }" class="list">
+                    <li v-for="item in course.rt_data" :key="item.id">
+                        <Link href="">0{{ item.sort }}{{ item.name }}</Link><span class="ml-[10px]"
+                            :class="{ 'hidden': item.sort == course.rt_data.length }">|</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="main-top top-2">
+                <div v-motion :initial="{ opacity: 0, x: -300 }"
+                    :enter="{ opacity: 1, x: 0, transition: { delay: 1500, duration: 800, } }" class="big-title mb-[30px]">
+                    <img :src="images.provide" alt="">
+                </div>
+                <ul v-motion :initial="{ opacity: 0, x: 300 }"
+                    :enter="{ opacity: 1, x: 0, transition: { delay: 1500, duration: 800, } }" class="list">
                     <li v-for="item in course.rt_data" :key="item.id">
                         <Link href="">0{{ item.sort }}{{ item.name }}</Link><span class="ml-[10px]"
                             :class="{ 'hidden': item.sort == course.rt_data.length }">|</span>
@@ -38,8 +52,9 @@ export default {
             </div>
             <div class="main-bottom">
                 <div class="main-cards" v-for="item in course.rt_data" :key="item.id"
-                    :class="{ 'card-border': item.sort == course.rt_data.length }">
-                    <div v-motion :initial="{ opacity: 0, y: 300 }" :visibleOnce="{ opacity: 1, y: 0 }" class="card">
+                    :class="{ 'card-border': item.sort == course.rt_data.length }" v-motion
+                    :initial="{ opacity: 0, y: 300 }" :visibleOnce="{ opacity: 1, y: 0, transition: { duration: 800, } }">
+                    <div class="card">
                         <div class="main-card">
                             <div class="title ml-[-10px]">0{{ item.sort }}</div>
                             <div class="title-name">{{ item.name }}</div>
@@ -57,6 +72,10 @@ export default {
 <style scoped>
 .main-top {
     @apply flex justify-center pt-[63px] gap-[1.5%] mt-[-0.5%] mb-[5%];
+}
+
+.top-2 {
+    @apply hidden;
 }
 
 .big-title {
@@ -146,6 +165,12 @@ export default {
         @apply flex-col pt-0;
     }
 
+    .top-1 {
+        @apply hidden;
+    }
+    .top-2 {
+        @apply block;
+    }
     .big-title {
         @apply w-[41%];
     }

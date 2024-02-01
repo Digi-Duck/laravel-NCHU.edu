@@ -62,12 +62,12 @@ export default {
         <div class="hidden-on-desktop flex justify-center items-center mb-[5%]">
             <section class=" w-[90vw] py-[3%] flex flex-col justify-center items-center overflow-hidden "
                 @mouseleave="resetCards">
-                <div class="  mb-[15vw]  w-[45.7vw] h-[20.51vw]  2md:ml-[58vw] 2md:mb-[2vw] 2md:w-[27.97vw] ">
+                <div class="  mb-[15vw]  w-[45.7vw] h-[20.51vw]  2md:ml-[58vw] 2md:mb-[2vw] 2md:w-[27.97vw]" v-motion :initial="{ opacity: 0, x: -200 }" :visibleOnce="{ opacity: 1, x: 0, transition: {duration: 800,} }">
                     <img :src="imgs.laptopCourse" alt="">
                 </div>
-                <div class="card-tip"><i class="fa-solid fa-arrow-left"></i> 左右滑動圖片 <i class="fa-solid fa-arrow-right"></i>
+                <div class="card-tip" v-motion :initial="{ opacity: 0, x: 200 }" :visibleOnce="{ opacity: 1, x: 0, transition: {duration: 800,} }"><i class="fa-solid fa-arrow-left"></i> 左右滑動圖片 <i class="fa-solid fa-arrow-right"></i>
                 </div>
-                <div class=" w-[118.8vw] h-[80vw] 2md:w-[90vw] 2md:h-[45vw] ">
+                <div class=" w-[118.8vw] h-[80vw] 2md:w-[90vw] 2md:h-[45vw]" v-motion :initial="{ opacity: 0, x: 200 }" :visibleOnce="{ opacity: 1, x: 0, transition: {duration: 800,} }">
                     <swiper class=" swiper  ml-[16.24vw]  2sm:ml-[11vw] h-[70vw]  relative" :effect="'cards'"
                         :grabCursor="true" :modules="modules" :loop="true">
                         <swiper-slide v-for="(card, index) in cards" :key="index" class="swiper-slide"
@@ -90,7 +90,7 @@ export default {
         <div class=" hidden-on-laptop flex justify-center items-center mb-[5%]">
             <section class=" w-[67.39vw] py-[3%] flex justify-center items-center  overflow-hidden"
                 @mouseleave="resetCards">
-                <div class="w-[40.41vw] h-[33.85vw]">
+                <div class="w-[40.41vw] h-[33.85vw]"  v-motion :initial="{ opacity: 0, x: -200 }" :visibleOnce="{ opacity: 1, x: 0, transition: {duration: 800,} }">
                     <div class="cards h-[24.37vw] relative" @wheel.prevent="handleMouseWheel">
                         <div v-for="card in cards" :key="card.id" class="card "
                             :style="{ transform: card.transform, backgroundColor: card.color ,backgroundImage: 'url(' + card.img_path + ')', backgroundSize: 'cover', backgroundPosition:'50%  2%', boxShadow: 'inset 0px -12.5vw 50px 1px rgba(0, 0, 0, 0.3)' }">
@@ -108,7 +108,7 @@ export default {
                         </div>
                     </div>
                 </div>
-                <div class="w-[27.7vw] h-[34.59] ">
+                <div class="w-[27.7vw] h-[34.59] " v-motion :initial="{ opacity: 0, x: 200 }" :visibleOnce="{ opacity: 1, x: 0, transition: {duration: 800,} }">
                     <div class="mt-[-3.47vw]  w-[27.7vw] h-[13.84vw]  ">
                         <div class="provide w-[27.7vw] h-[13.84vw] ">
                             <div class="w-[27.7vw] pl-[5.76vw]  arrow tracking-[-1px] xl:tracking-[-3px]"><span

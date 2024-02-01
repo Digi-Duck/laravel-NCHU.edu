@@ -51,12 +51,13 @@ export default {
 }
 </script>
 <template>
-    <div class="w-[85%]  m-auto flex  flex-col">
+    <div class="w-[100%] 2sm:w-[85%]  m-auto flex  flex-col">
         <div class="title"><img :src="screenWidth ? images.coursePC : images.coursePhone" alt="" class="m-auto 2md:m-0">
         </div>
-        <div class="w-[90%] md:w-[80%] m-auto">
+        <div class="w-[100%] 2sm:w-[90%] md:w-[80%] m-auto">
             <div :class="ClickNum == 1 ? 'all-2' : 'all'">
-                <button @click="toggle()" class="OptionClick" type="button" v-if="Num == 1">{{getType}}<img class="w-[3vw] mt-1.5 ml-1 " :src="images.angleDown" alt=""></button>
+                <button @click="toggle()" class="OptionClick" type="button" v-if="Num == 1">{{getType}}<i
+                        class="fa-solid fa-chevron-down text-[3.2vw] mt-[1.6vw] ml-[2.6vw]"></i><img class="w-[3vw] mt-1.5 ml-1 " :src="images.angleDown" alt=""></button>
                 <Link  :href="route('course.type','latest')"><button @click="toggle()" class="OptionClick" type="button" v-if="Num == 2">最新課程<img class="w-[3vw] mt-1.5 ml-1 " :src="images.angleDown" alt=""></button></Link >
                 <Link  :href="route('course.type',type.id)" v-for="type in $page.props.classType.type" :key="type.id" ><button @click="toggle()" class="OptionClick" type="button" v-if="Num == 3">{{ type.name }}<img class="w-[3vw] mt-1.5 ml-1 " :src="images.angleDown" alt=""></button></Link >
                 <div :class="ClickNum == 2 ? 'SelectionOptionClick' : 'SelectionOption'">
@@ -71,21 +72,21 @@ export default {
                 <Link  :href="route('course.type',type.id)" v-for="type in $page.props.classType.type" :key="type.id"><button class="SelectionBtn" :class="{'ClickColor' : inputData == type.id}" type="button">{{ type.name }}</button></Link >
             </div>
         </div>
-        <div class="w-[90%]  ml-[13.8vw] 2sm:ml-[7.2vw] md:ml-[10.5vw] md:w-[80%]  py-[1%]  flex gap-[3%] flex-wrap justify-start">
-            <div v-for="course in courses" :key="course.id" class="flex 2sm:flex-col bg-[#ffffff] w-[55vw] mb-[2.5vw] 2sm:w-[22vw] 2sm:h-[29.72vw] 2sm:mb-[2.5vw]
-            md:mb-[1.5vw] md:w-[14.32vw] md:h-[19.06vw]">
-                <div class=" w-[22vw] h-[19.34vw 2sm:w-[22vw] 2sm:h-[28.34vw]  md:w-[14.32vw] md:h-[18.37vw] flex "
+        <div class="w-[100%] 2sm:ml-[7.2vw] md:ml-[10.5vw] md:w-[80%] pt-[9.3vw] 2sm:pt-[3.3vw] md:pt-[1vw] py-[1%] flex gap-[3%] flex-wrap justify-center 2sm:justify-start">
+            <div v-for="course in courses" :key="course.id" class="flex flex-col items-center bg-[#ffffff] w-[89vw] h-[350px] mb-[6.6vw] 2sm:w-[22vw] 2sm:h-[29.72vw] 2sm:mb-[2.5vw]
+            md:mb-[1.5vw] md:w-[14.32vw] md:h-[19.06vw]  shadow-lg">
+                <div class="w-full h-[500px] 2sm:w-[22vw] 2sm:h-[28.34vw] md:w-[14.32vw] md:h-[18.37vw]"
                     :style="{ backgroundImage: 'url(' + course.img_path + ')', backgroundSize: 'cover', backgroundPosition: 'center' }">
                 </div>
                 <div
-                    class="flex flex-col justify-start items-start h-[100%] w-[33vw] 2sm:w-[22vw] md:w-[14.32vw] px-[1.6vw]  pt-[1.3vw] md:px-[0.78vw] md:pt-[0.52vw]">
-                    <h1 class="card-name ">{{ course.name }}</h1>
-                    <ul>
-                        <li class="card-text ">課程日期 | {{ course.start_time.slice(0, 10) }} </li>
+                    class="flex flex-col justify-center items-start h-[100%] w-full 2sm:w-[22vw] md:w-[14.32vw] px-[6.6vw] 2sm:px-[1.6vw]  pt-[1.3vw] md:px-[0.78vw] md:pt-[0.52vw]">
+                    <h1 class="card-name">{{ course.name }}</h1>
+                    <ul class="mb-[2.5vw]">
+                        <li class="card-text mt-[1vw]">課程日期 | {{ course.start_time.slice(0, 10) }} </li>
                         <li class="card-text ">課程價格 | {{ course.price === 0 ? 'Free' : '$' + course.price }}</li>
                     </ul>
-                    <div class="flex  ml-auto mt-auto mb-[1.04vw] px-[0.78vw] card-more"><a :href="course.link"
-                            class=" border-b-[2px] border-[#ffffff]  hover:border-b-[2px] hover:border-[#0057ff] ">了解更多 <i
+                    <div class="flex  ml-auto 2sm:mt-auto mb-[1.04vw] px-[0.78vw] card-more"><a :href="course.link"
+                            class=" border-b-[2px] border-[#ffffff] hover:border-b-[2px] hover:border-[#0057ff] ">了解更多 <i
                                 class="fa-solid fa-arrow-right"></i></a></div>
                 </div>
             </div>
@@ -102,18 +103,17 @@ export default {
 }
 
 .card-name {
-    @apply text-[2.6vw] 2sm:text-[1.92vw] md:text-[1.2vw] font-black text-[#0057ff];
+    @apply text-[6vw] 2sm:text-[1.92vw] md:text-[1.2vw] font-black text-[#0057ff] mb-[2.1vw] 2sm:mb-0;
     font-family: 'Noto Sans TC', sans-serif;
 }
 
 .card-text {
-    @apply text-[1.68vw] 2sm:text-[1.28vw] md:text-[0.8vw] font-medium text-[#00000] mt-[0.50.8vw] tracking-[1.5px];
+    @apply text-[4.3vw] 2sm:text-[1.28vw] md:text-[0.8vw] font-medium text-[#00000] mt-[0.50.8vw] tracking-[1.5px];
     font-family: 'Noto Sans TC', sans-serif;
 }
 
 .card-more {
-    @apply text-[1.68vw] 2sm:text-[1.28vw] md:text-[0.8vw] text-[#0057ff] font-bold;
-    font-family: 'Inter', sans-serif;
+    @apply text-[3.2vw] 2sm:text-[1.28vw] md:text-[0.8vw] text-[#0057ff] font-[800];
 }
 
 /*barton*/
@@ -143,7 +143,7 @@ export default {
 
 
 .title {
-    @apply mt-[20px] md:mt-[60px] md:mb-[20px] 2md:w-[185px] md:w-[315px];
+    @apply mt-[20px] md:mt-[60px] 2sm:mb-[1vw] md:mb-[20px] 2md:w-[185px] md:w-[315px] 2sm:ml-[4vw] md:ml-[8.5vw];
 }
 
 .SelectionBar {
@@ -230,13 +230,14 @@ export default {
 
 li {
     font-size: 3.2vw;
-    margin-left: 5vw;
 }
 
 .OptionClick {
     display: inline-flex;
     justify-content: center;
-    font-size: 3.2vw;
+    font-size: 4.2vw;
+    font-weight: 800;
+    padding-bottom: 2.13vw;
 }
 
 .Guide {

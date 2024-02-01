@@ -255,14 +255,14 @@ export default {
         </div>
         <div v-if="detail" class="w-[100%] h-[100%] absolute top-0">
             <div class="mask w-full h-full fixed z-[5] top-0 left-0 bg-black/50">
-                <div class="modal absolute z-[6] top-[5%] left-[16%] w-[68%] h-[90dvh] px-[3%] bg-white overflow-y-scroll">
+                <div class="modal absolute z-[6] top-[5%] left-[16%] w-[68%] h-[90dvh] px-[5%] 2sm:px-[5%] md:px-[3%] bg-white overflow-y-scroll">
                     <div class="my-[20px] text-center relative">
-                        <Link href="" class="text-[14px] 2sm:text-[24px] md:text-[26px] font-[600] text-[#0057ff]">點我報名
-                        </Link>
+                        <a href="https://www.nchu.edu.tw/news-detail.php?id=56564" class="text-[14px] 2sm:text-[24px] md:text-[26px] font-[600] text-[#0057ff]">點我報名
+                        </a>
                         <button type="button" @click="detail = false"><i
                                 class="fa-solid fa-xmark text-[21px] absolute top-[25%] right-0"></i></button>
                     </div>
-                    <div class="flex flex-col text-[12px] 2sm:text-[20px] md:text-[22px] font-[500] text-center">
+                    <div class="flex flex-col text-[12px] 2sm:text-[12px] md:text-[22px] font-[500] text-center">
                         <div class="mb-[20px]">
                             人體農場真實存在嗎??犯罪者用件件謎團，嘲諷社會無能。<br>
                             鑑識專家利用家譜遺傳學分析，協助科學辦案，翻轉無數懸案。完美犯罪真的存在嗎??
@@ -382,7 +382,7 @@ export default {
 } */
 
 .news {
-    @apply w-[100%] py-[10px] md:py-[20px] text-[3vw] 2sm:text-[1.8vw] md:text-[2vw] xl:text-[1.4vw] font-[800] border-b-[2px] border-black flex justify-between md:gap-[4vw] xl:gap-[5vw];
+    @apply w-[100%] py-[10px] md:py-[20px] text-[3vw] 2sm:text-[1.8vw] md:text-[2vw] xl:text-[1.4vw] font-[800] border-b-[1px] 2sm:border-b-[2px] border-black flex justify-between md:gap-[4vw] xl:gap-[5vw];
 }
 
 .news:hover {
