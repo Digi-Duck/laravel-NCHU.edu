@@ -626,7 +626,7 @@ export default {
 
     .main {
         position: relative;
-        height: 200vw;
+        height: 200vh;
     }
 
     .h1 {
@@ -640,6 +640,7 @@ export default {
     .top {
         flex-direction: column;
         height: auto;
+        height: 80vh;
     }
 
     .top-right {
@@ -664,9 +665,9 @@ export default {
     }
 
     .bottom::before {
-        height: 3.4vw;
-        left: -8.5vw;
-        top: -17vh;
+        height: 2vh;
+        left: -7.5vw;
+        top: -23vh;
     }
 
     .h3 {
@@ -694,12 +695,12 @@ export default {
     }
 
     .informationBar {
-        padding-top: 80px;
+        padding-top: 0;
     }
 
     .h4 {
         text-align: left;
-        font-size: 2.6vw;
+        font-size: 2.5vw;
         line-height: 10px;
     }
 
@@ -711,18 +712,8 @@ export default {
     .h5 {
         font-size: 2.2vw;
     }
-}
-
-@media (max-width:451px) {
-
-.bottom::before {
-    height: 3.4vw;
-    left: -8.5vw;
-    top: -10vh;
-}
-.word-small .h1 {
-        font-size: 3vw;
+    .main{
+        height: 120vh;
     }
-
 }
 </style>
