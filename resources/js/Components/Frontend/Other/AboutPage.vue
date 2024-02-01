@@ -29,7 +29,7 @@ export default {
                 about, aboutPhone, member, memberPhone, result, resultPhone,
             },
             modules: [Navigation, Pagination, Mousewheel, Keyboard],
-            Num:  this.$page.props.response.rt_data.input ?? '',
+            Num: this.$page.props.response.rt_data.input ?? '',
             ClickNum: 1,
             show: false,
             screenWidth: false,
@@ -352,7 +352,8 @@ export default {
                         <p>2022.01.01</p>
                         <p class="card-title">有氧鬆筋雕塑</p>
                         <p class="card-content">一個人走得快，一群人走得遠，一同在教室揮灑汗水。</p>
-                        <button type="button" class="more">了解更多<i class="fa-solid fa-arrow-right"></i></button>
+                        <button type="button" class="more" @click="show = true">了解更多<i
+                                class="fa-solid fa-arrow-right"></i></button>
                     </div>
                 </div>
                 <div class="results">
@@ -361,7 +362,8 @@ export default {
                         <p>2022.01.01</p>
                         <p class="card-title">有氧鬆筋雕塑</p>
                         <p class="card-content">一個人走得快，一群人走得遠，一同在教室揮灑汗水。</p>
-                        <button type="button" class="more">了解更多<i class="fa-solid fa-arrow-right"></i></button>
+                        <button type="button" class="more" @click="show = true">了解更多<i
+                                class="fa-solid fa-arrow-right"></i></button>
                     </div>
                 </div>
                 <div class="results">
@@ -370,7 +372,8 @@ export default {
                         <p>2022.01.01</p>
                         <p class="card-title">有氧鬆筋雕塑</p>
                         <p class="card-content">一個人走得快，一群人走得遠，一同在教室揮灑汗水。</p>
-                        <button type="button" class="more">了解更多<i class="fa-solid fa-arrow-right"></i></button>
+                        <button type="button" class="more" @click="show = true">了解更多<i
+                                class="fa-solid fa-arrow-right"></i></button>
                     </div>
                 </div>
                 <div class="results">
@@ -379,7 +382,8 @@ export default {
                         <p>2022.01.01</p>
                         <p class="card-title">有氧鬆筋雕塑</p>
                         <p class="card-content">一個人走得快，一群人走得遠，一同在教室揮灑汗水。</p>
-                        <button type="button" class="more">了解更多<i class="fa-solid fa-arrow-right"></i></button>
+                        <button type="button" class="more" @click="show = true">了解更多<i
+                                class="fa-solid fa-arrow-right"></i></button>
                     </div>
                 </div>
                 <div class="results">
@@ -388,7 +392,8 @@ export default {
                         <p>2022.01.01</p>
                         <p class="card-title">有氧鬆筋雕塑</p>
                         <p class="card-content">一個人走得快，一群人走得遠，一同在教室揮灑汗水。</p>
-                        <button type="button" class="more">了解更多<i class="fa-solid fa-arrow-right"></i></button>
+                        <button type="button" class="more" @click="show = true">了解更多<i
+                                class="fa-solid fa-arrow-right"></i></button>
                     </div>
                 </div>
                 <div class="results">
@@ -397,7 +402,8 @@ export default {
                         <p>2022.01.01</p>
                         <p class="card-title">有氧鬆筋雕塑</p>
                         <p class="card-content">一個人走得快，一群人走得遠，一同在教室揮灑汗水。</p>
-                        <button type="button" class="more">了解更多<i class="fa-solid fa-arrow-right"></i></button>
+                        <button type="button" class="more" @click="show = true">了解更多<i
+                                class="fa-solid fa-arrow-right"></i></button>
                     </div>
                 </div>
                 <div class="w-[334px] 2md:w-[169px] md:w-[275px] opacity-0"></div>
@@ -454,9 +460,11 @@ export default {
 .SelectionBar button {
     font-weight: 800;
 }
-.modal{
+
+.modal {
     @apply absolute z-[6] top-[5%] left-[16%] w-[68%] h-[90dvh] px-[3%] bg-white overflow-y-scroll;
 }
+
 @keyframes up {
     from {
         max-height: 12.4vh;
@@ -481,9 +489,9 @@ export default {
     padding: 0.48vw 1.46vw;
     border-radius: 1.04vw 1.04vw 0px 0px;
     font-size: 1.04vw;
-    font-family: inter;
     background-color: transparent;
     margin-right: 1vw;
+    font-weight: 500;
 }
 
 .ClickColor {
@@ -552,22 +560,27 @@ export default {
     margin-top: 2.604vw;
     padding: 0px 1.04vw;
 }
-.swiper-slide{
+
+.swiper-slide {
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
     margin-left: 10px;
     margin-right: 10px;
 }
-.swiper-slide:nth-child(1){
+
+.swiper-slide:nth-child(1) {
     background-image: url('/images/About/yoga-1.jpg');
 }
-.swiper-slide:nth-child(2){
+
+.swiper-slide:nth-child(2) {
     background-image: url('/images/About/yoga-2.jpg');
 }
-.swiper-slide:nth-child(3){
+
+.swiper-slide:nth-child(3) {
     background-image: url('/images/About/yoga-3.jpg');
 }
+
 .members {
     @apply w-[334px] h-[361px] 2md:w-[440px] 2md:h-[173px] md:w-[600px] md:h-[230px] mt-[20px] font-[700] flex flex-col 2md:flex-row bg-white shadow-lg;
 
@@ -658,5 +671,4 @@ export default {
     .OptionClick {
         display: block;
     }
-}
-</style>
+}</style>

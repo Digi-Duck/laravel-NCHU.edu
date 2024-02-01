@@ -59,7 +59,7 @@ export default {
         <div class="w-[100%] 2sm:w-[90%] md:w-[80%] m-auto">
             <div :class="ClickNum == 1 ? 'all-2' : 'all'">
                 <button @click="toggle()" class="OptionClick" type="button" v-if="Num == 1">{{ getType }}<i
-                        class="fa-solid fa-chevron-down text-[3.2vw] mt-[1.6vw] ml-[2.6vw]"></i><img
+                        class="fa-solid fa-chevron-down text-[3.2vw] mt-[1.6vw]"></i><img
                         class="w-[3vw] mt-1.5 ml-1 " :src="images.angleDown" alt=""></button>
                 <Link :href="route('course.type', 'latest')"><button @click="toggle()" class="OptionClick" type="button"
                     v-if="Num == 2">最新課程<img class="w-[3vw] mt-1.5 ml-1 " :src="images.angleDown" alt=""></button></Link>
@@ -78,7 +78,7 @@ export default {
                     </Link>
                 </div>
             </div>
-            <div class="SelectionBar w-[100%]">
+            <div class="SelectionBar w-[99%]">
                 <Link :href="route('course.type', 'all')"><button class="SelectionBtn"
                     :class="{ 'ClickColor': inputData == 'all' }" type="button">全部課程</button></Link>
                 <Link :href="route('course.type', 'latest')"><button class="SelectionBtn"
@@ -89,7 +89,7 @@ export default {
             </div>
         </div>
         <div
-            class="w-[100%] 2sm:ml-[7.2vw] md:ml-[10.5vw] md:w-[80%] pt-[9.3vw] 2sm:pt-[3.3vw] md:pt-[1vw] py-[1%] flex gap-[3%] flex-wrap justify-center 2sm:justify-start">
+            class="w-[100%] 2sm:ml-[7.2vw] md:m-auto md:w-[80%] pt-[2.604vw] 2sm:pt-[3.3vw] md:pt-[1vw] md:pl-[1.5vw] py-[1%] flex gap-[3%] md:gap-[2.4vw] flex-wrap justify-center 2sm:justify-start">
             <div v-for="course in courses" :key="course.id" class="flex flex-col items-center bg-[#ffffff] w-[89vw] h-[350px] mb-[6.6vw] 2sm:w-[22vw] 2sm:h-[29.72vw] 2sm:mb-[2.5vw]
             md:mb-[1.5vw] md:w-[14.32vw] md:h-[19.06vw]  shadow-lg">
                 <div class="w-full h-[500px] 2sm:w-[22vw] 2sm:h-[28.34vw] md:w-[14.32vw] md:h-[18.37vw]"
@@ -98,7 +98,7 @@ export default {
                 <div
                     class="flex flex-col justify-center items-start h-[100%] w-full 2sm:w-[22vw] md:w-[14.32vw] px-[6.6vw] 2sm:px-[1.6vw]  pt-[1.3vw] md:px-[0.78vw] md:pt-[0.52vw]">
                     <h1 class="card-name">{{ course.name }}</h1>
-                    <ul class="mb-[2.5vw]">
+                    <ul>
                         <li class="card-text mt-[1vw]">課程日期 | {{ course.start_time.slice(0, 10) }} </li>
                         <li class="card-text ">課程價格 | {{ course.price === 0 ? 'Free' : '$' + course.price }}</li>
                     </ul>
@@ -154,7 +154,7 @@ export default {
     }
 
     to {
-        max-height: 30vh;
+        max-height: 40vh;
     }
 }
 
@@ -170,7 +170,7 @@ export default {
 .SelectionBtn {
     @apply py-[0.48vw] px-[1.46vw] text-[1.04vw] bg-transparent mr-[1vw];
     border-radius: 1.04vw 1.04vw 0px 0px;
-    font-family: inter;
+    font-weight: 500;
 }
 
 .ClickColor {

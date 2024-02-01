@@ -12,7 +12,7 @@ export default {
             images: {
                 news, wallpaper, newsPhone,
             },
-            Num:  this.$page.props.response.rt_data.input ?? '',
+            Num: this.$page.props.response.rt_data.input ?? '',
             ClickNum: 1,
             detail: false,
             screenWidth: false,
@@ -74,47 +74,47 @@ export default {
                         <div>【探索系列】2024鑑識推理偵查營 （1/29-1/31）</div>
                         <div><i class="fa-solid fa-arrow-right"></i></div>
                     </button>
-                    <button class="news" href="">
+                    <button type="button" class="news" href="" @click="detail = true">
                         <div>2024.01.29</div>
                         <div>【探索系列】2024鑑識推理偵查營 （1/29-1/31）</div>
                         <div><i class="fa-solid fa-arrow-right"></i></div>
                     </button>
-                    <button type="button" class="news" href="">
+                    <button type="button" class="news" href="" @click="detail = true">
                         <div>2024.01.29</div>
                         <div>【探索系列】2024鑑識推理偵查營 （1/29-1/31）</div>
                         <div><i class="fa-solid fa-arrow-right"></i></div>
                     </button>
-                    <button type="button" class="news" href="">
+                    <button type="button" class="news" href="" @click="detail = true">
                         <div>2024.01.29</div>
                         <div>【探索系列】2024鑑識推理偵查營 （1/29-1/31）</div>
                         <div><i class="fa-solid fa-arrow-right"></i></div>
                     </button>
-                    <button type="button" class="news" href="">
+                    <button type="button" class="news" href="" @click="detail = true">
                         <div>2024.01.29</div>
                         <div>【探索系列】2024鑑識推理偵查營 （1/29-1/31）</div>
                         <div><i class="fa-solid fa-arrow-right"></i></div>
                     </button>
-                    <button type="button" class="news" href="">
+                    <button type="button" class="news" href="" @click="detail = true">
                         <div>2024.01.01</div>
                         <div>【探索系列】2024鑑識推理偵查營 （1/29-1/31）</div>
                         <div><i class="fa-solid fa-arrow-right"></i></div>
                     </button>
-                    <button type="button" class="news" href="">
+                    <button type="button" class="news" href="" @click="detail = true">
                         <div>2024.01.01</div>
                         <div>【探索系列】2024鑑識推理偵查營 （1/29-1/31）</div>
                         <div><i class="fa-solid fa-arrow-right"></i></div>
                     </button>
-                    <button type="button" class="news" href="">
+                    <button type="button" class="news" href="" @click="detail = true">
                         <div>2024.01.01</div>
                         <div>【探索系列】2024鑑識推理偵查營 （1/29-1/31）</div>
                         <div><i class="fa-solid fa-arrow-right"></i></div>
                     </button>
-                    <button type="button" class="news" href="">
+                    <button type="button" class="news" href="" @click="detail = true">
                         <div>2024.01.01</div>
                         <div>【探索系列】2024鑑識推理偵查營 （1/29-1/31）</div>
                         <div><i class="fa-solid fa-arrow-right"></i></div>
                     </button>
-                    <button type="button" class="news" href="">
+                    <button type="button" class="news" href="" @click="detail = true">
                         <div>2024.01.01</div>
                         <div>【探索系列】2024鑑識推理偵查營 （1/29-1/31）</div>
                         <div><i class="fa-solid fa-arrow-right"></i></div>
@@ -122,142 +122,144 @@ export default {
                 </div>
             </div>
             <div v-if="Num == 2" class="w-[90%] 2sm:w-[100%] m-auto order-4">
-                <Link class="news" href="">
-                <div>2024.01.29</div>
-                <div>【探索系列】2024鑑識推理偵查營 （1/29-1/31）</div>
-                <div><i class="fa-solid fa-arrow-right"></i></div>
-                </Link>
-                <Link class="news" href="">
-                <div>2024.01.29</div>
-                <div>【探索系列】2024鑑識推理偵查營 （1/29-1/31）</div>
-                <div><i class="fa-solid fa-arrow-right"></i></div>
-                </Link>
-                <Link class="news" href="">
-                <div>2024.01.29</div>
-                <div>【探索系列】2024鑑識推理偵查營 （1/29-1/31）</div>
-                <div><i class="fa-solid fa-arrow-right"></i></div>
-                </Link>
-                <Link class="news" href="">
-                <div>2024.01.29</div>
-                <div>【探索系列】2024鑑識推理偵查營 （1/29-1/31）</div>
-                <div><i class="fa-solid fa-arrow-right"></i></div>
-                </Link>
-                <Link class="news" href="">
-                <div>2024.01.29</div>
-                <div>【探索系列】2024鑑識推理偵查營 （1/29-1/31）</div>
-                <div><i class="fa-solid fa-arrow-right"></i></div>
-                </Link>
+                <button type="button" class="news" href="" @click="detail = true">
+                    <div>2024.01.29</div>
+                    <div>【探索系列】2024鑑識推理偵查營 （1/29-1/31）</div>
+                    <div><i class="fa-solid fa-arrow-right"></i></div>
+                </button>
+                <button type="button" class="news" href="" @click="detail = true">
+                    <div>2024.01.29</div>
+                    <div>【探索系列】2024鑑識推理偵查營 （1/29-1/31）</div>
+                    <div><i class="fa-solid fa-arrow-right"></i></div>
+                </button>
+                <button type="button" class="news" href="" @click="detail = true">
+                    <div>2024.01.29</div>
+                    <div>【探索系列】2024鑑識推理偵查營 （1/29-1/31）</div>
+                    <div><i class="fa-solid fa-arrow-right"></i></div>
+                </button>
+                <button type="button" class="news" href="" @click="detail = true">
+                    <div>2024.01.29</div>
+                    <div>【探索系列】2024鑑識推理偵查營 （1/29-1/31）</div>
+                    <div><i class="fa-solid fa-arrow-right"></i></div>
+                </button>
+                <button type="button" class="news" href="" @click="detail = true">
+                    <div>2024.01.29</div>
+                    <div>【探索系列】2024鑑識推理偵查營 （1/29-1/31）</div>
+                    <div><i class="fa-solid fa-arrow-right"></i></div>
+                </button>
             </div>
             <div v-if="Num == 3" class="w-[90%] 2sm:w-[100%] m-auto order-4">
-                <Link class="news" href="">
-                <div>2024.01.29</div>
-                <div>【探索系列】2024鑑識推理偵查營 （1/29-1/31）</div>
-                <div><i class="fa-solid fa-arrow-right"></i></div>
-                </Link>
-                <Link class="news" href="">
-                <div>2024.01.29</div>
-                <div>【探索系列】2024鑑識推理偵查營 （1/29-1/31）</div>
-                <div><i class="fa-solid fa-arrow-right"></i></div>
-                </Link>
-                <Link class="news" href="">
-                <div>2024.01.29</div>
-                <div>【探索系列】2024鑑識推理偵查營 （1/29-1/31）</div>
-                <div><i class="fa-solid fa-arrow-right"></i></div>
-                </Link>
-                <Link class="news" href="">
-                <div>2024.01.29</div>
-                <div>【探索系列】2024鑑識推理偵查營 （1/29-1/31）</div>
-                <div><i class="fa-solid fa-arrow-right"></i></div>
-                </Link>
-                <Link class="news" href="">
-                <div>2024.01.29</div>
-                <div>【探索系列】2024鑑識推理偵查營 （1/29-1/31）</div>
-                <div><i class="fa-solid fa-arrow-right"></i></div>
-                </Link>
-                <Link class="news" href="">
-                <div>2024.01.01</div>
-                <div>【探索系列】2024鑑識推理偵查營 （1/29-1/31）</div>
-                <div><i class="fa-solid fa-arrow-right"></i></div>
-                </Link>
-                <Link class="news" href="">
-                <div>2024.01.01</div>
-                <div>【探索系列】2024鑑識推理偵查營 （1/29-1/31）</div>
-                <div><i class="fa-solid fa-arrow-right"></i></div>
-                </Link>
-                <Link class="news" href="">
-                <div>2024.01.01</div>
-                <div>【探索系列】2024鑑識推理偵查營 （1/29-1/31）</div>
-                <div><i class="fa-solid fa-arrow-right"></i></div>
-                </Link>
-                <Link class="news" href="">
-                <div>2024.01.01</div>
-                <div>【探索系列】2024鑑識推理偵查營 （1/29-1/31）</div>
-                <div><i class="fa-solid fa-arrow-right"></i></div>
-                </Link>
-                <Link class="news" href="">
-                <div>2024.01.01</div>
-                <div>【探索系列】2024鑑識推理偵查營 （1/29-1/31）</div>
-                <div><i class="fa-solid fa-arrow-right"></i></div>
-                </Link>
+                <button type="button" class="news" href="" @click="detail = true">
+                    <div>2024.01.29</div>
+                    <div>【探索系列】2024鑑識推理偵查營 （1/29-1/31）</div>
+                    <div><i class="fa-solid fa-arrow-right"></i></div>
+                </button>
+                <button type="button" class="news" href="" @click="detail = true">
+                    <div>2024.01.29</div>
+                    <div>【探索系列】2024鑑識推理偵查營 （1/29-1/31）</div>
+                    <div><i class="fa-solid fa-arrow-right"></i></div>
+                </button>
+                <button type="button" class="news" href="" @click="detail = true">
+                    <div>2024.01.29</div>
+                    <div>【探索系列】2024鑑識推理偵查營 （1/29-1/31）</div>
+                    <div><i class="fa-solid fa-arrow-right"></i></div>
+                </button>
+                <button type="button" class="news" href="" @click="detail = true">
+                    <div>2024.01.29</div>
+                    <div>【探索系列】2024鑑識推理偵查營 （1/29-1/31）</div>
+                    <div><i class="fa-solid fa-arrow-right"></i></div>
+                </button>
+                <button type="button" class="news" href="" @click="detail = true">
+                    <div>2024.01.29</div>
+                    <div>【探索系列】2024鑑識推理偵查營 （1/29-1/31）</div>
+                    <div><i class="fa-solid fa-arrow-right"></i></div>
+                </button>
+                <button type="button" class="news" href="" @click="detail = true">
+                    <div>2024.01.01</div>
+                    <div>【探索系列】2024鑑識推理偵查營 （1/29-1/31）</div>
+                    <div><i class="fa-solid fa-arrow-right"></i></div>
+                </button>
+                <button type="button" class="news" href="" @click="detail = true">
+                    <div>2024.01.01</div>
+                    <div>【探索系列】2024鑑識推理偵查營 （1/29-1/31）</div>
+                    <div><i class="fa-solid fa-arrow-right"></i></div>
+                </button>
+                <button type="button" class="news" href="" @click="detail = true">
+                    <div>2024.01.01</div>
+                    <div>【探索系列】2024鑑識推理偵查營 （1/29-1/31）</div>
+                    <div><i class="fa-solid fa-arrow-right"></i></div>
+                </button>
+                <button type="button" class="news" href="" @click="detail = true">
+                    <div>2024.01.01</div>
+                    <div>【探索系列】2024鑑識推理偵查營 （1/29-1/31）</div>
+                    <div><i class="fa-solid fa-arrow-right"></i></div>
+                </button>
+                <button type="button" class="news" href="" @click="detail = true">
+                    <div>2024.01.01</div>
+                    <div>【探索系列】2024鑑識推理偵查營 （1/29-1/31）</div>
+                    <div><i class="fa-solid fa-arrow-right"></i></div>
+                </button>
             </div>
             <div v-if="Num == 4" class="w-[90%] 2sm:w-[100%] m-auto order-4">
-                <Link class="news" href="">
-                <div>2024.01.29</div>
-                <div>【探索系列】2024鑑識推理偵查營 （1/29-1/31）</div>
-                <div><i class="fa-solid fa-arrow-right"></i></div>
-                </Link>
-                <Link class="news" href="">
-                <div>2024.01.29</div>
-                <div>【探索系列】2024鑑識推理偵查營 （1/29-1/31）</div>
-                <div><i class="fa-solid fa-arrow-right"></i></div>
-                </Link>
-                <Link class="news" href="">
-                <div>2024.01.29</div>
-                <div>【探索系列】2024鑑識推理偵查營 （1/29-1/31）</div>
-                <div><i class="fa-solid fa-arrow-right"></i></div>
-                </Link>
-                <Link class="news" href="">
-                <div>2024.01.29</div>
-                <div>【探索系列】2024鑑識推理偵查營 （1/29-1/31）</div>
-                <div><i class="fa-solid fa-arrow-right"></i></div>
-                </Link>
-                <Link class="news" href="">
-                <div>2024.01.29</div>
-                <div>【探索系列】2024鑑識推理偵查營 （1/29-1/31）</div>
-                <div><i class="fa-solid fa-arrow-right"></i></div>
-                </Link>
-                <Link class="news" href="">
-                <div>2024.01.01</div>
-                <div>【探索系列】2024鑑識推理偵查營 （1/29-1/31）</div>
-                <div><i class="fa-solid fa-arrow-right"></i></div>
-                </Link>
-                <Link class="news" href="">
-                <div>2024.01.01</div>
-                <div>【探索系列】2024鑑識推理偵查營 （1/29-1/31）</div>
-                <div><i class="fa-solid fa-arrow-right"></i></div>
-                </Link>
-                <Link class="news" href="">
-                <div>2024.01.01</div>
-                <div>【探索系列】2024鑑識推理偵查營 （1/29-1/31）</div>
-                <div><i class="fa-solid fa-arrow-right"></i></div>
-                </Link>
-                <Link class="news" href="">
-                <div>2024.01.01</div>
-                <div>【探索系列】2024鑑識推理偵查營 （1/29-1/31）</div>
-                <div><i class="fa-solid fa-arrow-right"></i></div>
-                </Link>
-                <Link class="news" href="">
-                <div>2024.01.01</div>
-                <div>【探索系列】2024鑑識推理偵查營 （1/29-1/31）</div>
-                <div><i class="fa-solid fa-arrow-right"></i></div>
-                </Link>
+                <button type="button" class="news" href="" @click="detail = true">
+                    <div>2024.01.29</div>
+                    <div>【探索系列】2024鑑識推理偵查營 （1/29-1/31）</div>
+                    <div><i class="fa-solid fa-arrow-right"></i></div>
+                </button>
+                <button type="button" class="news" href="" @click="detail = true">
+                    <div>2024.01.29</div>
+                    <div>【探索系列】2024鑑識推理偵查營 （1/29-1/31）</div>
+                    <div><i class="fa-solid fa-arrow-right"></i></div>
+                </button>
+                <button type="button" class="news" href="" @click="detail = true">
+                    <div>2024.01.29</div>
+                    <div>【探索系列】2024鑑識推理偵查營 （1/29-1/31）</div>
+                    <div><i class="fa-solid fa-arrow-right"></i></div>
+                </button>
+                <button type="button" class="news" href="" @click="detail = true">
+                    <div>2024.01.29</div>
+                    <div>【探索系列】2024鑑識推理偵查營 （1/29-1/31）</div>
+                    <div><i class="fa-solid fa-arrow-right"></i></div>
+                </button>
+                <button type="button" class="news" href="" @click="detail = true">
+                    <div>2024.01.29</div>
+                    <div>【探索系列】2024鑑識推理偵查營 （1/29-1/31）</div>
+                    <div><i class="fa-solid fa-arrow-right"></i></div>
+                </button>
+                <button type="button" class="news" href="" @click="detail = true">
+                    <div>2024.01.01</div>
+                    <div>【探索系列】2024鑑識推理偵查營 （1/29-1/31）</div>
+                    <div><i class="fa-solid fa-arrow-right"></i></div>
+                </button>
+                <button type="button" class="news" href="" @click="detail = true">
+                    <div>2024.01.01</div>
+                    <div>【探索系列】2024鑑識推理偵查營 （1/29-1/31）</div>
+                    <div><i class="fa-solid fa-arrow-right"></i></div>
+                </button>
+                <button type="button" class="news" href="" @click="detail = true">
+                    <div>2024.01.01</div>
+                    <div>【探索系列】2024鑑識推理偵查營 （1/29-1/31）</div>
+                    <div><i class="fa-solid fa-arrow-right"></i></div>
+                </button>
+                <button type="button" class="news" href="" @click="detail = true">
+                    <div>2024.01.01</div>
+                    <div>【探索系列】2024鑑識推理偵查營 （1/29-1/31）</div>
+                    <div><i class="fa-solid fa-arrow-right"></i></div>
+                </button>
+                <button type="button" class="news" href="" @click="detail = true">
+                    <div>2024.01.01</div>
+                    <div>【探索系列】2024鑑識推理偵查營 （1/29-1/31）</div>
+                    <div><i class="fa-solid fa-arrow-right"></i></div>
+                </button>
             </div>
         </div>
         <div v-if="detail" class="w-[100%] h-[100%] absolute top-0">
             <div class="mask w-full h-full fixed z-[5] top-0 left-0 bg-black/50">
-                <div class="modal absolute z-[6] top-[5%] left-[16%] w-[68%] h-[90dvh] px-[5%] 2sm:px-[5%] md:px-[3%] bg-white overflow-y-scroll">
+                <div
+                    class="modal absolute z-[6] top-[5%] left-[16%] w-[68%] h-[90dvh] px-[5%] 2sm:px-[5%] md:px-[3%] bg-white overflow-y-scroll">
                     <div class="my-[20px] text-center relative">
-                        <a href="https://www.nchu.edu.tw/news-detail.php?id=56564" class="text-[14px] 2sm:text-[24px] md:text-[26px] font-[600] text-[#0057ff]">點我報名
+                        <a href="https://www.nchu.edu.tw/news-detail.php?id=56564"
+                            class="text-[14px] 2sm:text-[24px] md:text-[26px] font-[600] text-[#0057ff]">點我報名
                         </a>
                         <button type="button" @click="detail = false"><i
                                 class="fa-solid fa-xmark text-[21px] absolute top-[25%] right-0"></i></button>
@@ -331,7 +333,7 @@ export default {
     padding: 0.48vw 1.46vw;
     border-radius: 1.04vw 1.04vw 0px 0px;
     font-size: 1.04vw;
-    font-family: inter;
+    font-weight: 500;
     background-color: transparent;
     margin-right: 1vw;
 }
@@ -412,5 +414,14 @@ export default {
 
     .OptionClick {
         display: block;
+        padding-bottom: 1vw;
+    }
+
+    .OptionClick i {
+        font-size: 12px;
+    }
+
+    .main button.OptionBtn {
+        font-weight: 100;
     }
 }</style>

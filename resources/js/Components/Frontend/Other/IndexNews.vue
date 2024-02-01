@@ -25,32 +25,32 @@ export default {
 <template>
     <main class="w-[90%] mb-[40vw] 2sm:mb-[20vw] md:w-[80%] m-auto">
         <div class="all">
-            <img v-motion :initial="{ opacity: 0, x: -200 }" :visibleOnce="{ opacity: 1, x: 0, transition: {duration: 1000,} }"
+            <img v-motion :initial="{ opacity: 0, x: -200 }" :visibleOnce="{ opacity: 1, x: 0, transition: {duration: 800,} }"
                 :src="screenWidth ? images.latest : images.latestPhone" alt="">
-            <div ref="slide" v-motion :initial="{ opacity: 0, y: 300 }" :visibleOnce="{ opacity: 1, y: 0, transition: {duration: 1000,} }">
-                <Link class="more">了解更多</Link>
+            <div ref="slide" v-motion :initial="{ opacity: 0, y: 300 }" :visibleOnce="{ opacity: 1, y: 0, transition: {duration: 800,} }">
+                <Link :href="route('news.type', '1')" class="more">了解更多</Link>
                 <div class="all-news">
-                    <Link class="news" href="">
+                    <Link class="news" :href="route('news.type', '1')">
                     <div>2023.01.01</div>
                     <div>包含職業訓練、兒童營隊、專業證照、運動課程</div>
                     <div><i class="fa-solid fa-arrow-right"></i></div>
                     </Link>
-                    <Link class="news" href="">
+                    <Link class="news" :href="route('news.type', '1')">
                     <div>2023.01.01</div>
                     <div>包含職業訓練、兒童營隊、專業證照、運動課程</div>
                     <div><i class="fa-solid fa-arrow-right"></i></div>
                     </Link>
-                    <Link class="news" href="">
+                    <Link class="news" :href="route('news.type', '1')">
                     <div>2023.01.01</div>
                     <div>包含職業訓練、兒童營隊、專業證照、運動課程</div>
                     <div><i class="fa-solid fa-arrow-right"></i></div>
                     </Link>
-                    <Link class="news" href="">
+                    <Link class="news" :href="route('news.type', '1')">
                     <div>2023.01.01</div>
                     <div>包含職業訓練、兒童營隊、專業證照、運動課程</div>
                     <div><i class="fa-solid fa-arrow-right"></i></div>
                     </Link>
-                    <Link class="news" href="">
+                    <Link class="news" :href="route('news.type', '1')">
                     <div>2023.01.01</div>
                     <div>包含職業訓練、兒童營隊、專業證照、運動課程</div>
                     <div><i class="fa-solid fa-arrow-right"></i></div>

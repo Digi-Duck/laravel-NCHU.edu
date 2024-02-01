@@ -165,7 +165,7 @@ export default {
 .h3 {
     font-size: 1vw;
     display: block;
-    padding-bottom: 4vh;
+    padding-bottom: 2.5vh;
 }
 
 .h4 {
@@ -207,7 +207,7 @@ export default {
     background-position: center;
     width: 50%;
     height: 80%;
-    
+
 }
 
 .bottom:hover::before {
@@ -253,8 +253,8 @@ export default {
     }
 
     .bottom::before {
-        top: -26.5vh;
-        left: -11.5vw;
+        top: -23vh;
+        left: -9.5vw;
         height: 2vh;
     }
 
@@ -271,6 +271,7 @@ export default {
 
     .h3 {
         font-size: 1.5vw;
+        padding-bottom: 1.5vh;
     }
 
     .h4 {
@@ -388,11 +389,17 @@ export default {
     }
 
     .all{
-        height: 100vh;
+        height: 130vh;
+    }
+    .h2{
+        padding-bottom: 1vh;
+    }
+    .top{
+        height: 90vh;
     }
     .bottom::before {
-        left: -7vw;
-        top: -18vh;
+        left: -8vw;
+        top: -20vh;
     }
 }
 

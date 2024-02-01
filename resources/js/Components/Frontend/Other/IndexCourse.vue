@@ -19,7 +19,7 @@ export default {
             cards: [
                 { title: '綠能溫室智慧環控實務班', type: '專業證照', tag1: '團隊', tag2: '實務班', tag3: '管理', tag4: '綠能', color: '#7dbda8', text: '在物聯網遠端控制催生第四波農業革命下，本計畫積極打造俱備環控自動化及農業生產知識人才，以垂直立體種植為架構，學習善用溫室設施。', link: 'https://elite.taiwanjobs.gov.tw/ClassSearch/Detail?UUID=B38ED0FDE9B34989A0DA2D56403CBEBE&SOURCE_TYPE=ELIT&fbclid=IwAR0JwbuW0bb_YR8W127wlIALqepRInPjsx8aja0hIwlZbrqvw08S82XAKhI', img_path:'/images/course/training.jpg' },
                 { title: '樂活陶-No10', type: '單元手作', tag1: '樂齡', tag2: '手作', tag3: '陶藝', tag4: '藝術', color: '#21d2db', text: '捏陶能幫助樂齡們訓練手部的靈活度，還能幫助大腦不斷運作，思考捏陶步驟或發想新造型，最重要的是周圍都是同年齡層。', link: 'https://www.siileec.com/subject.php?sn=4346&fbclid=IwAR0NY-qTpIUc9M1FlK5-4kIfyjS8zi85ik-JIchGmuQzVL8tKJIm8XvPso4', img_path:'/images/course/made.png' },
-                { title: '居家水電修繕入門班', type: '職業訓練', tag1: '水電', tag2: '入門', tag3: '修繕', tag4: '專業', color: '#ffcc00', text: '基本的居家水電維修絕對是值得投資的項目當家中水電出現小問題時，不必再擔心叫不到水電。', link:  'https://siileec.com/subject.php?sn=4384&fbclid=IwAR24E_g4DnDJsphbhOk9OrTqnCNXBDeSOm9pTAIwusKzG1AL77I_Nih6z9k', img_path:'/images/main/engineerIMG.jpg' },
+                { title: '居家水電修繕入門班', type: '職業訓練', tag1: '水電', tag2: '入門', tag3: '修繕', tag4: '專業', color: '#ffcc00', text: '基本的居家水電維修絕對是值得投資的項目當家中水電出現小問題時，不必再擔心叫不到水電。', link:  'https://www2.nchu.edu.tw/news-detail/id/56627', img_path:'/images/main/engineerIMG.jpg' },
                 { title: '一般專案經理證照培訓班', type: '專業證照', tag1: '新手', tag2: '培訓班', tag3: '管理', tag4: '證照', color: '#db5621', text: '專案經理是現在團隊中不可或缺的角色，擁有專業的證照能夠提升個人競爭力並開啟更廣況的職業發展道路。', link:  'https://www.siileec.com/subject.php?sn=4312', img_path:'/images/course/fakeIMG.jpg' },
             ],
             topCardIndex: 3,
@@ -72,7 +72,7 @@ export default {
                         :grabCursor="true" :modules="modules" :loop="true">
                         <swiper-slide v-for="(card, index) in cards" :key="index" class="swiper-slide"
                             :style="{ backgroundColor: card.color,backgroundImage: 'url(' + card.img_path + ')', backgroundSize: '100%', backgroundPosition:'50%  2%', boxShadow: 'inset 0px -40vw 100px 1px rgba(0, 0, 0, 0.3)',backgroundRepeat: 'no-repeat'}">
-                            <a>
+                            <a :href="card.link">
                                 <div class="card flex flex-col justify-end">
                                     <div class="card-type">{{ card.type }}</div>
                                     <div class="card-title flex flex-wrap w-[230px] mb-[2vw] 2sm:w-[800px] 2sm:mb-[0px]">{{ card.title }}</div>
@@ -94,7 +94,7 @@ export default {
                     <div class="cards h-[24.37vw] relative" @wheel.prevent="handleMouseWheel">
                         <div v-for="card in cards" :key="card.id" class="card "
                             :style="{ transform: card.transform, backgroundColor: card.color ,backgroundImage: 'url(' + card.img_path + ')', backgroundSize: 'cover', backgroundPosition:'50%  2%', boxShadow: 'inset 0px -12.5vw 50px 1px rgba(0, 0, 0, 0.3)' }">
-                            <a :herf="card.link">
+                            <a :href="card.link">
                                 <div class="card flex flex-col justify-end">
                                     <div class="card-type">{{ card.type }}</div>
                                     <div class="card-title">{{ card.title }}</div>

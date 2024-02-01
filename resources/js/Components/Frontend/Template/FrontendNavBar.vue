@@ -111,16 +111,16 @@ export default {
                     </li>
                     <ul class="sub-dropdown-menu" :class="{ 'sub-3': turn == 3, 'sub': turn != 3 }">
                         <li>
-                            <Link :href="route('news.type','1')">本週消息</Link>
+                            <Link :href="route('news.type','1')">所有消息</Link>
                         </li>
                         <li>
-                            <Link :href="route('news.type','2')">本月消息</Link>
+                            <Link :href="route('news.type','2')">本週消息</Link>
                         </li>
                         <li>
-                            <Link :href="route('news.type','3')">半年內消息</Link>
+                            <Link :href="route('news.type','3')">本月消息</Link>
                         </li>
                         <li>
-                            <Link :href="route('news.type','4')">所有消息</Link>
+                            <Link :href="route('news.type','4')">半年內消息</Link>
                         </li>
                     </ul>
                 </label>

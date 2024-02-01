@@ -7,6 +7,7 @@ import FrontendFooter from '@/Components/Frontend/Template/FrontendFooter.vue';
 import frontendBackground from '/images/body/grid.svg';
 import frontendBackgroundPad from '/images/body/smallGrid.svg';
 import top from '/images/logo/top.png';
+import logo from '/images/logo/logo-loading.svg';
 
 export default {
     components: {
@@ -16,7 +17,7 @@ export default {
     data() {
         return {
             images: {
-                frontendBackground, frontendBackgroundPad, top,
+                frontendBackground, frontendBackgroundPad, top, logo,
             },
             screenWidth: false,
         };
@@ -49,7 +50,12 @@ export default {
 
 <template>
     <div>
-        <section></section>
+        <!-- <section id="frontend-layout" ref="frontendLayout" class="h-[100dvh] overflow-x-hidden flex justify-center items-center"
+            :style="{ backgroundImage: `url(${screenWidth ? images.frontendBackgroundPad : images.frontendBackground})` }">
+            <transition>
+                <div class="w-[90px] h-[100px] load" :style="{ backgroundImage: `url(${images.logo})`}"></div>
+            </transition>
+        </section> -->
         <section id="frontend-layout" ref="frontendLayout" class="h-[100dvh] overflow-x-hidden"
             :style="{ backgroundImage: `url(${screenWidth ? images.frontendBackgroundPad : images.frontendBackground})` }">
             <div>
@@ -66,6 +72,17 @@ export default {
 </template>
 
 <style scoped>
+@keyframes loading{
+    0%{
+        @apply w-[90px];
+    }
+    100%{
+        @apply w-[245px];
+    }
+}
+.load{
+    animation: loading 2s linear 1 normal;
+}
 .goTop {
     position: sticky;
     margin-bottom: 30px;
