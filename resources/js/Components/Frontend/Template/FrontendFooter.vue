@@ -3,7 +3,6 @@
 <script>
 import { document } from 'postcss';
 import logo from '/images/logo/logo.svg';
-import top from '/images/logo/top.png';
 
 window.onscroll = function () {
     scrollFunction();
@@ -14,27 +13,17 @@ export default {
         return {
             images: {
                 logo,
-                top,
             },
         };
     },
     methods: {
-        scrollFunction() {
-            if (document.documentElement.scrollTop > 300) {
-                this.documentElement.style.display = "block";
-            } else {
-                this.documentElement.style.display = "none";
-            }
-        }
+
     },
 
 };
 </script>
 
 <template>
-    <button class="gotop">
-        <Link href="#"><img :src="images.top" alt="" class="w-[50px] md:w-[63px]"></Link>
-    </button>
     <footer class="w-[100%]  bg-white flex justify-center ">
         <div class="main w-[79%]">
             <div class="top">
@@ -115,17 +104,6 @@ export default {
 <style scoped>
 * {
     scroll-behavior: smooth;
-}
-
-.gotop {
-    position: sticky;
-    margin-bottom: 30px;
-    bottom: 30px;
-    /* left: 93vw; */
-    float: right;
-    right: 30px;
-    z-index: 10;
-    opacity: 0.9;
 }
 
 .word-small {
@@ -442,11 +420,6 @@ export default {
 }
 
 @media (max-width:768px) {
-    .gotop {
-        margin-bottom: 10px;
-        right: 10px;
-        bottom: 10px;
-    }
 
     .logo {
         width: 80%;
