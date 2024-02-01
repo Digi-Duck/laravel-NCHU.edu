@@ -9,8 +9,11 @@ use Inertia\Inertia;
 class AboutController extends Controller
 {
     //
-    public function index()
-    {
-        return Inertia::render('Frontend/About');
+    public function get_about($input){
+        $data = (object)[
+            'input' =>$input,
+        ];
+        // dd($data);
+        return Inertia::render('Frontend/About', ['response' => rtFormat($data) ?? []]);
     }
 }

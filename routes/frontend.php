@@ -9,13 +9,19 @@ use App\Http\Controllers\Frontend\CourseController;
 
 Route::get('/', [IndexController::class, 'index'])->name('home');
 
-Route::get('/about',[AboutController::class,'index'])->name('about.index');
-Route::get('/news',[NewController::class,'index'])->name('news.index');
-Route::get('/web',[WebInformationController::class,'index'])->name('web.index');
+Route::prefix('about')->group(function () {
+    Route::get('/type/{input}', [AboutController::class, 'get_about'])->name('about.type');
+});
+
+Route::prefix('news')->group(function () {
+    Route::get('/type/{input}', [NewController::class, 'get_news'])->name('news.type');
+});
+
+Route::prefix('web')->group(function () {
+    Route::get('/type/{input}', [WebInformationController::class, 'get_web'])->name('web.type');
+});
 
 Route::prefix('course')->group(function () {
     Route::get('/type/{input}', [CourseController::class, 'get_course'])->name('course.type');
-    Route::get('/all', [CourseController::class, 'all'])->name('course.all');
-    Route::get('/latest', [CourseController::class, 'latest'])->name('course.latest');
 });
 

@@ -42,25 +42,25 @@ export default {
                     <div class="content-3">
                         <div class="h2">消息資訊</div>
                         <div>
-                            <Link class="h3" href="">最新消息</Link>
+                            <Link class="h3" :href="route('news.type','1')">最新消息</Link>
                         </div>
                     </div>
                     <div class="content-3">
                         <div class="h2">關於我們</div>
                         <div>
-                            <Link class="h3" href="">單位介紹</Link>
+                            <Link class="h3" :href="route('about.type','1')">單位介紹</Link>
                         </div>
                         <div>
-                            <Link class="h3" href="">成員介紹</Link>
+                            <Link class="h3" :href="route('about.type','2')">成員介紹</Link>
                         </div>
                         <div>
-                            <Link class="h3" href="">相關法規</Link>
+                            <Link class="h3" :href="route('about.type','3')">相關法規</Link>
                         </div>
                         <div>
-                            <Link class="h3" href="">成果展示</Link>
+                            <Link class="h3" :href="route('about.type','4')">成果展示</Link>
                         </div>
                         <div>
-                            <Link class="h3" href="">表單下載</Link>
+                            <Link class="h3" :href="route('about.type','5')">表單下載</Link>
                         </div>
                     </div>
                     <div class="content-3">
@@ -84,16 +84,16 @@ export default {
                 </div>
                 <div class="flex gap-1 tabs">
                     <div class="informationBar">
-                        <Link class="h4" :href="route('web.index')">隱私權聲明 |</Link>
+                        <Link class="h4" :href="route('web.type','1')">隱私權聲明 |</Link>
                     </div>
                     <div class="informationBar">
-                        <Link class="h4" :href="route('web.index')">智慧財產權聲明 |</Link>
+                        <Link class="h4" :href="route('web.type','2')">智慧財產權聲明 |</Link>
                     </div>
                     <div class="informationBar">
-                        <Link class="h4" :href="route('web.index')">網站導覽 |</Link>
+                        <Link class="h4" :href="route('web.type','3')">網站導覽 |</Link>
                     </div>
                     <div class="informationBar">
-                        <Link class="h4" href="">網站意見回饋</Link>
+                        <Link class="h4" :href="route('web.type','4')">網站意見回饋</Link>
                     </div>
                 </div>
             </div>

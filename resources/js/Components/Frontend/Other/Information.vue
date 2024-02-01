@@ -4,12 +4,15 @@ import webPhone from '/images/Information/webPhone.png';
 import angleDown from '/images/Information/angle-down.svg';
 
 export default {
+    props: {
+        response: Object,
+    },
     data() {
         return {
             images: {
                 webPC, webPhone, angleDown,
             },
-            Num: 1,
+            Num:  this.$page.props.response.rt_data.input ?? '',
             ClickNum: 1,
             screenWidth: false,
         }

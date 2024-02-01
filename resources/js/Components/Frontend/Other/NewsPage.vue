@@ -4,12 +4,15 @@ import newsPhone from '/images/News/news-phone.png';
 import wallpaper from '/images/News/wallpaper.svg';
 
 export default {
+    props: {
+        response: Object,
+    },
     data() {
         return {
             images: {
                 news, wallpaper, newsPhone,
             },
-            Num: 1,
+            Num:  this.$page.props.response.rt_data.input ?? '',
             ClickNum: 1,
             detail: false,
             screenWidth: false,
@@ -19,6 +22,7 @@ export default {
         this.checkScreenWidth();
         window.addEventListener('resize', this.checkScreenWidth);
     },
+
     methods: {
         toggle() {
             if (this.ClickNum == 1) {

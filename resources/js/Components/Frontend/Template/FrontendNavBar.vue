@@ -43,13 +43,13 @@ export default {
 
                     </li>
                     <li>
-                        <Link :href="route('about.index')">關於我們</Link>
+                        <Link :href="route('about.type','1')">關於我們</Link>
                     </li>
                     <li>
                         <Link :href="route('course.type','all')">課程資訊</Link>
                     </li>
                     <li>
-                        <Link :href="route('news.index')">最新消息</Link>
+                        <Link :href="route('news.type','1')">最新消息</Link>
                     </li>
                 </ul>
                 <div class="fun-menu">
@@ -69,19 +69,19 @@ export default {
                     </li>
                     <ul class="sub-dropdown-menu" :class="{ 'sub-1': turn == 1, 'sub' : turn != 1}">
                         <li>
-                            <Link href="">單位介紹</Link>
+                            <Link :href="route('about.type','1')">單位介紹</Link>
                         </li>
                         <li>
-                            <Link href="">成員介紹</Link>
+                            <Link :href="route('about.type','2')">成員介紹</Link>
                         </li>
                         <li>
-                            <Link href="">相關法規</Link>
+                            <Link :href="route('about.type','3')">相關法規</Link>
                         </li>
                         <li>
-                            <Link href="">表單下載</Link>
+                            <Link :href="route('about.type','4')">表單下載</Link>
                         </li>
                         <li>
-                            <Link href="">成果展示</Link>
+                            <Link :href="route('about.type','5')">成果展示</Link>
                         </li>
                     </ul>
                 </label>
@@ -111,16 +111,16 @@ export default {
                     </li>
                     <ul class="sub-dropdown-menu" :class="{ 'sub-3': turn == 3, 'sub': turn != 3 }">
                         <li>
-                            <Link href="">本週消息</Link>
+                            <Link :href="route('news.type','1')">本週消息</Link>
                         </li>
                         <li>
-                            <Link href="">本月消息</Link>
+                            <Link :href="route('news.type','2')">本月消息</Link>
                         </li>
                         <li>
-                            <Link href="">半年內消息</Link>
+                            <Link :href="route('news.type','3')">半年內消息</Link>
                         </li>
                         <li>
-                            <Link href="">所有消息</Link>
+                            <Link :href="route('news.type','4')">所有消息</Link>
                         </li>
                     </ul>
                 </label>

@@ -15,17 +15,21 @@ import 'swiper/css/pagination';
 
 
 export default {
+    props: {
+        response: Object,
+    },
     components: {
         Swiper,
         SwiperSlide,
     },
     data() {
         return {
+            inputData: this.response ?? '',
             images: {
                 about, aboutPhone, member, memberPhone, result, resultPhone,
             },
             modules: [Navigation, Pagination, Mousewheel, Keyboard],
-            Num: 1,
+            Num:  this.$page.props.response.rt_data.input ?? '',
             ClickNum: 1,
             show: false,
             screenWidth: false,
@@ -51,6 +55,7 @@ export default {
 </script>
 
 <template>
+    {{ inputData }}
     <div class="w-[100%] flex justify-center">
         <div class="main w-[100%] 2sm:w-[67%] mb-[70px]">
             <div class="title"><img :src="screenWidth ? images.about : images.aboutPhone" alt="" class="m-auto 2md:m-0">

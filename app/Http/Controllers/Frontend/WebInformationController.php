@@ -9,8 +9,11 @@ use Inertia\Inertia;
 class WebInformationController extends Controller
 {
     //
-    public function index()
-    {
-        return Inertia::render('Frontend/WebInformation');
+    public function get_web($input){
+        $data = (object)[
+            'input' =>$input,
+        ];
+        // dd($data);
+        return Inertia::render('Frontend/WebInformation', ['response' => rtFormat($data) ?? []]);
     }
 }

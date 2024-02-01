@@ -8,9 +8,13 @@ use Inertia\Inertia;
 
 class NewController extends Controller
 {
-    //
-    public function index()
-    {
-        return Inertia::render('Frontend/News');
+
+    public function get_news($input) {
+        $data = [
+            'input' => $input,
+        ];
+
+        return Inertia::render('Frontend/News', ['response' => rtFormat($data) ?? []]);
     }
+
 }
