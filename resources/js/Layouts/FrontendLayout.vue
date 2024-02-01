@@ -23,11 +23,15 @@ export default {
     mounted() {
         this.checkScreenWidth();
         window.addEventListener('resize', this.checkScreenWidth);
+        console.log(this.$refs.frontendLayout);
     },
     methods: {
         checkScreenWidth() {
             this.screenWidth = window.innerWidth <= 768;
         },
+        totop() {
+            this.$refs.frontendLayout.scrollTo({ top: 0, behavior: 'smooth' });
+        }
     },
     watch: {
         // 監聽路由變化，回到頁面頂端
@@ -44,16 +48,19 @@ export default {
 </script>
 
 <template>
-    <section id="frontend-layout" ref="frontendLayout" class="h-[100dvh] overflow-x-hidden"
-        :style="{ backgroundImage: `url(${screenWidth ? images.frontendBackgroundPad : images.frontendBackground})` }">
-        <div>
-            <FrontendHeader />
+    <div>
+        <section></section>
+        <section id="frontend-layout" ref="frontendLayout" class="h-[100dvh] overflow-x-hidden"
+            :style="{ backgroundImage: `url(${screenWidth ? images.frontendBackgroundPad : images.frontendBackground})` }">
+            <div>
+                <FrontendHeader />
 
-            <main>
-                <slot />
-            </main>
-
-            <FrontendFooter />
-        </div>
-    </section>
+                <main>
+                    <slot />
+                </main>
+                <button class="absolute right-0 bottom-0" type="button" @click="totop">test</button>
+                <FrontendFooter />
+            </div>
+        </section>
+    </div>
 </template>
