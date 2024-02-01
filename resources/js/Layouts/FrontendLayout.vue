@@ -58,7 +58,7 @@ export default {
                 <main>
                     <slot />
                 </main>
-                <button @click="toTop()" :class="yScrollValue < 100 ? 'goTop':''"><img :src="images.top" alt="" class="w-[50px] md:w-[63px]"></button>
+                <button @click="toTop()" class="goTop"><img :src="images.top" alt="" class="w-[50px] md:w-[63px]"></button>
                 <FrontendFooter />
             </div>
         </section>
