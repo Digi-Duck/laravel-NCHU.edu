@@ -76,8 +76,8 @@ export default {
                     </div>
                     <div class="content-3">
                         <div class="h2"><a :href="route('course.type','all')">課程資訊</a></div>
-                         <div v-for="type in $page.props.classType.type" :key="type.id">
-                            <Link :href="route('course.type', type.id)">{{type.name}}</Link>
+                         <div  v-for="type in $page.props.classType.type" :key="type.id">
+                            <Link class="h3" :href="route('course.type', type.id)">{{type.name}}</Link>
                         </div>
                     </div>
                 </div>
