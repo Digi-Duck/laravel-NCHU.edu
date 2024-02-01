@@ -486,7 +486,7 @@ export default {
     }
 
     .bottom::before {
-        top: -26vh;
+        top: -27vh;
     }
 
     .h1 {
@@ -509,7 +509,7 @@ export default {
 
 }
 
-@media (max-width:691px) {
+@media (max-width:690px) {
 
     .logo {
         width: 70%;
