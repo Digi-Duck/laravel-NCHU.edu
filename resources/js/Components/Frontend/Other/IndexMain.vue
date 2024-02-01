@@ -39,7 +39,7 @@ export default {
             </div>
             <div class="main-top top-2">
                 <div v-motion :initial="{ opacity: 0, x: -300 }"
-                    :enter="{ opacity: 1, x: 0, transition: { delay: 1500, duration: 800, } }" class="big-title mb-[30px] m-auto">
+                    :enter="{ opacity: 1, x: 0, transition: { delay: 1500, duration: 800, } }" class="big-title mb-[30px] m-auto 2md:ml-0">
                     <img :src="images.provide" alt="">
                 </div>
                 <ul v-motion :initial="{ opacity: 0, x: 300 }"

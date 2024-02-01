@@ -232,108 +232,108 @@ export default {
                 </div>
             </div>
             <div v-if="Num == 3" class="w-[90%] 2sm:w-[100%] m-auto">
-                <Link class="news" href="">
+                <button type="button" class="news" href="">
                 <div>2024.01.01</div>
                 <div>國立中興大學辦理推廣教育注意事項</div>
                 <div><i class="fa-solid fa-arrow-right"></i></div>
-                </Link>
-                <Link class="news" href="">
+                </button>
+                <button type="button" class="news" href="">
                 <div>2024.01.01</div>
                 <div>國立中興大學辦理推廣教育注意事項</div>
                 <div><i class="fa-solid fa-arrow-right"></i></div>
-                </Link>
-                <Link class="news" href="">
+                </button>
+                <button type="button" class="news" href="">
                 <div>2024.01.01</div>
                 <div>國立中興大學辦理推廣教育注意事項</div>
                 <div><i class="fa-solid fa-arrow-right"></i></div>
-                </Link>
-                <Link class="news" href="">
+                </button>
+                <button type="button" class="news" href="">
                 <div>2024.01.01</div>
                 <div>國立中興大學辦理推廣教育注意事項</div>
                 <div><i class="fa-solid fa-arrow-right"></i></div>
-                </Link>
-                <Link class="news" href="">
+                </button>
+                <button type="button" class="news" href="">
                 <div>2024.01.01</div>
                 <div>國立中興大學辦理推廣教育注意事項</div>
                 <div><i class="fa-solid fa-arrow-right"></i></div>
-                </Link>
-                <Link class="news" href="">
+                </button>
+                <button type="button" class="news" href="">
                 <div>2024.01.01</div>
                 <div>國立中興大學辦理推廣教育注意事項</div>
                 <div><i class="fa-solid fa-arrow-right"></i></div>
-                </Link>
-                <Link class="news" href="">
+                </button>
+                <button type="button" class="news" href="">
                 <div>2024.01.01</div>
                 <div>國立中興大學辦理推廣教育注意事項</div>
                 <div><i class="fa-solid fa-arrow-right"></i></div>
-                </Link>
-                <Link class="news" href="">
+                </button>
+                <button type="button" class="news" href="">
                 <div>2024.01.01</div>
                 <div>國立中興大學辦理推廣教育注意事項</div>
                 <div><i class="fa-solid fa-arrow-right"></i></div>
-                </Link>
-                <Link class="news" href="">
+                </button>
+                <button type="button" class="news" href="">
                 <div>2024.01.01</div>
                 <div>國立中興大學辦理推廣教育注意事項</div>
                 <div><i class="fa-solid fa-arrow-right"></i></div>
-                </Link>
-                <Link class="news" href="">
+                </button>
+                <button type="button" class="news" href="">
                 <div>2024.01.01</div>
                 <div>國立中興大學辦理推廣教育注意事項</div>
                 <div><i class="fa-solid fa-arrow-right"></i></div>
-                </Link>
+                </button>
             </div>
             <div v-if="Num == 4" class="w-[90%] 2sm:w-[100%] m-auto">
-                <Link class="news" >
+                <button type="button" class="news" >
                 <div>2024.01.01</div>
                 <div class="truncate">國立中興大學辦理推廣教育注意事項</div>
                 <div><i class="fa-solid fa-arrow-right"></i></div>
-                </Link>
-                <Link class="news" >
+                </button>
+                <button type="button" class="news" >
                 <div>2024.01.01</div>
                 <div class="truncate">國立中興大學辦理推廣教育注意事項</div>
                 <div><i class="fa-solid fa-arrow-right"></i></div>
-                </Link>
-                <Link class="news" >
+                </button>
+                <button type="button" class="news" >
                 <div>2024.01.01</div>
                 <div class="truncate">國立中興大學辦理推廣教育注意事項</div>
                 <div><i class="fa-solid fa-arrow-right"></i></div>
-                </Link>
-                <Link class="news" >
+                </button>
+                <button type="button" class="news" >
                 <div>2024.01.01</div>
                 <div class="truncate">國立中興大學辦理推廣教育注意事項</div>
                 <div><i class="fa-solid fa-arrow-right"></i></div>
-                </Link>
-                <Link class="news" >
+                </button>
+                <button type="button" class="news" >
                 <div>2024.01.01</div>
                 <div class="truncate">國立中興大學辦理推廣教育注意事項</div>
                 <div><i class="fa-solid fa-arrow-right"></i></div>
-                </Link>
-                <Link class="news" >
+                </button>
+                <button type="button" class="news" >
                 <div>2024.01.01</div>
                 <div class="truncate">國立中興大學辦理推廣教育注意事項</div>
                 <div><i class="fa-solid fa-arrow-right"></i></div>
-                </Link>
-                <Link class="news" >
+                </button>
+                <button type="button" class="news" >
                 <div>2024.01.01</div>
                 <div class="truncate">國立中興大學辦理推廣教育注意事項</div>
                 <div><i class="fa-solid fa-arrow-right"></i></div>
-                </Link>
-                <Link class="news" >
+                </button>
+                <button type="button" class="news" >
                 <div>2024.01.01</div>
                 <div class="truncate">國立中興大學辦理推廣教育注意事項</div>
                 <div><i class="fa-solid fa-arrow-right"></i></div>
-                </Link>
-                <Link class="news" >
+                </button>
+                <button type="button" class="news" >
                 <div>2024.01.01</div>
                 <div class="truncate">國立中興大學辦理推廣教育注意事項</div>
                 <div><i class="fa-solid fa-arrow-right"></i></div>
-                </Link>
-                <Link class="news" >
+                </button>
+                <button type="button" class="news" >
                 <div>2024.01.01</div>
                 <div class="truncate">國立中興大學辦理推廣教育注意事項</div>
                 <div><i class="fa-solid fa-arrow-right"></i></div>
-                </Link>
+                </button>
             </div>
             <div v-if="Num == 5" class="w-[100%] flex flex-wrap justify-evenly md:justify-evenly">
                 <div class="results">

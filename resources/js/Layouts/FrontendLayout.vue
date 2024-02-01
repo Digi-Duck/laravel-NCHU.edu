@@ -62,7 +62,7 @@ export default {
                 <div v-show="show" class="w-[90px] h-[100px] load" :style="{ backgroundImage: `url(${images.logo})`}"></div>
             </transition>
         </section>
-        <section v-show="stage == 2" id="frontend-layout" ref="frontendLayout" class="h-[100dvh] overflow-x-hidden"
+        <section v-if="stage == 2" id="frontend-layout" ref="frontendLayout" class="h-[100dvh] overflow-x-hidden"
             :style="{ backgroundImage: `url(${screenWidth ? images.frontendBackgroundPad : images.frontendBackground})` }">
             <div>
                 <FrontendHeader />
@@ -80,7 +80,7 @@ export default {
 <style scoped>
 .fade-enter-active,
 .fade-leave-active {
-  animation: loading 2s;
+  animation: loading 1.5s;
 }
 
 @keyframes loading{
@@ -90,9 +90,6 @@ export default {
     100%{
         @apply w-[245px];
     }
-}
-.load{
-    animation: loading 2s linear 1 normal;
 }
 .goTop {
     position: sticky;
